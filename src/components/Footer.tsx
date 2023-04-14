@@ -1,19 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 import logoPic from "../../public/images/logo-black.png";
 import { NewsletterForm } from "./NewsletterForm";
 
 export const Footer: React.FC = () => {
+  const t = useTranslations("Global.Footer");
+
   return (
     <div className="flex flex-col items-center xl:items-start pt-16 lg:pt-24 pb-10 xl:px-48 mt-10 lg:mt-16 bg-[#7EBDD5]">
       <div className="flex flex-col lg:flex-row items-center justify-between mb-24 px-12 xl:px-0 w-full">
-        <p className="text-center lg:text-left text-4xl">
-          Subscribe to our newsletter, <br />
-          and follow us around.
-        </p>
+        <p className="text-center lg:text-left text-4xl">{t("message")}</p>
 
-        <NewsletterForm />
+        <NewsletterForm
+          inputPlaceholder={t("inputPlaceholder")}
+          inputError={t("inputError")}
+          ctaText={t("cta")}
+        />
       </div>
       <Link className="relative h-20 w-56" href="/" target="_blank">
         <Image

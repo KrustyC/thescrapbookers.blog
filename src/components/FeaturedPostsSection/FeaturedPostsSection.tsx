@@ -1,4 +1,5 @@
-import type { Post as IPost } from "types/global";
+import { getTranslations } from "next-intl/server";
+import type { AppLocale, Post as IPost } from "types/global";
 import { SectionWithTitle } from "../SectionWIthTitle/SectionWithTitle";
 import { Post } from "./Post";
 import { FeaturedPostsSectionSkeleton } from "./FeaturedPostsSectionSkeleton";
@@ -14,14 +15,20 @@ async function getFeaturedPosts(): Promise<{ posts: IPost[] }> {
   return res.json();
 }
 
-export default async function FeaturedPostsSection() {
+export default async function FeaturedPostsSection({
+  locale,
+}: {
+  locale: AppLocale;
+}) {
   const { posts } = await getFeaturedPosts();
 
+  const t = await getTranslations("Home.Featured");
+
   return (
-    <SectionWithTitle title="Our recent thoughts">
+    <SectionWithTitle title={t("title")}>
       <div className="flex flex-col lg:flex-row gap-y-16 lg:gap-x-16">
         {posts.map((post, i) => (
-          <Post key={i} {...post} />
+          <Post key={i} post={post} locale={locale} />
         ))}
       </div>
     </SectionWithTitle>

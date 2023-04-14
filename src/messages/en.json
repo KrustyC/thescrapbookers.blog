@@ -1,0 +1,26 @@
+{
+  "Home": {
+    "Hero": {
+      "title": "Our 'old school' way of keeping you up to date on our whereabouts"
+    },
+    "Featured": {
+      "title": "Our recent thoughts"
+    },
+    "SmallNotes": {
+      "title": "Small Notes"
+    },
+    "AboutUs": {
+      "title": "About Us",
+      "content": "We are Davide and Beatrice, a software engineer and a freelance designer. We have just started our journey around the world and wanted to find a way to keep our family and close friends up to date on our whereabouts by sharing a few of our stories.",
+      "cta": "Find out more"
+    }
+  },
+  "Global": {
+    "Footer": {
+      "message": "Subscribe to our newsletter, and follow us around the world",
+      "inputPlaceholder": "Enter Email",
+      "inputError": "Please enter a valid email",
+      "cta": "Subscribe Now"
+    }
+  }
+}

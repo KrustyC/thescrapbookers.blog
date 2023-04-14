@@ -1,0 +1,26 @@
+{
+  "Home": {
+    "Hero": {
+      "title": "Il nostro modo 'old school' di tenervi aggiornati sulle nostre avventure"
+    },
+    "Featured": {
+      "title": "Articoli Recenti"
+    },
+    "SmallNotes": {
+      "title": "Piccole Note"
+    },
+    "AboutUs": {
+      "title": "Chi Siamo",
+      "content": "Siamo Davide e Beatrice, un software engineer e una designer freelance. Ci siamo da poco avventurati nel nostro viaggio intorno al mondo ed abbiamo deciso di creare quest blog per condividere un po' delle nostre storie.",
+      "cta": "Scopri di più"
+    }
+  },
+  "Global": {
+    "Footer": {
+      "message": "Iscriviti alla nostra newsletter, e seguici intorno al mondo",
+      "inputPlaceholder": "Inserisci Email",
+      "inputError": "Inserisci una mail valida",
+      "cta": "Iscriviti Ora"
+    }
+  }
+}

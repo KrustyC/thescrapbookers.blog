@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Hero } from "components/Hero";
 import FeaturedPostsSection, {
   FeaturedPostsSectionSkeleton,
@@ -7,25 +8,26 @@ import SmallNotesSection, {
 } from "components/SmallNotesSection/SmallNotesSection";
 import { AboutUsSection } from "components/AboutUsSection";
 import { Footer } from "components/Footer";
-import { Suspense } from "react";
+import { AppLocale } from "types/global";
 
 export const metadata = {
   title: "Home | The Scrapbookers",
 };
 
-export default function Home() {
+export default function Home({ params }: { params: { locale: AppLocale } }) {
+  console.log(params);
   return (
     <div className="flex flex-col">
       <Hero />
 
       <Suspense fallback={<FeaturedPostsSectionSkeleton />}>
         {/* @ts-expect-error Server Component */}
-        <FeaturedPostsSection />
+        <FeaturedPostsSection locale={params.locale} />
       </Suspense>
 
       <Suspense fallback={<SmallNotesSectionSkeleton />}>
         {/* @ts-expect-error Server Component */}
-        <SmallNotesSection />
+        <SmallNotesSection locale={params.locale} />
       </Suspense>
 
       {/* <CategoriesSection /> */}

@@ -7,11 +7,21 @@ import { useNewsletterSubscribeRequest } from "hooks/useNewsletterSubscribeReque
 const EMAIL_REGEX =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
+interface NewsletterFormProps {
+  inputPlaceholder: string;
+  inputError: string;
+  ctaText: string;
+}
+
 type FormData = {
   email: string;
 };
 
-export const NewsletterForm: React.FC = ({}) => {
+export const NewsletterForm: React.FC<NewsletterFormProps> = ({
+  inputPlaceholder,
+  inputError,
+  ctaText,
+}) => {
   const {
     handleSubmit,
     register,
@@ -30,12 +40,12 @@ export const NewsletterForm: React.FC = ({}) => {
       <input
         className="h-16 lg:h-full px-6 w-full lg:w-72 mb-4 lg:mb-0"
         type="email"
-        placeholder="Enter Email"
+        placeholder={inputPlaceholder}
         {...register("email", {
           required: true,
           pattern: {
             value: EMAIL_REGEX,
-            message: "Please enter a valid email",
+            message: inputError,
           },
         })}
       />
@@ -45,7 +55,7 @@ export const NewsletterForm: React.FC = ({}) => {
         className="h-16 lg:h-full w-full lg:w-56 bg-black text-white px-12 lg:ml-4 disabled:opacity-50 disabled:cursor-not-allowed"
         disabled={!isValid || !isDirty}
       >
-        Subscribe Now
+        {ctaText}
       </button>
     </form>
   );
