@@ -15,6 +15,9 @@
       "cta": "Find out more"
     }
   },
+  "BlogPost": {
+    "writtenBy": "Written by"
+  },
   "Global": {
     "Footer": {
       "message": "Subscribe to our newsletter, and follow us around the world",

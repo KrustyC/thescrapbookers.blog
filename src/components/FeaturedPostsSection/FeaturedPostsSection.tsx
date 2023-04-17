@@ -4,9 +4,12 @@ import { SectionWithTitle } from "../SectionWIthTitle/SectionWithTitle";
 import { Post } from "./Post";
 import { FeaturedPostsSectionSkeleton } from "./FeaturedPostsSectionSkeleton";
 
-async function getFeaturedPosts(): Promise<{ posts: IPost[] }> {
-  const url = `${process.env.baseUrl}/post/api?tag=featured`;
+async function getFeaturedPosts(
+  locale: AppLocale
+): Promise<{ posts: IPost[] }> {
+  const url = `${process.env.baseUrl}/${locale}/post/api?tag=featured`;
   const res = await fetch(url, { next: { revalidate: 86400 } });
+  // const res = await fetch(url, { next: { revalidate: 0 } });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -20,7 +23,7 @@ export default async function FeaturedPostsSection({
 }: {
   locale: AppLocale;
 }) {
-  const { posts } = await getFeaturedPosts();
+  const { posts } = await getFeaturedPosts(locale);
 
   const t = await getTranslations("Home.Featured");
 

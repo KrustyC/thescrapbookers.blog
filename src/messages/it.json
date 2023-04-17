@@ -15,6 +15,9 @@
       "cta": "Scopri di più"
     }
   },
+  "BlogPost": {
+    "writtenBy": "Scritto da"
+  },
   "Global": {
     "Footer": {
       "message": "Iscriviti alla nostra newsletter, e seguici intorno al mondo",

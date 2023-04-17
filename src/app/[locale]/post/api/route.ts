@@ -22,7 +22,14 @@ function parseContentfulPostFields(
   };
 }
 
-export async function GET(request: Request) {
+interface Options {
+  params: {
+    slug: string;
+    locale: string;
+  };
+}
+
+export async function GET(request: Request, { params }: Options) {
   try {
     const client = getContentfulClient();
 
@@ -35,6 +42,7 @@ export async function GET(request: Request) {
 
     const result = await client.getEntries<ContentfulPostFields>({
       content_type: "post",
+      locale: params.locale,
       "metadata.tags.sys.id[all]": tag,
       select:
         "fields.title,fields.slug,fields.smallIntro,fields.thumbnailImage,fields.date,fields.category",
@@ -47,6 +55,6 @@ export async function GET(request: Request) {
     return NextResponse.json({ posts });
   } catch (error) {
     console.error(error);
-    // return res.status(500).json({ error: "Failed to fetch posts" });
+    return NextResponse.json({ error: "Failed to fetch posts" });
   }
 }

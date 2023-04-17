@@ -1,18 +1,20 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
+import { AppLocale } from "types/global";
 import { BlogPostSkeleton } from "components/BlogPost/BlogPostSkeleton";
 import BlogPost, { getPost } from "components/BlogPost/BlogPost";
 
 interface PostpageProps {
   params: {
     slug: string;
+    locale: AppLocale;
   };
 }
 
 export async function generateMetadata({
-  params: { slug },
+  params: { slug, locale },
 }: PostpageProps): Promise<Metadata> {
-  const { post } = await getPost(slug);
+  const { post } = await getPost(slug, locale);
 
   return {
     title: post.title,
@@ -35,12 +37,12 @@ export async function generateMetadata({
   };
 }
 
-export default function Post({ params: { slug } }: PostpageProps) {
+export default function Post({ params: { slug, locale } }: PostpageProps) {
   return (
     <div>
       <Suspense fallback={<BlogPostSkeleton />}>
         {/* @ts-expect-error Server Component */}
-        <BlogPost slug={slug} />
+        <BlogPost slug={slug} locale={locale} />
       </Suspense>
     </div>
   );

@@ -4,10 +4,10 @@ import { SectionWithTitle } from "../SectionWIthTitle/SectionWithTitle";
 import { SmallNotePost } from "./SmallNotePost";
 import { SmallNotesSectionSkeleton } from "./SmallNotesSectionSkeleton";
 
-async function getSmallNotes(): Promise<{ posts: IPost[] }> {
-  const url = `${process.env.baseUrl}/post/api?tag=smallnoteHome`;
-  // const res = await fetch(url, { next: { revalidate: 0 } });
+async function getSmallNotes(locale: AppLocale): Promise<{ posts: IPost[] }> {
+  const url = `${process.env.baseUrl}/${locale}/post/api?tag=smallnoteHome`;
   const res = await fetch(url, { next: { revalidate: 86400 } });
+  // const res = await fetch(url, { next: { revalidate: 0 } });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -21,7 +21,7 @@ export default async function SmallNotesSection({
 }: {
   locale: AppLocale;
 }) {
-  const { posts } = await getSmallNotes();
+  const { posts } = await getSmallNotes(locale);
 
   const t = await getTranslations("Home.SmallNotes");
 

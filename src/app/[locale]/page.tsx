@@ -15,7 +15,6 @@ export const metadata = {
 };
 
 export default function Home({ params }: { params: { locale: AppLocale } }) {
-  console.log(params);
   return (
     <div className="flex flex-col">
       <Hero />

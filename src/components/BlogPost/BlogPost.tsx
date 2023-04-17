@@ -1,8 +1,10 @@
 import format from "date-fns/format";
 import Image from "next/image";
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { formatDate, getFormat } from "utils/date";
+import { AppLocale, Post } from "types/global";
 import { poppins } from "utils/fonts";
-import { Post } from "types/global";
 import parse from "html-react-parser";
 import { RichText } from "./RichText/RichText";
 
@@ -11,8 +13,11 @@ interface GetPostResponse {
   nextPost: Pick<Post, "title" | "slug" | "date" | "mainImage" | "smallIntro">;
 }
 
-export async function getPost(slug: string): Promise<GetPostResponse> {
-  const url = `${process.env.baseUrl}/post/api/${slug}`;
+export async function getPost(
+  slug: string,
+  locale: AppLocale
+): Promise<GetPostResponse> {
+  const url = `${process.env.baseUrl}/${locale}/post/api/${slug}`;
   const res = await fetch(url, { next: { revalidate: 86400 } }); // Re-validate every day in production
   // const res = await fetch(url, { next: { revalidate: 0 } });
 
@@ -25,10 +30,13 @@ export async function getPost(slug: string): Promise<GetPostResponse> {
 
 interface BlogPostProps {
   slug: string;
+  locale: AppLocale;
 }
 
-export default async function BlogPost({ slug }: BlogPostProps) {
-  const { post, nextPost } = await getPost(slug);
+export default async function BlogPost({ slug, locale }: BlogPostProps) {
+  const { post, nextPost } = await getPost(slug, locale);
+
+  const t = await getTranslations("BlogPost");
 
   return (
     <div className="flex flex-col py-8 lg:py-12">
@@ -39,7 +47,14 @@ export default async function BlogPost({ slug }: BlogPostProps) {
         >
           <span>{post.category}</span>
           <div className="border-r-2 h-2 mx-2 border-gray-400" />
-          <span>{format(new Date(post.date), "MMMM dd, yyyy")}</span>
+
+          <span>
+            {formatDate({
+              date: new Date(post.date),
+              format: getFormat(locale),
+              locale,
+            })}
+          </span>
         </div>
 
         <h1 className="lg:w-4/5 xl:w-3/5 my-8 lg:my-16 text-6xl font-semibold text-center">
@@ -66,7 +81,8 @@ export default async function BlogPost({ slug }: BlogPostProps) {
       <RichText richtext={post.richtext} />
 
       <p className="w-full px-6 lg:px-0 lg:w-[720px] mx-auto border-t border-t-gray-200 mt-10 lg:mt-16 pt-10 lgpt-16 text-2xl">
-        <span className="text-gray-500">Written by</span> {post.author.name}
+        <span className="text-gray-500">{t("writtenBy")}</span>{" "}
+        {post.author.name}
       </p>
 
       {nextPost && (
