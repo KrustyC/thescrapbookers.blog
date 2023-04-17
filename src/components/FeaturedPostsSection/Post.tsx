@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "next-intl";
 import type { AppLocale, Post as IPost } from "types/global";
 import { formatDate, getFormat } from "utils/date";
 import { poppins } from "utils/fonts";

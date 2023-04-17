@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "next-intl";
 import { poppins } from "utils/fonts";
 import type { AppLocale, Post as IPost } from "types/global";
 

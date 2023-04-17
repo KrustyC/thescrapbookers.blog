@@ -1,9 +1,8 @@
 import { poppins } from "utils/fonts";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { Link, useTranslations } from "next-intl";
 
 import aboutUsPic from "../../public/images/about-us.jpg";
-import Link from "next/link";
 
 export const AboutUsSection: React.FC = () => {
   const t = useTranslations("Home.AboutUs");

@@ -1,6 +1,6 @@
 import format from "date-fns/format";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { formatDate, getFormat } from "utils/date";
 import { AppLocale, Post } from "types/global";
