@@ -1,5 +1,18 @@
 {
   "Home": {
+    "Metadata": {
+      "title": "The Scrapbookers | Culture , Digital Nomads, & Lifestyle Travel Blog.",
+      "description": "Travel blog for culturally curious and for digital nomads who wants to embrace and connect with locals and other like minded travellers.",
+      "keywords": [
+        "Travel",
+        "SouthEast Asia",
+        "Digital Nomads",
+        "Digital Nomading",
+        "Backpacking",
+        "Trip",
+        "Travel tips"
+      ]
+    },
     "Hero": {
       "title": "Our 'old school' way of keeping you up to date on our whereabouts"
     },
@@ -16,6 +29,17 @@
     }
   },
   "AboutUs": {
+    "Metadata": {
+      "title": "A lil introduction",
+      "description": "Brief introduction to the blog post by us. Why we do it, and what motivates us",
+      "keywords": [
+        "Travel",
+        "South East Asia",
+        "Introduction",
+        "About Us",
+        "Why we do it"
+      ]
+    },
     "title": "A lil introdction to our Blog",
     "Beatrice": {
       "firstParagraph": "Ever since I finished University, I've been dreaming about discovering new places.",

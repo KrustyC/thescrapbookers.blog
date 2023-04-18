@@ -4,7 +4,7 @@ import { AppLocale } from "types/global";
 import { BlogPostSkeleton } from "components/BlogPost/BlogPostSkeleton";
 import BlogPost, { getPost } from "components/BlogPost/BlogPost";
 
-interface PostpageProps {
+interface PostPageProps {
   params: {
     slug: string;
     locale: AppLocale;
@@ -13,7 +13,7 @@ interface PostpageProps {
 
 export async function generateMetadata({
   params: { slug, locale },
-}: PostpageProps): Promise<Metadata> {
+}: PostPageProps): Promise<Metadata> {
   const { post } = await getPost(slug, locale);
 
   return {
@@ -32,12 +32,12 @@ export async function generateMetadata({
           width: post.mainImage.details.width || 800,
         },
       ],
-      locale: "en-GB",
+      locale,
     },
   };
 }
 
-export default function Post({ params: { slug, locale } }: PostpageProps) {
+export default function Post({ params: { slug, locale } }: PostPageProps) {
   return (
     <div>
       <Suspense fallback={<BlogPostSkeleton />}>

@@ -1,5 +1,18 @@
 {
   "Home": {
+    "Metadata": {
+      "title": "The Scrapbookers | Cultura , Nomaidsmo Digitale & Lifestyle. Travel Blog.",
+      "description": "Pensieri di viaggio per amanti degli usi e costumi di culture straniere e per nomadi digitali, vogliosi di viaggiare e scoprire culture nuove.",
+      "keywords": [
+        "Travel",
+        "Sudest Asiatico",
+        "Nomadi Digitali",
+        "Backpacking",
+        "Viaggi",
+        "Culture straniere",
+        "Consigli di viaggio"
+      ]
+    },
     "Hero": {
       "title": "Il nostro modo 'old school' di tenervi aggiornati sulle nostre avventure"
     },
@@ -16,6 +29,17 @@
     }
   },
   "AboutUs": {
+    "Metadata": {
+      "title": "A lil introduction",
+      "description": "Breve introduzione su di noi e al nostro blog. Cosa ci motiva a scrivere e a condividere le nostre esperienze.",
+      "keywords": [
+        "Travel",
+        "Sudest Asiatico",
+        "Introduzione",
+        "Chi Siamo",
+        "Perchè lo facciamo"
+      ]
+    },
     "title": "Una piccola introduzione al nostro Blog",
     "Beatrice": {
       "firstParagraph": "Fin da quando ho finito l'università ho sognato di poter girare il mondo alla scoperti di posti nuovi.",

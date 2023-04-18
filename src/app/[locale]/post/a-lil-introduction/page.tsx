@@ -1,50 +1,44 @@
+import { Metadata } from "next";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { AppLocale } from "types/global";
 
-export const metadata = {
-  title: "A lil introduction",
-  description: "Brief introduction to the blog post by us",
-  generator: "Next.js",
-  keywords: [
-    "Travel",
-    "South East Asia",
-    "Introduction",
-    "About Us",
-    "AboutWhy we do it",
-  ],
-  authors: [
-    { name: "Davide Crestini", url: "https://dcrestini.me" },
-    { name: "Beatrice Cox", url: "https://beatricecox.com" },
-  ],
-  creator: "Davide Crestini",
-  publisher: "Beatrice Cox",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "A lil introduction",
-    description: "Brief introduction to the blog post by us",
-    // siteId: '1467726470533754880',
-    // creator: '@nextjs',
-    // creatorId: '1467726470533754880',
-    // images: ['https://nextjs.org/og.png'],
-  },
-  // images: [
-  //   {
-  //     url: 'https://nextjs.org/og.png',
-  //     width: 800,
-  //     height: 600,
-  //   },
-  //   {
-  //     url: 'https://nextjs.org/og-alt.png',
-  //     width: 1800,
-  //     height: 1600,
-  //     alt: 'My custom alt',
-  //   },
-  // ],
-};
+interface IntroductionPageProps {
+  params: {
+    locale: AppLocale;
+  };
+}
+
+export async function generateMetadata({
+  params: { locale },
+}: IntroductionPageProps): Promise<Metadata> {
+  const t = await getTranslations("AboutUs.Metadata");
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    keywords: t("keywords"),
+    authors: [
+      { name: "Davide Crestini", url: "https://dcrestini.me" },
+      { name: "Beatrice Cox", url: "https://beatricecox.com" },
+    ],
+    creator: "Davide Crestini",
+    publisher: "Beatrice Cox",
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      siteName: "The Scrapbookers",
+      images: [
+        {
+          url: "/images/about-us.jpg",
+          height: 1792,
+          width: 2048,
+        },
+      ],
+      locale,
+    },
+  };
+}
 
 export default function ALilIntroductionPage() {
   const t = useTranslations("AboutUs");
