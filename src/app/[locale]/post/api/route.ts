@@ -22,31 +22,35 @@ function parseContentfulPostFields(
   };
 }
 
-export async function GET(request: Request) {
+interface Options {
+  params: {
+    slug: string;
+    locale: string;
+  };
+}
+
+export async function GET(request: Request, { params }: Options) {
   try {
     const client = getContentfulClient();
 
     const { searchParams } = new URL(request.url);
     const tag = searchParams.get("tag");
 
-    if (!tag) {
-      throw new Error("tag is a mandatory field");
-    }
-
     const result = await client.getEntries<ContentfulPostFields>({
       content_type: "post",
-      "metadata.tags.sys.id[all]": tag,
+      locale: params.locale,
+      "metadata.tags.sys.id[all]": tag || undefined,
       select:
         "fields.title,fields.slug,fields.smallIntro,fields.thumbnailImage,fields.date,fields.category",
     });
 
-    const posts = result.items
-      .slice(0, 3)
-      .map((item) => parseContentfulPostFields(item.fields));
+    const posts = result.items.map((item) =>
+      parseContentfulPostFields(item.fields)
+    );
 
     return NextResponse.json({ posts });
   } catch (error) {
     console.error(error);
-    // return res.status(500).json({ error: "Failed to fetch posts" });
+    return NextResponse.json({ error: "Failed to fetch posts" });
   }
 }

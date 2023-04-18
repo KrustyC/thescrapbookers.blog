@@ -38,18 +38,22 @@ function parseContentfulNextPostFields(
   };
 }
 
-export async function GET(
-  _: Request,
-  { params }: { params: { slug: string } }
-) {
+interface Options {
+  params: {
+    slug: string;
+    locale: string;
+  };
+}
+
+export async function GET(_: Request, { params }: Options) {
   try {
     const client = getContentfulClient();
 
     const result = await client.getEntries<ContentfulPostFields>({
       content_type: "post",
+      locale: params.locale,
       "fields.slug[all]": params.slug,
     });
-
     const post = result.items?.[0] || null;
 
     if (!post) {
@@ -63,7 +67,7 @@ export async function GET(
         : undefined,
     });
   } catch (error) {
-    console.error(error);
-    // return res.status(500).json({ error: "Failed to fetch posts" });
+    console.error(error)
+    return NextResponse.json({ error: "Failed to fetch post" });
   }
 }

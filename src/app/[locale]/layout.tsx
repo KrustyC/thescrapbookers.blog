@@ -1,7 +1,10 @@
+import "../globals.css";
+
 import Script from "next/script";
 import { WebsiteUnderConstruction } from "components/WebsiteUnderConstrution/WebsiteUnderConstruction";
 import { crimsonPro } from "utils/fonts";
-import "./globals.css";
+import { useLocale } from "next-intl";
+import { notFound } from "next/navigation";
 
 export const metadata = {
   title: {
@@ -67,11 +70,20 @@ const WEBSITE_IS_ACTIVE = process.env.WEBSITE_IS_ACTIVE === "true" || false;
 
 export default function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { locale: string };
 }) {
+  const locale = useLocale();
+
+  // Show a 404 error if the user requests an unknown locale
+  if (params.locale !== locale) {
+    notFound();
+  }
+
   return (
-    <html lang="en" style={crimsonPro.style}>
+    <html lang={locale} style={crimsonPro.style}>
       <body className={!WEBSITE_IS_ACTIVE ? "bg-orange-100" : ""}>
         {WEBSITE_IS_ACTIVE ? children : <WebsiteUnderConstruction />}
       </body>

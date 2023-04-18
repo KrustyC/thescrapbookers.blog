@@ -1,6 +1,7 @@
 import { PropsWithChildren } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { TwitterIcon } from "icons/Twitter";
 import { InstagramIcon } from "icons/Instagram";
 import { URLS } from "utils/urls";
@@ -51,13 +52,14 @@ const CircularLink: React.FC<PropsWithChildren<CircularButtonLinkProps>> = ({
 };
 
 export const Hero = () => {
+  const t = useTranslations("Home.Hero");
+
   return (
     <div className="w-full pb-20 lg:pb-40 relative bg-black text-white flex justify-center">
       <div className="flex flex-col w-5/6 xl:w-7/12 z-10">
         <Navbar />
         <h1 className="text-5xl lg:text-7xl leading-[3.5rem] lg:leading-[5.5rem] font-bold w-full lg:w-3/4">
-          Our {"'"}old school{"'"} way of keeping you up to date on our
-          whereabouts
+          {t("title")}
         </h1>
         <div className="flex mt-4">
           <CircularLink href={URLS.twitterURL()} className="mr-3">

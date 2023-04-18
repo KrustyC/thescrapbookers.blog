@@ -1,19 +1,23 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "next-intl";
+import { useTranslations } from "next-intl";
 
 import logoPic from "../../public/images/logo-black.png";
 import { NewsletterForm } from "./NewsletterForm";
 
 export const Footer: React.FC = () => {
-  return (
-    <div className="flex flex-col items-center xl:items-start pt-16 lg:pt-24 pb-10 xl:px-48 mt-10 lg:mt-16 bg-[#7EBDD5]">
-      <div className="flex flex-col lg:flex-row items-center justify-between mb-24 px-12 xl:px-0 w-full">
-        <p className="text-center lg:text-left text-4xl">
-          Subscribe to our newsletter, <br />
-          and follow us around.
-        </p>
+  const t = useTranslations("Global.Footer");
 
-        <NewsletterForm />
+  return (
+    <div className="flex flex-col items-center xl:items-start pt-16 lg:pt-24 xl:px-48 mt-10 lg:mt-16 bg-[#7EBDD5]">
+      <div className="flex flex-col lg:flex-row items-center justify-between mb-24 px-12 xl:px-0 w-full">
+        <p className="text-center lg:text-left text-4xl">{t("message")}</p>
+
+        <NewsletterForm
+          inputPlaceholder={t("inputPlaceholder")}
+          inputError={t("inputError")}
+          ctaText={t("cta")}
+        />
       </div>
       <Link className="relative h-20 w-56" href="/" target="_blank">
         <Image
@@ -24,6 +28,10 @@ export const Footer: React.FC = () => {
           style={{ objectFit: "contain" }}
         />
       </Link>
+
+      <div className="flex items-center justify-center mt-2 h-14 w-full border-t border-gray-800">
+        <span className="text-sm">©2023 | The Scrapbookers</span>
+      </div>
     </div>
   );
 };

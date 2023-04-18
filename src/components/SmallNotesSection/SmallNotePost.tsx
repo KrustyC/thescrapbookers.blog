@@ -1,8 +1,15 @@
-import Link from "next/link";
+import { Link } from "next-intl";
 import { poppins } from "utils/fonts";
-import type { Post as IPost } from "types/global";
+import type { AppLocale, Post as IPost } from "types/global";
 
-export const SmallNotePost: React.FC<IPost> = ({ title, category, slug }) => {
+interface PostProps {
+  post: IPost;
+  locale: AppLocale;
+}
+
+export const SmallNotePost: React.FC<PostProps> = ({
+  post: { title, category, slug },
+}) => {
   return (
     <div className="flex flex-col w-full">
       <Link href={`/post/${slug}`}>
