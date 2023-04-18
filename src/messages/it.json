@@ -15,6 +15,29 @@
       "cta": "Scopri di più"
     }
   },
+  "AboutUs": {
+    "title": "Una piccola introduzione al nostro Blog",
+    "Beatrice": {
+      "firstParagraph": "Fin da quando ho finito l'università ho sognato di poter girare il mondo alla scoperti di posti nuovi.",
+      "secondParagraph": "As I'm writing this, I'm sitting in a Thai beach bar made of drift wood with mon khwans or axe pillows and low tables and is far enough from the beach to not get sand in our devices, it's 5pm and we have just ordered cocktails which come decorated with a slice of pineapple and an orchid flower, they are £3 and it's on this beach with about ten people sitting on the sand waiting for the sunset.",
+      "thirdParagraph": "Finora è stato tutto piuttosto semplice e ci stiamo godendo tutti i piccoli momenti quotidiani in cui vediamo qualcosa di nuovo ed inusuale. Una delle parti migliori di viaggiare è la possibilità di incontrare persone nuovi, sia gente del posto che altri turisti e nomadi digitali.",
+      "fourthParagraph": "È molto rinfrescante vedere cose diverse dal solito, assaggiare cibi nuovi ed essere in un Paese così rilassato. La flessibilità di essere freelance e dividere la giornata a metà tra avventura e lavoro, è forse uno dei privilegi che apprezziamo di più. Ti costringe a perderti qualche sera durante la settimana, in quanto dobbiamo adattarci ai fusorari europei e degli USA, però ci garantisce piena flessiblità sul come e quando lavorare.",
+      "fifthParagraph": "Al momento mi sento molto rilassata ed anche se può sembrar strano, è quasi liberatorio poter avere tutto ciò di cui hai bisogno all'interno di un backpack ed uno zainetto; nonostante lo spazio limitato abbiamo del posto pure per \"un po' di casa\", portando con noi delle piccole cose regalateci da amici a familiari. Posso già sentire i miei genitori e mio fratello William che stanno ridendo del fatto che io non sia mai riuscita a viaggiare leggera.",
+      "sixthParagraph": "È già passato un mese e mezzo, ma siamo ancora a Febbraio, ci sono ancora molti mesi davanti a noi e molti posti da vedere e non vedo l'ora di scoprirli!"
+    },
+    "Davide": {
+      "firstParagraph": "Il mio amore per i viaggi è qualcosa che si è sviluppato col tempo. Credo sia iniziato durante il nostro Interrail nel 2018 con la Bea. Abbiamo attraversato tutta lEuropa, partendo da Sofia in Bulgaria, fino ad arrivare ad Amsterdam in Olanda, sperimentando culture e cibi diversi e scoprendo modi nuovi di vivere.",
+      "secondParagraph": "Da allora in poi ho sognato di poter viaggiare intorno al mondo e nei miei 2 anni di lavoro a Culture Trip scoprivo continuamente nuove storie e luoghi interessanti di cui non avevo mai sentito parlare prima. Il che non ha fatto altro che alimentare il mio sogno.",
+      "thirdParagraph": "L'anno scorso si è presentata l'opportunità di poter lavorare da remoto per un'azienda statunitense; avevo finalmente l'opportunità di fare il lavoro che amo da qualsiasi parte del mondo, senza alcun vincolo di orario. Era il momento che stavo aspettando e sapevo che sarebbe valsa la pena buttarmi e correre il rischio.",
+      "fourthParagraph": "Con Bea abbiamo deciso di iniziare a pianificare il nostro viaggio intorno al mondo ed un paio di settimane dopo aver cominnciato il mio nuovo lavoro abbiamo prenotato il nostro biglietto aereo di sola andata per la nostra prima destinazione: Bangkok. Non avevamo alcun piano, ma eravamo pronti per buttarci in un'avventura nuova!",
+      "fifthParagraph": "Adoro scoprire posti nuovi e stili di vita completamente diversi dal mio, in particolare mi piace vedere come le persone di culture diverse vivono la loro vita di tutti i giorni. È un modo per mettere in gioco le mie ideed e le mie convinzioni, aiutandomi a scorpire orizzonti nuovi e a crescere come individuo. Cerco sempre di prendere il meglio da ciò che vedo, anche se non sempre con grande successo 😅. "
+    },
+    "Generic": {
+      "firstParagraph": "Finora, il nostro viaggio è stato un'esperienza bellissima, qualcosa che di certo ricorderemo per il resto della nostra vita; e siamo solo all'inizio! Anche se può sembrar scontato, sono i piccoli dettagli e le sottigliezze che ci differenziano a colpirci di più e a farci innamorare delle nuove culture che scopriamo viaggiando.",
+      "secondParagraph": "Se sei arrivato a leggere fin qui, vogliamo ringraziarti per il tempo dedicatoci e per aver visitato il nostro blog. Il nostro scopo è di dare un'idea autentica dei luoghi che visiteremo e, per quanto possibile, di accompagnarti nel nostro viaggio insieme a noi. Attraverso le nostre parole, speriamo di riuscire a fornirti contenuti informativi, cercando di stimolare ulteriormente il tuo interesse per le diverse culture che popolano il nostro pianeta, attraverso il racconto delle loro storie e dei loro paesaggi.",
+      "thirdParagraph": "Ci auguriamo che ti possa piacere leggere i nostri contenuti, tanto quanto a noi piace condividerli con te."
+    }
+  },
   "BlogPost": {
     "writtenBy": "Scritto da"
   },
