@@ -11,5 +11,5 @@ export default createMiddleware({
 // See "Matching Paths" below to learn more
 export const config = {
   // Skip all paths that should not be internationalized
-  matcher: ["/((?!icons|_next/static|_next/image|favicon.ico).*)"],
+  matcher: ["/((?!icons|_next/static|_next/image|sitemap.xml|favicon.ico).*)"],
 };
