@@ -39,7 +39,7 @@ export async function generateMetadata({
       siteName: "The Scrapbookers",
       images: [
         {
-          url: "/images/about-us.jpg",
+          url: `${process.env.baseUrl}/images/about-us.jpg`,
           height: 569,
           width: 853,
         },
