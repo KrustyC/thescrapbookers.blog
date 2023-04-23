@@ -1,17 +1,23 @@
-import { PropsWithChildren } from "react";
+import React, { PropsWithChildren } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { TwitterIcon } from "icons/Twitter";
 import { InstagramIcon } from "icons/Instagram";
 import { URLS } from "utils/urls";
+import { LanguageSwitch } from "components/LanguageSwitch";
 
 import homeHeroPic from "../../public/images/home-hero.jpg";
 import logoPic from "../../public/images/logo-white.png";
+import { AppLocale } from "types/global";
 
-const Navbar = () => {
+interface NavbarProps {
+  locale: AppLocale;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ locale }) => {
   return (
-    <div className="h-40 xl:h-24 flex items-center mb-4 lg:mb-20 xl:mb-28">
+    <div className="h-40 xl:h-24 flex items-center justify-between mb-4 lg:mb-20 xl:mb-28">
       <Link
         className="relative w-full lg:w-72 xl:w-56 h-32 xl:h-20"
         href="/"
@@ -25,6 +31,8 @@ const Navbar = () => {
           style={{ objectFit: "contain" }}
         />
       </Link>
+
+      <LanguageSwitch currentLocale={locale} />
     </div>
   );
 };
@@ -51,13 +59,17 @@ const CircularLink: React.FC<PropsWithChildren<CircularButtonLinkProps>> = ({
   );
 };
 
-export const Hero = () => {
+interface HeroProps {
+  locale: AppLocale;
+}
+
+export const Hero: React.FC<HeroProps> = ({ locale }) => {
   const t = useTranslations("Home.Hero");
 
   return (
     <div className="w-full pb-20 lg:pb-40 relative bg-black text-white flex justify-center">
-      <div className="flex flex-col w-5/6 xl:w-7/12 z-10">
-        <Navbar />
+      <div className="flex flex-col px-6 lg:px-16 xl:px-48 z-10">
+        <Navbar locale={locale} />
         <h1 className="text-5xl lg:text-7xl leading-[3.5rem] lg:leading-[5.5rem] font-bold w-full lg:w-3/4">
           {t("title")}
         </h1>

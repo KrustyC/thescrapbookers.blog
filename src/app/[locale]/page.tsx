@@ -26,7 +26,7 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
-    keywords: t("keywords"),
+    // keywords: t("keywords"),
     authors: [
       { name: "Davide Crestini", url: "https://dcrestini.me" },
       { name: "Beatrice Cox", url: "https://beatricecox.com" },
@@ -52,7 +52,7 @@ export async function generateMetadata({
 export default function Home({ params }: { params: { locale: AppLocale } }) {
   return (
     <div className="flex flex-col">
-      <Hero />
+      <Hero locale={params.locale}/>
 
       <Suspense fallback={<FeaturedPostsSectionSkeleton />}>
         {/* @ts-expect-error Server Component */}
