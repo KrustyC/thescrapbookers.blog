@@ -17,7 +17,6 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
-    keywords: t("keywords"),
     authors: [
       { name: "Davide Crestini", url: "https://dcrestini.me" },
       { name: "Beatrice Cox", url: "https://beatricecox.com" },

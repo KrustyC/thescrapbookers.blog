@@ -13,7 +13,6 @@ export const metadata = {
   },
   description: "Travel Blog of The Scrapbookers",
   generator: "Next.js",
-  keywords: ["Travel", "South East Asia", "Blog", "Food and travel"],
   authors: [
     { name: "Davide Crestini", url: "https://dcrestini.me" },
     { name: "Beatrice Cox", url: "https://beatricecox.com" },
@@ -77,6 +76,7 @@ export default function RootLayout({
 }) {
   const locale = useLocale();
 
+  console.log(locale, params);
   // Show a 404 error if the user requests an unknown locale
   if (params.locale !== locale) {
     notFound();

@@ -28,7 +28,6 @@ function parseContentfulPostFields(post: Entry<PostSkeleton>): Post | null {
     slug: fields.slug,
     smallIntro: fields.smallIntro,
     date: new Date(fields.date),
-    keywords: fields.keywords,
     category: fields.category,
     richtext: fields.richtext,
     thumbnailImage: fields.thumbnailImage
