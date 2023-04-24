@@ -49,6 +49,10 @@
   "BlogPost": {
     "writtenBy": "Scritto da"
   },
+  "NotFound": {
+    "title": "mmmh... maybe you are a bit ahead of our travel.",
+    "backHome": "torna alla home"
+  },
   "Global": {
     "LocaleSwitch": {
       "helpText": "usa versione italiana del sitor"

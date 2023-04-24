@@ -49,6 +49,10 @@
   "BlogPost": {
     "writtenBy": "Written by"
   },
+  "NotFound": {
+    "title": "mmmh... maybe you are a bit ahead of our travel.",
+    "backHome": "back to homepage"
+  },
   "Global": {
     "LocaleSwitch": {
       "helpText": "switch to italian language"

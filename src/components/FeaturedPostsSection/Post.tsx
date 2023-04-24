@@ -45,7 +45,9 @@ export const Post: React.FC<PostProps> = ({
       <Link href={href}>
         <h3 className="text-3xl mt-4 text-black font-medium">{title}</h3>
       </Link>
-      <span className="text-xl mt-4 text-gray-500">{smallIntro}</span>
+      <span className="text-xl mt-4 text-gray-500 line-clamp-3">
+        {smallIntro}
+      </span>
     </div>
   );
 };

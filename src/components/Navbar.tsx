@@ -12,7 +12,7 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ helpText, locale }) => {
   return (
-    <div className="flex justify-center w-full h-24 bg-[#DB6843]">
+    <div className="flex justify-center w-full h-24 bg-primary">
       <div className="w-full mx-6 md:mx-0 md:w-2/3 h-full flex items-center justify-between">
         <Link className="relative h-full w-44 md:w-56" href="/">
           <Image
