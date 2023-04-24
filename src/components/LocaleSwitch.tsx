@@ -5,11 +5,11 @@ import { useRouter } from "next/navigation";
 import { Switch } from "@headlessui/react";
 import { AppLocale } from "types/global";
 
-interface LanguageSwitchProps {
+interface LocaleSwitchProps {
   currentLocale: AppLocale;
 }
 
-export const LanguageSwitch: React.FC<LanguageSwitchProps> = ({
+export const LocaleSwitch: React.FC<LocaleSwitchProps> = ({
   currentLocale,
 }) => {
   const isItalian = currentLocale === "it";

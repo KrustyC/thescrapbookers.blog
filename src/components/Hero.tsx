@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { TwitterIcon } from "icons/Twitter";
 import { InstagramIcon } from "icons/Instagram";
 import { URLS } from "utils/urls";
-import { LanguageSwitch } from "components/LanguageSwitch";
+import { LocaleSwitch } from "components/LocaleSwitch";
 
 import homeHeroPic from "../../public/images/home-hero.jpg";
 import logoPic from "../../public/images/logo-white.png";
@@ -32,7 +32,7 @@ const Navbar: React.FC<NavbarProps> = ({ locale }) => {
         />
       </Link>
 
-      <LanguageSwitch currentLocale={locale} />
+      <LocaleSwitch currentLocale={locale} />
     </div>
   );
 };
