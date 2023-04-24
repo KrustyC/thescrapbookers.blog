@@ -1,22 +1,28 @@
-import { Asset } from "contentful";
+import { Asset, EntryFieldType, EntryFieldTypes } from "contentful";
 import { Document } from "@contentful/rich-text-types";
 
-export interface CotentfulAuthor {
+export interface AuthorSkelton {
+  contentTypeId: "author";
   fields: {
     name: string;
   };
 }
 
-export interface ContentfulPostFields {
-  title: string;
-  slug: string;
-  keywords: string[];
-  smallIntro: string;
-  thumbnailImage: Asset;
-  mainImage: Asset;
-  category: string;
-  richtext: Document;
-  date: Date;
-  nextPost: { fields: Omit<ContentfulPostFields, "nextPost"> };
-  author: CotentfulAuthor;
+export type PostDate = `${number}-${number}-${number}T${number}:${number}:${number}Z`
+
+export interface PostSkeleton {
+  contentTypeId: "post";
+  fields: {
+    title: EntryFieldTypes.Text;
+    slug: EntryFieldTypes.Text;
+    keywords: EntryFieldTypes.Text[];
+    smallIntro: EntryFieldTypes.Text;
+    mainImage: Asset;
+    thumbnailImage: Asset;
+    category: EntryFieldTypes.Text;
+    richtext: Document;
+    date: EntryFieldTypes.Date;
+    nextPost: { fields: Omit<PostSkeleton, "nextPost"> };
+    author: AuthorSkelton;
+  };
 }

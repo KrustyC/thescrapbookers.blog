@@ -1,8 +1,8 @@
 import { createClient, type ContentfulClientApi } from "contentful";
 
-let cachedClient: ContentfulClientApi | undefined;
+let cachedClient: ContentfulClientApi<undefined> | undefined;
 
-export function getContentfulClient(): ContentfulClientApi {
+export function getContentfulClient(): ContentfulClientApi<undefined> {
   if (!cachedClient) {
     cachedClient = createClient({
       space: process.env.CONTENTFUL_SPACE_ID as string,
