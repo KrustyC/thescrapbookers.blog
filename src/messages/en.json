@@ -50,6 +50,9 @@
     "writtenBy": "Written by"
   },
   "Global": {
+    "LocaleSwitch": {
+      "helpText": "switch to italian language"
+    },
     "Footer": {
       "message": "Subscribe to our newsletter, and follow us around the world",
       "inputPlaceholder": "Enter Email",

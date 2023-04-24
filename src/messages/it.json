@@ -50,6 +50,9 @@
     "writtenBy": "Scritto da"
   },
   "Global": {
+    "LocaleSwitch": {
+      "helpText": "usa versione italiana del sitor"
+    },
     "Footer": {
       "message": "Iscriviti alla nostra newsletter, e seguici intorno al mondo",
       "inputPlaceholder": "Inserisci Email",

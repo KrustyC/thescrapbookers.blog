@@ -6,14 +6,15 @@ import logoPic from "../../public/images/logo-black.png";
 import { AppLocale } from "types/global";
 
 interface NavbarProps {
+  helpText: string;
   locale: AppLocale;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ locale }) => {
+export const Navbar: React.FC<NavbarProps> = ({ helpText, locale }) => {
   return (
-    <div className="flex justify-center w-full h-32 bg-[#DB6843]">
-      <div className="w-2/3 h-full flex items-center justify-between">
-        <Link className="relative h-full w-56" href="/">
+    <div className="flex justify-center w-full h-24 bg-[#DB6843]">
+      <div className="w-full mx-6 md:mx-0 md:w-2/3 h-full flex items-center justify-between">
+        <Link className="relative h-full w-44 md:w-56" href="/">
           <Image
             src={logoPic}
             alt="the scrapbooker logo"
@@ -23,7 +24,7 @@ export const Navbar: React.FC<NavbarProps> = ({ locale }) => {
           />
         </Link>
 
-        <LocaleSwitch currentLocale={locale} />
+        <LocaleSwitch helpText={helpText} currentLocale={locale} />
       </div>
     </div>
   );

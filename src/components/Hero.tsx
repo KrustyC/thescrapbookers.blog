@@ -16,6 +16,8 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ locale }) => {
+  const t = useTranslations("Global.LocaleSwitch");
+
   return (
     <div className="h-40 xl:h-24 flex items-center justify-between mb-4 lg:mb-20 xl:mb-28">
       <Link
@@ -32,7 +34,7 @@ const Navbar: React.FC<NavbarProps> = ({ locale }) => {
         />
       </Link>
 
-      <LocaleSwitch currentLocale={locale} />
+      <LocaleSwitch currentLocale={locale} helpText={t("helpText")} />
     </div>
   );
 };

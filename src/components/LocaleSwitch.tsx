@@ -6,10 +6,12 @@ import { Switch } from "@headlessui/react";
 import { AppLocale } from "types/global";
 
 interface LocaleSwitchProps {
+  helpText: string;
   currentLocale: AppLocale;
 }
 
 export const LocaleSwitch: React.FC<LocaleSwitchProps> = ({
+  helpText,
   currentLocale,
 }) => {
   const isItalian = currentLocale === "it";
@@ -29,7 +31,7 @@ export const LocaleSwitch: React.FC<LocaleSwitchProps> = ({
         className={`${isItalian ? "bg-blue-600" : "bg-red-500"}
           relative inline-flex items-center h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-background duration-600 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
       >
-        <span className="sr-only">Switch language</span>
+        <span className="sr-only">{helpText}</span>
         <span
           aria-hidden="true"
           className={`${
