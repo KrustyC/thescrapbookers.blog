@@ -57,6 +57,18 @@ export async function generateMetadata({
       ],
       locale,
     },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+      images: [
+        {
+          url: `${process.env.baseUrl}/images/about-us.jpg`,
+          height: 569,
+          width: 853,
+        },
+      ],
+    },
   };
 }
 
