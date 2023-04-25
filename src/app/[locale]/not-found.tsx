@@ -2,9 +2,10 @@
 import { Link } from "next-intl";
 import Image from "next/image";
 
-import eyesPic from "../../public/images/eyes.png";
+import eyesPic from "../../../public/images/eyes.png";
 
 export default function NotFound() {
+  // @TODO This is not yet supported in next-intl, so we only keep english language atm, it should be added soon
   // const t = useTranslations("NotFound");
 
   return (
@@ -23,15 +24,15 @@ export default function NotFound() {
           </div>
         </div>
 
-        <h2 className="text-6xl w-[720px] font-bold mb-3">
+        <h2 className="text-8xl sm:text-6xl w-[720px] font-bold mb-8 sm:mb-3">
           mmmh... maybe you are a bit ahead of our travel.
         </h2>
         <Link
           replace
           href="/post/a-lil-introduction"
-          className="bg-white px-6 pt-2 pb-4  w-fit font-bold inline-block"
+          className="bg-white px-6 pt-2 pb-4 w-fit font-bold inline-block"
         >
-          <span className="text-6xl text-black">back to homepage</span>
+          <span className="text-8xl sm:text-6xl text-black">back to homepage</span>
         </Link>
       </div>
     </div>
