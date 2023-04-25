@@ -18,7 +18,7 @@ export async function getPost(
   locale: AppLocale
 ): Promise<GetPostResponse> {
   const url = `${process.env.baseUrl}/${locale}/post/api/${slug}`;
-  const res = await fetch(url, { next: { revalidate: 86400 } }); // Re-validate every day in production
+  const res = await fetch(url);
   // const res = await fetch(url, { next: { revalidate: 0 } });
 
   if (!res.ok) {

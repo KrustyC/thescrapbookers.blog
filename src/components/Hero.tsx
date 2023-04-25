@@ -19,9 +19,9 @@ const Navbar: React.FC<NavbarProps> = ({ locale }) => {
   const t = useTranslations("Global.LocaleSwitch");
 
   return (
-    <div className="h-40 xl:h-24 flex items-center justify-between mb-4 lg:mb-20 xl:mb-28">
+    <div className="h-24 xl:h-24 flex items-center justify-between mb-4 lg:mb-20 xl:mb-28">
       <Link
-        className="relative w-full lg:w-72 xl:w-56 h-32 xl:h-20"
+        className="relative w-44 md:w-56 lg:w-72 xl:w-56 h-full xl:h-20"
         href="/"
         target="_blank"
       >

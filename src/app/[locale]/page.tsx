@@ -18,6 +18,18 @@ interface HomePageProps {
   };
 }
 
+/**
+ *
+ * @TODO This is not yet supported by next-intl, but once it is it should be addded, in order to
+ * build static pages at build time and therefore improve performance
+ *
+ */
+// export async function generateStaticParams() {
+//   return ["en", "it"].map((locale) => ({
+//     locale,
+//   }));
+// }
+
 export async function generateMetadata({
   params: { locale },
 }: HomePageProps): Promise<Metadata> {
@@ -51,7 +63,7 @@ export async function generateMetadata({
 export default function Home({ params }: { params: { locale: AppLocale } }) {
   return (
     <div className="flex flex-col">
-      <Hero locale={params.locale}/>
+      <Hero locale={params.locale} />
 
       <Suspense fallback={<FeaturedPostsSectionSkeleton />}>
         {/* @ts-expect-error Server Component */}

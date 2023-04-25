@@ -6,7 +6,7 @@ import { SmallNotesSectionSkeleton } from "./SmallNotesSectionSkeleton";
 
 async function getSmallNotes(locale: AppLocale): Promise<{ posts: IPost[] }> {
   const url = `${process.env.baseUrl}/${locale}/post/api?tag=smallnoteHome`;
-  const res = await fetch(url, { next: { revalidate: 86400 } });
+  const res = await fetch(url);
   // const res = await fetch(url, { next: { revalidate: 0 } });
 
   if (!res.ok) {
@@ -21,19 +21,30 @@ export default async function SmallNotesSection({
 }: {
   locale: AppLocale;
 }) {
-  const { posts } = await getSmallNotes(locale);
-
   const t = await getTranslations("Home.SmallNotes");
 
-  return (
-    <SectionWithTitle title={t("title")} greyBackground>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-y-12 gap-x-16">
-        {posts.map((post, i) => (
-          <SmallNotePost key={i} post={post} locale={locale} />
-        ))}
-      </div>
-    </SectionWithTitle>
-  );
+  try {
+    const { posts } = await getSmallNotes(locale);
+
+    return (
+      <SectionWithTitle title={t("title")} greyBackground>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-y-12 gap-x-16">
+          {posts.map((post, i) => (
+            <SmallNotePost key={i} post={post} locale={locale} />
+          ))}
+        </div>
+      </SectionWithTitle>
+    );
+  } catch (error) {
+    return (
+      <SectionWithTitle title={t("title")} greyBackground>
+        <div className="flex flex-col">
+          <h4 className="text-3xl mb-4">{t("error1")}</h4>
+          <span className="text-xl">{t("error2")}</span>
+        </div>
+      </SectionWithTitle>
+    );
+  }
 }
 
 export { SmallNotesSectionSkeleton };

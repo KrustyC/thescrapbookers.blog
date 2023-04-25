@@ -8,10 +8,14 @@
       "title": "Storie di 'digital packers', metà nomadi digitali, metà backpackers."
     },
     "Featured": {
-      "title": "Articoli Recenti"
+      "title": "Articoli Recenti",
+      "error1": "Errore durante il caricamento dei post recenti...",
+      "error2": "Ci scusiamo per il disagio, siamo già al lavoro per risolvere il problema, ti preghiamo di riprovare tra qualche minuto."
     },
     "SmallNotes": {
-      "title": "Piccole Note"
+      "title": "Piccole Note",
+      "error1": "Errore durante il caricamento delle piccole note...",
+      "error2": "Ci scusiamo per il disagio, siamo già al lavoro per risolvere il problema, ti preghiamo di riprovare tra qualche minuto."
     },
     "AboutUs": {
       "title": "Chi Siamo",
