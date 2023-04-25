@@ -1,12 +1,12 @@
-// import { Link, useTranslations } from "next-intl";
-import { Link } from "next-intl";
+import Link from "next/link";
 import Image from "next/image";
+// import { getTranslations } from "next-intl/server";
 
-import eyesPic from "../../../public/images/eyes.png";
+import eyesPic from "../../public/images/eyes.png";
 
 export default function NotFound() {
   // @TODO This is not yet supported in next-intl, so we only keep english language atm, it should be added soon
-  // const t = useTranslations("NotFound");
+  // const t = getTranslations("NotFound");
 
   return (
     <div className="bg-primary h-screen w-screen flex items-center">
@@ -28,11 +28,12 @@ export default function NotFound() {
           mmmh... maybe you are a bit ahead of our travel.
         </h2>
         <Link
-          replace
-          href="/post/a-lil-introduction"
+          href="/"
           className="bg-white px-6 pt-2 pb-4 w-fit font-bold inline-block"
         >
-          <span className="text-8xl sm:text-6xl text-black">back to homepage</span>
+          <span className="text-8xl sm:text-6xl text-black">
+            back to homepage
+          </span>
         </Link>
       </div>
     </div>
