@@ -1,22 +1,10 @@
 import { getTranslations } from "next-intl/server";
-import type { AppLocale, Post as IPost } from "types/global";
+import type { AppLocale } from "types/global";
+import { getPostsByTag } from "utils/api";
+
 import { SectionWithTitle } from "../SectionWIthTitle/SectionWithTitle";
 import { Post } from "./Post";
 import { FeaturedPostsSectionSkeleton } from "./FeaturedPostsSectionSkeleton";
-
-async function getFeaturedPosts(
-  locale: AppLocale
-): Promise<{ posts: IPost[] }> {
-  const url = `${process.env.baseUrl}/${locale}/post/api?tag=featured`;
-  const res = await fetch(url);
-  // const res = await fetch(url, { next: { revalidate: 0 } });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
-}
 
 export default async function FeaturedPostsSection({
   locale,
@@ -26,7 +14,7 @@ export default async function FeaturedPostsSection({
   const t = await getTranslations("Home.Featured");
 
   try {
-    const { posts } = await getFeaturedPosts(locale);
+    const { posts } = await getPostsByTag({ tag: "featured", locale });
 
     return (
       <SectionWithTitle title={t("title")}>

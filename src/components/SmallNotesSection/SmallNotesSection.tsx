@@ -1,20 +1,10 @@
 import { getTranslations } from "next-intl/server";
-import type { AppLocale, Post as IPost } from "types/global";
+import type { AppLocale,} from "types/global";
+import { getPostsByTag } from "utils/api";
+
 import { SectionWithTitle } from "../SectionWIthTitle/SectionWithTitle";
 import { SmallNotePost } from "./SmallNotePost";
 import { SmallNotesSectionSkeleton } from "./SmallNotesSectionSkeleton";
-
-async function getSmallNotes(locale: AppLocale): Promise<{ posts: IPost[] }> {
-  const url = `${process.env.baseUrl}/${locale}/post/api?tag=smallnoteHome`;
-  const res = await fetch(url);
-  // const res = await fetch(url, { next: { revalidate: 0 } });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
-}
 
 export default async function SmallNotesSection({
   locale,
@@ -24,7 +14,7 @@ export default async function SmallNotesSection({
   const t = await getTranslations("Home.SmallNotes");
 
   try {
-    const { posts } = await getSmallNotes(locale);
+    const { posts } = await getPostsByTag({ tag: "smallnoteHome", locale });
 
     return (
       <SectionWithTitle title={t("title")} greyBackground>
