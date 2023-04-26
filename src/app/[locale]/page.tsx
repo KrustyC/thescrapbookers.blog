@@ -50,7 +50,7 @@ export async function generateMetadata({
       siteName: "The Scrapbookers",
       images: [
         {
-          url: `${process.env.baseUrl}/images/about-us.jpg`,
+          url: `${process.env.baseUrl}/images/the_scrapbookers.png`,
           height: 569,
           width: 853,
         },
@@ -63,7 +63,7 @@ export async function generateMetadata({
       description: t("description"),
       images: [
         {
-          url: `${process.env.baseUrl}/images/about-us.jpg`,
+          url: `${process.env.baseUrl}/images/the_scrapbookers.png`,
           height: 569,
           width: 853,
         },
@@ -86,8 +86,6 @@ export default function Home({ params }: { params: { locale: AppLocale } }) {
         {/* @ts-expect-error Server Component */}
         <SmallNotesSection locale={params.locale} />
       </Suspense>
-
-      {/* <CategoriesSection /> */}
 
       <AboutUsSection />
 

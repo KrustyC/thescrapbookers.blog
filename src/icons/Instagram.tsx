@@ -3,9 +3,9 @@ interface InstagramIconProps {
   onClick?: VoidFunction;
 }
 
-export const InstagramIcon: React.FC<
-  React.PropsWithChildren<InstagramIconProps>
-> = ({ className = "" }) => (
+export const InstagramIcon: React.FC<InstagramIconProps> = ({
+  className = "",
+}) => (
   <svg
     className={className}
     xmlns="http://www.w3.org/2000/svg"

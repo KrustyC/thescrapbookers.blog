@@ -51,7 +51,11 @@
     }
   },
   "BlogPost": {
-    "writtenBy": "Written by"
+    "writtenBy": "Written by",
+    "notFound": {
+      "message": "Seems like the post you are looking for does not exist",
+      "cta": "back to homepage"
+    }
   },
   "NotFound": {
     "title": "mmmh... maybe you are a bit ahead of our travel",

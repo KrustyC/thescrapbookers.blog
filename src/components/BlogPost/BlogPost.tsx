@@ -1,43 +1,28 @@
 import format from "date-fns/format";
+import parse from "html-react-parser";
 import Image from "next/image";
 import { Link } from "next-intl";
-import { getTranslations } from "next-intl/server";
 import { formatDate, getFormat } from "utils/date";
 import { AppLocale, Post } from "types/global";
 import { poppins } from "utils/fonts";
-import parse from "html-react-parser";
+
 import { RichText } from "./RichText/RichText";
 
-interface GetPostResponse {
-  post: Post;
-  nextPost: Pick<Post, "title" | "slug" | "date" | "mainImage" | "smallIntro">;
-}
-
-export async function getPost(
-  slug: string,
-  locale: AppLocale
-): Promise<GetPostResponse> {
-  const url = `${process.env.baseUrl}/${locale}/post/api/${slug}`;
-  const res = await fetch(url);
-  // const res = await fetch(url, { next: { revalidate: 0 } });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
-}
-
 interface BlogPostProps {
-  slug: string;
+  post: Post;
+  nextPost?: Pick<Post, "title" | "slug" | "date" | "mainImage" | "smallIntro">;
   locale: AppLocale;
+  copy: {
+    writtenByText: string;
+  };
 }
 
-export default async function BlogPost({ slug, locale }: BlogPostProps) {
-  const { post, nextPost } = await getPost(slug, locale);
-
-  const t = await getTranslations("BlogPost");
-
+export const BlogPost: React.FC<BlogPostProps> = ({
+  post,
+  nextPost,
+  locale,
+  copy,
+}) => {
   return (
     <div className="flex flex-col py-8 lg:py-12">
       <div className="flex flex-col items-center">
@@ -81,7 +66,7 @@ export default async function BlogPost({ slug, locale }: BlogPostProps) {
       <RichText richtext={post.richtext} />
 
       <p className="w-full px-6 lg:px-0 lg:w-[720px] mx-auto border-t border-t-gray-200 mt-10 lg:mt-16 pt-10 lgpt-16 text-2xl">
-        <span className="text-gray-500">{t("writtenBy")}</span>{" "}
+        <span className="text-gray-500">{copy.writtenByText}</span>{" "}
         {post.author.name}
       </p>
 
@@ -121,4 +106,4 @@ export default async function BlogPost({ slug, locale }: BlogPostProps) {
       )}
     </div>
   );
-}
+};

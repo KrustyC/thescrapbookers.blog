@@ -1,4 +1,4 @@
-export const BlogPostSkeleton: React.FC = () => {
+export default function PostLoading() {
   return (
     <div className="flex flex-col items-center w-full animate-pulse py-12">
       <div className="h-10 w-64 mt-4 rounded-full bg-gray-300" />
@@ -22,4 +22,4 @@ export const BlogPostSkeleton: React.FC = () => {
       </div>
     </div>
   );
-};
+}

@@ -51,7 +51,11 @@
     }
   },
   "BlogPost": {
-    "writtenBy": "Scritto da"
+    "writtenBy": "Scritto da",
+    "notFound": {
+      "message": "Sembra che il l'articolo che stai cercando non esista.",
+      "cta": "torna alla home"
+    }
   },
   "NotFound": {
     "title": "mmmh... forse vi siete persi durante il viaggio",
