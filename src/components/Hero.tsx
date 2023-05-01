@@ -7,7 +7,7 @@ import { InstagramIcon } from "icons/Instagram";
 import { URLS } from "utils/urls";
 import { LocaleSwitch } from "components/LocaleSwitch";
 
-import homeHeroPic from "../../public/images/home-hero.jpg";
+import homeHeroPic from "../../public/images/home-hero.png";
 import logoPic from "../../public/images/logo-white.png";
 import { AppLocale } from "types/global";
 
