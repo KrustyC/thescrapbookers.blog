@@ -15,8 +15,8 @@
 [[plugins]]
 package = "@netlify/plugin-nextjs"
 
-[[plugins]]
-package = "@netlify/plugin-lighthouse"
+# [[plugins]]
+# package = "@netlify/plugin-lighthouse"
 
-  [plugins.inputs]
-    run_on_success = "true"
+  # [plugins.inputs]
+    # run_on_success = "true"

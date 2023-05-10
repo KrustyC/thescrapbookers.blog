@@ -2,7 +2,7 @@ import { Navbar } from "components/Navbar";
 import { Footer } from "components/Footer";
 import { AppLocale } from "types/global";
 
-export default function PostLayout({
+export default function ContinentLayout({
   children,
   params,
 }: {
