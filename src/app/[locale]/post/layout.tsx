@@ -1,7 +1,6 @@
 import { Navbar } from "components/Navbar";
 import { Footer } from "components/Footer";
 import { AppLocale } from "types/global";
-import { useTranslations } from "next-intl";
 
 export default function PostLayout({
   children,
@@ -10,15 +9,13 @@ export default function PostLayout({
   children: React.ReactNode;
   params: { locale: AppLocale };
 }) {
-  const t = useTranslations("Global.LocaleSwitch");
-
   return (
     <div>
-      <Navbar locale={params.locale} helpText={t("helpText")} />
+      <Navbar locale={params.locale} />
 
       <div>{children}</div>
 
-      <Footer />
+      <Footer locale={params.locale} />
     </div>
   );
 }

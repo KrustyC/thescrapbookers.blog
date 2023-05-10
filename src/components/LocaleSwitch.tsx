@@ -24,24 +24,22 @@ export const LocaleSwitch: React.FC<LocaleSwitchProps> = ({
   };
 
   return (
-    <div className="py-16">
-      <Switch
-        checked={isItalian}
-        onChange={onToggle}
-        className={`${isItalian ? "bg-blue-600" : "bg-red-500"}
+    <Switch
+      checked={isItalian}
+      onChange={onToggle}
+      className={`${isItalian ? "bg-blue-600" : "bg-red-500"}
           relative inline-flex items-center h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-background duration-600 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
-      >
-        <span className="sr-only">{helpText}</span>
-        <span
-          aria-hidden="true"
-          className={`${
-            isItalian
-              ? "translate-x-[26px] bg-ita-flag"
-              : "translate-x-0 bg-uk-flag"
-          }
+    >
+      <span className="sr-only">{helpText}</span>
+      <span
+        aria-hidden="true"
+        className={`${
+          isItalian
+            ? "translate-x-[26px] bg-ita-flag"
+            : "translate-x-0 bg-uk-flag"
+        }
            bg-cover bg-center bg-no-repeat border-2 border-white pointer-events-none inline-block h-[22px] w-[22px] transform rounded-full bg-white shadow-lg ring-0 transition duration-600 ease-in-out`}
-        />
-      </Switch>
-    </div>
+      />
+    </Switch>
   );
 };

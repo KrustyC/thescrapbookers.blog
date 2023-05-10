@@ -19,5 +19,5 @@ html {
 }
 
 .introduction-letter {
-  @apply bg-orange-100 mx-4 lg:w-4/5 lg:mx-auto italic  rounded-xl p-12 flex flex-col gap-y-6 text-2xl mb-24;
+  @apply bg-black text-white mx-4 lg:w-1/2 lg:mx-auto rounded-xl p-6 md:p-12 text-xl flex flex-col justify-between;
 }

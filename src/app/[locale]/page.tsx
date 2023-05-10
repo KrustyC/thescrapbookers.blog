@@ -89,7 +89,7 @@ export default function Home({ params }: { params: { locale: AppLocale } }) {
 
       <AboutUsSection />
 
-      <Footer />
+      <Footer locale={params.locale}  />
     </div>
   );
 }

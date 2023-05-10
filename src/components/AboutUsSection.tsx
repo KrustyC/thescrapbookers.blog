@@ -22,7 +22,7 @@ export const AboutUsSection: React.FC = () => {
           </p>
           <Link
             className="h-16 w-56 flex justify-center items-center bg-black text-white"
-            href="/post/a-lil-introduction"
+            href="/about-us"
             style={poppins.style}
           >
             <span>{t("cta")}</span>
