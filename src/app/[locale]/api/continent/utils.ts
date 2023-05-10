@@ -15,7 +15,7 @@ export function parseContentfulContinentFields(
   if (
     typeof fields.name !== "string" ||
     typeof fields.slug !== "string" ||
-    typeof fields.description !== "string"
+    typeof fields.mainDescription !== "string"
   ) {
     return null;
   }
@@ -23,7 +23,7 @@ export function parseContentfulContinentFields(
   return {
     name: fields.name,
     slug: fields.slug,
-    description: fields.description,
+    mainDescription: fields.mainDescription,
     metaDescription: fields.metaDescription as unknown as string,
     mainImage,
   };

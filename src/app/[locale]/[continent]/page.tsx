@@ -1,9 +1,11 @@
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { AppLocale } from "types/global";
+import { getContinent } from "utils/api";
 
 interface ContinentPageProps {
   params: {
+    continent: string;
     locale: AppLocale;
   };
 }
@@ -25,14 +27,19 @@ export async function generateMetadata({
 }: ContinentPageProps): Promise<Metadata> {
   const t = await getTranslations("Home.Metadata");
 
-  // @TODO Here the data should come from a continent fetched directly from Contentful
-
   return {
     title: t("title"),
     description: t("description"),
+    authors: [
+      { name: "Davide Crestini", url: "https://dcrestini.me" },
+      { name: "Beatrice Cox", url: "https://beatricecox.com" },
+    ],
+    creator: "Davide Crestini",
+    publisher: "Beatrice Cox",
     openGraph: {
       title: t("title"),
       description: t("description"),
+      siteName: "The Scrapbookers",
       images: [
         {
           url: `${process.env.baseUrl}/images/the_scrapbookers.png`,
@@ -57,14 +64,20 @@ export async function generateMetadata({
   };
 }
 
-export default function ContinentPage({
-  params,
-}: {
-  params: { locale: AppLocale };
-}) {
+export default async function ContinentPage({ params }: ContinentPageProps) {
+  const { continent } = await getContinent(params.continent, params.locale);
+  const res = await getContinent(params.continent, params.locale);
+  console.log(res);
+
   return (
     <div className="flex flex-col">
-      Welcome to the page for Asia! Have amazing fun here!
+      <div className="w-[1024px] mx-auto py-24">
+        <h1 className="text-6xl font-bold">{continent.name}</h1>
+
+        {continent.mainDescription && (
+          <div className="text-xl">{continent.mainDescription}</div>
+        )}
+      </div>
     </div>
   );
 }

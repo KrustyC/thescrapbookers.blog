@@ -41,7 +41,7 @@ export async function getPost(
 }
 
 interface GetContinentResponse {
-  post: Continent;
+  continent: Continent;
 }
 
 export async function getContinent(
@@ -49,8 +49,9 @@ export async function getContinent(
   locale: AppLocale
 ): Promise<GetContinentResponse> {
   const url = `${process.env.baseUrl}/${locale}/api/continent/${slug}`;
-  const res = await fetch(url);
-  // const res = await fetch(url, { next: { revalidate: 0 } });
+  console.log(url)
+  // const res = await fetch(url);
+  const res = await fetch(url, { next: { revalidate: 0 } });
 
   if (!res.ok) {
     throw new Error("Failed to fetch continent");

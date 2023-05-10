@@ -19,7 +19,6 @@ export async function GET(_: Request, { params }: Options) {
       content_type: "continent",
       locale: params.locale,
       "fields.slug": params.slug,
-      select: ["fields.name", "fields.slug", "fields.mainImage"],
     });
 
     const continent = result.items[0] || null;

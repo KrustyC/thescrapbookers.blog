@@ -6,7 +6,7 @@ export interface ContinentSkeleton {
   fields: {
     name: EntryFieldTypes.Text;
     slug: EntryFieldTypes.Text;
-    description: EntryFieldTypes.Text;
+    mainDescription: EntryFieldTypes.Text;
     metaDescription?: EntryFieldTypes.Text;
     mainImage?: Asset;
   };

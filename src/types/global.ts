@@ -6,7 +6,7 @@ export interface Continent {
   name: string;
   slug: string;
   mainImage?: Image;
-  description: string;
+  mainDescription: string;
   metaDescription?: string;
 }
 
