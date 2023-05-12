@@ -9,27 +9,6 @@ export default function ALilIntroductionPage() {
 
   return (
     <div className="flex flex-col py-6 lg:py-8 mx-auto w-11/12 2xl:w-3/4 ">
-      {/* <h1
-        style={poppins.style}
-        className="text-6xl font-semibold text-left pt-12 pb-16 w-3/4"
-      >
-        {t("title")}
-      </h1> */}
-
-      {/* <div className="flex gap-x-12">
-        <div className="flex flex-col gap-y-6 text-2xl flex-1">
-          <p style={crimsonText.style}>{generic("firstParagraph")}</p>
-          <p style={crimsonText.style}>{generic("secondParagraph")}</p>
-          <p style={crimsonText.style}>{generic("thirdParagraph")}</p>
-        </div>
-        <div className="flex flex-col gap-y-6 text-2xl flex-1">
-          <p style={crimsonText.style}>{generic("fourthParagraph")}</p>
-          <p style={crimsonText.style}>{generic("fifthParagraph")}</p>
-          <p style={crimsonText.style}>{generic("sixthParagraph")}</p>
-          <p style={crimsonText.style}>{generic("seventhParagraph")}</p>
-        </div>
-      </div> */}
-
       <div className="rich-text-copy flex flex-col gap-y-6 text-2xl mb-12">
         <h1
           style={poppins.style}
