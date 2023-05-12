@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import { AppLocale } from "types/global";
 
 const ERROR_MESSAGES = {
-  it: "Oops, sembra che si sia verificato un error inatteso. I nostri developer sono stati informati. Ti preghiamo di riprovare più tardi.",
+  it: "Oops, sembra che si sia verificato un errore inatteso. I nostri developer sono stati informati. Ti preghiamo di riprovare più tardi.",
   en: "An error happened. Our devs have been informed and are already working towards a fix. Please try again soon.",
 };
 
