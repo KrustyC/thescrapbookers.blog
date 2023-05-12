@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Link } from "next-intl";
+import Link from "next-intl/link";
 import { useTranslations } from "next-intl";
 import { AppLocale } from "types/global";
 

@@ -1,4 +1,4 @@
-import { Link } from "next-intl";
+import Link from "next-intl/link";
 import { poppins } from "utils/fonts";
 
 interface BreadcrumbsProps {

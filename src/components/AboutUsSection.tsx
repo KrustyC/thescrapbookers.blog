@@ -1,6 +1,7 @@
 import { poppins } from "utils/fonts";
 import Image from "next/image";
-import { Link, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
+import Link from "next-intl/link";
 
 import aboutUsPic from "../../public/images/about-us.jpg";
 
