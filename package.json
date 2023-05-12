@@ -12,7 +12,7 @@
     "@contentful/rich-text-react-renderer": "^15.16.4",
     "@headlessui/react": "^1.7.14",
     "@mailchimp/mailchimp_marketing": "^3.0.80",
-    "@types/node": "18.14.1",
+    "@types/node": "^16.18.29",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
     "contentful": "^10.2.0",
