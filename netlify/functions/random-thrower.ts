@@ -6,8 +6,7 @@ const withIntegrations = wrap(withSentry);
 
 const handler = withIntegrations(
   async (event: HandlerEvent, context: HandlerContext & SentryContext) => {
-    // Add handler function content here
-    throw new Error("Report this to sentryy")
+    throw Error("yet another error");
   }
 );
 
