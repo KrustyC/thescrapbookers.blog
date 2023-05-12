@@ -34,12 +34,12 @@ const nextConfig = withNextIntl({
 
         // If you're deploying on a host that doesn't support the `vary` header (e.g. Vercel),
         // make sure to disable caching for prefetch requests for Server Components.
-        missing: [
-          {
-            type: "header",
-            key: "Next-Router-Prefetch",
-          },
-        ],
+        // missing: [
+        //   {
+        //     type: "header",
+        //     key: "Next-Router-Prefetch",
+        //   },
+        // ],
       },
     ];
   },

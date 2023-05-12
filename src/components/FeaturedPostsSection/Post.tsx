@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Link } from "next-intl";
+import Link from "next-intl/link";
 import type { AppLocale, Post as IPost } from "types/global";
 import { formatDate, getFormat } from "utils/date";
 import { poppins } from "utils/fonts";
@@ -12,11 +12,9 @@ interface PostProps {
 }
 
 export const Post: React.FC<PostProps> = ({
-  post: { title, slug, smallIntro, thumbnailImage, category, date },
+  post: { title, href, smallIntro, thumbnailImage, category, date },
   locale,
 }) => {
-  const href = `/post/${slug}`;
-
   return (
     <div className="flex flex-col w-full">
       <Link href={href} className="flex w-full aspect-square relative">

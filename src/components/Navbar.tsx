@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { Link, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
+import Link from "next-intl/link";
 import { LocaleSwitch } from "components/LocaleSwitch";
 
 import logoPic from "../../public/images/logo-black.png";

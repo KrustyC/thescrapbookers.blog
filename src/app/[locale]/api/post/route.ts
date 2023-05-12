@@ -1,39 +1,8 @@
 import { NextResponse } from "next/server";
-import type { Post } from "types/global";
 import type { PostSkeleton } from "types/contentful";
-import { extractImageDataFromContentfulAsset } from "utils/images";
 import { getContentfulClient } from "utils/contentful-client";
-import { Entry } from "contentful";
 
-function parseContentfulPostFields(
-  post: Entry<PostSkeleton>
-): Pick<
-  Post,
-  "title" | "slug" | "date" | "smallIntro" | "thumbnailImage" | "category"
-> | null {
-  const { fields } = post;
-
-  if (
-    typeof fields.title !== "string" ||
-    typeof fields.slug !== "string" ||
-    typeof fields.smallIntro !== "string" ||
-    typeof fields.category !== "string" ||
-    typeof fields.date !== "string"
-  ) {
-    return null;
-  }
-
-  return {
-    title: fields.title,
-    slug: fields.slug,
-    smallIntro: fields.smallIntro,
-    date: new Date(fields.date),
-    category: fields.category,
-    thumbnailImage: fields.thumbnailImage
-      ? extractImageDataFromContentfulAsset(fields.thumbnailImage)
-      : undefined,
-  };
-}
+import { parseContentfulPostFieldsForList } from "./utils";
 
 interface Options {
   params: {
@@ -48,11 +17,17 @@ export async function GET(request: Request, { params }: Options) {
 
     const { searchParams } = new URL(request.url);
     const tag = searchParams.get("tag");
+    const country = searchParams.get("country");
+
+    console.log(country);
 
     const result = await client.getEntries<PostSkeleton>({
       content_type: "post",
       locale: params.locale,
+      include: 2, // This is used to fetch two nested entries (country and continent)
       "metadata.tags.sys.id[all]": tag ? [tag] : undefined,
+      "fields.country.sys.contentType.sys.id": country ? "country" : undefined,
+      "fields.country.fields.slug[all]": country ? [country] : undefined,
       select: [
         "fields.title",
         "fields.slug",
@@ -60,10 +35,11 @@ export async function GET(request: Request, { params }: Options) {
         "fields.thumbnailImage",
         "fields.date",
         "fields.category",
+        "fields.country",
       ],
     });
 
-    const posts = result.items.map((item) => parseContentfulPostFields(item));
+    const posts = result.items.map(parseContentfulPostFieldsForList);
 
     return NextResponse.json({ posts });
   } catch (error) {

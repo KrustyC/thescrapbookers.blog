@@ -1,10 +1,11 @@
 import format from "date-fns/format";
 import parse from "html-react-parser";
 import Image from "next/image";
-import { Link } from "next-intl";
+import Link from "next-intl/link";
 import { formatDate, getFormat } from "utils/date";
 import { AppLocale, Post } from "types/global";
 import { poppins } from "utils/fonts";
+import { Breadcrumbs } from "./Breadcrumbs";
 
 import { RichText } from "./RichText/RichText";
 
@@ -45,6 +46,8 @@ export const BlogPost: React.FC<BlogPostProps> = ({
         <h1 className="lg:w-4/5 xl:w-3/5 my-8 lg:my-16 text-6xl font-semibold text-center">
           {post.title}
         </h1>
+
+        {post.country ? <Breadcrumbs country={post.country} /> : null}
       </div>
 
       <div className="flex flex-col my-12 lg:my-24">
@@ -94,7 +97,7 @@ export const BlogPost: React.FC<BlogPostProps> = ({
 
             <Link href={`/post/${nextPost.slug}`}>
               <h1 className="text-5xl font-semibold text-black">
-                {post.title}
+                {nextPost.title}
               </h1>
             </Link>
 

@@ -4,7 +4,7 @@ import { ArticleNotFoundIcon } from "icons/ArticleNotFound";
 import { AppLocale } from "types/global";
 import { BlogPost } from "components/BlogPost/BlogPost";
 import { getPost } from "utils/api";
-import { Link } from "next-intl";
+import Link from "next-intl/link";
 interface PostPageProps {
   params: {
     slug: string;
