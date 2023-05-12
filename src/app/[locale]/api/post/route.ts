@@ -19,8 +19,6 @@ export async function GET(request: Request, { params }: Options) {
     const tag = searchParams.get("tag");
     const country = searchParams.get("country");
 
-    console.log(country);
-
     const result = await client.getEntries<PostSkeleton>({
       content_type: "post",
       locale: params.locale,

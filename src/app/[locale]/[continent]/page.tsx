@@ -67,7 +67,6 @@ export async function generateMetadata({
 export default async function ContinentPage({ params }: ContinentPageProps) {
   const { continent } = await getContinent(params.continent, params.locale);
   const res = await getContinent(params.continent, params.locale);
-  console.log(res);
 
   return (
     <div className="flex flex-col">

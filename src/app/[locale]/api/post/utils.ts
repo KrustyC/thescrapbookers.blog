@@ -10,10 +10,10 @@ import { Entry } from "contentful";
 
 function generatePostHref(slug: string, country: Country | undefined) {
   if (!country) {
-    return `/post/${slug}`;
+    return `/generic/${slug}`;
   }
 
-  return `/${country.continent.slug}/${country.slug}/post/${slug}`;
+  return `/${country.continent.slug}/${country.slug}/${slug}`;
 }
 
 function parseContentfulCountry(

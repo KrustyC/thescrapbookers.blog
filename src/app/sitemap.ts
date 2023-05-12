@@ -1,22 +1,22 @@
 import { AppLocale, Post } from "types/global";
 
-const BASE_ROUTES = ["", "/a-lil-introduction"];
+const BASE_ROUTES = ["", "/about-us"];
 
 async function postsRoutesForLocale(locale: AppLocale) {
-  const res = await fetch(`${process.env.baseUrl}/${locale}/post/api`);
+  const res = await fetch(`${process.env.baseUrl}/${locale}/api/post`);
 
   const { posts } = await res.json();
 
   return posts.map((post: Post) => {
     if (locale === "en") {
       return {
-        url: `${process.env.baseUrl}/post/${post.slug}`, // No need to include the locale for english posts
+        url: `${process.env.baseUrl}${post.href}`, // No need to include the locale for english posts
         lastModified: post.date,
       };
     }
 
     return {
-      url: `${process.env.baseUrl}/${locale}/post/${post.slug}`,
+      url: `${process.env.baseUrl}/${locale}${post.href}`,
       lastModified: post.date,
     };
   });
@@ -28,9 +28,9 @@ export default async function sitemap() {
     postsRoutesForLocale("it"),
   ]);
 
-  const italianRoutes = BASE_ROUTES.map((route) => `/it${route}`);
+  const italianBaseRoutes = BASE_ROUTES.map((route) => `/it${route}`);
 
-  const allRoutes = [...BASE_ROUTES, ...italianRoutes].map((route) => ({
+  const allRoutes = [...BASE_ROUTES, ...italianBaseRoutes].map((route) => ({
     url: `${process.env.baseUrl}${route}`,
     lastModified: new Date().toISOString(),
   }));

@@ -49,7 +49,6 @@ export async function getContinent(
   locale: AppLocale
 ): Promise<GetContinentResponse> {
   const url = `${process.env.baseUrl}/${locale}/api/continent/${slug}`;
-  console.log(url)
   // const res = await fetch(url);
   const res = await fetch(url, { next: { revalidate: 0 } });
 
@@ -69,7 +68,6 @@ export async function getCountry(
   locale: AppLocale
 ): Promise<GetCountryResponse> {
   const url = `${process.env.baseUrl}/${locale}/api/country/${slug}`;
-  console.log(url);
   const res = await fetch(url);
   // const res = await fetch(url, { next: { revalidate: 0 } });
 

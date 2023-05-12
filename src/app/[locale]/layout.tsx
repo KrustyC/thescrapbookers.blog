@@ -6,7 +6,7 @@ import Script from "next/script";
 import { useLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 
-import { crimsonPro } from "utils/fonts";
+import { crimsonText } from "utils/fonts";
 import { AppLocale } from "types/global";
 
 interface Props {
@@ -82,7 +82,7 @@ export default function LocaleLayout({ children, params }: Props) {
   }
 
   return (
-    <html lang={locale} style={crimsonPro.style}>
+    <html lang={locale} style={crimsonText.style}>
       <body>{children}</body>
 
       {process.env.environment === "production" && (
