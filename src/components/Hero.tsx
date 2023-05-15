@@ -30,6 +30,7 @@ const Navbar: React.FC<NavbarProps> = ({ locale }) => {
           alt="the scrapbooker logo"
           sizes="100%"
           fill
+          priority
           style={{ objectFit: "contain" }}
         />
       </Link>
