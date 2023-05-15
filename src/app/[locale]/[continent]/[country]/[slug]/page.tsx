@@ -22,22 +22,32 @@ export async function generateMetadata({
       return {};
     }
 
+    const title = post.title;
+    const description = post.smallIntro;
+    const images = [
+      {
+        url: new URL(post.mainImage.url),
+        height: post.mainImage.details.height || 569,
+        width: post.mainImage.details.width || 853,
+      },
+    ];
+
     return {
-      title: post.title,
-      description: post.smallIntro,
+      title,
+      description,
       creator: post.author.name,
       openGraph: {
-        title: post.title,
-        description: post.smallIntro,
+        title,
+        description,
         siteName: "The Scrapbookers",
-        images: [
-          {
-            url: post.mainImage.url,
-            height: post.mainImage.details.height || 450,
-            width: post.mainImage.details.width || 800,
-          },
-        ],
+        images,
         locale,
+      },
+      twitter: {
+        card: "summary_large_image",
+        title,
+        description,
+        images,
       },
     };
   } catch (error) {
@@ -62,9 +72,7 @@ export default async function PostPage({
           href="/"
           className="bg-black px-6 pt-2 pb-4 w-fit font-bold inline-block mt-8"
         >
-          <span className="text-xl text-white">
-            {t("notFound.cta")}
-          </span>
+          <span className="text-xl text-white">{t("notFound.cta")}</span>
         </Link>
       </div>
     );
