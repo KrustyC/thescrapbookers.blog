@@ -19,13 +19,6 @@ export async function GET(_: Request, { params }: Options) {
       content_type: "country",
       locale: params.locale,
       "fields.slug": params.slug,
-      select: [
-        "fields.name",
-        "fields.slug",
-        "fields.mainImage",
-        "fields.continent",
-        "fields.description",
-      ],
     });
 
     const country = result.items[0] || null;

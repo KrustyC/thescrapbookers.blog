@@ -8,7 +8,10 @@ import type {
 import { extractImageDataFromContentfulAsset } from "utils/images";
 import { Entry } from "contentful";
 
-function generatePostHref(slug: string, country: Country | undefined) {
+function generatePostHref(
+  slug: string,
+  country: Pick<Country, "slug" | "continent"> | undefined
+) {
   if (!country) {
     return `/generic/${slug}`;
   }

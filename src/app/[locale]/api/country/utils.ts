@@ -17,18 +17,13 @@ export function parseContentfulCountryFields(
     ? extractImageDataFromContentfulAsset(fields.mainImage as any) // Contentful new types are fucking awful, so I had to hack around a bit
     : undefined;
 
-  if (
-    typeof fields.name !== "string" ||
-    typeof fields.slug !== "string" ||
-    (typeof fields.slug !== "string" && includeDescription) ||
-    !fields.continent
-  ) {
+  if (!fields.continent || !mainImage) {
     return null;
   }
 
   return {
-    name: fields.name,
-    slug: fields.slug,
+    name: fields.name as unknown as string,
+    slug: fields.slug as unknown as string,
     metaDescription: fields.metaDescription as unknown as string,
     description: includeDescription
       ? (fields.description as string)

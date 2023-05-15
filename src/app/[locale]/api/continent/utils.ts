@@ -12,18 +12,15 @@ export function parseContentfulContinentFields(
     ? extractImageDataFromContentfulAsset(fields.mainImage as any) // Contentful new types are fucking awful, so I had to hack around a bit
     : undefined;
 
-  if (
-    typeof fields.name !== "string" ||
-    typeof fields.slug !== "string" ||
-    typeof fields.mainDescription !== "string"
-  ) {
+  if (!mainImage) {
     return null;
   }
 
+  // This looks ugly as hell, but unfortunately Contentful SDK new types aer horrible
   return {
-    name: fields.name,
-    slug: fields.slug,
-    mainDescription: fields.mainDescription,
+    name: fields.name as unknown as string,
+    slug: fields.slug as unknown as string,
+    mainDescription: fields.mainDescription as unknown as string,
     metaDescription: fields.metaDescription as unknown as string,
     mainImage,
   };
