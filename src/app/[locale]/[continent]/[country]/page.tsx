@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
 import { AppLocale } from "types/global";
 import { getCountry } from "utils/api";
 
@@ -23,43 +22,34 @@ interface CountryPageProps {
 // }
 
 export async function generateMetadata({
-  params: { locale },
+  params: { country: countrySlug, locale },
 }: CountryPageProps): Promise<Metadata> {
-  const t = await getTranslations("Home.Metadata");
+  const { country } = await getCountry(countrySlug, locale);
+
+  const title = country.name;
+  const description = country.metaDescription;
+  const images = [
+    {
+      url: new URL(country.mainImage.url),
+      height: country.mainImage.details.height || 569,
+      width: country.mainImage.details.width || 853,
+    },
+  ];
 
   return {
-    title: t("title"),
-    description: t("description"),
-    authors: [
-      { name: "Davide Crestini", url: "https://dcrestini.me" },
-      { name: "Beatrice Cox", url: "https://beatricecox.com" },
-    ],
-    creator: "Davide Crestini",
-    publisher: "Beatrice Cox",
+    title,
+    description,
     openGraph: {
-      title: t("title"),
-      description: t("description"),
-      siteName: "The Scrapbookers",
-      images: [
-        {
-          url: `${process.env.baseUrl}/images/the_scrapbookers.png`,
-          height: 569,
-          width: 853,
-        },
-      ],
+      title,
+      description,
+      images,
       locale,
     },
     twitter: {
       card: "summary_large_image",
-      title: t("title"),
-      description: t("description"),
-      images: [
-        {
-          url: `${process.env.baseUrl}/images/the_scrapbookers.png`,
-          height: 569,
-          width: 853,
-        },
-      ],
+      title: country.name,
+      description: country.metaDescription,
+      images,
     },
   };
 }

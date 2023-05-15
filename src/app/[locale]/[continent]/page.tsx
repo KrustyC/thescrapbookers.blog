@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
 import { AppLocale } from "types/global";
 import { getContinent } from "utils/api";
 
@@ -23,50 +22,40 @@ interface ContinentPageProps {
 // }
 
 export async function generateMetadata({
-  params: { locale },
+  params: { continent: continentSlug, locale },
 }: ContinentPageProps): Promise<Metadata> {
-  const t = await getTranslations("Home.Metadata");
+  const { continent } = await getContinent(continentSlug, locale);
+
+  const title = continent.name;
+  const description = continent.metaDescription;
+  const images = [
+    {
+      url: new URL(continent.mainImage.url),
+      height: continent.mainImage.details.height || 569,
+      width: continent.mainImage.details.width || 853,
+    },
+  ];
 
   return {
-    title: t("title"),
-    description: t("description"),
-    authors: [
-      { name: "Davide Crestini", url: "https://dcrestini.me" },
-      { name: "Beatrice Cox", url: "https://beatricecox.com" },
-    ],
-    creator: "Davide Crestini",
-    publisher: "Beatrice Cox",
+    title,
+    description,
     openGraph: {
-      title: t("title"),
-      description: t("description"),
-      siteName: "The Scrapbookers",
-      images: [
-        {
-          url: `${process.env.baseUrl}/images/the_scrapbookers.png`,
-          height: 569,
-          width: 853,
-        },
-      ],
+      title,
+      description,
+      images,
       locale,
     },
     twitter: {
       card: "summary_large_image",
-      title: t("title"),
-      description: t("description"),
-      images: [
-        {
-          url: `${process.env.baseUrl}/images/the_scrapbookers.png`,
-          height: 569,
-          width: 853,
-        },
-      ],
+      title: continent.name,
+      description: continent.metaDescription,
+      images,
     },
   };
 }
 
 export default async function ContinentPage({ params }: ContinentPageProps) {
   const { continent } = await getContinent(params.continent, params.locale);
-  const res = await getContinent(params.continent, params.locale);
 
   return (
     <div className="flex flex-col">

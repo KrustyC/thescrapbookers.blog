@@ -5,7 +5,7 @@ export type AppLocale = "en" | "it";
 export interface Continent {
   name: string;
   slug: string;
-  mainImage?: Image;
+  mainImage: Image;
   mainDescription: string;
   metaDescription?: string;
 }
@@ -13,7 +13,7 @@ export interface Continent {
 export interface Country {
   name: string;
   slug: string;
-  mainImage?: Image;
+  mainImage: Image;
   description?: string;
   metaDescription?: string;
   continent: Pick<Continent, "name" | "slug">;
