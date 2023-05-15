@@ -33,10 +33,16 @@ export async function generateMetadata({
       },
     ];
 
+    const baseUrl = process.env.baseUrl;
+
     return {
       title,
       description,
       creator: post.author.name,
+      alternates: {
+        canonical: `${baseUrl}${post.href}`,
+        languages: { it: new URL(`${baseUrl}/it${post.href}`) },
+      },
       openGraph: {
         title,
         description,

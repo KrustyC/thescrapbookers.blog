@@ -34,6 +34,7 @@ export async function generateMetadata({
   params: { locale },
 }: HomePageProps): Promise<Metadata> {
   const t = await getTranslations("Home.Metadata");
+  const baseUrl = process.env.baseUrl as string;
 
   return {
     title: t("title"),
@@ -42,6 +43,10 @@ export async function generateMetadata({
       { name: "Davide Crestini", url: "https://dcrestini.me" },
       { name: "Beatrice Cox", url: "https://beatricecox.com" },
     ],
+    alternates: {
+      canonical: new URL(baseUrl),
+      languages: { it: new URL(`${baseUrl}/it`) },
+    },
     creator: "Davide Crestini",
     publisher: "Beatrice Cox",
     openGraph: {
@@ -89,7 +94,7 @@ export default function Home({ params }: { params: { locale: AppLocale } }) {
 
       <AboutUsSection />
 
-      <Footer locale={params.locale}  />
+      <Footer locale={params.locale} />
     </div>
   );
 }
