@@ -34,7 +34,7 @@ export async function generateMetadata({
     ];
 
     const baseUrl = process.env.baseUrl;
-
+    console.log(baseUrl, post.href)
     return {
       title,
       description,
