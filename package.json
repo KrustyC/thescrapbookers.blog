@@ -25,13 +25,13 @@
     "html-react-parser": "3.0.16",
     "next": "13.3.0",
     "next-intl": "2.15.0-beta.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "react-hook-form": "7.43.9",
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^4.37.0",
+    "@netlify/plugin-nextjs": "4.37.0",
     "@types/mailchimp__mailchimp_marketing": "3.0.9",
     "autoprefixer": "10.4.14",
     "eslint-config-prettier": "8.8.0",
