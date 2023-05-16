@@ -11,6 +11,7 @@ import SmallNotesSection, {
 import { AboutUsSection } from "components/AboutUsSection";
 import { Footer } from "components/Footer";
 import { AppLocale } from "types/global";
+import { createAlternates } from "utils/urls";
 
 interface HomePageProps {
   params: {
@@ -43,10 +44,7 @@ export async function generateMetadata({
       { name: "Davide Crestini", url: "https://dcrestini.me" },
       { name: "Beatrice Cox", url: "https://beatricecox.com" },
     ],
-    alternates: {
-      canonical: baseUrl,
-      languages: { it: `${baseUrl}/it` },
-    },
+    alternates: createAlternates({ path: "" }),
     creator: "Davide Crestini",
     publisher: "Beatrice Cox",
     openGraph: {

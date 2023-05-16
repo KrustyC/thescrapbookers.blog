@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import Link from "next-intl/link";
 import { ArticleNotFoundIcon } from "icons/ArticleNotFound";
 import { AppLocale } from "types/global";
 import { BlogPost } from "components/BlogPost/BlogPost";
 import { getPost } from "utils/api";
-import Link from "next-intl/link";
+import { createAlternates } from "utils/urls";
 interface PostPageProps {
   params: {
     slug: string;
@@ -32,16 +33,11 @@ export async function generateMetadata({
       },
     ];
 
-    const baseUrl = process.env.baseUrl;
-
     return {
       title,
       description,
       creator: post.author.name,
-      alternates: {
-        canonical: `${baseUrl}${post.href}`,
-        languages: { it: `${baseUrl}/it${post.href}` },
-      },
+      alternates: createAlternates({ path: post.href }),
       openGraph: {
         title,
         description,

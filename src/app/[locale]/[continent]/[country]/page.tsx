@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { AppLocale } from "types/global";
 import { getCountry } from "utils/api";
+import { createAlternates } from "utils/urls";
 
 interface CountryPageProps {
   params: {
@@ -36,15 +37,10 @@ export async function generateMetadata({
     },
   ];
 
-  const baseUrl = process.env.baseUrl;
-
   return {
     title,
     description,
-    alternates: {
-      canonical: `${baseUrl}/${countrySlug}`,
-      languages: { it: `${baseUrl}/it/${countrySlug}` },
-    },
+    alternates: createAlternates({ path: `/${countrySlug}` }),
     openGraph: {
       title,
       description,

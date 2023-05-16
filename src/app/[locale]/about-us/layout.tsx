@@ -3,6 +3,7 @@ import { Footer } from "components/Footer";
 import { AppLocale } from "types/global";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { createAlternates } from "utils/urls";
 
 interface IntroductionPageProps {
   params: {
@@ -20,10 +21,7 @@ export async function generateMetadata({
     title: t("title"),
     description: t("description"),
     metadataBase: new URL(baseUrl),
-    alternates: {
-      canonical: `${baseUrl}/about-us`,
-      languages: { it: `${baseUrl}/it/about-us` },
-    },
+    alternates: createAlternates({ path: "/about-us" }),
     authors: [
       { name: "Davide Crestini", url: "https://dcrestini.me" },
       { name: "Beatrice Cox", url: "https://beatricecox.com" },
