@@ -34,14 +34,14 @@ export async function generateMetadata({
     ];
 
     const baseUrl = process.env.baseUrl;
-    console.log(baseUrl, post.href)
+    console.log(baseUrl, post.href);
     return {
       title,
       description,
       creator: post.author.name,
       alternates: {
         canonical: `${baseUrl}${post.href}`,
-        languages: { it: new URL(`${baseUrl}/it${post.href}`) },
+        languages: { it: `${baseUrl}/it${post.href}` },
       },
       openGraph: {
         title,

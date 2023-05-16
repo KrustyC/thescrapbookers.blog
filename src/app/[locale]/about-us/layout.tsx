@@ -14,13 +14,16 @@ export async function generateMetadata({
   params: { locale },
 }: IntroductionPageProps): Promise<Metadata> {
   const t = await getTranslations("AboutUs.Metadata");
+  const baseUrl = process.env.baseUrl || "https://thescrapbookers.blog";
 
   return {
     title: t("title"),
     description: t("description"),
-    metadataBase: new URL(
-      process.env.baseUrl || "https://thescrapbookers.blog"
-    ),
+    metadataBase: new URL(baseUrl),
+    alternates: {
+      canonical: `${baseUrl}/about-us`,
+      languages: { it: `${baseUrl}/it/about-us` },
+    },
     authors: [
       { name: "Davide Crestini", url: "https://dcrestini.me" },
       { name: "Beatrice Cox", url: "https://beatricecox.com" },

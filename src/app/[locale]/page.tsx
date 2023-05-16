@@ -44,8 +44,8 @@ export async function generateMetadata({
       { name: "Beatrice Cox", url: "https://beatricecox.com" },
     ],
     alternates: {
-      canonical: new URL(baseUrl),
-      languages: { it: new URL(`${baseUrl}/it`) },
+      canonical: baseUrl,
+      languages: { it: `${baseUrl}/it` },
     },
     creator: "Davide Crestini",
     publisher: "Beatrice Cox",

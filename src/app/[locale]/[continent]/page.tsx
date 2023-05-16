@@ -36,9 +36,15 @@ export async function generateMetadata({
     },
   ];
 
+  const baseUrl = process.env.baseUrl;
+
   return {
     title,
     description,
+    alternates: {
+      canonical: `${baseUrl}/${continentSlug}`,
+      languages: { it: `${baseUrl}/it/${continentSlug}` },
+    },
     openGraph: {
       title,
       description,
