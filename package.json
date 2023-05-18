@@ -12,9 +12,6 @@
     "@contentful/rich-text-react-renderer": "15.16.4",
     "@headlessui/react": "1.7.14",
     "@mailchimp/mailchimp_marketing": "3.0.80",
-    "@netlify/integrations": "0.6.0",
-    "@netlify/next": "1.4.6",
-    "@netlify/sentry": "0.0.8",
     "@types/node": "18.11.9",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
@@ -23,7 +20,7 @@
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.1",
     "html-react-parser": "3.0.16",
-    "next": "13.3.0",
+    "next": "^13.4.2",
     "next-intl": "2.15.0-beta.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -31,7 +28,6 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "4.37.1",
     "@types/mailchimp__mailchimp_marketing": "3.0.9",
     "autoprefixer": "10.4.14",
     "eslint-config-prettier": "8.8.0",

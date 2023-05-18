@@ -35,7 +35,6 @@ export async function generateMetadata({
   params: { locale },
 }: HomePageProps): Promise<Metadata> {
   const t = await getTranslations("Home.Metadata");
-  const baseUrl = process.env.baseUrl as string;
 
   return {
     title: t("title"),

@@ -9,7 +9,7 @@ const nextConfig = withNextIntl({
     googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID,
   },
   experimental: {
-    appDir: true,
+    serverActions: true,
   },
   images: {
     domains: ["images.ctfassets.net"],

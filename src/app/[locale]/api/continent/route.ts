@@ -20,8 +20,6 @@ export async function GET(_: Request, { params }: Options) {
     });
 
     const continents = result.items || [];
-    console.log(result.items)
-    console.log(continents)
 
     return NextResponse.json({
       continents: continents.map(parseContentfulContinentFields),

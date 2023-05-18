@@ -17,7 +17,7 @@ export const Post: React.FC<PostProps> = ({
 }) => {
   return (
     <div className="flex flex-col w-full">
-      <Link href={href} className="flex w-full aspect-square relative">
+      <Link href={href} className="flex w-full aspect-square relative bg-gray-200">
         <Image
           sizes="100%"
           fill

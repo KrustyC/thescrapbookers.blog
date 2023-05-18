@@ -10,6 +10,7 @@ export async function getPostsByTag({
   locale,
 }: GetPostsByTagParams): Promise<{ posts: Post[] }> {
   const url = `${process.env.baseUrl}/${locale}/api/post?tag=${tag}`;
+  console.log(url);
   const res = await fetch(url);
   // const res = await fetch(url, { next: { revalidate: 0 } });
 
