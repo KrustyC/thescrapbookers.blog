@@ -58,6 +58,7 @@ export const BlogPost: React.FC<BlogPostProps> = ({
             className="loading-background"
             sizes="100%"
             fill
+            priority
             src={post.mainImage.url}
             alt="main picutre" // @TODO ee if we can use description to make it more accessible
             style={{ objectFit: "cover" }}

@@ -9,7 +9,4 @@ Sentry.init({
   tracesSampleRate: 1,
   debug: false,
   replaysOnErrorSampleRate: 1.0,
-
-  // This sets the sample rate to be 80%.
-  replaysSessionSampleRate: 0.8,
 });
