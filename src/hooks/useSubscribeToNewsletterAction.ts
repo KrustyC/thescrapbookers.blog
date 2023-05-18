@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { subscribeToNewsletterAction } from "actions/subscribe-to-newsletter-action";
+import type { NewsletterSubscribeErroCode } from "utils/error-codes";
 
 type FormData = {
   email: string;
@@ -11,7 +12,7 @@ type UseSubscribeToNewsletterActionReturn = [
   {
     isSuccess: boolean;
     isPending: boolean;
-    error?: string;
+    error?: NewsletterSubscribeErroCode;
   },
   {
     onSubscribe: (data: FormData) => Promise<void>;
@@ -21,7 +22,9 @@ type UseSubscribeToNewsletterActionReturn = [
 export const useSubscribeToNewsletterAction =
   (): UseSubscribeToNewsletterActionReturn => {
     const [isSuccess, setSuccess] = useState<boolean>(false);
-    const [error, setError] = useState<string | undefined>();
+    const [error, setError] = useState<
+      NewsletterSubscribeErroCode | undefined
+    >();
     const [isPending, startTransaction] = useTransition();
 
     const onSubscribe = async (data: FormData) => {

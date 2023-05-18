@@ -5,13 +5,16 @@ import { Dialog } from "@headlessui/react";
 interface SuccessDialogProps {
   isOpen: boolean;
   onClose: VoidFunction;
+  messages: {
+    title: string;
+    message: string;
+  };
 }
-
-// @TODO REMEMEBR TO USE TRANSLATIONS
 
 export const SuccessDialog: React.FC<SuccessDialogProps> = ({
   isOpen,
   onClose,
+  messages,
 }) => {
   return (
     <Dialog open={isOpen} onClose={onClose} className="relative z-50">
@@ -19,12 +22,9 @@ export const SuccessDialog: React.FC<SuccessDialogProps> = ({
 
       <div className="fixed inset-0 flex items-center justify-center">
         <Dialog.Panel className="mx-auto max-w-sm rounded bg-white p-6">
-          <Dialog.Title>Thanks for subscribing</Dialog.Title>
+          <Dialog.Title>{messages.title}</Dialog.Title>
 
-          <Dialog.Description>
-            Thanks for subscribing! We promise we will not spam you with tons of
-            emails.
-          </Dialog.Description>
+          <Dialog.Description>{messages.message}</Dialog.Description>
         </Dialog.Panel>
       </div>
     </Dialog>

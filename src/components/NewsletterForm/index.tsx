@@ -12,20 +12,29 @@ const EMAIL_REGEX =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 interface NewsletterFormProps {
-  inputPlaceholder: string;
-  inputError: string;
-  ctaText: string;
+  messages: {
+    inputPlaceholder: string;
+    inputError: string;
+    ctaText: string;
+    dialogs: {
+      success: {
+        title: string;
+        message: string;
+      };
+      error: {
+        title: string;
+        generic: string;
+        userAlreadyExist: string;
+      };
+    };
+  };
 }
 
 type FormData = {
   email: string;
 };
 
-export const NewsletterForm: React.FC<NewsletterFormProps> = ({
-  inputPlaceholder,
-  inputError,
-  ctaText,
-}) => {
+export const NewsletterForm: React.FC<NewsletterFormProps> = ({ messages }) => {
   const {
     handleSubmit,
     register,
@@ -62,12 +71,12 @@ export const NewsletterForm: React.FC<NewsletterFormProps> = ({
           type="email"
           autoComplete="off"
           disabled={isPending || isSuccess}
-          placeholder={inputPlaceholder}
+          placeholder={messages.inputPlaceholder}
           {...register("email", {
             required: true,
             pattern: {
               value: EMAIL_REGEX,
-              message: inputError,
+              message: messages.inputError,
             },
           })}
         />
@@ -77,18 +86,20 @@ export const NewsletterForm: React.FC<NewsletterFormProps> = ({
           className="h-16 lg:h-full w-full lg:w-56 bg-black text-white px-12 lg:ml-4 disabled:opacity-50 disabled:cursor-not-allowed"
           disabled={!isValid || !isDirty || isPending || isSuccess}
         >
-          {ctaText}
+          {messages.ctaText}
         </button>
       </form>
 
       <SuccessDialog
+        messages={messages.dialogs.success}
         isOpen={showSuccessDialog}
         onClose={() => setShowSuccessDialog(false)}
       />
 
       <ErrorDialog
+        messages={messages.dialogs.error}
         isOpen={showErrorDialog}
-        message={error || "Something went wrong"}
+        error={error!}
         onClose={() => setShowErrorDialog(false)}
       />
     </>

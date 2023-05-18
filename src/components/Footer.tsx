@@ -12,18 +12,34 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ locale }) => {
-  const t = useTranslations("Global.Footer");
+  const footer = useTranslations("Global.Footer");
+  const newsletter = useTranslations("Global.NewsletterForm");
   const localeSwitch = useTranslations("Global.LocaleSwitch");
 
   return (
     <div className="flex flex-col items-center xl:items-start pt-16 lg:pt-20 pb-10 xl:px-48 mt-10 lg:mt-16 bg-accent">
       <div className="flex flex-col lg:flex-row items-center justify-between mb-24 px-12 xl:px-0 w-full">
-        <p className="text-center lg:text-left text-4xl mb-4 lg:mb-0">{t("message")}</p>
+        <p className="text-center lg:text-left text-4xl mb-4 lg:mb-0">
+          {footer("newsletterMessage")}
+        </p>
 
         <NewsletterForm
-          inputPlaceholder={t("inputPlaceholder")}
-          inputError={t("inputError")}
-          ctaText={t("cta")}
+          messages={{
+            inputPlaceholder: newsletter("inputPlaceholder"),
+            inputError: newsletter("inputError"),
+            ctaText: newsletter("cta"),
+            dialogs: {
+              success: {
+                title: newsletter("dialogs.success.title"),
+                message: newsletter("dialogs.success.message"),
+              },
+              error: {
+                title: newsletter("dialogs.error.title"),
+                generic: newsletter("dialogs.error.generic"),
+                userAlreadyExist: newsletter("dialogs.error.userAlreadyExist"),
+              },
+            },
+          }}
         />
       </div>
 

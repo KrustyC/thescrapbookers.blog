@@ -4,6 +4,10 @@ import mailchimp, {
   type Status,
   ErrorResponse,
 } from "@mailchimp/mailchimp_marketing";
+import {
+  NEWSLETTER_SUBSCIRBE_ERRORS,
+  type NewsletterSubscribeErroCode,
+} from "utils/error-codes";
 
 function isVariableDefined(variable: unknown): variable is string {
   return !!variable && typeof variable === "string";
@@ -20,7 +24,7 @@ interface SubscribeToNewsletterActionData {
 
 interface SubscribeToNewsletterActionReturn {
   success: boolean;
-  error?: string;
+  error?: NewsletterSubscribeErroCode;
 }
 
 export async function subscribeToNewsletterAction(
@@ -28,13 +32,6 @@ export async function subscribeToNewsletterAction(
 ): Promise<SubscribeToNewsletterActionReturn> {
   const { MAILCHIMP_AUDIENCE_ID, MAILCHIMP_API_KEY, MAILCHIMP_SERVER } =
     process.env;
-
-  console.log(
-    "HERE",
-    MAILCHIMP_AUDIENCE_ID,
-    MAILCHIMP_API_KEY,
-    MAILCHIMP_SERVER
-  );
 
   if (!isVariableDefined(MAILCHIMP_AUDIENCE_ID)) {
     throw new Error("MAILCHIMP_AUDIENCE_ID is not defined");
@@ -67,12 +64,15 @@ export async function subscribeToNewsletterAction(
     return { success: true };
   } catch (error) {
     if (isMemberErrorResponse(error)) {
-      return { success: false, error: "Members already exist" };
+      return {
+        success: false,
+        error: NEWSLETTER_SUBSCIRBE_ERRORS.USER_ALREADY_EXISTS,
+      };
     }
 
     return {
       success: false,
-      error: "Unexpected error while adding member to newsletter",
+      error: NEWSLETTER_SUBSCIRBE_ERRORS.GENERIC,
     };
   }
 }

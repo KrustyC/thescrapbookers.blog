@@ -69,11 +69,24 @@
     "LocaleSwitch": {
       "helpText": "switch to italian language"
     },
-    "Footer": {
-      "message": "Subscribe to our newsletter, and follow us around",
+    "NewsletterForm": {
       "inputPlaceholder": "Enter Email",
       "inputError": "Please enter a valid email",
-      "cta": "Subscribe Now"
+      "cta": "Subscribe Now",
+      "dialogs": {
+        "success": {
+          "title": "Thank you for subscribing!",
+          "message": "We will keep you updated with our latest posts and news."
+        },
+        "error": {
+          "title": "Something went wrong",
+          "generic": "We couldn't subscribe you to our newsletter. Please try again later",
+          "userAlreadyExist": "This email is already subscribed, we appreciate your interest, but there is no need to subscribe again :)"
+        }
+      }
+    },
+    "Footer": {
+      "newsletterMessage": "Subscribe to our newsletter, and follow us around"
     }
   }
 }
