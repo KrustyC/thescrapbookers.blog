@@ -22,7 +22,8 @@ export const ErrorDialog: React.FC<ErrorDialogProps> = ({
         <Dialog.Panel className="mx-auto max-w-sm rounded bg-white p-6">
           <Dialog.Title>Something went wrong</Dialog.Title>
           <Dialog.Description>
-            We couldn't subscribe you to our newsletter. Please try again later
+            We couldn{"'"}t subscribe you to our newsletter. Please try again
+            later
           </Dialog.Description>
         </Dialog.Panel>
       </div>
