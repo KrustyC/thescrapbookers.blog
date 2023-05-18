@@ -1,5 +1,6 @@
 const ms = require("ms");
 const withNextIntl = require("next-intl/plugin")("./src/i18n.ts");
+const { withSentryConfig } = require("@sentry/nextjs");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = withNextIntl({
@@ -28,8 +29,6 @@ const nextConfig = withNextIntl({
             ].join(", "),
           },
         ],
-        // If you're deploying on a host that doesn't support the `vary` header (e.g. Vercel),
-        // make sure to disable caching for prefetch requests for Server Components.
         missing: [
           {
             type: "header",
@@ -41,4 +40,24 @@ const nextConfig = withNextIntl({
   },
 });
 
-module.exports = nextConfig;
+// Injected content via Sentry wizard below
+
+module.exports = withSentryConfig(
+  nextConfig,
+  {
+    // https://github.com/getsentry/sentry-webpack-plugin#options
+    // Suppresses source map uploading logs during build
+    silent: true,
+    org: "the-scrapbookers",
+    project: "the-scrapbookers-blog",
+  },
+  {
+    // For all available options, see:
+    // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
+
+    widenClientFileUpload: true,
+    transpileClientSDK: true,
+    hideSourceMaps: true,
+    disableLogger: true,
+  }
+);
