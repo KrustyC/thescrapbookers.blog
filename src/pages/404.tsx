@@ -1,8 +1,9 @@
-import "../globals.css";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 import eyesPic from "../../public/images/eyes.png";
+
+import "../globals.css";
 
 export default function NotFound() {
   return (

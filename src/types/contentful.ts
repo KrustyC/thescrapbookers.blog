@@ -1,5 +1,5 @@
-import { Asset, EntryFieldTypes } from "contentful";
 import { Document } from "@contentful/rich-text-types";
+import { Asset, EntryFieldTypes } from "contentful";
 
 export interface ContinentSkeleton {
   contentTypeId: "continent";

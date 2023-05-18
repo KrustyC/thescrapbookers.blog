@@ -1,13 +1,15 @@
-import format from "date-fns/format";
-import parse from "html-react-parser";
 import Image from "next/image";
 import Link from "next-intl/link";
-import { formatDate, getFormat } from "utils/date";
+import format from "date-fns/format";
+import parse from "html-react-parser";
+
 import { AppLocale, Post } from "types/global";
+import { formatDate, getFormat } from "utils/date";
 import { poppins } from "utils/fonts";
-import { Breadcrumbs } from "./Breadcrumbs";
 
 import { RichText } from "./RichText/RichText";
+import { Breadcrumbs } from "./Breadcrumbs";
+
 
 interface BlogPostProps {
   post: Post;

@@ -1,13 +1,13 @@
-import "../../globals.css";
-
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 import { useLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 
-import { crimsonText } from "utils/fonts";
 import { AppLocale } from "types/global";
+import { crimsonText } from "utils/fonts";
+
+import "../../globals.css";
 
 interface Props {
   children: React.ReactNode;

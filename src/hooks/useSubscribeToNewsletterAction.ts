@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
+
 import { subscribeToNewsletterAction } from "actions/subscribe-to-newsletter-action";
 import type { NewsletterSubscribeErroCode } from "utils/error-codes";
 

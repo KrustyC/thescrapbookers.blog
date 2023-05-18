@@ -1,4 +1,4 @@
-import { PropsWithChildren, Children } from "react";
+import { Children, PropsWithChildren } from "react";
 import Image from "next/image";
 import { Block, Inline } from "@contentful/rich-text-types";
 import parse from "html-react-parser";

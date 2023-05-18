@@ -1,10 +1,12 @@
 import { getTranslations } from "next-intl/server";
+
 import type { AppLocale } from "types/global";
 import { getPostsByTag } from "utils/api";
 
 import { SectionWithTitle } from "../SectionWIthTitle/SectionWithTitle";
-import { Post } from "./Post";
+
 import { FeaturedPostsSectionSkeleton } from "./FeaturedPostsSectionSkeleton";
+import { Post } from "./Post";
 
 export default async function FeaturedPostsSection({
   locale,

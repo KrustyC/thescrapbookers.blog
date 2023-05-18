@@ -1,15 +1,16 @@
 import { Suspense } from "react";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { Hero } from "components/Hero";
+
+import { AboutUsSection } from "components/AboutUsSection";
 import FeaturedPostsSection, {
   FeaturedPostsSectionSkeleton,
 } from "components/FeaturedPostsSection/FeaturedPostsSection";
+import { Footer } from "components/Footer";
+import { Hero } from "components/Hero";
 import SmallNotesSection, {
   SmallNotesSectionSkeleton,
 } from "components/SmallNotesSection/SmallNotesSection";
-import { AboutUsSection } from "components/AboutUsSection";
-import { Footer } from "components/Footer";
 import { AppLocale } from "types/global";
 import { createAlternates } from "utils/urls";
 

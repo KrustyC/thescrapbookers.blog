@@ -1,6 +1,7 @@
 "use client";
 
 import { Dialog } from "@headlessui/react";
+
 import {
   NEWSLETTER_SUBSCIRBE_ERRORS,
   NewsletterSubscribeErroCode,

@@ -1,7 +1,8 @@
+import { Entry } from "contentful";
+
+import { ContinentSkeleton, CountrySkeleton } from "types/contentful";
 import { Country } from "types/global";
 import { extractImageDataFromContentfulAsset } from "utils/images";
-import { ContinentSkeleton, CountrySkeleton } from "types/contentful";
-import { Entry } from "contentful";
 
 interface ParseContentfulCountryFieldsOptions {
   includeDescription: boolean;

@@ -1,6 +1,6 @@
-import format from "date-fns/format";
-import { SectionWithTitle } from "./SectionWIthTitle/SectionWithTitle";
 import { poppins } from "utils/fonts";
+
+import { SectionWithTitle } from "./SectionWIthTitle/SectionWithTitle";
 
 interface ICategory {
   name: string;

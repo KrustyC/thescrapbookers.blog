@@ -1,9 +1,10 @@
 "use server";
 
 import mailchimp, {
-  type Status,
   ErrorResponse,
+  type Status,
 } from "@mailchimp/mailchimp_marketing";
+
 import {
   NEWSLETTER_SUBSCIRBE_ERRORS,
   type NewsletterSubscribeErroCode,

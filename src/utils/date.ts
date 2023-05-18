@@ -1,5 +1,6 @@
 import format from "date-fns/format";
-import { it, enGB } from "date-fns/locale";
+import { enGB, it } from "date-fns/locale";
+
 import { AppLocale } from "types/global";
 
 interface FormatDateOptions {

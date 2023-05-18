@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+
 import type { CountrySkeleton } from "types/contentful";
 import { getContentfulClient } from "utils/contentful-client";
 

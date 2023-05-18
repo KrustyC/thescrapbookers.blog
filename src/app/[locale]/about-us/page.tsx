@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
-import { poppins, crimsonText } from "utils/fonts";
+
+import { crimsonText, poppins } from "utils/fonts";
 
 export default function ALilIntroductionPage() {
   const t = useTranslations("AboutUs");

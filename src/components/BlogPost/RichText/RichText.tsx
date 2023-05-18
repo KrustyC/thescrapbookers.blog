@@ -2,16 +2,17 @@ import {
   documentToReactComponents,
   Options,
 } from "@contentful/rich-text-react-renderer";
-import { INLINES, BLOCKS, MARKS, Document } from "@contentful/rich-text-types";
+import { BLOCKS, Document, INLINES, MARKS } from "@contentful/rich-text-types";
+
 import {
   Asset,
   Bold,
-  Text,
   Heading,
-  OrderedList,
-  UnorderedList,
   Hyperlink,
   ListItem,
+  OrderedList,
+  Text,
+  UnorderedList,
 } from "./Blocks";
 
 const options: Options = {

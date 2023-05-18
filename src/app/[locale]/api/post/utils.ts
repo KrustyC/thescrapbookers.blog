@@ -1,12 +1,13 @@
-import type { Country, Post } from "types/global";
+import { Entry } from "contentful";
+
 import type {
   AuthorSkelton,
   ContinentSkeleton,
   CountrySkeleton,
   PostSkeleton,
 } from "types/contentful";
+import type { Country, Post } from "types/global";
 import { extractImageDataFromContentfulAsset } from "utils/images";
-import { Entry } from "contentful";
 
 function generatePostHref(
   slug: string,

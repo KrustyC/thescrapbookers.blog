@@ -1,8 +1,9 @@
-import { Navbar } from "components/Navbar";
-import { Footer } from "components/Footer";
-import { AppLocale } from "types/global";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+
+import { Footer } from "components/Footer";
+import { Navbar } from "components/Navbar";
+import { AppLocale } from "types/global";
 import { createAlternates } from "utils/urls";
 
 interface IntroductionPageProps {

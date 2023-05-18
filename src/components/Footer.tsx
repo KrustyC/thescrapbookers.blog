@@ -1,11 +1,13 @@
 import Image from "next/image";
-import Link from "next-intl/link";
 import { useTranslations } from "next-intl";
+import Link from "next-intl/link";
+
 import { AppLocale } from "types/global";
 
 import logoPic from "../../public/images/logo-black.png";
-import { NewsletterForm } from "./NewsletterForm";
+
 import { LocaleSwitch } from "./LocaleSwitch";
+import { NewsletterForm } from "./NewsletterForm";
 
 interface FooterProps {
   locale: AppLocale;

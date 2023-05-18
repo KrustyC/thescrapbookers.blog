@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+
 import type { PostSkeleton } from "types/contentful";
 import { getContentfulClient } from "utils/contentful-client";
 

@@ -1,8 +1,9 @@
 "use client";
 
-import { usePathname } from "next-intl/client";
 import { useRouter } from "next/navigation";
+import { usePathname } from "next-intl/client";
 import { Switch } from "@headlessui/react";
+
 import { AppLocale } from "types/global";
 
 interface LocaleSwitchProps {
