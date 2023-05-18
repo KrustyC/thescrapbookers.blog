@@ -54,6 +54,6 @@ export default createMiddleware({
 export const config = {
   // Skip all paths that should not be internationalized
   matcher: [
-    "/((?!icons|_next/static|_next/image|api|en/api|it/api|sitemap.xml|robots.txt|_ipx|favicon.ico).*)",
+    "/((?!icons|images|_next/static|_next/image|api|en/api|it/api|sitemap.xml|robots.txt|_ipx|favicon.ico).*)",
   ],
 };
