@@ -1,8 +1,8 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import { BugFixingIcon } from "icons/BugFixing";
 
+import { BugFixingIcon } from "icons/BugFixing";
 import { AppLocale } from "types/global";
 
 const ERROR_MESSAGES = {

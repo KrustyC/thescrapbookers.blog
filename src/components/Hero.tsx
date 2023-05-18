@@ -2,10 +2,10 @@ import React, { PropsWithChildren } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { InstagramIcon } from "icons/Instagram";
-import { TwitterIcon } from "icons/Twitter";
 
 import { LocaleSwitch } from "components/LocaleSwitch";
+import { InstagramIcon } from "icons/Instagram";
+import { TwitterIcon } from "icons/Twitter";
 import { AppLocale } from "types/global";
 import { URLS } from "utils/urls";
 

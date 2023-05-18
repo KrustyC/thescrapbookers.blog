@@ -1,7 +1,7 @@
-import Image from "next/image";
-import Link from "next-intl/link";
 import format from "date-fns/format";
 import parse from "html-react-parser";
+import Image from "next/image";
+import Link from "next-intl/link";
 
 import { AppLocale, Post } from "types/global";
 import { formatDate, getFormat } from "utils/date";

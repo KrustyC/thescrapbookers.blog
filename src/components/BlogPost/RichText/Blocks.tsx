@@ -1,7 +1,7 @@
 import { Children, PropsWithChildren } from "react";
-import Image from "next/image";
 import { Block, Inline } from "@contentful/rich-text-types";
 import parse from "html-react-parser";
+import Image from "next/image";
 
 export const Bold: React.FC<PropsWithChildren> = ({ children }) => (
   <span className="font-bold">{children}</span>
