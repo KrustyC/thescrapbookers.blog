@@ -64,6 +64,7 @@ export const NewsletterForm: React.FC<NewsletterFormProps> = ({ messages }) => {
     <>
       <form
         style={poppins.style}
+        autoComplete="off"
         className="flex flex-col w-full lg:w-auto mt-8 lg:mt-0 lg:flex-row lg:justify-end lg:h-16"
         onSubmit={handleSubmit(onSubscribe)}
       >
