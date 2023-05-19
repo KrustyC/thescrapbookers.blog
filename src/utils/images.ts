@@ -1,6 +1,6 @@
 import type { Asset, AssetFields, AssetFile } from "contentful";
 
-import type { Image } from "types/global";
+import type { Image } from "@/types/global";
 
 function fileIsAssetFile(file: AssetFields | AssetFile): file is AssetFile {
   return Object.keys(file).includes("details");

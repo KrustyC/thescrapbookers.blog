@@ -1,6 +1,6 @@
-import { poppins } from "utils/fonts";
-
 import { SectionWithTitle } from "./SectionWIthTitle/SectionWithTitle";
+
+import { poppins } from "@/utils/fonts";
 
 interface ICategory {
   name: string;

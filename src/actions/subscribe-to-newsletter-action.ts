@@ -8,7 +8,7 @@ import mailchimp, {
 import {
   NEWSLETTER_SUBSCIRBE_ERRORS,
   type NewsletterSubscribeErroCode,
-} from "utils/error-codes";
+} from "@/utils/error-codes";
 
 function isVariableDefined(variable: unknown): variable is string {
   return !!variable && typeof variable === "string";

@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 
-import type { ContinentSkeleton } from "types/contentful";
-import { getContentfulClient } from "utils/contentful-client";
-
 import { parseContentfulContinentFields } from "../utils";
+
+import type { ContinentSkeleton } from "@/types/contentful";
+import { getContentfulClient } from "@/utils/contentful-client";
 
 interface Options {
   params: {

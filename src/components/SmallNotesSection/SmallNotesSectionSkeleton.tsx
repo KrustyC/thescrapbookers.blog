@@ -1,4 +1,4 @@
-import { LoadingSectionWithTitle } from "components/SectionWIthTitle/LoadingSectionWithTitle";
+import { LoadingSectionWithTitle } from "@/components/SectionWIthTitle/LoadingSectionWithTitle";
 
 const POST_COUNTS = [1, 2, 3, 4];
 

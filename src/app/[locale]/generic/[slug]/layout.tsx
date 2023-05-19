@@ -1,6 +1,6 @@
-import { Footer } from "components/Footer";
-import { Navbar } from "components/Navbar";
-import { AppLocale } from "types/global";
+import { Footer } from "@/components/Footer";
+import { Navbar } from "@/components/Navbar";
+import { AppLocale } from "@/types/global";
 
 export default function GenericLayout({
   children,

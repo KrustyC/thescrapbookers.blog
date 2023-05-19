@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next-intl/link";
 
-import type { AppLocale, Post as IPost } from "types/global";
-import { formatDate, getFormat } from "utils/date";
-import { poppins } from "utils/fonts";
+import type { AppLocale, Post as IPost } from "@/types/global";
+import { formatDate, getFormat } from "@/utils/date";
+import { poppins } from "@/utils/fonts";
 
 const DEFAULT_IMAGE = ""; // @TODO Ask Bea to do a nice default image
 

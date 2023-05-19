@@ -1,7 +1,7 @@
 import Link from "next-intl/link";
 
-import type { AppLocale, Post as IPost } from "types/global";
-import { poppins } from "utils/fonts";
+import type { AppLocale, Post as IPost } from "@/types/global";
+import { poppins } from "@/utils/fonts";
 
 interface PostProps {
   post: IPost;

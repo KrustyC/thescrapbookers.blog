@@ -1,12 +1,12 @@
 import { getTranslations } from "next-intl/server";
 
-import type { AppLocale,} from "types/global";
-import { getPostsByTag } from "utils/api";
-
 import { SectionWithTitle } from "../SectionWIthTitle/SectionWithTitle";
 
 import { SmallNotePost } from "./SmallNotePost";
 import { SmallNotesSectionSkeleton } from "./SmallNotesSectionSkeleton";
+
+import type { AppLocale,} from "@/types/global";
+import { getPostsByTag } from "@/utils/api";
 
 export default async function SmallNotesSection({
   locale,

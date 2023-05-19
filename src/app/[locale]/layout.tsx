@@ -4,10 +4,10 @@ import Script from "next/script";
 import { useLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 
-import { AppLocale } from "types/global";
-import { crimsonText } from "utils/fonts";
-
 import "../../globals.css";
+
+import { AppLocale } from "@/types/global";
+import { crimsonText } from "@/utils/fonts";
 
 interface Props {
   children: React.ReactNode;

@@ -1,12 +1,12 @@
 import { NextResponse } from "next/server";
 
-import { PostSkeleton } from "types/contentful";
-import { getContentfulClient } from "utils/contentful-client";
-
 import {
   parseContentfulNextPostFields,
   parseContentfulPostFieldsForSinglePost,
 } from "../utils";
+
+import { PostSkeleton } from "@/types/contentful";
+import { getContentfulClient } from "@/utils/contentful-client";
 
 interface Options {
   params: {

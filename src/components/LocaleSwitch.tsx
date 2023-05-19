@@ -4,7 +4,7 @@ import { Switch } from "@headlessui/react";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next-intl/client";
 
-import { AppLocale } from "types/global";
+import { AppLocale } from "@/types/global";
 
 interface LocaleSwitchProps {
   helpText: string;

@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 
-import { CountrySkeleton } from "types/contentful";
-import { getContentfulClient } from "utils/contentful-client";
-
 import { parseContentfulCountryFields } from "./utils";
+
+import { CountrySkeleton } from "@/types/contentful";
+import { getContentfulClient } from "@/utils/contentful-client";
 
 interface Options {
   params: {

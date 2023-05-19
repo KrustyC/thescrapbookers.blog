@@ -1,4 +1,4 @@
-import { AppLocale, Continent, Country, Post } from "types/global";
+import { AppLocale, Continent, Country, Post } from "@/types/global";
 
 interface GetPostsByTagParams {
   tag: "featured" | "smallnoteHome";

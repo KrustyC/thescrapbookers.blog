@@ -5,7 +5,7 @@ import { Dialog } from "@headlessui/react";
 import {
   NEWSLETTER_SUBSCIRBE_ERRORS,
   NewsletterSubscribeErroCode,
-} from "utils/error-codes";
+} from "@/utils/error-codes";
 
 interface ErrorDialogProps {
   isOpen: boolean;

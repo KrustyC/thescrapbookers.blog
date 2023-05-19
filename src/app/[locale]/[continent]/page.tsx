@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
-import { AppLocale } from "types/global";
-import { getContinent } from "utils/api";
-import { createAlternates } from "utils/urls";
+import { AppLocale } from "@/types/global";
+import { getContinent } from "@/utils/api";
+import { createAlternates } from "@/utils/urls";
 
 interface ContinentPageProps {
   params: {

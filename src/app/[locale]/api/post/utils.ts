@@ -5,9 +5,9 @@ import type {
   ContinentSkeleton,
   CountrySkeleton,
   PostSkeleton,
-} from "types/contentful";
-import type { Country, Post } from "types/global";
-import { extractImageDataFromContentfulAsset } from "utils/images";
+} from "@/types/contentful";
+import type { Country, Post } from "@/types/global";
+import { extractImageDataFromContentfulAsset } from "@/utils/images";
 
 function generatePostHref(
   slug: string,

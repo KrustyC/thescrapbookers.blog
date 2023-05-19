@@ -3,12 +3,12 @@ import parse from "html-react-parser";
 import Image from "next/image";
 import Link from "next-intl/link";
 
-import { AppLocale, Post } from "types/global";
-import { formatDate, getFormat } from "utils/date";
-import { poppins } from "utils/fonts";
-
 import { RichText } from "./RichText/RichText";
 import { Breadcrumbs } from "./Breadcrumbs";
+
+import { AppLocale, Post } from "@/types/global";
+import { formatDate, getFormat } from "@/utils/date";
+import { poppins } from "@/utils/fonts";
 
 
 interface BlogPostProps {

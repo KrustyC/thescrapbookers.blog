@@ -3,14 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
-import { LocaleSwitch } from "components/LocaleSwitch";
-import { InstagramIcon } from "icons/Instagram";
-import { TwitterIcon } from "icons/Twitter";
-import { AppLocale } from "types/global";
-import { URLS } from "utils/urls";
-
 import homeHeroPic from "../../public/images/home-hero.jpg";
 import logoPic from "../../public/images/logo-white.png";
+
+import { LocaleSwitch } from "@/components/LocaleSwitch";
+import { InstagramIcon } from "@/icons/Instagram";
+import { TwitterIcon } from "@/icons/Twitter";
+import { AppLocale } from "@/types/global";
+import { URLS } from "@/utils/urls";
 
 interface NavbarProps {
   locale: AppLocale;

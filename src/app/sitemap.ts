@@ -1,4 +1,4 @@
-import { Post } from "types/global";
+import { Post } from "@/types/global";
 
 const BASE_PATHS = ["", "/about-us"];
 

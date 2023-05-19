@@ -2,8 +2,8 @@
 
 import { useParams } from "next/navigation";
 
-import { BugFixingIcon } from "icons/BugFixing";
-import { AppLocale } from "types/global";
+import { BugFixingIcon } from "@/icons/BugFixing";
+import { AppLocale } from "@/types/global";
 
 const ERROR_MESSAGES = {
   it: "Oops, sembra che si sia verificato un errore inatteso. I nostri developer sono stati informati. Ti preghiamo di riprovare più tardi.",

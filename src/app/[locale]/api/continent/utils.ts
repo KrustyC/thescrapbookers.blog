@@ -1,8 +1,8 @@
 import { Entry } from "contentful";
 
-import { ContinentSkeleton } from "types/contentful";
-import { Continent } from "types/global";
-import { extractImageDataFromContentfulAsset } from "utils/images";
+import { ContinentSkeleton } from "@/types/contentful";
+import { Continent } from "@/types/global";
+import { extractImageDataFromContentfulAsset } from "@/utils/images";
 
 export function parseContentfulContinentFields(
   continent: Entry<ContinentSkeleton>
