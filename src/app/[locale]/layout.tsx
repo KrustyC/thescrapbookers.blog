@@ -89,10 +89,10 @@ export default function LocaleLayout({ children, params }: Props) {
         <>
           <Script
             async
-            strategy="afterInteractive"
+            strategy="lazyOnload"
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.googleAnalyticsId}`}
           />
-          <Script id="ga-script" strategy="afterInteractive">
+          <Script id="ga-script" strategy="lazyOnload">
             {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
@@ -101,6 +101,11 @@ export default function LocaleLayout({ children, params }: Props) {
                 gtag('config', '${process.env.googleAnalyticsId}');
                 `}
           </Script>
+
+          {/* @TODO
+           * Check this https://nextjs.org/docs/app/building-your-application/optimizing/scripts
+           * Once Partytown and worker are supported in app folder, we can use them here
+           */}
         </>
       )}
     </html>
