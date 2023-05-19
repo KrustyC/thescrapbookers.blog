@@ -27,7 +27,8 @@ export const Post: React.FC<PostProps> = ({
           sizes="100%"
           fill
           src={thumbnailImage?.url || DEFAULT_IMAGE}
-          alt="man doing something"
+          alt={thumbnailImage?.description || "default image"}
+          loading="lazy"
           style={{ objectFit: "cover" }}
         />
       </Link>
