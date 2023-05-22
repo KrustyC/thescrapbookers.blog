@@ -5,7 +5,7 @@ import { useLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 
 import { AppLocale } from "@/types/global";
-import { crimsonText } from "@/utils/fonts";
+import { poppins } from "@/utils/fonts";
 
 interface Props {
   children: React.ReactNode;
@@ -80,7 +80,7 @@ export default function LocaleLayout({ children, params }: Props) {
   }
 
   return (
-    <html lang={locale} style={crimsonText.style}>
+    <html lang={locale} style={poppins.style}>
       <body>{children}</body>
 
       {process.env.environment === "production" && (

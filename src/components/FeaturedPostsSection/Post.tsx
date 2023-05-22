@@ -20,10 +20,11 @@ export const Post: React.FC<PostProps> = ({
     <div className="flex flex-col w-full">
       <Link
         href={href}
-        className="flex w-full aspect-square relative bg-gray-200"
+        className="flex w-full aspect-square relative bg-gray-200 rounded-2xl"
         prefetch={false}
       >
         <Image
+          className="rounded-2xl"
           sizes="100%"
           fill
           src={thumbnailImage?.url || DEFAULT_IMAGE}
@@ -33,11 +34,11 @@ export const Post: React.FC<PostProps> = ({
         />
       </Link>
       <div
-        className="flex items-center mt-6 uppercase tracking-widest text-xs text-gray-400 "
+        className="flex items-center mt-6 uppercase tracking-widest text-regular text-gray-400 "
         style={poppins.style}
       >
         <span>{category}</span>
-        <div className="border-r-2 h-2 mx-2" />
+        <div className="border-r-2 h-3 mx-2" />
         <span>
           {formatDate({
             date: new Date(date),

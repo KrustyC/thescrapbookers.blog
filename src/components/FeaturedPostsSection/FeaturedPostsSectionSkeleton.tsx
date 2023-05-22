@@ -8,7 +8,7 @@ export const FeaturedPostsSectionSkeleton = () => {
       <div className="flex gap-x-16">
         {POST_COUNTS.map((_, i) => (
           <div key={i} className="flex flex-col w-full animate-pulse">
-            <div className="flex w-full aspect-square relative bg-gray-300" />
+            <div className="flex w-full aspect-square relative bg-gray-300 rounded-2xl" />
 
             <div className="flex items-center mt-4 h-4">
               <div className="bg-gray-300 h-4 w-1/2" />

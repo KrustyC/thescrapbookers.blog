@@ -86,7 +86,14 @@
       }
     },
     "Footer": {
-      "newsletterMessage": "Iscriviti alla nostra newsletter per essere sempre aggiornato"
+      "notes": "Note",
+      "newsletterMessage": "Dagli Scrapbookers",
+      "Links": {
+        "asia": "Asia",
+        "remoteRoaming": "Remote Roaming",
+        "cheatsheets": "Cheatsheets",
+        "aboutUs": "Chi SIamo"
+      }
     }
   }
 }

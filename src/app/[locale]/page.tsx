@@ -8,6 +8,7 @@ import FeaturedPostsSection, {
 } from "@/components/FeaturedPostsSection/FeaturedPostsSection";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
+import { HighlightSection } from "@/components/HighlightSection";
 import SmallNotesSection, {
   SmallNotesSectionSkeleton,
 } from "@/components/SmallNotesSection/SmallNotesSection";
@@ -77,22 +78,23 @@ export async function generateMetadata({
 
 export default function Home({ params }: { params: { locale: AppLocale } }) {
   return (
-    <div className="flex flex-col">
-      <Hero locale={params.locale} />
+    <>
+      <div className="flex flex-col">
+        {/* <Hero locale={params.locale} /> */}
 
-      <Suspense fallback={<FeaturedPostsSectionSkeleton />}>
-        {/* @ts-expect-error Server Component */}
-        <FeaturedPostsSection locale={params.locale} />
-      </Suspense>
+        <Suspense fallback={<FeaturedPostsSectionSkeleton />}>
+          {/* @ts-expect-error Server Component */}
+          <FeaturedPostsSection locale={params.locale} />
+        </Suspense>
 
-      <Suspense fallback={<SmallNotesSectionSkeleton />}>
-        {/* @ts-expect-error Server Component */}
-        <SmallNotesSection locale={params.locale} />
-      </Suspense>
+        <AboutUsSection />
 
-      <AboutUsSection />
+        <HighlightSection />
 
-      <Footer locale={params.locale} />
-    </div>
+        <div className="-mt-[160px] z-50 block">
+          <Footer locale={params.locale} />
+        </div>
+      </div>
+    </>
   );
 }

@@ -1,6 +1,10 @@
 import { AlternateURLs } from "next/dist/lib/metadata/types/alternative-urls-types";
 
 export const URLS = {
+  asiaArticles: () => "/asia",
+  remoteRoaming: () => "/remote-roaming",
+  cheatsheets: () => "/cheat-sheets",
+  aboutUs: () => "/about-us",
   instagramURL: () =>
     "https://www.instagram.com/the_scrapbookers?igshid=OTjhZDVkZWE=",
   twitterURL: () =>

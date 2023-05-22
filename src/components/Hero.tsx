@@ -3,14 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
-import homeHeroPic from "../../public/images/home-hero.jpg";
-import logoPic from "../../public/images/logo-white.png";
-
 import { LocaleSwitch } from "@/components/LocaleSwitch";
 import { InstagramIcon } from "@/icons/Instagram";
 import { TwitterIcon } from "@/icons/Twitter";
 import { AppLocale } from "@/types/global";
 import { URLS } from "@/utils/urls";
+
+import homeHeroPic from "../../public/images/home-hero.jpg";
+import logoPic from "../../public/images/logo-white.png";
 
 interface NavbarProps {
   locale: AppLocale;
@@ -71,7 +71,7 @@ export const Hero: React.FC<HeroProps> = ({ locale }) => {
   const t = useTranslations("Home.Hero");
 
   return (
-    <div className="w-full pb-20 lg:pb-40 relative bg-black text-white flex justify-center">
+    <div className="w-full pb-20 lg:pb-40 text-white flex justify-center">
       <div className="flex flex-col px-6 lg:px-16 xl:px-48 z-10">
         <Navbar locale={locale} />
         <h1 className="text-5xl lg:text-7xl leading-[3.5rem] lg:leading-[5.5rem] font-bold w-full lg:w-3/4">
@@ -87,7 +87,7 @@ export const Hero: React.FC<HeroProps> = ({ locale }) => {
           </CircularLink>
         </div>
       </div>
-      <Image
+      {/* <Image
         src={homeHeroPic}
         alt="Picture of the author"
         placeholder="blur"
@@ -95,7 +95,8 @@ export const Hero: React.FC<HeroProps> = ({ locale }) => {
         priority
         fill
         style={{ objectFit: "cover" }}
-      />
+      /> */}
+      <div className="curve"></div>
     </div>
   );
 };

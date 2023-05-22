@@ -8,7 +8,7 @@
       "title": "We are 'digital packers', half digital nomads, half backpackers."
     },
     "Featured": {
-      "title": "Our recent thoughts",
+      "title": "Recent Articles",
       "error1": "An error happened while fetching featured post...",
       "error2": "Sorry for the incovenience, please bear with us, we are already working towards a fix."
     },
@@ -86,7 +86,14 @@
       }
     },
     "Footer": {
-      "newsletterMessage": "Subscribe to our newsletter, and follow us around"
+      "notes": "Notes",
+      "newsletterMessage": "From the Scrapbookers",
+      "Links": {
+        "asia": "Asia Articles",
+        "remoteRoaming": "Remote Roaming",
+        "cheatsheets": "Cheatsheets",
+        "aboutUs": "About Us"
+      }
     }
   }
 }

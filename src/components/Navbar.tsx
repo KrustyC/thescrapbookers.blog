@@ -2,10 +2,10 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import Link from "next-intl/link";
 
-import logoPic from "../../public/images/logo-black.png";
-
 import { LocaleSwitch } from "@/components/LocaleSwitch";
 import { AppLocale } from "@/types/global";
+
+import logoPic from "../../public/images/logo-black.png";
 
 interface NavbarProps {
   locale: AppLocale;
