@@ -49,7 +49,7 @@ export const PhotoDumpSection: React.FC = () => {
         </div>
       </div>
 
-      <div className="absolute left-[250px] bottom-[80px] flex flex-col rounded-2xl p-8 bg-gray-200shadow-2xl">
+      <div className="absolute left-[250px] bottom-[80px] flex flex-col rounded-2xl p-8 bg-white drop-shadow-2xl">
         <h2 className="text-4xl font-semibold  w-fit border-primary border-b-8">
           {t("title")}
         </h2>
