@@ -1,9 +1,20 @@
 import { ReactNode } from "react";
+import { Metadata } from "next";
 
 import "../globals.css";
 
 type Props = {
   children: ReactNode;
+};
+
+export const metadata: Metadata = {
+  icons: {
+    icon: {
+      url: "/favicon.ico",
+      type: "image/png",
+    },
+    shortcut: { url: "/favicon.png", type: "image/png" },
+  },
 };
 
 /**
