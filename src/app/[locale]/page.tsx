@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { getTranslations } from "next-intl/server";
 
 import { Footer } from "@/components/Footer";
@@ -13,9 +14,10 @@ import FeaturedPostsSection, {
 import { Hero } from "@/components/home/Hero/Hero";
 import { HighlightSection } from "@/components/home/HighlightSection";
 import { PhotoDumpSection } from "@/components/home/PhotoDumpSection";
-import { Video } from "@/components/home/Video";
 import { AppLocale } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
+
+const DynamicVideo = dynamic(() => import("../../components/home/Video"));
 
 interface HomePageProps {
   params: {
@@ -89,7 +91,7 @@ export default function Home({ params }: { params: { locale: AppLocale } }) {
           <FeaturedPostsSection locale={params.locale} />
         </Suspense>
 
-        <Video />
+        <DynamicVideo />
 
         <Suspense fallback={<DigitalNomadingSectionSkeleton />}>
           {/* @ts-expect-error Server Component */}
