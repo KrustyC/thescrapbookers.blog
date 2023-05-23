@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 
 import { crimsonText, poppins } from "@/utils/fonts";
 
-export default function ALilIntroductionPage() {
+export default function AboutUsPage() {
   const t = useTranslations("AboutUs");
   const bea = useTranslations("AboutUs.Beatrice");
   const davide = useTranslations("AboutUs.Davide");
