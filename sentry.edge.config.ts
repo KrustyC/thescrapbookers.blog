@@ -9,3 +9,5 @@ Sentry.init({
   tracesSampleRate: 1,
   debug: false,
 });
+
+// https://stream.mux.com/00lGJE5gxu024LMfOBxp5sEjfXEqvYLYbVOgA00Cl4xj400.m3u8

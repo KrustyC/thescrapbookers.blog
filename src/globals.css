@@ -22,8 +22,34 @@ html {
   @apply bg-black text-white mx-4 lg:w-1/2 lg:mx-auto rounded-xl p-6 md:p-12 text-xl flex flex-col justify-between;
 }
 
-.react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  display: none;
+mux-player {
+  /* Hide all controls at once */
+  --controls: none;
+
+  /* Hide the error dialog */
+  --dialog: none;
+
+  /* Hide the loading indicator */
+  --loading-indicator: none;
+
+  /* Target all sections by excluding the section prefix */
+  --play-button: none;
+  --live-button: none;
+  --seek-backward-button: none;
+  --seek-forward-button: none;
+  --mute-button: none;
+  --captions-button: none;
+  --airplay-button: none;
+  --pip-button: none;
+  --fullscreen-button: none;
+  --cast-button: none;
+  --playback-rate-button: none;
+  --volume-range: none;
+  --time-range: none;
+  --time-display: none;
+  --duration-display: none;
+
+  /* Target a specific section by prefixing the CSS var with (top|center|bottom) */
+  --center-controls: none;
+  --bottom-play-button: none;
 }
