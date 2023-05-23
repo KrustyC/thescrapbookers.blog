@@ -9,6 +9,7 @@ import FeaturedPostsSection, {
 } from "@/components/home/FeaturedPostsSection/FeaturedPostsSection";
 import { Hero } from "@/components/home/Hero/Hero";
 import { HighlightSection } from "@/components/home/HighlightSection";
+import { Video } from "@/components/home/Video";
 import { AppLocale } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
 // import DigitalNomadingSection, {
@@ -86,6 +87,8 @@ export default function Home({ params }: { params: { locale: AppLocale } }) {
           {/* @ts-expect-error Server Component */}
           <FeaturedPostsSection locale={params.locale} />
         </Suspense>
+
+        <Video />
 
         <AboutUsSection />
 
