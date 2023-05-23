@@ -7,8 +7,6 @@ import { SectionWithTitle } from "../SectionWIthTitle/SectionWithTitle";
 
 import { DigitalNomadingSectionSkeleton } from "./DigitalNomadingSectionSkeleton";
 import { Post } from "./Post";
-// import { Carousel } from "./Carousel";
-// import { SinglePost } from "./SinglePost";
 
 export default async function DigitalNomadingSection({
   locale,
@@ -19,13 +17,6 @@ export default async function DigitalNomadingSection({
 
   try {
     const { posts } = await getPostsByTag({ tag: "featured", locale });
-    // const [hilghlitedPostResult, otherPostsResult] = await Promise.all([
-    //   getPostsByTag({ tag: "featured", locale }),
-    //   getPostsByTag({ tag: "featured", locale }),
-    // ]);
-
-    // const hilghlitedPost = hilghlitedPostResult.posts[0];
-    // const { posts: otherPosts } = otherPostsResult;
 
     return (
       <SectionWithTitle title={t("title")} primaryBackground>
