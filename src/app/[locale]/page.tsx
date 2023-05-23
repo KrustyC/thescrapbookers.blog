@@ -7,13 +7,13 @@ import FeaturedPostsSection, {
   FeaturedPostsSectionSkeleton,
 } from "@/components/FeaturedPostsSection/FeaturedPostsSection";
 import { Footer } from "@/components/Footer";
-import { Hero } from "@/components/Hero";
+import { Hero } from "@/components/Hero/Hero";
 import { HighlightSection } from "@/components/HighlightSection";
-import SmallNotesSection, {
-  SmallNotesSectionSkeleton,
-} from "@/components/SmallNotesSection/SmallNotesSection";
 import { AppLocale } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
+// import DigitalNomadingSection, {
+//   DigitalNomadingSectionSkeleton,
+// } from "@/components/DigitalNomadingSection/DigitalNomadingSection";
 
 interface HomePageProps {
   params: {
@@ -80,7 +80,7 @@ export default function Home({ params }: { params: { locale: AppLocale } }) {
   return (
     <>
       <div className="flex flex-col">
-        {/* <Hero locale={params.locale} /> */}
+        <Hero locale={params.locale} />
 
         <Suspense fallback={<FeaturedPostsSectionSkeleton />}>
           {/* @ts-expect-error Server Component */}

@@ -1,6 +1,7 @@
 "use client";
 
 import { Switch } from "@headlessui/react";
+import classNames from "classnames";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next-intl/client";
 
@@ -28,8 +29,10 @@ export const LocaleSwitch: React.FC<LocaleSwitchProps> = ({
     <Switch
       checked={isItalian}
       onChange={onToggle}
-      className={`${isItalian ? "bg-blue-600" : "bg-red-500"}
-          relative inline-flex items-center h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-background duration-600 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+      className={classNames(
+        "relative inline-flex items-center h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-background duration-600 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75",
+        { "bg-yellow-200": isItalian, "bg-white": !isItalian }
+      )}
     >
       <span className="sr-only">{helpText}</span>
       <span

@@ -22,6 +22,8 @@ html {
   @apply bg-black text-white mx-4 lg:w-1/2 lg:mx-auto rounded-xl p-6 md:p-12 text-xl flex flex-col justify-between;
 }
 
-.wave {
-  transform: rotate(180deg);
+.react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  display: none;
 }

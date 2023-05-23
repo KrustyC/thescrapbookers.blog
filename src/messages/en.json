@@ -5,11 +5,21 @@
       "description": "Travel blog digital nomads and culturally curious travellers  who wants to travel the world while working, connect with locals and other like minded travellers."
     },
     "Hero": {
-      "title": "We are 'digital packers', half digital nomads, half backpackers."
+      "title": {
+        "part1": "Take only memories,",
+        "part2": "leave only footprints."
+      },
+      "author": "Chief Seattle",
+      "subtitle": "The scary burning or smoky season had already made the air heavy and hazy in the north."
     },
     "Featured": {
       "title": "Recent Articles",
       "error1": "An error happened while fetching featured post...",
+      "error2": "Sorry for the incovenience, please bear with us, we are already working towards a fix."
+    },
+    "DigitalNomading": {
+      "title": "Digital Nomading",
+      "error1": "An error happened while fetching digital nomading post...",
       "error2": "Sorry for the incovenience, please bear with us, we are already working towards a fix."
     },
     "SmallNotes": {
@@ -21,6 +31,12 @@
       "title": "About Us",
       "content": "We are Davide and Beatrice, a software engineer and a freelance designer. We have just started our journey around the world and wanted to find a way to keep our family and close friends up to date on our whereabouts by sharing a few of our stories.",
       "cta": "Find out more"
+    },
+    "NavbarLinks": {
+      "asia": "Asia Articles",
+      "remoteRoaming": "Remote Roaming",
+      "cheatsheets": "Cheatsheets",
+      "aboutUs": "About Us"
     }
   },
   "AboutUs": {

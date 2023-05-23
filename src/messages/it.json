@@ -5,11 +5,21 @@
       "description": "Pensieri e consigli di viaggio per nomadi digitali ed amanti degli usi e costumi di culture straniere. Un blog per leggere storie su posti nuvi e a te sconosciuti."
     },
     "Hero": {
-      "title": "Storie di 'digital packers', metà nomadi digitali, metà backpackers."
+      "title": {
+        "part1": "Take only memories,",
+        "part2": "leave only footprints."
+      },
+      "author": "Chief Seattle",
+      "subtitle": "The scary burning or smoky season had already made the air heavy and hazy in the north."
     },
     "Featured": {
       "title": "Articoli Recenti",
       "error1": "Errore durante il caricamento dei post recenti...",
+      "error2": "Ci scusiamo per il disagio, siamo già al lavoro per risolvere il problema, ti preghiamo di riprovare tra qualche minuto."
+    },
+    "DigitalNomading": {
+      "title": "Nomadismo Digitale",
+      "error1": "Errore durante il caricamento dei post sul nomadismo digitale...",
       "error2": "Ci scusiamo per il disagio, siamo già al lavoro per risolvere il problema, ti preghiamo di riprovare tra qualche minuto."
     },
     "SmallNotes": {
@@ -21,6 +31,12 @@
       "title": "Chi Siamo",
       "content": "Siamo Davide e Beatrice, un software engineer e una designer freelance. Ci siamo da poco avventurati nel nostro viaggio intorno al mondo ed abbiamo deciso di creare quest blog per condividere un po' delle nostre storie.",
       "cta": "Scopri di più"
+    },
+    "NavbarLinks": {
+      "asia": "Asia",
+      "remoteRoaming": "Remote Roaming",
+      "cheatsheets": "Cheatsheets",
+      "aboutUs": "Chi SIamo"
     }
   },
   "AboutUs": {

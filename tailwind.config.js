@@ -8,9 +8,16 @@ module.exports = {
         "ita-flag": "url('/icons/ita.png')",
       },
       colors: {
-        primary: "#F7941D",
-        primary: "#36F7CE",
+        primary: "#21F8EC",
         black: "#1E1E1E",
+      },
+      fontSize: {
+        "10xl": "10rem",
+      },
+      screens: {
+        "3xl": "1600px",
+        "4xl": "2000px",
+        "5xl": "2400px",
       },
     },
   },
