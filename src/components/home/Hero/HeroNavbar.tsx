@@ -6,7 +6,7 @@ import { LocaleSwitch } from "@/components/LocaleSwitch";
 import { AppLocale } from "@/types/global";
 import { URLS } from "@/utils/urls";
 
-import logoPic from "../../../public/images/logo-white.png";
+import logoPic from "../../../../public/images/logo-white.png";
 
 interface HeroNavbarProps {
   locale: AppLocale;
@@ -33,7 +33,7 @@ export const HeroNavbar: React.FC<HeroNavbarProps> = ({ locale }) => {
         />
       </Link>
 
-      <div className="flex items-center gap-4 text-white uppercase font-semibold">
+      <div className="flex items-center gap-5 text-white uppercase font-semibold">
         <Link href={URLS.asiaArticles()}>{navbar("asia")}</Link>
         <Link href={URLS.remoteRoaming()}>{navbar("remoteRoaming")}</Link>
         <Link href={URLS.cheatsheets()}>{navbar("cheatsheets")}</Link>

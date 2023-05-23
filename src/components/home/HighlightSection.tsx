@@ -3,11 +3,12 @@ import Link from "next-intl/link";
 
 import { leagueGothic } from "@/utils/fonts";
 
-import homeHeroPic from "../../public/images/home-hero.jpg";
+import homeHeroPic from "../../../public/images/home-hero.jpg";
+import { ButtonLink } from "../uikit/ButtonLink";
 
 export const HighlightSection = () => {
   return (
-    <div className="flex p-16 relative w-full h-[680px]">
+    <div className="flex py-16 px-24 relative w-full h-[680px] 2xl:h-[780px]"> 
       <div className="flex flex-col z-10 text-white">
         <h2
           style={leagueGothic.style}
@@ -20,13 +21,13 @@ export const HighlightSection = () => {
           hazy in the nort
         </p>
 
-        <Link
+        <ButtonLink
           href="/asia/laos/vang-vieng-to-luang-prabang"
           type="submit"
-          className="font-light flex items-center justify-center rounded-2xl h-16 w-32 lg:w-56 bg-white text-black"
+          variant="white"
         >
           Read Article
-        </Link>
+        </ButtonLink>
       </div>
 
       <Image

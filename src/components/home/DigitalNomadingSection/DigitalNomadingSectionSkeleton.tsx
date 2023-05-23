@@ -1,8 +1,8 @@
-import { LoadingSectionWithTitle } from "@/components/SectionWIthTitle/LoadingSectionWithTitle";
+import { LoadingSectionWithTitle } from "@/components/home/SectionWIthTitle/LoadingSectionWithTitle";
 
 const POST_COUNTS = [1, 2, 3];
 
-export const FeaturedPostsSectionSkeleton = () => {
+export const DigitalNomadingSectionSkeleton = () => {
   return (
     <LoadingSectionWithTitle>
       <div className="flex gap-x-16">

@@ -1,12 +1,10 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import Link from "next-intl/link";
 
+import { ButtonLink } from "@/components/uikit/ButtonLink";
 import { poppins } from "@/utils/fonts";
 
-import aboutUsPic from "../../public/images/about-us.jpg";
-
-import { ButtonLink } from "./uikit/ButtonLink";
+import aboutUsPic from "../../../public/images/about-us.jpg";
 
 export const AboutUsSection: React.FC = () => {
   const t = useTranslations("Home.AboutUs");

@@ -2,13 +2,13 @@ import { Suspense } from "react";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
-import { AboutUsSection } from "@/components/AboutUsSection";
+import { Footer } from "@/components/Footer";
+import { AboutUsSection } from "@/components/home/AboutUsSection";
 import FeaturedPostsSection, {
   FeaturedPostsSectionSkeleton,
-} from "@/components/FeaturedPostsSection/FeaturedPostsSection";
-import { Footer } from "@/components/Footer";
-import { Hero } from "@/components/Hero/Hero";
-import { HighlightSection } from "@/components/HighlightSection";
+} from "@/components/home/FeaturedPostsSection/FeaturedPostsSection";
+import { Hero } from "@/components/home/Hero/Hero";
+import { HighlightSection } from "@/components/home/HighlightSection";
 import { AppLocale } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
 // import DigitalNomadingSection, {
@@ -91,7 +91,7 @@ export default function Home({ params }: { params: { locale: AppLocale } }) {
 
         <HighlightSection />
 
-        <div className="-mt-[160px] z-50 block">
+        <div className="-mt-[160px] 2xl:-mt-[200px] z-50 block">
           <Footer locale={params.locale} />
         </div>
       </div>

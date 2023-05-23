@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 
 import { AppLocale } from "@/types/global";
 
-import homeHeroPic from "../../../public/images/hero-wave.png";
+import homeHeroPic from "../../../../public/images/hero-wave.png";
 
 import { HeroNavbar } from "./HeroNavbar";
 import { Title } from "./Title";
@@ -16,7 +16,7 @@ export const Hero: React.FC<HeroProps> = ({ locale }) => {
   const t = useTranslations("Home.Hero");
 
   return (
-    <div className="relative w-full h-[720px] lg:h-[750px] 4xl:h-[1800px] flex flex-col">
+    <div className="relative w-full h-[720px] lg:h-[750px] 2xl:h-[940px] 4xl:h-[1800px] flex flex-col">
       <div className="flex z-50">
         <HeroNavbar locale={locale} />
       </div>
