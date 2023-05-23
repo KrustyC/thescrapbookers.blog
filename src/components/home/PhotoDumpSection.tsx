@@ -12,7 +12,7 @@ export const PhotoDumpSection: React.FC = () => {
   return (
     <div className="relative my-20">
       <div className="flex gap-20 h-[550px]">
-        <div className="h-full relative bg-[red] w-3/12 rounded-r-2xl">
+        <div className="h-full relative bg-gray-200 w-3/12 rounded-r-2xl">
           <Image
             className="rounded-r-2xl"
             src={image1}
@@ -24,7 +24,7 @@ export const PhotoDumpSection: React.FC = () => {
           />
         </div>
 
-        <div className="h-full relative bg-[green] w-4/12 rounded-2xl">
+        <div className="h-full relative bg-gray-200 w-4/12 rounded-2xl">
           <Image
             className="rounded-2xl"
             src={image2}
@@ -36,7 +36,7 @@ export const PhotoDumpSection: React.FC = () => {
           />
         </div>
 
-        <div className="h-full relative bg-[blue] w-4/12 rounded-l-2xl">
+        <div className="h-full relative bg-gray-200 w-4/12 rounded-l-2xl">
           <Image
             className="rounded-l-2xl"
             src={image3}
@@ -49,7 +49,7 @@ export const PhotoDumpSection: React.FC = () => {
         </div>
       </div>
 
-      <div className="absolute left-[250px] bottom-[80px] flex flex-col rounded-2xl p-8 bg-white drop-shadow-2xl">
+      <div className="absolute left-[250px] bottom-[80px] flex flex-col rounded-2xl p-8 bg-gray-200shadow-2xl">
         <h2 className="text-4xl font-semibold  w-fit border-primary border-b-8">
           {t("title")}
         </h2>

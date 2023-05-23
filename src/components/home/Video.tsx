@@ -14,7 +14,7 @@ export const Video: React.FC = () => {
       defaultShowRemainingTime={false}
       className="w-full bg-gray-200 -mb-2"
       streamType="on-demand"
-      playbackId="00lGJE5gxu024LMfOBxp5sEjfXEqvYLYbVOgA00Cl4xj400"
+      playbackId="nxCCwFBmmiMRxKFPlOMOtkYea29hWEHgSDbj02QfvNC4"
       metadata={{
         video_title: "A video of Ban Sen",
       }}
