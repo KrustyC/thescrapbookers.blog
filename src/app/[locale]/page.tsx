@@ -4,17 +4,18 @@ import { getTranslations } from "next-intl/server";
 
 import { Footer } from "@/components/Footer";
 import { AboutUsSection } from "@/components/home/AboutUsSection";
+import DigitalNomadingSection, {
+  DigitalNomadingSectionSkeleton,
+} from "@/components/home/DigitalNomadingSection/DigitalNomadingSection";
 import FeaturedPostsSection, {
   FeaturedPostsSectionSkeleton,
 } from "@/components/home/FeaturedPostsSection/FeaturedPostsSection";
 import { Hero } from "@/components/home/Hero/Hero";
 import { HighlightSection } from "@/components/home/HighlightSection";
+import { PhotoDumpSection } from "@/components/home/PhotoDumpSection";
 import { Video } from "@/components/home/Video";
 import { AppLocale } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
-// import DigitalNomadingSection, {
-//   DigitalNomadingSectionSkeleton,
-// } from "@/components/DigitalNomadingSection/DigitalNomadingSection";
 
 interface HomePageProps {
   params: {
@@ -89,6 +90,13 @@ export default function Home({ params }: { params: { locale: AppLocale } }) {
         </Suspense>
 
         <Video />
+
+        <Suspense fallback={<DigitalNomadingSectionSkeleton />}>
+          {/* @ts-expect-error Server Component */}
+          <DigitalNomadingSection locale={params.locale} />
+        </Suspense>
+
+        <PhotoDumpSection />
 
         <AboutUsSection />
 

@@ -17,19 +17,24 @@
       "error1": "Errore durante il caricamento dei post recenti...",
       "error2": "Ci scusiamo per il disagio, siamo già al lavoro per risolvere il problema, ti preghiamo di riprovare tra qualche minuto."
     },
+    "PhotoDump": {
+      "title": "Photo Dump",
+      "text": "Okay, questo dovrebbe essre tradotto in italiano ad un certo punto.",
+      "cta": "Vai a Pinterest"
+    },
     "DigitalNomading": {
       "title": "Nomadismo Digitale",
       "error1": "Errore durante il caricamento dei post sul nomadismo digitale...",
       "error2": "Ci scusiamo per il disagio, siamo già al lavoro per risolvere il problema, ti preghiamo di riprovare tra qualche minuto."
     },
-    "SmallNotes": {
-      "title": "Piccole Note",
-      "error1": "Errore durante il caricamento delle piccole note...",
-      "error2": "Ci scusiamo per il disagio, siamo già al lavoro per risolvere il problema, ti preghiamo di riprovare tra qualche minuto."
+    "HighlightSection": {
+      "title": "Da Vang Vieng a Luang Prabang",
+      "text": "The scary burning or smoky season had already made the air heavy and hazy in the nort",
+      "cta": "Leggi Articolo"
     },
     "AboutUs": {
       "title": "Chi Siamo",
-      "content": "Siamo Davide e Beatrice, un software engineer e una designer freelance. Ci siamo da poco avventurati nel nostro viaggio intorno al mondo ed abbiamo deciso di creare quest blog per condividere un po' delle nostre storie.",
+      "text": "Siamo Davide e Beatrice, un software engineer e una designer freelance. Ci siamo da poco avventurati nel nostro viaggio intorno al mondo ed abbiamo deciso di creare quest blog per condividere un po' delle nostre storie.",
       "cta": "Scopri di più"
     },
     "NavbarLinks": {

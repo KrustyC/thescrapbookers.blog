@@ -17,19 +17,24 @@
       "error1": "An error happened while fetching featured post...",
       "error2": "Sorry for the incovenience, please bear with us, we are already working towards a fix."
     },
+    "PhotoDump": {
+      "title": "Photo Dump",
+      "text": "Okay, it takes a long time to understand what website is the real one to apply for visas and it.",
+      "cta": "Go to Pinterest"
+    },
     "DigitalNomading": {
       "title": "Digital Nomading",
       "error1": "An error happened while fetching digital nomading post...",
       "error2": "Sorry for the incovenience, please bear with us, we are already working towards a fix."
     },
-    "SmallNotes": {
-      "title": "Small Notes",
-      "error1": "An error happened while fetching small notes...",
-      "error2": "Sorry for the incovenience, please bear with us, we are already working towards a fix."
+    "HighlightSection": {
+      "title": "Vang Vieng to Luang Prabang",
+      "text": "The scary burning or smoky season had already made the air heavy and hazy in the nort",
+      "cta": "Read Article"
     },
     "AboutUs": {
       "title": "About Us",
-      "content": "We are Davide and Beatrice, a software engineer and a freelance designer. We have just started our journey around the world and wanted to find a way to keep our family and close friends up to date on our whereabouts by sharing a few of our stories.",
+      "text": "We are Davide and Beatrice, a software engineer and a freelance designer. We have just started our journey around the world and wanted to find a way to keep our family and close friends up to date on our whereabouts by sharing a few of our stories.",
       "cta": "Find out more"
     },
     "NavbarLinks": {

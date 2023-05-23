@@ -20,7 +20,7 @@ export const AboutUsSection: React.FC = () => {
             {t("title")}
           </h6>
           <p className="text-left text-2xl lg:max-w-[650px] mb-4 xl:mb-6">
-            {t("content")}
+            {t("text")}
           </p>
           <ButtonLink variant="black" href="/about-us">
             {t("cta")}
