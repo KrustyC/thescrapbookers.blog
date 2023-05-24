@@ -14,11 +14,16 @@ export const LoadingSectionWithTitle: React.FC<
         "flex flex-col py-8 md:py-16 lg:py-20 px-6 lg:px-16 xl:px-48 w-full",
         {
           "bg-white": !primaryBackground,
-          "bg-gray-100": primaryBackground,
+          "bg-primary": primaryBackground,
         }
       )}
     >
-      <div className="w-2/3 my-4 animate-pulse bg-gray-300 h-10 pulse" />
+      <div
+        className={classNames("w-2/3 my-4 animate-pulse h-10 pulse", {
+          "bg-gray-300": !primaryBackground,
+          "bg-white": primaryBackground,
+        })}
+      />
 
       <div
         className={classNames("border-b-4 rounded-full w-2/3 mb-8 lg:mb-12", {

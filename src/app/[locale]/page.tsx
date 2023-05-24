@@ -86,8 +86,6 @@ export default function Home({ params }: { params: { locale: AppLocale } }) {
       <div className="flex flex-col">
         <Hero locale={params.locale} />
 
-        <FeaturedPostsSectionSkeleton />
-
         <Suspense fallback={<FeaturedPostsSectionSkeleton />}>
           {/* @ts-expect-error Server Component */}
           <FeaturedPostsSection locale={params.locale} />
@@ -95,10 +93,10 @@ export default function Home({ params }: { params: { locale: AppLocale } }) {
 
         {/* <DynamicVideo /> */}
 
-        {/* <Suspense fallback={<DigitalNomadingSectionSkeleton />}> */}
-        {/* @ts-expect-error Server Component */}
-        {/* <DigitalNomadingSection locale={params.locale} />
-        </Suspense> */}
+        <Suspense fallback={<DigitalNomadingSectionSkeleton />}>
+          {/* @ts-expect-error Server Component */}
+          <DigitalNomadingSection locale={params.locale} />
+        </Suspense>
 
         {/* <PhotoDumpSection /> */}
 
