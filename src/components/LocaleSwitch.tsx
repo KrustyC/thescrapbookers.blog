@@ -30,19 +30,20 @@ export const LocaleSwitch: React.FC<LocaleSwitchProps> = ({
       checked={isItalian}
       onChange={onToggle}
       className={classNames(
-        "relative inline-flex items-center h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-background duration-600 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75",
-        { "bg-yellow-200": isItalian, "bg-white": !isItalian }
+        "relative inline-flex items-center h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-background duration-600 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75 bg-white"
       )}
     >
-      <span className="sr-only">{helpText}</span>
+      <span aria-hidden="true" className="sr-only">
+        {helpText}
+      </span>
       <span
-        aria-hidden="true"
-        className={`${
-          isItalian
-            ? "translate-x-[26px] bg-ita-flag"
-            : "translate-x-0 bg-uk-flag"
-        }
-           bg-cover bg-center bg-no-repeat border-2 border-white pointer-events-none inline-block h-[22px] w-[22px] transform rounded-full bg-white shadow-lg ring-0 transition duration-600 ease-in-out`}
+        className={classNames(
+          "bg-cover bg-center bg-no-repeat border border-black pointer-events-none inline-block h-[22px] w-[22px] transform rounded-full bg-white shadow-lg ring-0 transition duration-600 ease-in-out",
+          {
+            "translate-x-[26px] bg-ita-flag": isItalian,
+            "translate-x-0 bg-uk-flag": !isItalian,
+          }
+        )}
       />
     </Switch>
   );
