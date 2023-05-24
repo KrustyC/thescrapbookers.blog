@@ -16,7 +16,7 @@ export const Hero: React.FC<HeroProps> = ({ locale }) => {
   const t = useTranslations("Home.Hero");
 
   return (
-    <div className="relative w-full h-[680px] lg:h-[750px] 2xl:h-[940px] 4xl:h-[1800px] flex flex-col">
+    <div className="relative w-full h-[740px] lg:h-[790px] 2xl:h-[940px] 4xl:h-[1800px] flex flex-col">
       <div className="flex z-50">
         <HeroNavbar locale={locale} />
       </div>

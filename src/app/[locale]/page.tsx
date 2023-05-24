@@ -102,11 +102,11 @@ export default function Home({ params }: { params: { locale: AppLocale } }) {
 
         {/* <AboutUsSection /> */}
 
-        {/* <HighlightSection /> */}
+        <HighlightSection />
 
-        {/* <div className="-mt-[160px] 2xl:-mt-[200px] z-50 block">
+        <div className="-mt-[160px] 2xl:-mt-[200px] z-50 block">
           <Footer locale={params.locale} />
-        </div> */}
+        </div>
       </div>
     </>
   );

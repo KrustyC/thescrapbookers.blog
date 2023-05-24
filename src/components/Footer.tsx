@@ -61,13 +61,13 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
     <footer className="bg-transparent">
       <WaveSvg />
 
-      <div className="flex flex-col px-16 pb-16 bg-primary">
-        <div className="flex justify-between items-end mb-24">
-          <div className="flex flex-col">
-            <span style={ooohBaby.style} className="text-3xl mb-2">
+      <div className="flex flex-col px-16 md:px-16 pb-10 pt-6 md:pt-3 -mt-2 bg-primary">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-end md:mb-24">
+          <div className="flex flex-col md:w-[280px] lg:w-fit">
+            <span style={ooohBaby.style} className="text-3xl mb-1 md:mb-2">
               {footer("notes")}
             </span>
-            <span className="text-3xl mb-2 font-semibold w-[220px] mb-6">
+            <span className="text-3xl mb-2 font-semibold mb-4 md:mb-6">
               {footer("newsletterMessage")}
             </span>
             <NewsletterForm
@@ -92,7 +92,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
             />
           </div>
 
-          <div className="flex flex-col gap-4 uppercase font-semibold justify-end text-right">
+          <div className="flex flex-col gap-4 uppercase font-semibold justify-center md:justify-end text-center md:text-right my-16 md:my-0">
             <Link href={URLS.asiaArticles()}>{footer("Links.asia")}</Link>
             <Link href={URLS.remoteRoaming()}>
               {footer("Links.remoteRoaming")}
@@ -100,7 +100,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
             <Link href={URLS.cheatsheets()}>{footer("Links.cheatsheets")}</Link>
             <Link href={URLS.aboutUs()}>{footer("Links.aboutUs")}</Link>
 
-            <div className="flex gap-4 justify-end">
+            <div className="flex gap-4 justify-center md:justify-end">
               <CircularLink href={URLS.instagramURL()}>
                 <InstagramIcon className="text-black fill-primary h-6" />
               </CircularLink>
@@ -111,11 +111,11 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
           </div>
         </div>
 
-        <div className="flex items-center justify-between">
-          <span className="text-lg font-light mt-2">
+        <div className="flex flex-col-reverse md:flex-row items-center md:justify-between">
+          <span className="text-sm md:text-lg font-light md:mt-2">
             ©2023 | The Scrapbookers
           </span>
-          <Link className="relative h-20 w-56" href="/" target="_blank">
+          <Link className="hidden md:block relative h-20 w-56" href="/" target="_blank">
             <Image
               src={logoPic}
               alt="the scrapbooker logo"

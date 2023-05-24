@@ -65,11 +65,11 @@ export const NewsletterForm: React.FC<NewsletterFormProps> = ({ messages }) => {
       <form
         style={poppins.style}
         autoComplete="off"
-        className="flex flex-col w-full lg:w-auto mt-8 lg:mt-0 lg:flex-row lg:justify-end lg:h-16"
+        className="flex flex-col w-full lg:w-auto lg:flex-row lg:justify-end lg:h-16"
         onSubmit={handleSubmit(onSubscribe)}
       >
         <input
-          className="h-16 lg:h-full px-6 w-full lg:w-72 mb-4 lg:mb-0 lg:mr-4 border-2 border-black rounded-2xl"
+          className="h-12 md:h-16 lg:h-full px-6 w-full lg:w-72 mb-4 lg:mb-0 lg:mr-4 md:border-2 md:border-black rounded-full md:rounded-2xl"
           type="email"
           autoComplete="off"
           disabled={isPending || isSuccess}
@@ -85,7 +85,7 @@ export const NewsletterForm: React.FC<NewsletterFormProps> = ({ messages }) => {
 
         <button
           type="submit"
-          className="rounded-2xl h-16 lg:h-full w-full lg:w-56 bg-black text-white px-12 lg:ml-4 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="rounded-full md:rounded-2xl h-12 md:h-16 lg:h-full w-full lg:w-56 bg-black text-white px-12 lg:ml-4 disabled:opacity-50 disabled:cursor-not-allowed"
           disabled={!isValid || !isDirty || isPending || isSuccess}
         >
           {messages.ctaText}
