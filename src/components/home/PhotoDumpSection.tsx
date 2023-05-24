@@ -11,8 +11,8 @@ export const PhotoDumpSection: React.FC = () => {
 
   return (
     <div className="relative my-20">
-      <div className="flex gap-20 h-[550px]">
-        <div className="h-full relative bg-gray-200 w-3/12 rounded-r-2xl">
+      <div className="flex flex-col lg:flex-row lg:justify-between gap-6 lg:gap-20 lg:h-[550px]">
+        <div className="h-[180px] md:h-[320px] lg:h-full w-3/5 lg:w-3/12 rounded-r-2xl relative bg-gray-200">
           <Image
             className="rounded-r-2xl"
             src={image1}
@@ -24,9 +24,9 @@ export const PhotoDumpSection: React.FC = () => {
           />
         </div>
 
-        <div className="h-full relative bg-gray-200 w-4/12 rounded-2xl">
+        <div className="h-[140px] md:h-[320px] lg:h-full w-5/6 md:w-3/5 lg:w-4/12 rounded-l-2xl lg:rounded-2xl relative bg-gray-200 self-end lg:self-auto">
           <Image
-            className="rounded-2xl"
+            className="rounded-l-2xl lg:rounded-2xl"
             src={image2}
             alt="the scrapbooker logo" // @TODO Once images are there add description
             sizes="100%"
@@ -36,9 +36,9 @@ export const PhotoDumpSection: React.FC = () => {
           />
         </div>
 
-        <div className="h-full relative bg-gray-200 w-4/12 rounded-l-2xl">
+        <div className="h-[180px] md:h-[360px] lg:h-full w-3/4 md:w-1/2 lg:w-3/12 rounded-r-2xl lg:rounded-r-none lg:rounded-l-2xl relative bg-gray-200">
           <Image
-            className="rounded-l-2xl"
+            className="rounded-r-2xl lg:rounded-r-none lg:rounded-l-2xl"
             src={image3}
             alt="the scrapbooker logo" // @TODO Once images are there add description
             sizes="100%"
@@ -49,12 +49,12 @@ export const PhotoDumpSection: React.FC = () => {
         </div>
       </div>
 
-      <div className="absolute left-[250px] bottom-[80px] flex flex-col rounded-2xl p-8 bg-white drop-shadow-2xl">
-        <h2 className="text-4xl font-semibold  w-fit border-primary border-b-8">
+      <div className="absolute left-[20px] md:left-[120px] bottom-[340px] lg:left-[250px] lg:bottom-[80px] flex flex-col rounded-2xl p-6 lg:p-8 bg-white drop-shadow-2xl">
+        <h2 className="text-xl lg:text-4xl font-semibold  w-fit border-primary border-b-2 lg:border-b-8">
           {t("title")}
         </h2>
 
-        <p className="text-xl my-4 w-[420px]">{t("text")}</p>
+        <p className="text-regular lg:text-xl my-4 w-[280px] md:w-[380px] lg:w-[420px]">{t("text")}</p>
 
         <ButtonLink size="sm" href="black" target="_blank" variant="black">
           {t("cta")}

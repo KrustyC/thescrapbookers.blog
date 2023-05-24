@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { Metadata } from "next";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import { getTranslations } from "next-intl/server";
 
 import { Footer } from "@/components/Footer";
@@ -17,7 +17,7 @@ import { PhotoDumpSection } from "@/components/home/PhotoDumpSection";
 import { AppLocale } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
 
-const DynamicVideo = dynamic(() => import("../../components/home/Video"));
+// const DynamicVideo = dynamic(() => import("../../components/home/Video"));
 
 interface HomePageProps {
   params: {
@@ -98,7 +98,7 @@ export default function Home({ params }: { params: { locale: AppLocale } }) {
           <DigitalNomadingSection locale={params.locale} />
         </Suspense>
 
-        {/* <PhotoDumpSection /> */}
+        <PhotoDumpSection />
 
         <AboutUsSection />
 
