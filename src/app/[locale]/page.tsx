@@ -100,7 +100,7 @@ export default function Home({ params }: { params: { locale: AppLocale } }) {
 
         {/* <PhotoDumpSection /> */}
 
-        {/* <AboutUsSection /> */}
+        <AboutUsSection />
 
         <HighlightSection />
 
