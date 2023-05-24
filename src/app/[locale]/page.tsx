@@ -86,27 +86,27 @@ export default function Home({ params }: { params: { locale: AppLocale } }) {
       <div className="flex flex-col">
         <Hero locale={params.locale} />
 
-        <Suspense fallback={<FeaturedPostsSectionSkeleton />}>
+        {/* <Suspense fallback={<FeaturedPostsSectionSkeleton />}> */}
           {/* @ts-expect-error Server Component */}
-          <FeaturedPostsSection locale={params.locale} />
+          {/* <FeaturedPostsSection locale={params.locale} />
         </Suspense>
 
         <DynamicVideo />
 
-        <Suspense fallback={<DigitalNomadingSectionSkeleton />}>
+        <Suspense fallback={<DigitalNomadingSectionSkeleton />}> */}
           {/* @ts-expect-error Server Component */}
-          <DigitalNomadingSection locale={params.locale} />
-        </Suspense>
+          {/* <DigitalNomadingSection locale={params.locale} />
+        </Suspense> */}
 
-        <PhotoDumpSection />
+        {/* <PhotoDumpSection />
 
         <AboutUsSection />
 
-        <HighlightSection />
+        <HighlightSection /> */}
 
-        <div className="-mt-[160px] 2xl:-mt-[200px] z-50 block">
+        {/* <div className="-mt-[160px] 2xl:-mt-[200px] z-50 block">
           <Footer locale={params.locale} />
-        </div>
+        </div> */}
       </div>
     </>
   );

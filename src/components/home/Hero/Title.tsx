@@ -6,7 +6,6 @@ interface TitleProps {
   titlePart2: string;
   author: string;
   subtitle: string;
-  locale: AppLocale;
 }
 
 export const Title: React.FC<TitleProps> = ({
@@ -14,20 +13,19 @@ export const Title: React.FC<TitleProps> = ({
   titlePart2,
   author,
   subtitle,
-  locale,
 }) => {
   return (
     <div className="-mt-24 flex flex-col px-6 lg:px-16 xl:px-24 z-10 text-white">
       <h1
         style={leagueGothic.style}
-        className="text-5xl lg:text-10xl leading-[3.5rem] lg:leading-[9rem] font-bold w-full uppercase"
+        className="text-7xl md:text-8xl lg:text-9xl xl:text-10xl leading-[4rem] xl:leading-[9rem] font-bold w-full uppercase"
       >
         {titlePart1} <br />
         {titlePart2}
       </h1>
-      <div className="flex justify-between items-center">
-        <p className="max-w-[600px] text-3xl">{subtitle}</p>
-        <span className="uppercase text-5xl" style={leagueGothic.style}>
+      <div className="flex flex-col-reverse lg:flex-row lg:justify-between lg:items-start gap-4 lg:gap-0">
+        <p className="lg:max-w-[600px] text-xl md:text-2xl lg:text-3xl font-light">{subtitle}</p>
+        <span className="uppercase text-3xl md:text-4xl lg:text-5xl" style={leagueGothic.style}>
           {author}
         </span>
       </div>
