@@ -16,7 +16,7 @@ export const Hero: React.FC<HeroProps> = ({ locale }) => {
   const t = useTranslations("Home.Hero");
 
   return (
-    <div className="relative w-full h-[720px] lg:h-[750px] 2xl:h-[940px] 4xl:h-[1800px] flex flex-col">
+    <div className="relative w-full h-[740px] lg:h-[790px] 2xl:h-[940px] 4xl:h-[1800px] flex flex-col">
       <div className="flex z-50">
         <HeroNavbar locale={locale} />
       </div>
@@ -27,7 +27,6 @@ export const Hero: React.FC<HeroProps> = ({ locale }) => {
           titlePart2={t("title.part2")}
           subtitle={t("subtitle")}
           author={t("author")}
-          locale={locale}
         />
       </div>
 

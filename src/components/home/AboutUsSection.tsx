@@ -10,8 +10,8 @@ export const AboutUsSection: React.FC = () => {
   const t = useTranslations("Home.AboutUs");
 
   return (
-    <div className="lg:h-[450px] xl:h-[500px] flex flex-col-reverse lg:flex-row lg:justify-between gap-20 my-16 w-full">
-      <div className="bg-gray-100 flex flex-col justify-center items-end w-full lg:w-7/12 xl:w-2/3 py-16 xl:py12 px-6 lg:p-12 xl:p-24 rounded-r-2xl">
+    <div className="bg-gray-100 lg:bg-white lg:h-[450px] xl:h-[500px] flex flex-col-reverse lg:flex-row lg:justify-between gap-8 lg:gap-20 py-16 lg:py-0 lg:my-16 w-full">
+      <div className="bg-gray-100 flex flex-col justify-center items-end w-full lg:w-7/12 xl:w-2/3 px-6 lg:p-12 xl:p-24 md:rounded-r-2xl">
         <div>
           <h6
             style={poppins.style}
@@ -28,9 +28,9 @@ export const AboutUsSection: React.FC = () => {
         </div>
       </div>
 
-      <div className="mx-6 lg:mx-0 lg:w-5/12 xl:w-1/3 h-[500px] lg:h-full relative rounded-l-2xl">
+      <div className="mx-6 lg:mx-0 lg:w-5/12 xl:w-1/3 h-[500px] lg:h-full relative rounded-2xl lg:rounded-r-none">
         <Image
-          className="rounded-l-2xl"
+          className="rounded-2xl lg:rounded-r-none"
           src={aboutUsPic}
           alt="us taking a selfie in the jungle"
           placeholder="blur"

@@ -20,7 +20,7 @@ export default async function FeaturedPostsSection({
 
     return (
       <SectionWithTitle title={t("title")}>
-        <div className="flex flex-col lg:flex-row gap-y-16 lg:gap-x-16">
+        <div className="flex flex-col md:flex-row gap-12 md:gap-8 lg:gap-16">
           {posts.map((post, i) => (
             <Post key={i} post={post} locale={locale} />
           ))}

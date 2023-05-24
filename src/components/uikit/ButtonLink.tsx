@@ -25,13 +25,13 @@ export const ButtonLink: React.FC<PropsWithChildren<ButtonLinkProps>> = ({
       rel={target === "_blank" ? "noopener noreferrer" : undefined}
       type={type}
       className={classNames(
-        "flex items-center justify-center  font-light w-fit",
+        "flex items-center justify-center font-light w-fit",
         {
           "bg-white text-black": variant === "white",
           "bg-black text-white": variant === "black",
         },
         {
-          "h-12 min-w-24 px-8 rounded-xl": size === "sm",
+          "text-sm lg:text-lg h-10 lg:h-12 min-w-16 lg:min-w-24 px-4 lg:px-8 rounded-xl": size === "sm",
           "h-16 min-w-32 px-12 rounded-2xl": size === "md",
         }
       )}
