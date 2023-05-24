@@ -5,7 +5,7 @@ const POST_COUNTS = [1, 2, 3];
 export const FeaturedPostsSectionSkeleton = () => {
   return (
     <LoadingSectionWithTitle>
-      <div className="flex gap-x-16">
+      <div className="flex flex-col md:flex-row gap-12 md:gap-8 lg:gap-16">
         {POST_COUNTS.map((_, i) => (
           <div key={i} className="flex flex-col w-full animate-pulse">
             <div className="flex w-full aspect-square relative bg-gray-300 rounded-2xl" />
