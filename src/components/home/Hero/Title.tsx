@@ -1,4 +1,3 @@
-import { AppLocale } from "@/types/global";
 import { leagueGothic } from "@/utils/fonts";
 
 interface TitleProps {

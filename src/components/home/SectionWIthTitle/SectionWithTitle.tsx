@@ -28,10 +28,10 @@ export const SectionWithTitle: React.FC<
     >
       <h2
         className={classNames(
-          "text-3xl lg:text-5xl font-semibold mb-8 lg:mb-12 border-b-4 lg:border-b-8 w-fit text-black lg:leading-[4.5rem]",
+          "text-3xl lg:text-5xl font-semibold mb-8 lg:mb-12 border-b-4 lg:border-b-[6px] w-fit text-black lg:leading-[3.5rem]",
           {
-            "border-white": primaryBackground,
             "border-primary": !primaryBackground,
+            "border-white text-white": primaryBackground,
           }
         )}
       >
