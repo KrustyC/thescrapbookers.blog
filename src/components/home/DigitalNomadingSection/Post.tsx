@@ -34,7 +34,7 @@ export const Post: React.FC<PostProps> = ({
         />
       </Link>
       <div
-        className="flex items-center mt-6 md:mt-4 lg:mt-6 uppercase tracking-widest text-gray-400 text-sm md:text-xs lg:text-lg"
+        className="flex items-center mt-6 md:mt-4 lg:mt-6 uppercase tracking-widest text-gray-400 text-sm md:text-xs lg:text-lg text-white"
         style={poppins.style}
       >
         <span>{category}</span>
@@ -48,11 +48,11 @@ export const Post: React.FC<PostProps> = ({
         </span>
       </div>
       <Link href={href}>
-        <h3 className="text-2xl lg:text-3xl my-2 md:my-3 lg:my-4 text-black font-medium">
+        <h3 className="text-2xl lg:text-3xl my-2 md:my-3 lg:my-4 text-white font-medium">
           {title}
         </h3>
       </Link>
-      <span className="text-lg lg:text-xl text-gray-500 line-clamp-3">
+      <span className="text-lg lg:text-xl text-white line-clamp-3">
         {smallIntro}
       </span>
     </div>
