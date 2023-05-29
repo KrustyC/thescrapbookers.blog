@@ -17,7 +17,7 @@ import { PhotoDumpSection } from "@/components/home/PhotoDumpSection";
 import { AppLocale } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
 
-const DynamicVideo = dynamic(() => import("../../components/home/Video"));
+// const DynamicVideo = dynamic(() => import("../../components/home/Video"));
 
 interface HomePageProps {
   params: {
@@ -91,7 +91,7 @@ export default function Home({ params }: { params: { locale: AppLocale } }) {
           <FeaturedPostsSection locale={params.locale} />
         </Suspense>
 
-        <DynamicVideo />
+        {/* <DynamicVideo /> */}
 
         <Suspense fallback={<DigitalNomadingSectionSkeleton />}>
           {/* @ts-expect-error Server Component */}
