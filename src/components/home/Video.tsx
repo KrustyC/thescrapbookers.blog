@@ -1,6 +1,7 @@
 "use client";
 
 import MuxPlayer from "@mux/mux-player-react";
+
 import { leagueGothic } from "@/utils/fonts";
 
 const Video: React.FC = () => {

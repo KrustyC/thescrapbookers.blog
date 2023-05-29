@@ -26,22 +26,6 @@ mux-player {
   /* Hide all controls at once */
   --controls: none;
 
-  /* Hide the error dialog */
-  /* --dialog: none; */
-
-  /* Hide the loading indicator */
-  /* --loading-indicator: none; */
-
   --media-object-fit: cover;
   --media-object-position: center;
-
-  /* aspect-ratio: 4 / 5; */
-
-  /* @media screen and (min-width: 768px) {
-    aspect-ratio: 4 / 3;
-  } */
-
-  /* @media screen and (min-width: 1200px) {
-    aspect-ratio: 16 / 9;
-  } */
 }
