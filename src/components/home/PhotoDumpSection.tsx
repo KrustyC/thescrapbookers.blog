@@ -10,9 +10,9 @@ export const PhotoDumpSection: React.FC = () => {
   const t = useTranslations("Home.PhotoDump");
 
   return (
-    <div className="relative my-20">
-      <div className="flex flex-col lg:flex-row lg:justify-between gap-6 lg:gap-20 lg:h-[550px]">
-        <div className="h-[180px] md:h-[320px] lg:h-full w-3/5 lg:w-3/12 rounded-r-2xl relative bg-gray-200">
+    <div className="relative mb-16 mt-32">
+      <div className="flex flex-col lg:flex-row lg:justify-between gap-6 lg:gap-8 lg:h-[550px]">
+        <div className="h-[180px] md:h-[320px] lg:h-full w-3/5 lg:w-1/4 rounded-r-2xl relative bg-gray-200">
           <Image
             className="rounded-r-2xl"
             src={image1}
@@ -24,7 +24,7 @@ export const PhotoDumpSection: React.FC = () => {
           />
         </div>
 
-        <div className="h-[140px] md:h-[320px] lg:h-full w-5/6 md:w-3/5 lg:w-4/12 rounded-l-2xl lg:rounded-2xl relative bg-gray-200 self-end lg:self-auto">
+        <div className="h-[140px] md:h-[320px] lg:h-full w-5/6 md:w-3/5 lg:w-1/4 rounded-l-2xl lg:rounded-2xl relative bg-gray-200 self-end lg:self-auto">
           <Image
             className="rounded-l-2xl lg:rounded-2xl"
             src={image2}
@@ -36,7 +36,19 @@ export const PhotoDumpSection: React.FC = () => {
           />
         </div>
 
-        <div className="h-[180px] md:h-[360px] lg:h-full w-3/4 md:w-1/2 lg:w-3/12 rounded-r-2xl lg:rounded-r-none lg:rounded-l-2xl relative bg-gray-200">
+        <div className="h-[180px] md:h-[320px] lg:h-full w-3/5 lg:w-1/4 rounded-2xl relative bg-gray-200">
+          <Image
+            className="rounded-2xl"
+            src={image1}
+            alt="the scrapbooker logo" // @TODO Once images are there add description
+            sizes="100%"
+            loading="lazy"
+            fill
+            style={{ objectFit: "cover" }}
+          />
+        </div>
+
+        <div className="h-[180px] md:h-[360px] lg:h-full w-3/4 md:w-1/2 lg:w-1/4 rounded-r-2xl lg:rounded-r-none lg:rounded-l-2xl relative bg-gray-200">
           <Image
             className="rounded-r-2xl lg:rounded-r-none lg:rounded-l-2xl"
             src={image3}
@@ -54,7 +66,9 @@ export const PhotoDumpSection: React.FC = () => {
           {t("title")}
         </h2>
 
-        <p className="text-regular lg:text-xl my-4 w-[280px] md:w-[380px] lg:w-[420px]">{t("text")}</p>
+        <p className="text-regular lg:text-xl my-4 w-[280px] md:w-[380px] lg:w-[420px]">
+          {t("text")}
+        </p>
 
         <ButtonLink size="sm" href="black" target="_blank" variant="black">
           {t("cta")}

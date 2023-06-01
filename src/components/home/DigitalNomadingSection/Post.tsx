@@ -38,7 +38,7 @@ export const Post: React.FC<PostProps> = ({
         style={poppins.style}
       >
         <span>{category}</span>
-        <div className="border-r-2 h-3 mx-2" />
+        <div className="border-r-2 border-black h-3 mx-2" />
         <span>
           {formatDate({
             date: new Date(date),

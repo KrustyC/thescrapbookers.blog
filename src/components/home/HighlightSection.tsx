@@ -10,7 +10,7 @@ export const HighlightSection = () => {
   const t = useTranslations("Home.HighlightSection");
 
   return (
-    <div className="flex py-16 px-8 lg:px-24 relative w-full h-[880px] 2xl:h-[780px]">
+    <div className="flex py-16 px-8 lg:px-24 lg:mt-16 relative w-full h-[880px] 2xl:h-[780px]">
       <div className="flex flex-col justify-start md:justify-center z-10 text-white">
         <h2
           style={leagueGothic.style}
