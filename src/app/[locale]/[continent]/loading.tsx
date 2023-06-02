@@ -1,9 +1,16 @@
+import { ContinentHeroLoading } from "@/components/continent/ContinentHero";
+import { CountryLoading } from "@/components/continent/Country";
+
 export default function PostLoading() {
   return (
-    <div className="flex flex-col items-center w-full animate-pulse py-12">
-      <div className="h-10 w-64 mt-4 rounded-full bg-gray-300" />
+    <div>
+      <ContinentHeroLoading />
 
-      <div className="my-8 lg:my-16 h-12 w-3/5 bg-gray-300" />
+      <div className="flex flex-col gap-y-16 px-8 lg:px-24 xl:px-48 pt-12 lg:pt-32 pb-12 lg:pb-24">
+        {Array.from({ length: 3 }).map((_, i) => (
+          <CountryLoading key={i} />
+        ))}
+      </div>
     </div>
   );
 }

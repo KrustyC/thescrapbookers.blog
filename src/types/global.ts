@@ -15,6 +15,7 @@ export interface Country {
   slug: string;
   mainImage: Image;
   description?: string;
+  shortDescription?: string;
   metaDescription?: string;
   continent: Pick<Continent, "name" | "slug">;
 }

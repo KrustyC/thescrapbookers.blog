@@ -17,6 +17,7 @@ export interface CountrySkeleton {
   fields: {
     name: EntryFieldTypes.Text;
     slug: EntryFieldTypes.Text;
+    shortDescription: EntryFieldTypes.Text;
     description: EntryFieldTypes.Text;
     metaDescription: EntryFieldTypes.Text;
     mainImage?: Asset;

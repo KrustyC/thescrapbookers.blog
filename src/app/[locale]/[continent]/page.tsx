@@ -1,7 +1,9 @@
 import { Metadata } from "next";
 
+import { ContinentHero } from "@/components/continent/ContinentHero";
+import { Country } from "@/components/continent/Country";
 import { AppLocale } from "@/types/global";
-import { getContinent } from "@/utils/api";
+import { getContinent, getCountriesForContinent } from "@/utils/api";
 import { createAlternates } from "@/utils/urls";
 
 interface ContinentPageProps {
@@ -59,15 +61,18 @@ export async function generateMetadata({
 
 export default async function ContinentPage({ params }: ContinentPageProps) {
   const { continent } = await getContinent(params.continent, params.locale);
+  const { countries } = await getCountriesForContinent(
+    params.continent,
+    params.locale
+  );
 
   return (
-    <div className="flex flex-col">
-      <div className="w-[1024px] mx-auto py-24">
-        <h1 className="text-6xl font-bold">{continent.name}</h1>
-
-        {continent.mainDescription && (
-          <div className="text-xl">{continent.mainDescription}</div>
-        )}
+    <div>
+      <ContinentHero name={continent.name} image={continent.mainImage} />
+      <div className="flex flex-col gap-y-16 px-8 lg:px-24 xl:px-48 pt-12 lg:pt-32 pb-12 lg:pb-24">
+        {countries.map((country, i) => (
+          <Country key={i} country={country} />
+        ))}
       </div>
     </div>
   );
