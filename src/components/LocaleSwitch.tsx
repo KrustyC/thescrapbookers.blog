@@ -30,7 +30,7 @@ export const LocaleSwitch: React.FC<LocaleSwitchProps> = ({
       checked={isItalian}
       onChange={onToggle}
       className={classNames(
-        "relative inline-flex items-center h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-background duration-600 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75 bg-white"
+        "relative inline-flex items-center h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-background duration-600 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75 bg-gray-200"
       )}
     >
       <span aria-hidden="true" className="sr-only">
@@ -38,7 +38,7 @@ export const LocaleSwitch: React.FC<LocaleSwitchProps> = ({
       </span>
       <span
         className={classNames(
-          "bg-cover bg-center bg-no-repeat border border-black pointer-events-none inline-block h-[22px] w-[22px] transform rounded-full bg-white shadow-lg ring-0 transition duration-600 ease-in-out",
+          "bg-cover bg-center bg-no-repeat border border-gray-500 pointer-events-none inline-block h-[22px] w-[22px] transform rounded-full bg-white shadow-lg ring-0 transition duration-600 ease-in-out",
           {
             "translate-x-[26px] bg-ita-flag": isItalian,
             "translate-x-0 bg-uk-flag": !isItalian,

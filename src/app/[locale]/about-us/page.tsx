@@ -1,57 +1,61 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-import { crimsonText, poppins } from "@/utils/fonts";
+import { crimsonText, leagueGothic } from "@/utils/fonts";
+
+import aboutUsPic from "../../../../public/images/about-us.jpg";
+
+interface SidebarProps {
+  title: string;
+  description: string;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ title, description }) => {
+  return (
+    <div className="w-1/3 bg-primary flex justify-center">
+      <div className="h-screen sticky top-5 mt-36 flex-col lg:px-12 xl:px-20 text-white">
+        <h1 className="leading-[5rem] text-8xl" style={leagueGothic.style}>
+          {title}
+        </h1>
+
+        <p className="pr-4 my-6">{description}</p>
+        <div className="w-full aspect-square relative rounded-2xl border-4 border-black">
+          <Image
+            className="rounded-xl"
+            src={aboutUsPic}
+            alt="us taking a selfie in the jungle"
+            placeholder="blur"
+            fill
+            sizes="100%"
+            style={{ objectFit: "cover" }}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default function AboutUsPage() {
   const t = useTranslations("AboutUs");
-  const bea = useTranslations("AboutUs.Beatrice");
-  const davide = useTranslations("AboutUs.Davide");
-  const generic = useTranslations("AboutUs.Generic");
 
   return (
-    <div className="flex flex-col py-6 lg:py-8 mx-auto w-11/12 2xl:w-3/4 ">
-      <div className="rich-text-copy flex flex-col gap-y-6 text-2xl mb-12">
-        <h1
-          style={poppins.style}
-          className="text-6xl font-semibold text-left pt-12 pb-10"
-        >
-          {t("title")}
-        </h1>
-        <p style={crimsonText.style}>{generic("firstParagraph")}</p>
-        <p style={crimsonText.style}>{generic("secondParagraph")}</p>
-        <p style={crimsonText.style}>{generic("thirdParagraph")}</p>
-        <p style={crimsonText.style}>{generic("fourthParagraph")}</p>
-        <p style={crimsonText.style}>{generic("fifthParagraph")}</p>
-        <p style={crimsonText.style}>{generic("sixthParagraph")}</p>
-        <p style={crimsonText.style}>{generic("seventhParagraph")}</p>
-      </div>
+    <div className="flex flex-col">
+      <div className="flex">
+        <Sidebar title={t("title")} description={t("description")} />
 
-      <div className="flex flex-col lg:flex-row gap-12">
-        <div className="introduction-letter">
-          <div className="flex flex-col gap-y-6">
-            <p>{bea("firstParagraph")}</p>
-            <p>{bea("secondParagraph")}</p>
-            <p>{bea("thirdParagraph")}</p>
-            <p>{bea("fourthParagraph")}</p>
-            <p>{bea("fifthParagraph")}</p>
-            <p>{bea("sixthParagraph")}</p>
+        <div className="w-2/3 bg-white mt-36 pb-24">
+          <div className="flex flex-col gap-y-6 text-2xl w-[720px] mx-auto">
+            <p style={crimsonText.style}>{t("Generic.firstParagraph")}</p>
+            <p style={crimsonText.style}>{t("Generic.secondParagraph")}</p>
+            <p style={crimsonText.style}>{t("Generic.thirdParagraph")}</p>
+            <p style={crimsonText.style}>{t("Generic.fourthParagraph")}</p>
+            <p style={crimsonText.style}>{t("Generic.fifthParagraph")}</p>
+            <p style={crimsonText.style}>{t("Generic.sixthParagraph")}</p>
+            <p style={crimsonText.style}>{t("Generic.seventhParagraph")}</p>
           </div>
-
-          <span className="font-bold mt-3">Beatrice</span>
-        </div>
-
-        <div className="introduction-letter">
-          <div className="flex flex-col gap-y-6">
-            <p>{davide("firstParagraph")}</p>
-            <p>{davide("secondParagraph")}</p>
-            <p>{davide("thirdParagraph")}</p>
-            <p>{davide("fourthParagraph")}</p>
-            <p>{davide("fifthParagraph")}</p>
-          </div>
-
-          <span className="font-bold mt-3">Davide</span>
         </div>
       </div>
+      <div className="h-[550px] w-full bg-[green]"> CIAO</div>
     </div>
   );
 }

@@ -54,11 +54,13 @@ export default function AboutUsLayout({
 }) {
   return (
     <div>
-      <Navbar locale={params.locale} />
+      <Navbar blackText locale={params.locale} />
 
       <div>{children}</div>
 
-      <Footer locale={params.locale} />
+      <div className="-mt-40">
+        <Footer locale={params.locale} />
+      </div>
     </div>
   );
 }
