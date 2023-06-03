@@ -1,7 +1,7 @@
 import { ContinentHeroLoading } from "@/components/continent/ContinentHero";
 import { CountryLoading } from "@/components/continent/Country";
 
-export default function PostLoading() {
+export default function ContinentLoading() {
   return (
     <div>
       <ContinentHeroLoading />

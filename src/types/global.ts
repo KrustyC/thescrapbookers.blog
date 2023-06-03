@@ -10,13 +10,39 @@ export interface Continent {
   metaDescription?: string;
 }
 
+export interface CountryCheatsheetBasicWord {
+  word: string;
+  meaning: string;
+}
+
+export interface CountryCheatsheetCoworkingSpace {
+  name: string;
+  website: string;
+}
+
+export interface CountryCheatsheet {
+  language: string;
+  capital: string;
+  mainReligions: string[];
+  currency: string;
+  population: number;
+  area: number;
+  
+  basicWords: CountryCheatsheetBasicWord[];
+  dishes: string[];
+  visaWebsite: string;
+  faveCoworkingSpace: CountryCheatsheetCoworkingSpace;
+}
+
 export interface Country {
   name: string;
   slug: string;
   mainImage: Image;
+  thumbnailImage: Image;
   description?: string;
   shortDescription?: string;
   metaDescription?: string;
+  cheatsheet?: CountryCheatsheet;
   continent: Pick<Continent, "name" | "slug">;
 }
 

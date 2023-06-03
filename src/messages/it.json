@@ -68,6 +68,13 @@
       "cta": "torna alla home"
     }
   },
+  "Country": {
+    "Cheatsheet": {
+      "title": "Info in pillole",
+      "description": "Una serie di informazioni utili, e interessanti, visibili in un colpo d'occhio",
+      "seeMore": "Espandi"
+    }
+  },
   "NotFound": {
     "title": "mmmh... forse vi siete persi durante il viaggio",
     "backHome": "torna alla home"

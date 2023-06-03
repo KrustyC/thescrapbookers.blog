@@ -1,9 +1,14 @@
-export default function PostLoading() {
-  return (
-    <div className="flex flex-col items-center w-full animate-pulse py-12">
-      <div className="h-10 w-64 mt-4 rounded-full bg-gray-300" />
+import { CheatsheetLoading } from "@/components/country/Cheatsheet/Cheatsheet";
+import { CountryHeroLoading } from "@/components/country/CountryHero";
 
-      <div className="my-8 lg:my-16 h-12 w-3/5 bg-gray-300" />
+export default function CountryLoading() {
+  return (
+    <div>
+      <CountryHeroLoading />
+
+      <div className="px-8 lg:px-24 xl:px-48 pt-12 lg:pt-32 pb-12 lg:pb-24">
+        <CheatsheetLoading />
+      </div>
     </div>
   );
 }

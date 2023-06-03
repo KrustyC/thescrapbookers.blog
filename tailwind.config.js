@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         primary: "#FB7A7A",
         black: "#1E1E1E",
+        cheatsheet: "#FF7A00",
       },
       fontSize: {
         "10xl": "10rem",

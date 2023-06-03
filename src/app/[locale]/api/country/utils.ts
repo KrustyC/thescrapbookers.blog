@@ -1,16 +1,20 @@
 import { Entry } from "contentful";
 
 import { ContinentSkeleton, CountrySkeleton } from "@/types/contentful";
-import { Country } from "@/types/global";
+import { Country, CountryCheatsheet } from "@/types/global";
 import { extractImageDataFromContentfulAsset } from "@/utils/images";
 
 interface ParseContentfulCountryFieldsOptions {
-  includeDescription: boolean;
+  includeDescription?: boolean;
+  includeCheatsheet?: boolean;
 }
 
 export function parseContentfulCountryFields(
   country: Entry<CountrySkeleton>,
-  { includeDescription = false }: ParseContentfulCountryFieldsOptions
+  {
+    includeDescription = false,
+    includeCheatsheet = false,
+  }: ParseContentfulCountryFieldsOptions
 ): Country | null {
   const { fields } = country;
 
@@ -18,7 +22,11 @@ export function parseContentfulCountryFields(
     ? extractImageDataFromContentfulAsset(fields.mainImage as any) // Contentful new types are fucking awful, so I had to hack around a bit
     : undefined;
 
-  if (!fields.continent || !mainImage) {
+  const thumbnailImage = fields.thumbnailImage
+    ? extractImageDataFromContentfulAsset(fields.thumbnailImage as any) // Contentful new types are fucking awful, so I had to hack around a bit
+    : undefined;
+
+  if (!fields.continent || !mainImage || !thumbnailImage) {
     return null;
   }
 
@@ -30,7 +38,12 @@ export function parseContentfulCountryFields(
     description: includeDescription
       ? (fields.description as string)
       : undefined,
+      cheatsheet:
+      includeCheatsheet && fields.cheatsheet
+        ? (fields.cheatsheet as unknown as CountryCheatsheet)
+        : undefined,
     mainImage,
+    thumbnailImage,
     continent: {
       name: (fields.continent as unknown as ContinentSkeleton).fields
         .name as unknown as string, // Really dont like this, but COntentful types are fucked up!

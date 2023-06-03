@@ -19,8 +19,10 @@ export interface CountrySkeleton {
     slug: EntryFieldTypes.Text;
     shortDescription: EntryFieldTypes.Text;
     description: EntryFieldTypes.Text;
+    cheatsheet: EntryFieldTypes.Object;
     metaDescription: EntryFieldTypes.Text;
     mainImage?: Asset;
+    thumbnailImage?: Asset;
     continent: EntryFieldTypes.EntryLink<ContinentSkeleton>;
   };
 }

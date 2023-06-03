@@ -1,5 +1,7 @@
 import { Metadata } from "next";
 
+import { Cheatsheet } from "@/components/country/Cheatsheet/Cheatsheet";
+import { CountryHero } from "@/components/country/CountryHero";
 import { AppLocale } from "@/types/global";
 import { getCountry } from "@/utils/api";
 import { createAlternates } from "@/utils/urls";
@@ -59,16 +61,16 @@ export async function generateMetadata({
 
 export default async function CountryPage({ params }: CountryPageProps) {
   const { country } = await getCountry(params.country, params.locale);
-
+  console.log(country);
   return (
     <div className="flex flex-col">
-      <div className="w-[1024px] mx-auto py-24">
-        <h1 className="text-6xl font-bold">{country.name}</h1>
+      <CountryHero name={country.name} image={country.mainImage} />
 
-        {country.description && (
-          <div className="text-xl">{country.description}</div>
-        )}
-      </div>
+      {country.cheatsheet ? (
+        <div className="px-4 lg:px-24 xl:px-48 pt-12 lg:pt-32 pb-12 lg:pb-24">
+          <Cheatsheet name={country.name} cheatsheet={country.cheatsheet} />
+        </div>
+      ) : null}
     </div>
   );
 }

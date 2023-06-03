@@ -68,6 +68,13 @@
       "cta": "back to homepage"
     }
   },
+  "Country": {
+    "Cheatsheet": {
+      "title": "Cheatsheet",
+      "description": "A bunch of useful, and interesting facts, visible at a glance",
+      "seeMore": "See more"
+    }
+  },
   "NotFound": {
     "title": "mmmh... maybe you are a bit ahead of our travel",
     "backHome": "back to homepage"
