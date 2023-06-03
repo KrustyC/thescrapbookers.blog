@@ -27,11 +27,11 @@ export const CountryLoading = () => (
 export const Country: React.FC<CountryProps> = ({ country }) => {
   return (
     <div className="w-full 2xl:w-max 2xl:mx-auto flex flex-col md:flex-row gap-6">
-      <div className="w-full aspect-square md:w-3/4 md:aspect-auto md:h-[300px] relative rounded-xl">
+      <div className="w-full aspect-square md:w-3/4 md:aspect-auto md:h-[300px] relative rounded-xl loading-background">
         <Image
           className="rounded-xl"
-          src={country.mainImage.url}
-          alt={country.mainImage.description}
+          src={country.thumbnailImage.url}
+          alt={country.thumbnailImage.description}
           sizes="100vw"
           priority
           fill
