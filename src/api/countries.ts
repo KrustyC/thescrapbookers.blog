@@ -9,8 +9,10 @@ export async function getCountry(
   locale: AppLocale
 ): Promise<GetCountryResponse> {
   const url = `${process.env.baseUrl}/${locale}/api/country/${slug}`;
-  // const res = await fetch(url);
-  const res = await fetch(url, { next: { revalidate: 0 } });
+  const res = await fetch(
+    url,
+    process.env.disableCache ? { next: { revalidate: 0 } } : undefined
+  );
 
   if (!res.ok) {
     throw new Error(`Failed to fetch continent: ${slug}`);
@@ -28,8 +30,10 @@ export async function getCountriesForContinent(
   locale: AppLocale
 ): Promise<GetCountriesForContinentResponse> {
   const url = `${process.env.baseUrl}/${locale}/api/continent/${continentSlug}/countries?`;
-  const res = await fetch(url);
-  // const res = await fetch(url, { next: { revalidate: 0 } });
+  const res = await fetch(
+    url,
+    process.env.disableCache ? { next: { revalidate: 0 } } : undefined
+  );
 
   if (!res.ok) {
     throw new Error(

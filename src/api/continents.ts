@@ -10,8 +10,10 @@ export async function getContinent(
   locale: AppLocale
 ): Promise<GetContinentResponse> {
   const url = `${process.env.baseUrl}/${locale}/api/continent/${slug}`;
-  const res = await fetch(url);
-  // const res = await fetch(url, { next: { revalidate: 0 } });
+  const res = await fetch(
+    url,
+    process.env.disableCache ? { next: { revalidate: 0 } } : undefined
+  );
 
   if (!res.ok) {
     throw new Error(`Failed to fetch continent: ${slug}`);

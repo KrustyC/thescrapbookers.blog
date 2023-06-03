@@ -12,9 +12,10 @@ export async function getPosts({
   const url = `${process.env.baseUrl}/${locale}/api/post${
     tag ? `?tag=${tag}` : ""
   }`;
-
-  const res = await fetch(url);
-  // const res = await fetch(url, { next: { revalidate: 0 } });
+  const res = await fetch(
+    url,
+    process.env.disableCache ? { next: { revalidate: 0 } } : undefined
+  );
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -33,9 +34,10 @@ export async function getPostsByCountry({
   locale,
 }: GetPostsByCountryParams): Promise<{ posts: Post[] }> {
   const url = `${process.env.baseUrl}/${locale}/api/country/${country}/posts`;
-
-  // const res = await fetch(url);
-  const res = await fetch(url, { next: { revalidate: 0 } });
+  const res = await fetch(
+    url,
+    process.env.disableCache ? { next: { revalidate: 0 } } : undefined
+  );
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -59,8 +61,10 @@ export async function getPost({
   locale,
 }: GetPostParams): Promise<GetPostResponse> {
   const url = `${process.env.baseUrl}/${locale}/api/post/${slug}`;
-  const res = await fetch(url);
-  // const res = await fetch(url, { next: { revalidate: 0 } });
+  const res = await fetch(
+    url,
+    process.env.disableCache ? { next: { revalidate: 0 } } : undefined
+  );
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");

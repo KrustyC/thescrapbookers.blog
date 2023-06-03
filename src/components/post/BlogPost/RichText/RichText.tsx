@@ -4,6 +4,8 @@ import {
 } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, Document, INLINES, MARKS } from "@contentful/rich-text-types";
 
+import { crimsonText } from "@/utils/fonts";
+
 import {
   Asset,
   Bold,
@@ -40,9 +42,6 @@ const options: Options = {
     [BLOCKS.HEADING_5]: (_, children: any) => (
       <Heading size={5}>{children}</Heading>
     ),
-    [BLOCKS.HEADING_5]: (_, children: any) => (
-      <Heading size={5}>{children}</Heading>
-    ),
     [BLOCKS.HEADING_6]: (_, children: any) => (
       <Heading size={6}>{children}</Heading>
     ),
@@ -73,7 +72,7 @@ const options: Options = {
 
 export const RichText: React.FC<{ richtext: Document }> = ({ richtext }) => {
   return (
-    <div className="flex flex-col gap-y-4 text-2xl">
+    <div style={crimsonText.style} className="flex flex-col gap-y-4 text-2xl">
       {documentToReactComponents(richtext, options)}
     </div>
   );

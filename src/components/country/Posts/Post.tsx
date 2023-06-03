@@ -12,20 +12,20 @@ interface CountryPostProps {
 
 export const CountryPostLoading = () => (
   <div className="flex flex-col w-full">
-    <div className="loading-background w-full aspect-square rounded-2xl" />
+    <div className="loading-background-animation w-full aspect-square rounded-2xl" />
 
     <div className="flex items-center mt-4 h-4">
-      <div className="h-4 w-1/2 loading-background" />
-      <div className="border-r-2 h-2 mx-2 loading-background" />
-      <div className="h-4 w-1/2 loading-background" />
+      <div className="h-4 w-1/2 loading-background-animation" />
+      <div className="border-r-2 h-2 mx-2 loading-background-animation" />
+      <div className="h-4 w-1/2 loading-background-animation" />
     </div>
 
-    <div className="h-10 my-4 loading-background" />
+    <div className="h-10 my-4 loading-background-animation" />
 
-    <div className="flex flex-col gap-2 loading-background">
-      <div className="h-4 loading-background" />
-      <div className="h-4 loading-background" />
-      <div className="h-4 loading-background" />
+    <div className="flex flex-col gap-2 loading-background-animation">
+      <div className="h-4 loading-background-animation" />
+      <div className="h-4 loading-background-animation" />
+      <div className="h-4 loading-background-animation" />
     </div>
   </div>
 );

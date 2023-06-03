@@ -8,6 +8,7 @@ const nextConfig = withNextIntl({
     environment: process.env.ENVIRONMENT || "local",
     baseUrl: process.env.BASE_URL || "http://localhost:8888",
     googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID,
+    disableCache: process.env.DISABLE_CACHE === "true" || false,
   },
   experimental: {
     serverActions: true,

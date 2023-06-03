@@ -3,7 +3,7 @@ import Link from "next-intl/link";
 import { getTranslations } from "next-intl/server";
 
 import { getPost } from "@/api";
-import { BlogPost } from "@/components/BlogPost/BlogPost";
+import { BlogPost } from "@/components/post/BlogPost/BlogPost";
 import { ArticleNotFoundIcon } from "@/icons/ArticleNotFound";
 import { AppLocale } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
@@ -19,7 +19,7 @@ export async function generateMetadata({
   params: { slug, locale },
 }: PostPageProps): Promise<Metadata> {
   try {
-    const { post } = await getPost(slug, locale);
+    const { post } = await getPost({ slug, locale });
 
     if (!post) {
       return {};
@@ -62,7 +62,7 @@ export async function generateMetadata({
 export default async function PostPage({
   params: { slug, locale },
 }: PostPageProps) {
-  const { post, nextPost } = await getPost(slug, locale);
+  const { post, nextPost } = await getPost({ slug, locale });
   const t = await getTranslations("BlogPost");
 
   if (!post) {
