@@ -63,7 +63,7 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
   const onToggleExpanded = () => setIsExpanded((currentVal) => !currentVal);
 
   return (
-    <div className="px-5 py-8 w-full 2xl:w-[1024px] 2xl:mx-auto flex flex-col rounded-2xl bg-cheatsheet/10 shadow-xl">
+    <div className="px-5 py-8 w-full 2xl:w-max 2xl:mx-auto flex flex-col rounded-2xl bg-cheatsheet/10 shadow-xl">
       <div className="flex flex-col lg:flex-row lg:justify-between border-y border-black py-6">
         <div className="flex flex-col">
           <h2 className="text-3xl flex flex-col font-semibold mb-2">

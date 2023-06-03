@@ -6,6 +6,10 @@ html {
   @apply text-slate-900;
 }
 
+.loading-background {
+  @apply bg-gray-300 animate-pulse;
+}
+
 .rich-text-copy {
   @apply w-full lg:w-[720px] lg:mx-auto px-6 lg:px-0;
 }

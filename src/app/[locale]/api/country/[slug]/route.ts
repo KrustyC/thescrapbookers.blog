@@ -27,8 +27,6 @@ export async function GET(_: Request, { params }: Options) {
       return NextResponse.json({ country: null });
     }
 
-    console.log(country);
-
     return NextResponse.json({
       country: parseContentfulCountryFields(country, {
         includeDescription: true,

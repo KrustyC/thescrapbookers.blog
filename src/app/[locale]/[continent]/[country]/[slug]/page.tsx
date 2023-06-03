@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import Link from "next-intl/link";
 import { getTranslations } from "next-intl/server";
 
+import { getPost } from "@/api";
 import { BlogPost } from "@/components/BlogPost/BlogPost";
 import { ArticleNotFoundIcon } from "@/icons/ArticleNotFound";
 import { AppLocale } from "@/types/global";
-import { getPost } from "@/utils/api";
 import { createAlternates } from "@/utils/urls";
 
 interface PostPageProps {

@@ -77,7 +77,7 @@ export const BlogPost: React.FC<BlogPostProps> = ({
       </p>
 
       {nextPost && (
-        <div className="w-full lg:w-[920px] 2xl:w-[1240px] mx-auto mt-10 lg:mt-24 flex flex-col">
+        <div className="w-full lg:w-[920px] 2xl:w-max mx-auto mt-10 lg:mt-24 flex flex-col">
           <Link
             href={`/post/${nextPost.slug}`}
             className="w-full h-[380px] relative loading-background"

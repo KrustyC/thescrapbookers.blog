@@ -1,9 +1,13 @@
+import { Suspense } from "react";
 import { Metadata } from "next";
 
+import { getCountry } from "@/api";
 import { Cheatsheet } from "@/components/country/Cheatsheet/Cheatsheet";
 import { CountryHero } from "@/components/country/CountryHero";
+import CountryPosts, {
+  CountryPostsLoading,
+} from "@/components/country/Posts/CountryPosts";
 import { AppLocale } from "@/types/global";
-import { getCountry } from "@/utils/api";
 import { createAlternates } from "@/utils/urls";
 
 interface CountryPageProps {
@@ -61,7 +65,7 @@ export async function generateMetadata({
 
 export default async function CountryPage({ params }: CountryPageProps) {
   const { country } = await getCountry(params.country, params.locale);
-  console.log(country);
+
   return (
     <div className="flex flex-col">
       <CountryHero name={country.name} image={country.mainImage} />
@@ -71,6 +75,13 @@ export default async function CountryPage({ params }: CountryPageProps) {
           <Cheatsheet name={country.name} cheatsheet={country.cheatsheet} />
         </div>
       ) : null}
+
+      <Suspense fallback={<CountryPostsLoading />}>
+        <CountryPosts
+          country={{ name: country.name, slug: country.slug }}
+          locale={params.locale}
+        />
+      </Suspense>
     </div>
   );
 }

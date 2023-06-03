@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 
+import { getPosts } from "@/api";
 import type { AppLocale } from "@/types/global";
-import { getPostsByTag } from "@/utils/api";
 
 import { SectionWithTitle } from "../SectionWIthTitle/SectionWithTitle";
 
@@ -16,7 +16,7 @@ export default async function FeaturedPostsSection({
   const t = await getTranslations("Home.Featured");
 
   try {
-    const { posts } = await getPostsByTag({ tag: "featured", locale });
+    const { posts } = await getPosts({ tag: "featured", locale });
 
     return (
       <SectionWithTitle title={t("title")}>

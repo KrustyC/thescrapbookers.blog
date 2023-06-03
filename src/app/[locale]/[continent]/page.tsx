@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 
+import { getContinent, getCountriesForContinent } from "@/api";
 import { ContinentHero } from "@/components/continent/ContinentHero";
 import { Country } from "@/components/continent/Country";
 import { AppLocale } from "@/types/global";
-import { getContinent, getCountriesForContinent } from "@/utils/api";
 import { createAlternates } from "@/utils/urls";
 
 interface ContinentPageProps {

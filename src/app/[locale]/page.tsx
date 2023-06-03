@@ -87,14 +87,12 @@ export default function Home({ params }: { params: { locale: AppLocale } }) {
         <Hero locale={params.locale} />
 
         <Suspense fallback={<FeaturedPostsSectionSkeleton />}>
-          {/* @ts-expect-error Server Component */}
           <FeaturedPostsSection locale={params.locale} />
         </Suspense>
 
         <DynamicVideo />
 
         <Suspense fallback={<DigitalNomadingSectionSkeleton />}>
-          {/* @ts-expect-error Server Component */}
           <DigitalNomadingSection locale={params.locale} />
         </Suspense>
 

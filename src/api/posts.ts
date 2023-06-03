@@ -1,0 +1,70 @@
+import { AppLocale, Post } from "@/types/global";
+
+interface GetPostsByTagParams {
+  tag?: "featured" | "smallnoteHome";
+  locale: AppLocale;
+}
+
+export async function getPosts({
+  tag,
+  locale,
+}: GetPostsByTagParams): Promise<{ posts: Post[] }> {
+  const url = `${process.env.baseUrl}/${locale}/api/post${
+    tag ? `?tag=${tag}` : ""
+  }`;
+
+  const res = await fetch(url);
+  // const res = await fetch(url, { next: { revalidate: 0 } });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+
+interface GetPostsByCountryParams {
+  country: string;
+  locale: AppLocale;
+}
+
+export async function getPostsByCountry({
+  country,
+  locale,
+}: GetPostsByCountryParams): Promise<{ posts: Post[] }> {
+  const url = `${process.env.baseUrl}/${locale}/api/country/${country}/posts`;
+
+  // const res = await fetch(url);
+  const res = await fetch(url, { next: { revalidate: 0 } });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+
+interface GetPostParams {
+  slug: string;
+  locale: AppLocale;
+}
+
+interface GetPostResponse {
+  post: Post;
+  nextPost: Pick<Post, "title" | "slug" | "date" | "mainImage" | "smallIntro">;
+}
+
+export async function getPost({
+  slug,
+  locale,
+}: GetPostParams): Promise<GetPostResponse> {
+  const url = `${process.env.baseUrl}/${locale}/api/post/${slug}`;
+  const res = await fetch(url);
+  // const res = await fetch(url, { next: { revalidate: 0 } });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}

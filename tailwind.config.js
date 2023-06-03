@@ -20,6 +20,9 @@ module.exports = {
         "4xl": "2000px",
         "5xl": "2400px",
       },
+      width: {
+        "max": "1240px",
+      }
     },
   },
   plugins: [],

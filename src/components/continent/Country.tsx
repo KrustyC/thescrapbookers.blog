@@ -9,7 +9,7 @@ interface CountryProps {
 }
 
 export const CountryLoading = () => (
-  <div className="w-full 2xl:w-[1024px] 2xl:mx-auto flex flex-col md:flex-row gap-6">
+  <div className="w-full 2xl:w-max 2xl:mx-auto flex flex-col md:flex-row gap-6">
     <div className="w-full aspect-square md:w-3/4 md:aspect-auto md:h-[300px] rounded-xl bg-gray-300 animate-pulse" />
 
     <div className="w-full md:w-1/4 flex flex-col gap-2 md:gap-4">
@@ -26,7 +26,7 @@ export const CountryLoading = () => (
 
 export const Country: React.FC<CountryProps> = ({ country }) => {
   return (
-    <div className="w-full 2xl:w-[1024px] 2xl:mx-auto flex flex-col md:flex-row gap-6">
+    <div className="w-full 2xl:w-max 2xl:mx-auto flex flex-col md:flex-row gap-6">
       <div className="w-full aspect-square md:w-3/4 md:aspect-auto md:h-[300px] relative rounded-xl">
         <Image
           className="rounded-xl"

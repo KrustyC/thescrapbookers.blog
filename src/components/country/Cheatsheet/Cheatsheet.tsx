@@ -10,7 +10,7 @@ interface CheatsheetProps {
 }
 
 export const CheatsheetLoading = () => (
-  <div className="w-full 2xl:w-[1024px] 2xl:mx-auto flex flex-col md:flex-row gap-6">
+  <div className="w-full 2xl:w-max 2xl:mx-auto flex flex-col md:flex-row gap-6">
     Loading
   </div>
 );
