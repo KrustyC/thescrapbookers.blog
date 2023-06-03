@@ -9,12 +9,12 @@ interface BlogPostHeroProps {
   post: Post;
 }
 
-export const BlogPostLoading = () => <div>Loading</div>;
+export const BlogPostHerotLoading = () => <div>Loading</div>;
 
 export const BlogPostHero: React.FC<BlogPostHeroProps> = ({ post }) => {
   return (
-    <div className="flex flex-col items-center justify-end py-12 px-8 relative h-[650px] lg:h-[750px]">
-      <div className="z-10 flex flex-col items-center gap-4 lg:gap-6">
+    <div className="relative h-[650px] lg:h-[750px]">
+      <div className="z-10 flex flex-col items-center justify-end gap-4 lg:gap-6 absolute top-0 bottom-0 right-0 left-0 bg-gradient-to-b from-black/0 to-black/50 pb-8">
         {post.country ? <Breadcrumbs country={post.country} /> : null}
         <h1 className="lg:w-[530px] text-4xl lg:text-6xl font-bold text-center text-white">
           {post.title}

@@ -1,10 +1,12 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-import image1 from "../../../public/images/about-us.jpg";
-import image2 from "../../../public/images/home-hero.jpg";
-import image3 from "../../../public/images/the_scrapbookers.png";
-import { ButtonLink } from "../uikit/ButtonLink";
+import { ButtonLink } from "@/components/uikit/ButtonLink";
+
+import chiangMaiTower from "../../../public/images/chiang-mai-tower.jpg";
+import vientianeBuddhaStatue from "../../../public/images/vientiane-buddha-statue.jpg";
+import vientianeManWorkingWithCables from "../../../public/images/vientiane-man-working-with-cables.jpg";
+import vientianeTemple from "../../../public/images/vientiane-temple.jpg";
 
 export const PhotoDumpSection: React.FC = () => {
   const t = useTranslations("Home.PhotoDump");
@@ -15,8 +17,8 @@ export const PhotoDumpSection: React.FC = () => {
         <div className="h-[180px] md:h-[320px] lg:h-full w-3/5 lg:w-1/4 rounded-r-2xl relative bg-gray-200">
           <Image
             className="rounded-r-2xl"
-            src={image1}
-            alt="the scrapbooker logo" // @TODO Once images are there add description
+            src={vientianeManWorkingWithCables}
+            alt="a man on a step ladder working with a lot of cable in Vientiane (Laos)"
             sizes="100%"
             loading="lazy"
             fill
@@ -27,8 +29,8 @@ export const PhotoDumpSection: React.FC = () => {
         <div className="h-[140px] md:h-[320px] lg:h-full w-5/6 md:w-3/5 lg:w-1/4 rounded-l-2xl lg:rounded-2xl relative bg-gray-200 self-end lg:self-auto">
           <Image
             className="rounded-l-2xl lg:rounded-2xl"
-            src={image2}
-            alt="the scrapbooker logo" // @TODO Once images are there add description
+            src={vientianeTemple}
+            alt="the ceiling of a temple in Vienitane (Laos)"
             sizes="100%"
             loading="lazy"
             fill
@@ -39,8 +41,8 @@ export const PhotoDumpSection: React.FC = () => {
         <div className="h-[180px] md:h-[320px] lg:h-full w-3/5 lg:w-1/4 rounded-2xl relative bg-gray-200">
           <Image
             className="rounded-2xl"
-            src={image1}
-            alt="the scrapbooker logo" // @TODO Once images are there add description
+            src={vientianeBuddhaStatue}
+            alt="a statue of Buddha in Vientiane (Laos)"
             sizes="100%"
             loading="lazy"
             fill
@@ -51,8 +53,8 @@ export const PhotoDumpSection: React.FC = () => {
         <div className="h-[180px] md:h-[360px] lg:h-full w-3/4 md:w-1/2 lg:w-1/4 rounded-r-2xl lg:rounded-r-none lg:rounded-l-2xl relative bg-gray-200">
           <Image
             className="rounded-r-2xl lg:rounded-r-none lg:rounded-l-2xl"
-            src={image3}
-            alt="the scrapbooker logo" // @TODO Once images are there add description
+            src={chiangMaiTower}
+            alt="an old tower from a temple in Chiang Mai (Thailand)"
             sizes="100%"
             loading="lazy"
             fill

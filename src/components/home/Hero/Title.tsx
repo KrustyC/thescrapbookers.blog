@@ -1,4 +1,4 @@
-import { leagueGothic } from "@/utils/fonts";
+import { leagueGothic, poppins } from "@/utils/fonts";
 
 interface TitleProps {
   titlePart1: string;
@@ -23,8 +23,16 @@ export const Title: React.FC<TitleProps> = ({
         {titlePart2}
       </h1>
       <div className="flex flex-col-reverse lg:flex-row lg:justify-between lg:items-start gap-4 lg:gap-0">
-        <p className="lg:max-w-[600px] text-xl md:text-2xl lg:text-3xl font-light">{subtitle}</p>
-        <span className="uppercase text-4xl lg:text-5xl" style={leagueGothic.style}>
+        <p
+          style={poppins.style}
+          className="lg:max-w-[600px] text-xl md:text-2xl lg:text-3xl font-thin"
+        >
+          {subtitle}
+        </p>
+        <span
+          className="uppercase text-4xl lg:text-5xl"
+          style={leagueGothic.style}
+        >
           {author}
         </span>
       </div>
