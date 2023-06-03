@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 
-import { Country as ICountry,CountryCheatsheet } from "@/types/global";
+import { Country as ICountry, CountryCheatsheet } from "@/types/global";
 
 import { CheatsheetBanner } from "./CheatsheetBanner";
 
@@ -10,9 +10,7 @@ interface CheatsheetProps {
 }
 
 export const CheatsheetLoading = () => (
-  <div className="w-full 2xl:w-max 2xl:mx-auto flex flex-col md:flex-row gap-6">
-    Loading
-  </div>
+  <div className="w-full aspect-square lg:aspect-auto h-[560px] 2xl:w-max 2xl:mx-auto rounded-2xl shadow-xl loading-background-animation" />
 );
 
 export const Cheatsheet: React.FC<CheatsheetProps> = ({ name, cheatsheet }) => {

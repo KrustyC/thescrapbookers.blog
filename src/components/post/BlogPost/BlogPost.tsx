@@ -1,7 +1,7 @@
 import { AppLocale, Post } from "@/types/global";
 
 import { RichText } from "./RichText/RichText";
-import { BlogPostHero } from "./BlogPostHero";
+import { BlogPostHero, BlogPostHeroLoading } from "./BlogPostHero";
 import { NextPost } from "./NextPost";
 
 interface BlogPostProps {
@@ -13,7 +13,11 @@ interface BlogPostProps {
   };
 }
 
-export const BlogPostLoading = () => <div>Loading</div>;
+export const BlogPostLoading = () => (
+  <div className="flex felx-full">
+    <BlogPostHeroLoading />
+  </div>
+);
 
 export const BlogPost: React.FC<BlogPostProps> = ({
   post,

@@ -80,8 +80,11 @@ export const Asset: React.FC<{ block: Block | Inline }> = ({ block }) => {
 
   if (file.contentType.startsWith("video/")) {
     return (
-      <div className="mx-auto my-8 lg:my-16 loading-background w-full lg:w-[840px] aspect-video">
-        <video controls>
+      <div className="relative mx-auto my-8 lg:my-16 loading-background w-full lg:w-[840px] aspect-video">
+        <video
+          controls
+          className="w-full h-full absolute top-0 left-0 object-cover"
+        >
           <source src={url} type="video/mp4" />
           Sorry, your browser doesn{"'"}t support videos.
         </video>

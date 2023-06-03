@@ -9,10 +9,16 @@ interface CountryPostsProps {
 }
 
 export const CountryPostsLoading = () => (
-  <div className="w-full 2xl:w-max 2xl:mx-auto bg-gray-300 animate-pulse">
-    {Array.from({ length: 6 }).map((_, i) => (
-      <CountryPostLoading key={i} />
-    ))}
+  <div className="px-8 lg:px-24 xl:px-48 mt-8 mb-24">
+    <div className="w-full 2xl:w-max 2xl:mx-auto flex flex-col">
+      <div className="loading-background-animation h-10 w-full lg:w-3/5 loading-background-animation" />
+
+      <div className="grid gap-8 grid-cols-1 lg:grid-cols-3">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <CountryPostLoading key={i} />
+        ))}
+      </div>
+    </div>
   </div>
 );
 
@@ -28,6 +34,7 @@ export default async function CountryPosts({
         <h2 className="text-3xl lg:text-5xl font-semibold mb-8 lg:mb-12">
           Articles from {country.name}
         </h2>
+
         <div className="grid gap-8 grid-cols-1 lg:grid-cols-3">
           {posts.map((post) => (
             <CountryPost key={post.slug} post={post} locale={locale} />

@@ -13,11 +13,11 @@ export const CountryLoading = () => (
     <div className="w-full aspect-square md:w-3/4 md:aspect-auto md:h-[300px] rounded-xl bg-gray-300 animate-pulse" />
 
     <div className="w-full md:w-1/4 flex flex-col gap-2 md:gap-4">
-      <h2 className="h-16 bg-gray-300 animate-pulse" />
+      <h2 className="h-12 bg-gray-300 animate-pulse" />
       <div className="flex flex-col gap-2">
-        <div className="h-10 w-full bg-gray-300 animate-pulse" />
-        <div className="h-10 w-3/4 bg-gray-300 animate-pulse" />
-        <div className="h-10 w-3/5 bg-gray-300 animate-pulse" />
+        <div className="h-8 w-full bg-gray-300 animate-pulse" />
+        <div className="h-8 w-3/4 bg-gray-300 animate-pulse" />
+        <div className="h-8 w-3/5 bg-gray-300 animate-pulse" />
       </div>
       <div className="h-10 lg:h-12 min-w-16 lg:min-w-24 px-4 lg:px-8 rounded-xl bg-gray-300 animate-pulse" />
     </div>

@@ -38,7 +38,7 @@
       "cta": "Find out more"
     },
     "NavbarLinks": {
-      "asia": "Asia Articles",
+      "asia": "Asia",
       "remoteRoaming": "Remote Roaming",
       "cheatsheets": "Cheatsheets",
       "aboutUs": "About Us"
@@ -81,7 +81,7 @@
   },
   "Global": {
     "NavbarLinks": {
-      "asia": "Asia Articles",
+      "asia": "Asia",
       "remoteRoaming": "Remote Roaming",
       "cheatsheets": "Cheatsheets",
       "aboutUs": "About Us"
@@ -109,7 +109,7 @@
       "notes": "Notes",
       "newsletterMessage": "From the Scrapbookers",
       "Links": {
-        "asia": "Asia Articles",
+        "asia": "Asia",
         "remoteRoaming": "Remote Roaming",
         "cheatsheets": "Cheatsheets",
         "aboutUs": "About Us"
