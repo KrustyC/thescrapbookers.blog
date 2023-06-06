@@ -10,7 +10,7 @@
         "part2": "leave only footprints."
       },
       "author": "Chief Seattle",
-      "subtitle": "Yet another travel blog. Same same, but different."
+      "subtitle": "Finding the sustainable side of digital nomading, one discovery at a time"
     },
     "Featured": {
       "title": "Recent Articles",
@@ -33,8 +33,8 @@
       "cta": "Read Article"
     },
     "AboutUs": {
-      "title": "About Us",
-      "text": "We are Davide and Beatrice, a software engineer and a freelance designer. We have just started our journey around the world and wanted to find a way to keep our family and close friends up to date on our whereabouts by sharing a few of our stories.",
+      "title": "What's the blog about?",
+      "text": "Of course, we are not the first to start a travel blog. Honestly, we're a bit surprised to find ourselves even doing this. It's a journey of learning, meeting fascinating cultures and individuals, then sharing those stories via articles and chats with locals and digital nomads alike. Thanks for popping by, and you're more than welcome to tag along.",
       "cta": "Find out more"
     },
     "NavbarLinks": {
@@ -111,9 +111,10 @@
       "Links": {
         "asia": "Asia",
         "remoteRoaming": "Remote Roaming",
-        "cheatsheets": "Cheatsheets",
         "aboutUs": "About Us"
       }
     }
   }
 }
+
+

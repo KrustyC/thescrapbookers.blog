@@ -34,7 +34,7 @@ export const Post: React.FC<PostProps> = ({
         />
       </Link>
       <div
-        className="flex items-center mt-6 md:mt-4 uppercase tracking-widest text-gray-400 text-sm md:text-xs lg:text-lg"
+        className="flex items-center mt-6 md:mt-4 lg:mt-6 uppercase tracking-widest text-gray-400 text-sm md:text-xs lg:text-lg"
         style={poppins.style}
       >
         <span>{category}</span>

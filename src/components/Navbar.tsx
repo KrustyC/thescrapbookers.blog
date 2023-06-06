@@ -44,7 +44,6 @@ export const Navbar: React.FC<NavbarProps> = ({
       >
         <Link href={URLS.asiaArticles()}>{navbar("asia")}</Link>
         <Link href={URLS.remoteRoaming()}>{navbar("remoteRoaming")}</Link>
-        <Link href={URLS.cheatsheets()}>{navbar("cheatsheets")}</Link>
         <Link href={URLS.aboutUs()}>{navbar("aboutUs")}</Link>
 
         <LocaleSwitch

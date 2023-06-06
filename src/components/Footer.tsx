@@ -97,7 +97,6 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
             <Link href={URLS.remoteRoaming()}>
               {footer("Links.remoteRoaming")}
             </Link>
-            <Link href={URLS.cheatsheets()}>{footer("Links.cheatsheets")}</Link>
             <Link href={URLS.aboutUs()}>{footer("Links.aboutUs")}</Link>
 
             <div className="flex gap-4 justify-center md:justify-end">
