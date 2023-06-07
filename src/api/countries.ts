@@ -25,6 +25,12 @@ interface GetCountriesForContinentResponse {
   countries: Country[];
 }
 
+/**
+ * This is a small hack to quickly sort countries according to the order I prefer.
+ * in the future it may be done directly on the API, or Contentful.
+ */
+const countryOrderedSlugs = ["thailand", "laos", "vietnam", "cambodia"];
+
 export async function getCountriesForContinent(
   continentSlug: string,
   locale: AppLocale
@@ -41,5 +47,13 @@ export async function getCountriesForContinent(
     );
   }
 
-  return res.json();
+  const { countries } = (await res.json()) as { countries: Country[] };
+
+  countries.sort((a, b) => {
+    return (
+      countryOrderedSlugs.indexOf(a.slug) - countryOrderedSlugs.indexOf(b.slug)
+    );
+  });
+
+  return { countries };
 }

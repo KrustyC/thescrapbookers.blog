@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import Link from "next-intl/link";
 
 import { ButtonLink } from "@/components/uikit/ButtonLink";
+import { leagueGothic } from "@/utils/fonts";
 
 import chiangMaiTower from "../../../public/images/chiang-mai-tower.jpg";
 import vientianeBuddhaStatue from "../../../public/images/vientiane-buddha-statue.jpg";
@@ -12,9 +14,12 @@ export const PhotoDumpSection: React.FC = () => {
   const t = useTranslations("Home.PhotoDump");
 
   return (
-    <div className="relative mb-16 mt-32">
+    <div className="mb-16 mt-32">
       <div className="flex flex-col lg:flex-row lg:justify-between gap-6 lg:gap-8 lg:h-[550px]">
-        <div className="h-[180px] md:h-[320px] lg:h-full w-3/5 lg:w-1/4 rounded-r-2xl relative bg-gray-200">
+        <Link
+          href="/asia/laos"
+          className="h-[180px] md:h-[320px] lg:h-full w-3/5 lg:w-1/4 rounded-r-2xl bg-gray-200 relative"
+        >
           <Image
             className="rounded-r-2xl"
             src={vientianeManWorkingWithCables}
@@ -24,7 +29,16 @@ export const PhotoDumpSection: React.FC = () => {
             fill
             style={{ objectFit: "cover" }}
           />
-        </div>
+
+          <div className="absolute z-10 top-0 left-0 bottom-0 right-0 h-full w-full flex items-center justify-center">
+            <span
+              className="text-7xl text-white uppercase"
+              style={leagueGothic.style}
+            >
+              Laos
+            </span>
+          </div>
+        </Link>
 
         <div className="h-[140px] md:h-[320px] lg:h-full w-5/6 md:w-3/5 lg:w-1/4 rounded-l-2xl lg:rounded-2xl relative bg-gray-200 self-end lg:self-auto">
           <Image
@@ -63,7 +77,7 @@ export const PhotoDumpSection: React.FC = () => {
         </div>
       </div>
 
-      <div className="absolute left-[20px] md:left-[120px] bottom-[340px] lg:left-[250px] lg:bottom-[80px] flex flex-col rounded-2xl p-6 lg:p-8 bg-white drop-shadow-2xl">
+      {/* <div className="absolute left-[20px] md:left-[120px] bottom-[340px] lg:left-[250px] lg:bottom-[80px] flex flex-col rounded-2xl p-6 lg:p-8 bg-white drop-shadow-2xl">
         <h2 className="text-xl lg:text-4xl font-semibold  w-fit border-primary border-b-2 lg:border-b-[6px]">
           {t("title")}
         </h2>
@@ -75,7 +89,7 @@ export const PhotoDumpSection: React.FC = () => {
         <ButtonLink size="sm" href="black" target="_blank" variant="black">
           {t("cta")}
         </ButtonLink>
-      </div>
+      </div> */}
     </div>
   );
 };

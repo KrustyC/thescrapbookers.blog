@@ -5,6 +5,9 @@ import { getTranslations } from "next-intl/server";
 
 import { Footer } from "@/components/Footer";
 import { AboutUsSection } from "@/components/home/AboutUsSection";
+import CountriesCarouselSection, {
+  CountriesCarouselSectionSkeleton,
+} from "@/components/home/CountriesCarouselSection/CountriesCarouselSection";
 import DigitalNomadingSection, {
   DigitalNomadingSectionSkeleton,
 } from "@/components/home/DigitalNomadingSection/DigitalNomadingSection";
@@ -13,7 +16,6 @@ import FeaturedPostsSection, {
 } from "@/components/home/FeaturedPostsSection/FeaturedPostsSection";
 import { Hero } from "@/components/home/Hero/Hero";
 import { HighlightSection } from "@/components/home/HighlightSection";
-import { PhotoDumpSection } from "@/components/home/PhotoDumpSection";
 import { AppLocale } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
 
@@ -96,7 +98,9 @@ export default function Home({ params }: { params: { locale: AppLocale } }) {
           <DigitalNomadingSection locale={params.locale} />
         </Suspense>
 
-        <PhotoDumpSection />
+        <Suspense fallback={<CountriesCarouselSectionSkeleton />}>
+          <CountriesCarouselSection locale={params.locale} />
+        </Suspense>
 
         <AboutUsSection />
 
