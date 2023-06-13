@@ -1,4 +1,4 @@
-import { AppLocale, Country } from "@/types/global";
+import { AppLocale, Country, ShortCountry } from "@/types/global";
 
 interface GetCountryResponse {
   country: Country;
@@ -22,7 +22,7 @@ export async function getCountry(
 }
 
 interface GetCountriesForContinentResponse {
-  countries: Country[];
+  countries: ShortCountry[];
 }
 
 /**
@@ -35,7 +35,7 @@ export async function getCountriesForContinent(
   continentSlug: string,
   locale: AppLocale
 ): Promise<GetCountriesForContinentResponse> {
-  const url = `${process.env.baseUrl}/${locale}/api/continent/${continentSlug}/countries?`;
+  const url = `${process.env.baseUrl}/${locale}/api/continent/${continentSlug}/countries`;
   const res = await fetch(
     url,
     process.env.disableCache ? { next: { revalidate: 0 } } : undefined
@@ -49,11 +49,12 @@ export async function getCountriesForContinent(
 
   const { countries } = (await res.json()) as { countries: Country[] };
 
-  countries.sort((a, b) => {
+  const filteredCountries = countries.filter((country) => country !== null);
+  filteredCountries.sort((a, b) => {
     return (
       countryOrderedSlugs.indexOf(a.slug) - countryOrderedSlugs.indexOf(b.slug)
     );
   });
 
-  return { countries };
+  return { countries: filteredCountries };
 }

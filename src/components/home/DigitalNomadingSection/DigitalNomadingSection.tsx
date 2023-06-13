@@ -1,12 +1,12 @@
 import { getTranslations } from "next-intl/server";
 
-import { getPosts } from "@/api";
+import { getPostDigitalNomadingHighlightedPost } from "@/api";
 import type { AppLocale } from "@/types/global";
 
 import { SectionWithTitle } from "../SectionWIthTitle/SectionWithTitle";
 
 import { DigitalNomadingSectionSkeleton } from "./DigitalNomadingSectionSkeleton";
-import { Post } from "./Post";
+import { SinglePost } from "./SinglePost";
 
 export default async function DigitalNomadingSection({
   locale,
@@ -16,16 +16,12 @@ export default async function DigitalNomadingSection({
   const t = await getTranslations("Home.DigitalNomading");
 
   try {
-    const { posts } = await getPosts({ tag: "featured", locale });
+    const { post } = await getPostDigitalNomadingHighlightedPost({ locale });
 
     return (
-      <SectionWithTitle title={t("title")} primaryBackground withExtraMarginTop>
-        <div className="flex flex-col md:flex-row gap-12 md:gap-8 lg:gap-16">
-          {posts.map((post, i) => (
-            <Post key={i} post={post} locale={locale} />
-          ))}
-        </div>
-      </SectionWithTitle>
+      <section className="flex flex-col pt-8 pb-16 md:py-16 lg:py-20 px-6 lg:px-16 xl:px-48 bg-white pt-16 md:py-16 lg:py-20">
+        <SinglePost post={post} locale={locale} />
+      </section>
     );
   } catch (error) {
     return (

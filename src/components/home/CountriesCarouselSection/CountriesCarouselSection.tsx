@@ -34,6 +34,8 @@ export default async function CountriesCarouselSection({
 }) {
   const { countries } = await getCountriesForContinent("asia", locale);
 
+  if (countries.length === 0) return null;
+
   const slides = countries.map((country) => ({
     image: getImage(country.slug),
     name: country.name,

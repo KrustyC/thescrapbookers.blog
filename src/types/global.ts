@@ -27,7 +27,7 @@ export interface CountryCheatsheet {
   currency: string;
   population: number;
   area: number;
-  
+
   basicWords: CountryCheatsheetBasicWord[];
   dishes: string[];
   visaWebsite: string;
@@ -45,6 +45,12 @@ export interface Country {
   cheatsheet?: CountryCheatsheet;
   continent: Pick<Continent, "name" | "slug">;
 }
+
+export interface ShortCountry
+  extends Pick<
+    Country,
+    "name" | "slug" | "shortDescription" | "thumbnailImage"
+  > {}
 
 export interface Author {
   name: string;

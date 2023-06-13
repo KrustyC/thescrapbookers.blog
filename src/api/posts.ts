@@ -24,6 +24,26 @@ export async function getPosts({
   return res.json();
 }
 
+export async function getPostDigitalNomadingHighlightedPost({
+  locale,
+}: {
+  locale: AppLocale;
+}): Promise<{ post: Post }> {
+  const TAG = "digitalNomadingHighlighted";
+  const url = `${process.env.baseUrl}/${locale}/api/post?tag=${TAG}`;
+  const res = await fetch(
+    url,
+    process.env.disableCache ? { next: { revalidate: 0 } } : undefined
+  );
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  const { posts } = (await res.json()) as { posts: Post[] };
+  return { post: posts[0] };
+}
+
 interface GetPostsByCountryParams {
   country: string;
   locale: AppLocale;

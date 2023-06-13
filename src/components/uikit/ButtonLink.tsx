@@ -8,6 +8,7 @@ interface ButtonLinkProps {
   variant: "white" | "black";
   target?: "_blank";
   type?: "button" | "submit";
+  prefetch?: boolean;
 }
 
 export const ButtonLink: React.FC<PropsWithChildren<ButtonLinkProps>> = ({
@@ -15,6 +16,7 @@ export const ButtonLink: React.FC<PropsWithChildren<ButtonLinkProps>> = ({
   target,
   size = "md",
   variant,
+  prefetch = false,
   type = "button",
   children,
 }) => {
@@ -22,6 +24,7 @@ export const ButtonLink: React.FC<PropsWithChildren<ButtonLinkProps>> = ({
     <Link
       href={href}
       target={target}
+      prefetch={prefetch}
       rel={target === "_blank" ? "noopener noreferrer" : undefined}
       type={type}
       className={classNames(

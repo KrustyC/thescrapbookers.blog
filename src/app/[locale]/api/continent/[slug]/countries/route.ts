@@ -3,7 +3,10 @@ import { NextResponse } from "next/server";
 import type { CountrySkeleton } from "@/types/contentful";
 import { getContentfulClient } from "@/utils/contentful-client";
 
-import { parseContentfulCountryFields } from "../../../country/utils";
+import {
+  parseContentfulCountryFields,
+  parseSmallContentfulCountryFields,
+} from "../../../country/utils";
 
 interface Options {
   params: {
@@ -27,9 +30,9 @@ export async function GET(_: Request, { params }: Options) {
     const countries = result.items || [];
 
     return NextResponse.json({
-      countries: countries.map((country) =>
-        parseContentfulCountryFields(country, { includeDescription: false })
-      ),
+      countries: countries
+        .map(parseSmallContentfulCountryFields)
+        .filter((country) => country !== null),
     });
   } catch (error) {
     console.error(error);
