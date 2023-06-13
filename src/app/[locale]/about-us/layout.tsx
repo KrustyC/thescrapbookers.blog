@@ -56,9 +56,9 @@ export default function AboutUsLayout({
     <div>
       <Navbar blackText locale={params.locale} />
 
-      <div>{children}</div>
+      <div className="w-full">{children}</div>
 
-      <div className="-mt-40">
+      <div className="-mt-12 sm:-mt-24 md:-mt-28 lg:-mt-40">
         <Footer locale={params.locale} />
       </div>
     </div>
