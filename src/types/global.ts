@@ -49,7 +49,7 @@ export interface Country {
 export interface ShortCountry
   extends Pick<
     Country,
-    "name" | "slug" | "shortDescription" | "thumbnailImage"
+    "name" | "slug" | "shortDescription" | "thumbnailImage" | "continent"
   > {}
 
 export interface Author {

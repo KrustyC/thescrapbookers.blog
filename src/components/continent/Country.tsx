@@ -1,11 +1,10 @@
 import Image from "next/image";
 
 import { ButtonLink } from "@/components/uikit/ButtonLink";
-import { Country as ICountry } from "@/types/global";
-import { leagueGothic } from "@/utils/fonts";
+import { ShortCountry } from "@/types/global";
 
 interface CountryProps {
-  country: ICountry;
+  country: ShortCountry;
 }
 
 export const CountryLoading = () => (

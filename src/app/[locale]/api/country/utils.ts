@@ -26,7 +26,6 @@ export function parseContentfulCountryFields(
     ? extractImageDataFromContentfulAsset(fields.thumbnailImage as any) // Contentful new types are fucking awful, so I had to hack around a bit
     : undefined;
 
-
   if (!fields.continent || !mainImage || !thumbnailImage) {
     return null;
   }
@@ -72,5 +71,11 @@ export function parseSmallContentfulCountryFields(
     slug: fields.slug as unknown as string,
     shortDescription: fields.shortDescription as unknown as string,
     thumbnailImage,
+    continent: {
+      name: (fields.continent as unknown as ContinentSkeleton).fields
+        .name as unknown as string, // Really dont like this, but COntentful types are fucked up!
+      slug: (fields.continent as unknown as ContinentSkeleton).fields
+        .slug as unknown as string,
+    },
   };
 }
