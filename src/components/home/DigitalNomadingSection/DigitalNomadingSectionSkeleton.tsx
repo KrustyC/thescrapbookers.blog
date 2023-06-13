@@ -1,31 +1,32 @@
-import { LoadingSectionWithTitle } from "@/components/home/SectionWIthTitle/LoadingSectionWithTitle";
-
-const POST_COUNTS = [1, 2, 3];
-
 export const DigitalNomadingSectionSkeleton = () => {
   return (
-    <LoadingSectionWithTitle primaryBackground>
-      <div className="flex flex-col md:flex-row gap-12 md:gap-8 lg:gap-16">
-        {POST_COUNTS.map((_, i) => (
-          <div key={i} className="flex flex-col w-full animate-pulse">
-            <div className="flex w-full aspect-square relative bg-white rounded-2xl" />
+    <section className="py-8 md:py-16 lg:py-20 px-6 lg:px-16 xl:px-48 w-full bg-primary">
+      <div className="flex gap-x-8">
+        <div className="flex items-end w-full aspect-[4/3] relative bg-gray-200 rounded-2xl drop-shadow-lg bg-gray-400 border-2 border-black">
+          <div className="h-full w-full  loading-background-animation rounded-xl" />
+        </div>
 
-            <div className="flex items-center mt-4 h-4">
-              <div className="bg-white h-4 w-1/2" />
-              <div className="border-r-2 h-2 mx-2" />
-              <div className="bg-white h-4 w-1/2" />
-            </div>
+        <div className="flex flex-col text-black px-6 w-full">
+          <div className="h-10 w-full loading-background-animation" />
 
-            <div className="bg-white h-10 my-4" />
-
-            <div className="flex flex-col gap-2">
-              <div className="bg-white h-4" />
-              <div className="bg-white h-4" />
-              <div className="bg-white h-4" />
-            </div>
+          <div className="flex items-center my-4">
+            <span className="h-6 w-24 loading-background-animation" />
+            <div className="border-r-2 border-black h-3 mx-2" />
+            <span className="h-6 w-32 loading-background-animation" />
           </div>
-        ))}
+
+          <div className="flex flex-col gap-y-2">
+            {Array.from({ length: 3 }).map((_, i) => (
+              <div
+                key={i}
+                className="h-5 w-full loading-background-animation"
+              />
+            ))}
+          </div>
+
+          <div className="mt-6 w-36 text-sm h-10 lg:h-12 min-w-16 lg:min-w-24 px-4 lg:px-8 rounded-xl h-20 loading-background-animation" />
+        </div>
       </div>
-    </LoadingSectionWithTitle>
+    </section>
   );
 };

@@ -18,6 +18,8 @@ export default async function DigitalNomadingSection({
   try {
     const { post } = await getPostDigitalNomadingHighlightedPost({ locale });
 
+    if (!post) return null;
+
     return (
       <section className="flex flex-col pt-8 pb-16 md:py-16 lg:py-20 px-6 lg:px-16 xl:px-48 bg-white pt-16 md:py-16 lg:py-20">
         <SinglePost post={post} locale={locale} />
