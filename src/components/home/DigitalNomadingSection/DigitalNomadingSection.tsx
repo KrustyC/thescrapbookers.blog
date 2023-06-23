@@ -21,19 +21,12 @@ export default async function DigitalNomadingSection({
     if (!post) return null;
 
     return (
-      <section className="flex flex-col pt-8 pb-16 md:py-16 lg:py-20 px-6 lg:px-16 xl:px-48 bg-white pt-16 md:py-16 lg:py-20">
+      <section className="bg-primary flex flex-col pt-8 pb-16 md:py-16 lg:py-20 px-6 lg:px-16 xl:px-48 pt-16 md:py-16 lg:py-20">
         <SinglePost post={post} locale={locale} />
       </section>
     );
   } catch (error) {
-    return (
-      <SectionWithTitle title={t("title")} primaryBackground>
-        <div className="flex flex-col">
-          <h4 className="text-3xl mb-4">{t("error1")}</h4>
-          <span className="text-xl">{t("error2")}</span>
-        </div>
-      </SectionWithTitle>
-    );
+    return null;
   }
 }
 

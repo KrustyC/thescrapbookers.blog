@@ -1,8 +1,8 @@
 import Image from "next/image";
 
+import { ButtonLink } from "@/components/uikit/ButtonLink";
 import type { AppLocale, Post as IPost } from "@/types/global";
 import { formatDate, getFormat } from "@/utils/date";
-import { ButtonLink } from "@/components/uikit/ButtonLink";
 
 const DEFAULT_IMAGE = ""; // @TODO Ask Bea to do a nice default image
 

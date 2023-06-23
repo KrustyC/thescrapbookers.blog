@@ -42,7 +42,7 @@ export const Hyperlink: React.FC<PropsWithChildren<HyperlinkProps>> = ({
   children,
 }) => {
   return (
-    <a className="text-sky-600 hover:underline" href={href} target="_blank">
+    <a className="text-sky-600 hover:underline" href={href} target="_blank" rel="noreferrer">
       {children}
     </a>
   );

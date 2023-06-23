@@ -37,10 +37,7 @@ const CountriesCarousel: React.FC<CaoruselProps> = ({ slides }) => {
           lazy
         >
           <div className="h-full w-full bg-gray-200 relative rounded-2xl bg-gray-200">
-            <Link
-              href={slide.href}
-              // className="h-full w-full bg-gray-200 relative"
-            >
+            <Link href={slide.href} prefetch={false}>
               <Image
                 className="rounded-2xl"
                 src={slide.image}
@@ -63,8 +60,6 @@ const CountriesCarousel: React.FC<CaoruselProps> = ({ slides }) => {
           </div>
         </swiper-slide>
       ))}
-      {/* <swiper-slide lazy>Slide 2</swiper-slide>
-      <swiper-slide lazy>Slide 3</swiper-slide> */}
     </swiper-container>
   );
 };
