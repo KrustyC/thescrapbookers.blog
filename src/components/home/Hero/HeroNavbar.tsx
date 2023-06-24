@@ -35,7 +35,7 @@ export const HeroNavbar: React.FC<HeroNavbarProps> = ({ locale }) => {
 
       <div className="hidden md:flex items-center gap-5 text-white uppercase font-semibold">
         <Link href={URLS.asiaArticles()}>{navbar("asia")}</Link>
-        <Link href={URLS.remoteRoaming()}>{navbar("remoteRoaming")}</Link>
+        {/* <Link href={URLS.remoteRoaming()}>{navbar("remoteRoaming")}</Link> */}
         <Link href={URLS.aboutUs()}>{navbar("aboutUs")}</Link>
 
         <LocaleSwitch currentLocale={locale} helpText={t("helpText")} />
