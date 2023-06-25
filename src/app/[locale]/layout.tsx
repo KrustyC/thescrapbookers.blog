@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 import { useLocale } from "next-intl";
-import { getTranslations } from "next-intl/server";
+import { getTranslator } from "next-intl/server";
 
 import { AppLocale } from "@/types/global";
 import { poppins } from "@/utils/fonts";
@@ -12,8 +12,10 @@ interface Props {
   params: { locale: AppLocale };
 }
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("Home.Metadata");
+export async function generateMetadata({
+  params: { locale },
+}: Pick<Props, "params">): Promise<Metadata> {
+  const t = await getTranslator(locale, "Home.Metadata");
 
   return {
     title: {

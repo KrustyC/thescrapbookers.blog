@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
-import { getTranslations } from "next-intl/server";
+import { getTranslator } from "next-intl/server";
 
 import { Footer } from "@/components/Footer";
 import { AboutUsSection } from "@/components/home/AboutUsSection";
@@ -42,7 +42,7 @@ interface HomePageProps {
 export async function generateMetadata({
   params: { locale },
 }: HomePageProps): Promise<Metadata> {
-  const t = await getTranslations("Home.Metadata");
+  const t = await getTranslator(locale, "Home.Metadata");
 
   return {
     title: t("title"),

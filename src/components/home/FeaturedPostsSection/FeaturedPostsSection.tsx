@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslator } from "next-intl/server";
 
 import { getPosts } from "@/api";
 import type { AppLocale } from "@/types/global";
@@ -13,7 +13,7 @@ export default async function FeaturedPostsSection({
 }: {
   locale: AppLocale;
 }) {
-  const t = await getTranslations("Home.Featured");
+  const t = await getTranslator(locale, "Home.Featured");
 
   try {
     const { posts } = await getPosts({ tag: "featured", locale });

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next-intl/link";
-import { getTranslations } from "next-intl/server";
+import { getTranslator } from "next-intl/server";
 
 import { getPost } from "@/api";
 import { BlogPost } from "@/components/post/BlogPost/BlogPost";
@@ -63,7 +63,7 @@ export default async function PostPage({
   params: { slug, locale },
 }: PostPageProps) {
   const { post, nextPost } = await getPost({ slug, locale });
-  const t = await getTranslations("BlogPost");
+  const t = await getTranslator(locale, "BlogPost");
 
   if (!post) {
     return (
