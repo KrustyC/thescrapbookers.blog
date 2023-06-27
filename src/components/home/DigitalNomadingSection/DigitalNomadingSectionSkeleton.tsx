@@ -1,12 +1,12 @@
 export const DigitalNomadingSectionSkeleton = () => {
   return (
-    <section className="py-8 md:py-16 lg:py-20 px-6 lg:px-16 xl:px-48 w-full bg-primary">
-      <div className="flex gap-x-8">
-        <div className="flex items-end w-full aspect-[4/3] relative bg-gray-200 rounded-2xl drop-shadow-lg bg-gray-400 border-2 border-black">
+    <section className="py-16 lg:py-20 px-6 lg:px-16 xl:px-48 w-full bg-primary">
+      <div className="flex flex-col lg:flex-row gap-8">
+        <div className="flex items-end w-full aspect-square lg:aspect-[4/3] relative bg-gray-200 rounded-2xl drop-shadow-lg bg-gray-400 border-2 border-black">
           <div className="h-full w-full  loading-background-animation rounded-xl" />
         </div>
 
-        <div className="flex flex-col text-black px-6 w-full">
+        <div className="flex flex-col text-black lg:px-6 w-full">
           <div className="h-10 w-full loading-background-animation" />
 
           <div className="flex items-center my-4">
@@ -24,7 +24,7 @@ export const DigitalNomadingSectionSkeleton = () => {
             ))}
           </div>
 
-          <div className="mt-6 w-36 text-sm h-10 lg:h-12 min-w-16 lg:min-w-24 px-4 lg:px-8 rounded-xl h-20 loading-background-animation" />
+          <div className="mt-6 w-36 text-sm h-12 min-w-16 lg:min-w-24 px-4 lg:px-8 rounded-xl loading-background-animation" />
         </div>
       </div>
     </section>

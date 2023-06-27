@@ -16,8 +16,8 @@ export const SinglePost: React.FC<PostProps> = ({
   locale,
 }) => {
   return (
-    <div className="flex gap-x-8">
-      <div className="flex items-end w-full aspect-[4/3] relative bg-gray-200 rounded-2xl drop-shadow-lg bg-gray-400 border-2 border-black">
+    <div className="flex flex-col lg:flex-row gap-8">
+      <div className="flex items-end w-full aspect-square lg:aspect-[4/3] relative bg-gray-200 rounded-2xl drop-shadow-lg bg-gray-400 border-2 border-black">
         <Image
           className="rounded-2xl"
           sizes="100%"
@@ -29,7 +29,7 @@ export const SinglePost: React.FC<PostProps> = ({
         />
       </div>
 
-      <div className="flex flex-col text-black px-6 w-full">
+      <div className="flex flex-col text-black lg:px-6 w-full">
         <h3 className="text-3xl text-black font-semibold">{title}</h3>
 
         <div className="flex items-center my-2 uppercase tracking-widest text-regular">
@@ -44,7 +44,7 @@ export const SinglePost: React.FC<PostProps> = ({
           </span>
         </div>
 
-        <span className="text-lg mb-8">{smallIntro}</span>
+        <span className="text-lg mb-4 lg:mb-8">{smallIntro}</span>
 
         <ButtonLink variant="black" size="sm" href={href} prefetch={false}>
           Read More

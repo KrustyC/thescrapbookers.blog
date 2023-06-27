@@ -2,7 +2,7 @@ import classNames from "classnames";
 
 export const CountriesCarouselSectionSkeleton: React.FC = () => {
   return (
-    <div className="mb-16 mt-32 flex gap-10">
+    <div className="my-16 lg:mt-32 flex gap-10 overflow-y-hidden">
       {Array.from({ length: 4 }).map((_, i) => (
         <div
           key={i}

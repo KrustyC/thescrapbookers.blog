@@ -15,7 +15,7 @@ export default async function DigitalNomadingSection({
     if (!post) return null;
 
     return (
-      <section className="bg-primary flex flex-col pt-8 pb-16 md:py-16 lg:py-20 px-6 lg:px-16 xl:px-48 pt-16 md:py-16 lg:py-20">
+      <section className="bg-primary flex flex-col py-16 lg:py-20 px-6 lg:px-16 xl:px-48 pt-16 md:py-16 lg:py-20">
         <SinglePost post={post} locale={locale} />
       </section>
     );
