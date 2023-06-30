@@ -2,12 +2,21 @@ import {
   documentToReactComponents,
   Options,
 } from "@contentful/rich-text-react-renderer";
-import { BLOCKS, Document, INLINES, MARKS } from "@contentful/rich-text-types";
+import {
+  Block,
+  BLOCKS,
+  Document,
+  Inline,
+  INLINES,
+  MARKS,
+} from "@contentful/rich-text-types";
 
 import { crimsonText } from "@/utils/fonts";
 
 import {
+  Alert,
   Asset,
+  Blockquote,
   Bold,
   Heading,
   Hyperlink,
@@ -17,11 +26,33 @@ import {
   UnorderedList,
 } from "./Blocks";
 
+const EMOJI_REGEX =
+  /(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/gi;
+
+/**
+ * Contentful does not support an alert block, so we have to use a quote block 
+ * and do a hack by adding an emoji as the first character of the quote.
+ */
+function isBlockAnAlert(block: Block | Inline): boolean {
+  return (
+    block.content[0].nodeType === "paragraph" &&
+    block.content[0].content[0].nodeType === "text" &&
+    EMOJI_REGEX.test(block.content[0].content[0].value)
+  );
+}
+
 const options: Options = {
   renderMark: {
     [MARKS.BOLD]: (text) => <Bold>{text}</Bold>,
   },
   renderNode: {
+    [BLOCKS.QUOTE]: (block, children) => {
+      if (isBlockAnAlert(block)) {
+        return <Alert>{children}</Alert>;
+      }
+
+      return <Blockquote>{children}</Blockquote>;
+    },
     [BLOCKS.EMBEDDED_ASSET]: (block) => <Asset block={block} />,
     [INLINES.HYPERLINK]: ({ data }, children) => (
       <Hyperlink href={data.uri}>{children}</Hyperlink>
@@ -72,7 +103,10 @@ const options: Options = {
 
 export const RichText: React.FC<{ richtext: Document }> = ({ richtext }) => {
   return (
-    <div style={crimsonText.style} className="flex flex-col gap-y-6 text-2xl break-words">
+    <div
+      style={crimsonText.style}
+      className="flex flex-col gap-y-6 text-2xl break-words"
+    >
       {documentToReactComponents(richtext, options)}
     </div>
   );

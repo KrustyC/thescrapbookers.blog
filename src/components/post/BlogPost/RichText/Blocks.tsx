@@ -7,6 +7,24 @@ export const Bold: React.FC<PropsWithChildren> = ({ children }) => (
   <span className="font-bold">{children}</span>
 );
 
+export const Blockquote: React.FC<PropsWithChildren> = ({ children }) => (
+  <div
+    className="w-full lg:w-fit lg:mx-auto bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4"
+    role="alert"
+  >
+    {children}
+  </div>
+);
+
+export const Alert: React.FC<PropsWithChildren> = ({ children }) => (
+  <div
+    className="w-full lg:w-fit lg:mx-auto p-4 bg-indigo-900 text-indigo-100 shadow-md rounded-xl text-lg"
+    role="alert"
+  >
+    {children}
+  </div>
+);
+
 export const Text: React.FC<PropsWithChildren> = ({ children }) => {
   const childrenArray = Children.toArray(children);
 
@@ -42,7 +60,12 @@ export const Hyperlink: React.FC<PropsWithChildren<HyperlinkProps>> = ({
   children,
 }) => {
   return (
-    <a className="text-sky-600 hover:underline" href={href} target="_blank" rel="noreferrer">
+    <a
+      className="text-sky-600 hover:underline"
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+    >
       {children}
     </a>
   );
@@ -78,7 +101,7 @@ export const Asset: React.FC<{ block: Block | Inline }> = ({ block }) => {
   const url = `https:${file.url}`;
   const description = block.data.target.fields.description;
 
-  console.log(block.data.target.fields)
+  console.log(block.data.target.fields);
   if (file.contentType.startsWith("video/")) {
     return (
       <div className="relative mx-auto my-8 lg:my-16 loading-background w-full lg:w-[840px] aspect-video">
