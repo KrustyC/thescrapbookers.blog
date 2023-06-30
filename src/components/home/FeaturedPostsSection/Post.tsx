@@ -5,6 +5,8 @@ import type { AppLocale, Post as IPost } from "@/types/global";
 import { formatDate, getFormat } from "@/utils/date";
 import { poppins } from "@/utils/fonts";
 
+import { PostDescription } from "./PostDescription";
+
 const DEFAULT_IMAGE = ""; // @TODO Ask Bea to do a nice default image
 
 interface PostProps {
@@ -52,7 +54,8 @@ export const Post: React.FC<PostProps> = ({
           {title}
         </h3>
       </Link>
-      <span className="text-lg lg:text-xl text-gray-500 line-clamp-3">{smallIntro}</span>
+
+      <PostDescription text={smallIntro} />
     </div>
   );
 };

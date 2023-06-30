@@ -14,7 +14,7 @@ export const Text: React.FC<PropsWithChildren> = ({ children }) => {
     return null;
   }
 
-  return <p className="rich-text-copy mb-6">{children}</p>;
+  return <p className="rich-text-copy">{children}</p>;
 };
 
 export const UnorderedList: React.FC<PropsWithChildren> = ({ children }) => (
@@ -78,6 +78,7 @@ export const Asset: React.FC<{ block: Block | Inline }> = ({ block }) => {
   const url = `https:${file.url}`;
   const description = block.data.target.fields.description;
 
+  console.log(block.data.target.fields)
   if (file.contentType.startsWith("video/")) {
     return (
       <div className="relative mx-auto my-8 lg:my-16 loading-background w-full lg:w-[840px] aspect-video">

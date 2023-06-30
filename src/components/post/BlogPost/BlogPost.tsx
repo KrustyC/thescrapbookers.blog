@@ -29,7 +29,14 @@ export const BlogPost: React.FC<BlogPostProps> = ({
     <div className="flex flex-col">
       <BlogPostHero post={post} />
 
-      <div id="post-content" className="pt-24">
+      <div id="post-content" className="my-10 lg:my-20">
+        <p className="text-left px-6 lg:px-0 lg:w-[720px] lg:mx-auto text-black italic">
+          {post.smallIntro}
+        </p>
+      </div>
+
+      {/* <div id="post-content" className="pt-24"> */}
+      <div>
         <RichText richtext={post.richtext} />
       </div>
 

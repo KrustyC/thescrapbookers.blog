@@ -72,7 +72,7 @@ const options: Options = {
 
 export const RichText: React.FC<{ richtext: Document }> = ({ richtext }) => {
   return (
-    <div style={crimsonText.style} className="flex flex-col gap-y-4 text-2xl break-words">
+    <div style={crimsonText.style} className="flex flex-col gap-y-6 text-2xl break-words">
       {documentToReactComponents(richtext, options)}
     </div>
   );

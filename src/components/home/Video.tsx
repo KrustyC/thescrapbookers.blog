@@ -52,7 +52,7 @@ const Video = () => {
           alt="Placeholder image"
         />
       ) : (
-        <div className="absolute h-full w-full top-0 bottom-0 left-0 right-0 z-50 px-6 lg:px-16 xl:px-48 flex items-center">
+        <div className="absolute h-full w-full top-0 bottom-0 left-0 right-0 z-10 px-6 lg:px-16 xl:px-48 flex items-center">
           <h2
             style={leagueGothic.style}
             className="text-6xl lg:text-9xl text-white font-bold md:w-4/5 uppercase"
