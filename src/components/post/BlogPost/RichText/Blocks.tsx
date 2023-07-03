@@ -18,7 +18,7 @@ export const Blockquote: React.FC<PropsWithChildren> = ({ children }) => (
 
 export const Alert: React.FC<PropsWithChildren> = ({ children }) => (
   <div
-    className="w-full lg:w-fit lg:mx-auto p-4 bg-indigo-900 text-indigo-100 shadow-md rounded-xl text-lg"
+    className="w-full lg:w-fit lg:mx-auto p-4 bg-primary text-gray-100 shadow-md rounded-xl text-lg"
     role="alert"
   >
     {children}
@@ -61,7 +61,7 @@ export const Hyperlink: React.FC<PropsWithChildren<HyperlinkProps>> = ({
 }) => {
   return (
     <a
-      className="text-sky-600 hover:underline"
+      className="text-primary hover:underline"
       href={href}
       target="_blank"
       rel="noreferrer"

@@ -16,6 +16,26 @@ interface BlogPostProps {
 export const BlogPostLoading = () => (
   <div className="flex felx-full">
     <BlogPostHeroLoading />
+
+    <div className="w-full lg:w-[720px] lg:mx-auto flex flex-col py-10 lg:py-20 px-6 lg:px-0">
+      {new Array(8).fill(null).map((_, i) => (
+        <div key={i} className="mb-4 h-2 w-full bg-gray-300" />
+      ))}
+
+      <br />
+      <br />
+
+      {new Array(8).fill(null).map((_, i) => (
+        <div key={i} className="mb-4 h-4 w-full bg-gray-300" />
+      ))}
+
+      <br />
+      <br />
+
+      {new Array(8).fill(null).map((_, i) => (
+        <div key={i} className="mb-4 h-4 w-full  bg-gray-300" />
+      ))}
+    </div>
   </div>
 );
 
@@ -35,7 +55,6 @@ export const BlogPost: React.FC<BlogPostProps> = ({
         </p>
       </div>
 
-      {/* <div id="post-content" className="pt-24"> */}
       <div>
         <RichText richtext={post.richtext} />
       </div>
