@@ -101,7 +101,6 @@ export const Asset: React.FC<{ block: Block | Inline }> = ({ block }) => {
   const url = `https:${file.url}`;
   const description = block.data.target.fields.description;
 
-  console.log(block.data.target.fields);
   if (file.contentType.startsWith("video/")) {
     return (
       <div className="relative mx-auto my-8 lg:my-16 loading-background w-full lg:w-[840px] aspect-video">

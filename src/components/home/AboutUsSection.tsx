@@ -10,7 +10,7 @@ export const AboutUsSection: React.FC = () => {
   const t = useTranslations("Home.AboutUs");
 
   return (
-    <div className="bg-gray-100 lg:bg-white lg:h-[450px] xl:h-[500px] flex flex-col-reverse lg:flex-row lg:justify-between gap-8 lg:gap-20 py-16 lg:py-0 lg:my-16 w-full">
+    <div className="bg-gray-100 lg:bg-white lg:h-[450px] xl:h-[500px] flex flex-col-reverse lg:flex-row lg:justify-between gap-8 lg:gap-20 py-16 lg:py-0 lg:my-20 w-full">
       <div className="bg-gray-100 flex flex-col justify-center items-end w-full lg:w-7/12 xl:w-2/3 px-6 lg:p-12 xl:p-24 md:rounded-r-2xl">
         <div>
           <h6

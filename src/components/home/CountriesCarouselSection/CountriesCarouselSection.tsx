@@ -43,7 +43,7 @@ export default async function CountriesCarouselSection({
   }));
 
   return (
-    <div className="my-16 lg:mt-32">
+    <div className="my-16 lg:mt-20 lg:mb-0">
       <div className="min-h-[500px] lg:min-h-[550px]">
         <CountryCarousel slides={slides} />
       </div>
