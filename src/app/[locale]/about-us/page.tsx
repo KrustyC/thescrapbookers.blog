@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { crimsonText, leagueGothic } from "@/utils/fonts";
 
 import aboutUsPic from "../../../../public/images/about-us.jpg";
+import cameronHighlands from "../../../../public/images/cameron_highlands.jpg";
 
 interface SidebarProps {
   title: string;
@@ -14,7 +15,10 @@ const Sidebar: React.FC<SidebarProps> = ({ title, description }) => {
   return (
     <div className="w-full lg:w-1/3 bg-primary flex justify-center">
       <div className="lg:h-screen lg:sticky lg:top-5 lg:mt-36 flex-col px-8 lg:px-12 xl:px-20 pt-28 pb-16 lg:py-0 text-white">
-        <h1 className="lg:leading-[5rem] text-7xl lg:text-8xl" style={leagueGothic.style}>
+        <h1
+          className="lg:leading-[5rem] text-7xl lg:text-8xl"
+          style={leagueGothic.style}
+        >
           {title}
         </h1>
 
@@ -55,7 +59,16 @@ export default function AboutUsPage() {
           </div>
         </div>
       </div>
-      <div className="h-[550px] w-full bg-[green]"> CIAO</div>
+      <div className="h-[800px] w-full relative">
+        <Image
+          src={cameronHighlands}
+          alt="Tea plantation in Cameron Highlands, Tanha Rata, Malaysia"
+          placeholder="blur"
+          fill
+          sizes="100%"
+          style={{ objectFit: "cover" }}
+        />
+      </div>
     </div>
   );
 }
