@@ -58,7 +58,7 @@ export default function AboutUsLayout({
 
       <div className="w-full">{children}</div>
 
-      <div className="-mt-12 sm:-mt-24 md:-mt-28 lg:-mt-40">
+      <div className="-mt-12 sm:-mt-24 md:-mt-28 lg:-mt-40 2xl:-mt-48">
         <Footer locale={params.locale} />
       </div>
     </div>
