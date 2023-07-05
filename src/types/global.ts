@@ -67,6 +67,7 @@ export interface Image {
 
 export interface Post {
   title: string;
+  metaDescription: string;
   slug: string;
   smallIntro: string;
   thumbnailImage?: Image;

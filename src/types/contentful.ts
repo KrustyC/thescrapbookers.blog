@@ -42,6 +42,7 @@ export interface PostSkeleton {
   fields: {
     title: EntryFieldTypes.Text;
     slug: EntryFieldTypes.Text;
+    metaDescription: EntryFieldTypes.Text;
     smallIntro: EntryFieldTypes.Text;
     mainImage: Asset;
     thumbnailImage: Asset;

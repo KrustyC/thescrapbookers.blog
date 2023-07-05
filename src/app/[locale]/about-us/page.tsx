@@ -8,7 +8,10 @@ import cameronHighlands from "../../../../public/images/cameron_highlands.jpg";
 
 interface SidebarProps {
   title: string;
-  description: string;
+  description: {
+    part1: string;
+    part2: string;
+  };
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ title, description }) => {
@@ -22,7 +25,10 @@ const Sidebar: React.FC<SidebarProps> = ({ title, description }) => {
           {title}
         </h1>
 
-        <p className="mt-2 lg:mt-6 mb-8 lg:mb-6 lg:pr-4">{description}</p>
+        <div className="mt-2 lg:mt-6 mb-8 lg:mb-6 lg:pr-4">
+          <p>{description.part1}</p>
+          <p>{description.part2}</p>
+        </div>
         <div className="w-full aspect-square relative rounded-2xl border-4 border-black">
           <Image
             className="rounded-xl"
@@ -45,7 +51,13 @@ export default function AboutUsPage() {
   return (
     <div className="flex flex-col">
       <div className="flex flex-col lg:flex-row">
-        <Sidebar title={t("title")} description={t("description")} />
+        <Sidebar
+          title={t("title")}
+          description={{
+            part1: t("description.part1"),
+            part2: t("description.part2"),
+          }}
+        />
 
         <div className="w-full lg:w-2/3 bg-white lg:mt-36 lg:pb-24 px-4 lg:px-0 py-12 lg:py-0">
           <div className="flex flex-col gap-y-6 text-2xl w-full lg:w-[720px] lg:mx-auto">

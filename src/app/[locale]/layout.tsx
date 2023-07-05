@@ -50,9 +50,10 @@ export async function generateMetadata({
       title: t("title"),
       description: t("description"),
       siteName: "The Scrapbookers",
+      locale,
       images: [
         {
-          url: `${process.env.baseUrl}/images/about-us.jpg`,
+          url: `${process.env.baseUrl}/images/thescrapbookers.png`,
           height: 569,
           width: 853,
         },
@@ -64,7 +65,7 @@ export async function generateMetadata({
       description: t("description"),
       images: [
         {
-          url: `${process.env.baseUrl}/images/about-us.jpg`,
+          url: `${process.env.baseUrl}/images/thescrapbookers.png`,
           height: 569,
           width: 853,
         },

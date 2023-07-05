@@ -110,6 +110,7 @@ export function parseContentfulPostFieldsForSinglePost(
     title: fields.title,
     slug: fields.slug,
     smallIntro: fields.smallIntro,
+    metaDescription: fields.metaDescription,
     date: new Date(fields.date),
     category: fields.category,
     richtext: fields.richtext,

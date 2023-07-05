@@ -46,11 +46,14 @@
   },
   "AboutUs": {
     "Metadata": {
-      "title": "About us",
-      "description": "Brief introduction to the blog post by us. Why we do it, and what motivates us"
+      "title": "About Us",
+      "description": "Digital nomads on the go: join our adventures, discover who we are, how we travel, and the challenges we face working while on the move"
     },
     "title": "About us",
-    "description": "The burning smoky season had already made its way through the jungle, we may have died, but we survived",
+    "description": {
+      "part1": "We are Beatrice and Davide, a graphic designer and a software engineer traveling the world, starting from Southeast Asia.",  
+      "part2": "This is us the jungle near Chiang Mai, Thailand."  
+    },
     "Generic": {
       "firstParagraph": "So here we are travelling in South East Asia and trying to absorb as much as possible. We said we really needed to document it somehow, so we decided to start writing about our experience and how we are managing to balance travel and work. There are lots of amazing bloggers who do this already but we have found there are things which still haven't been talked about. Incredible but true. In fact, there is so much to write about that we will never manage to give you an accurate image of what we see.",
       "secondParagraph": "Living in London for 6 years has been an amazing eye-opener. We have met people from all over the world who, as well as, making our stay there really special, have just accentuated our desire to explore the world as much as possible. You soon get hooked on peoples' travel stories and just want to hear more and experience them yourself. Funnily enough, the stories you hear are always the ones where things have gone badly wrong and are the ones people remember forever. We will never forget our time in Luang Prabang during the burning season, but although it wasn't what we had hoped for, we will always cherish it as it showed us something that the people who live there have to endure.",

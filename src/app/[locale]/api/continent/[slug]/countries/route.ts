@@ -3,10 +3,7 @@ import { NextResponse } from "next/server";
 import type { CountrySkeleton } from "@/types/contentful";
 import { getContentfulClient } from "@/utils/contentful-client";
 
-import {
-  parseContentfulCountryFields,
-  parseSmallContentfulCountryFields,
-} from "../../../country/utils";
+import { parseSmallContentfulCountryFields } from "../../../country/utils";
 
 interface Options {
   params: {

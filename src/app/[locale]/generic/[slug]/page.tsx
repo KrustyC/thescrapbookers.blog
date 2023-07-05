@@ -26,7 +26,8 @@ export async function generateMetadata({
     }
 
     const title = post.title;
-    const description = post.smallIntro;
+    const description = post.metaDescription;
+
     const images = [
       {
         url: new URL(post.mainImage.url),
@@ -64,6 +65,8 @@ export default async function PostPage({
 }: PostPageProps) {
   const { post, nextPost } = await getPost({ slug, locale });
   const t = await getTranslator(locale, "BlogPost");
+
+  console.log(post, locale, slug);
 
   if (!post) {
     return (
