@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { draftMode } from "next/headers";
 import Link from "next-intl/link";
 import { getTranslator } from "next-intl/server";
 
-import { getPost } from "@/api";
 import { BlogPost } from "@/components/post/BlogPost/BlogPost";
+import { getPost } from "@/graphql/queries/posts.query";
 import { ArticleNotFoundIcon } from "@/icons/ArticleNotFound";
 import { AppLocale } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
@@ -19,7 +20,9 @@ export async function generateMetadata({
   params: { slug, locale },
 }: PostPageProps): Promise<Metadata> {
   try {
-    const { post } = await getPost({ slug, locale });
+    // const { isEnabled } = draftMode();
+    const isEnabled = true;
+    const { post } = await getPost({ slug, locale, isPreview: isEnabled });
 
     if (!post) {
       return {};
@@ -28,19 +31,21 @@ export async function generateMetadata({
     const title = post.title;
     const description = post.metaDescription;
 
-    const images = [
-      {
-        url: new URL(post.mainImage.url),
-        height: post.mainImage.details.height || 569,
-        width: post.mainImage.details.width || 853,
-      },
-    ];
+    const images = post.mainImage?.url
+      ? [
+          {
+            url: new URL(post.mainImage.url),
+            height: post.mainImage?.details.height || 569,
+            width: post.mainImage?.details.width || 853,
+          },
+        ]
+      : [];
 
     return {
       title,
       description,
-      creator: post.author.name,
-      alternates: createAlternates({ path: post.href }),
+      creator: post.author?.name,
+      alternates: post.href ? createAlternates({ path: post.href }) : undefined,
       openGraph: {
         title,
         description,
@@ -63,7 +68,14 @@ export async function generateMetadata({
 export default async function PostPage({
   params: { slug, locale },
 }: PostPageProps) {
-  const { post, nextPost } = await getPost({ slug, locale });
+  // const { isEnabled } = draftMode();
+  const isEnabled = true;
+  const { post, nextPost } = await getPost({
+    slug,
+    locale,
+    isPreview: isEnabled,
+  });
+
   const t = await getTranslator(locale, "BlogPost");
 
   console.log(post, locale, slug);
@@ -72,7 +84,7 @@ export default async function PostPage({
     return (
       <div className="flex flex-col items-center justify-center w-full py-12">
         <ArticleNotFoundIcon className="h-[180px] w-[320px] lg:h-[480px] lg:w-[620px]" />
-        <h2 className="text-2xl lg:text-4xl w-[320px] w-3/4 mt-8 text-center">
+        <h2 className="text-2xl lg:text-4xl w-[320px] mt-8 text-center">
           {t("notFound.message")}
         </h2>
         <Link

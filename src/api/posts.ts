@@ -1,3 +1,6 @@
+import { gql } from "@apollo/client";
+import { getApolloServerClient } from "src/graphql/apollo-server-client";
+
 import { AppLocale, Post } from "@/types/global";
 
 interface GetPostsByTagParams {
@@ -69,6 +72,7 @@ export async function getPostsByCountry({
 interface GetPostParams {
   slug: string;
   locale: AppLocale;
+  isPreview?: boolean;
 }
 
 interface GetPostResponse {
@@ -76,19 +80,81 @@ interface GetPostResponse {
   nextPost: Pick<Post, "title" | "slug" | "date" | "mainImage" | "smallIntro">;
 }
 
+const GET_POST_QUERY = gql`
+  query($slug: String, $locale: String, $preview: Boolean) {
+    postCollection(
+      where: { slug_in: [$slug] }
+      preview: $preview
+      locale: $locale
+    ) {
+      items {
+        title
+        metaDescription
+        slug
+        smallIntro
+        date
+        category
+        richtext {
+          json
+        }
+        author {
+          name
+        }
+        country {
+          name
+          slug
+          continent {
+            name
+            slug
+          }
+        }
+        mainImage {
+          title
+          description
+          width
+          height
+          url
+        }
+        thumbnailImage {
+          title
+          description
+          width
+          height
+          url
+        }
+      }
+    }
+  }
+`;
+
+// bodyRichText {
+//   json
+//   links {
+//     entries {
+//       inline {
+//         sys {
+//           id
+//         }
+//       }
+//     }
+//   }
+// }
+
 export async function getPost({
   slug,
   locale,
+  isPreview = false,
 }: GetPostParams): Promise<GetPostResponse> {
-  const url = `${process.env.baseUrl}/${locale}/api/post/${slug}`;
-  const res = await fetch(
-    url,
-    process.env.disableCache ? { next: { revalidate: 0 } } : undefined
-  );
+  try {
+    const data = await getApolloServerClient({
+      isPreview,
+    }).query<Response>({
+      query: GET_POST_QUERY,
+      variables: { slug, locale, preview: true },
+    });
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    return data.data.postCollection.items[0];
+  } catch (err) {
+    throw new Error("Failed to fetch post");
   }
-
-  return res.json();
 }

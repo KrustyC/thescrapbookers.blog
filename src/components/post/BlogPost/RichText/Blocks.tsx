@@ -2,6 +2,7 @@ import { Children, PropsWithChildren } from "react";
 import { Block, Inline } from "@contentful/rich-text-types";
 import parse from "html-react-parser";
 import Image from "next/image";
+import { RichTextAsset } from "@/types/global";
 
 export const Bold: React.FC<PropsWithChildren> = ({ children }) => (
   <span className="font-bold">{children}</span>
@@ -96,12 +97,15 @@ export const Heading: React.FC<PropsWithChildren<HeadingProps>> = ({
   }
 };
 
-export const Asset: React.FC<{ block: Block | Inline }> = ({ block }) => {
-  const file = block.data.target.fields.file;
-  const url = `https:${file.url}`;
-  const description = block.data.target.fields.description;
+export const Asset: React.FC<{ asset: RichTextAsset }> = ({ asset }) => {
+  const url = asset.url;
+  const description = asset.description;
 
-  if (file.contentType.startsWith("video/")) {
+  if (!url) {
+    return null;
+  }
+
+  if (asset.contentType?.startsWith("video/")) {
     return (
       <div className="relative mx-auto my-8 lg:my-16 loading-background w-full lg:w-[840px] aspect-video">
         <video
@@ -123,12 +127,14 @@ export const Asset: React.FC<{ block: Block | Inline }> = ({ block }) => {
         alt={
           description?.replace(/<\/?[^>]+(>|$)/g, "") || "image from the post"
         } // @TODO Check for descriptions
-        height={file.details.image.height}
-        width={file.details.image.width}
+        height={asset.height}
+        width={asset.width}
       />
-      <span className="mt-2 mx-4 text-gray-600 text-sm italic">
-        {parse(description)}
-      </span>
+      {description ? (
+        <span className="mt-2 mx-4 text-gray-600 text-sm italic">
+          {parse(description)}
+        </span>
+      ) : null}
     </div>
   );
 };
