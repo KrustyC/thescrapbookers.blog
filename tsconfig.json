@@ -25,6 +25,7 @@
       "@/actions/*": ["./src/actions/*"],
       "@/api": ["./src/api/index.ts"],
       "@/components/*": ["./src/components/*"],
+      "@/graphql/*": ["./src/graphql/*"],
       "@/hooks/*": ["./src/hooks/*"],
       "@/icons/*": ["./src/icons/*"],
       "@/types/*": ["./src/types/*"],
@@ -37,6 +38,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "getContentfulEnvironment.js"  ],
   "exclude": ["node_modules"]
 }

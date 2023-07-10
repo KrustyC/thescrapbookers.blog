@@ -3,10 +3,10 @@ import { Document } from "@contentful/rich-text-types";
 export type AppLocale = "en" | "it";
 
 export interface Continent {
-  name: string;
-  slug: string;
-  mainImage: Image;
-  mainDescription: string;
+  name?: string;
+  slug?: string;
+  mainImage?: Image;
+  mainDescription?: string;
   metaDescription?: string;
 }
 
@@ -35,15 +35,15 @@ export interface CountryCheatsheet {
 }
 
 export interface Country {
-  name: string;
-  slug: string;
-  mainImage: Image;
-  thumbnailImage: Image;
+  name?: string;
+  slug?: string;
+  mainImage?: Image;
+  thumbnailImage?: Image;
   description?: string;
   shortDescription?: string;
   metaDescription?: string;
   cheatsheet?: CountryCheatsheet;
-  continent: Pick<Continent, "name" | "slug">;
+  continent?: Pick<Continent, "name" | "slug">;
 }
 
 export interface ShortCountry
@@ -53,29 +53,45 @@ export interface ShortCountry
   > {}
 
 export interface Author {
-  name: string;
+  name?: string;
 }
 
 export interface Image {
-  url: string;
-  description: string;
+  url?: string;
+  title?: string;
+  description?: string;
   details: {
     height?: number;
     width?: number;
   };
 }
 
+export interface RichTextAsset {
+  id: string;
+  title?: string;
+  description?: string;
+  contentType?: string;
+  width?: number;
+  height?: number;
+  url?: string;
+}
+
+export interface RichText {
+  json?: Document;
+  assets?: Array<RichTextAsset | undefined>;
+}
+
 export interface Post {
-  title: string;
-  metaDescription: string;
-  slug: string;
-  smallIntro: string;
+  title?: string;
+  metaDescription?: string;
+  slug?: string;
+  smallIntro?: string;
   thumbnailImage?: Image;
-  mainImage: Image;
-  category: string;
-  richtext: Document;
-  date: Date;
-  href: string;
-  author: Author;
+  mainImage?: Image;
+  category?: string;
+  richtext: RichText;
+  date?: Date;
+  href?: string;
+  author?: Author;
   country?: Pick<Country, "name" | "slug" | "continent">;
 }
