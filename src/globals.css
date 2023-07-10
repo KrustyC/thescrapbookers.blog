@@ -23,6 +23,14 @@ html {
   @apply bg-gray-300 animate-pulse;
 }
 
+.section-layout {
+  @apply flex flex-col pt-8 pb-16 md:pt-10 px-6 lg:px-16 xl:px-48;
+}
+
+.section-layout > h2 {
+  @apply text-3xl lg:text-5xl font-semibold mb-8 lg:mb-12 w-fit lg:leading-[3.5rem];
+}
+
 .introduction-letter {
   @apply bg-black text-white mx-4 lg:w-1/2 lg:mx-auto rounded-xl p-6 md:p-12 text-xl flex flex-col justify-between;
 }

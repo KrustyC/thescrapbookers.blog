@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { crimsonText, leagueGothic } from "@/utils/fonts";
 
 import aboutUsPic from "../../../../public/images/about-us.jpg";
-import cameronHighlands from "../../../../public/images/cameron_highlands.jpg";
+import cameronHighlands from "../../../../public/images/cameron_highlands.png";
 
 interface SidebarProps {
   title: string;
@@ -16,8 +16,8 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ title, description }) => {
   return (
-    <div className="w-full lg:w-1/3 bg-primary flex justify-center">
-      <div className="lg:h-screen lg:sticky lg:top-5 lg:mt-36 flex-col px-8 lg:px-12 xl:px-20 pt-28 pb-16 lg:py-0 text-white">
+    <div className="w-full lg:w-1/3 bg-primary flex justify-center pb-24">
+      <div className="lg:h-screen lg:sticky lg:top-5 lg:mt-36  flex-col px-8 lg:px-12 xl:px-20 pt-28 pb-16 lg:py-0 text-white">
         <h1
           className="lg:leading-[5rem] text-7xl lg:text-8xl"
           style={leagueGothic.style}
@@ -25,11 +25,7 @@ const Sidebar: React.FC<SidebarProps> = ({ title, description }) => {
           {title}
         </h1>
 
-        <div className="mt-2 lg:mt-6 mb-8 lg:mb-6 lg:pr-4">
-          <p>{description.part1}</p>
-          <p>{description.part2}</p>
-        </div>
-        <div className="w-full aspect-square relative rounded-2xl border-4 border-black">
+        <div className="mt-2 lg:mt-6 mb-8 lg:mb-6 w-full aspect-square relative rounded-2xl border-4 border-black">
           <Image
             className="rounded-xl"
             src={aboutUsPic}
@@ -39,6 +35,11 @@ const Sidebar: React.FC<SidebarProps> = ({ title, description }) => {
             sizes="100%"
             style={{ objectFit: "cover" }}
           />
+        </div>
+
+        <div className="lg:pr-4">
+          <p>{description.part1}</p>
+          <p>{description.part2}</p>
         </div>
       </div>
     </div>
@@ -60,7 +61,7 @@ export default function AboutUsPage() {
         />
 
         <div className="w-full lg:w-2/3 bg-white lg:mt-36 lg:pb-24 px-4 lg:px-0 py-12 lg:py-0">
-          <div className="flex flex-col gap-y-6 text-2xl w-full lg:w-[720px] lg:mx-auto">
+          <div className="flex flex-col gap-y-6 text-2xl w-full lg:w-[720px] lg:mx-auto pb-[300px]">
             <p style={crimsonText.style}>{t("Generic.firstParagraph")}</p>
             <p style={crimsonText.style}>{t("Generic.secondParagraph")}</p>
             <p style={crimsonText.style}>{t("Generic.thirdParagraph")}</p>
@@ -71,7 +72,7 @@ export default function AboutUsPage() {
           </div>
         </div>
       </div>
-      <div className="h-[800px] w-full relative">
+      <div className="h-[800px] w-full relative -mt-[250px]">
         <Image
           src={cameronHighlands}
           alt="Tea plantation in Cameron Highlands, Tanha Rata, Malaysia"

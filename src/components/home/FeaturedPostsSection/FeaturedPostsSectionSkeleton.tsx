@@ -1,10 +1,10 @@
-import { LoadingSectionWithTitle } from "@/components/home/SectionWIthTitle/LoadingSectionWithTitle";
-
 const POST_COUNTS = [1, 2, 3];
 
 export const FeaturedPostsSectionSkeleton = () => {
   return (
-    <LoadingSectionWithTitle>
+    <section className="section-layout">
+      <div className="w-2/3 mb-12 animate-pulse h-10 pulse bg-gray-300" />
+
       <div className="flex flex-col md:flex-row gap-12 md:gap-8 lg:gap-16">
         {POST_COUNTS.map((_, i) => (
           <div key={i} className="flex flex-col w-full animate-pulse">
@@ -26,6 +26,6 @@ export const FeaturedPostsSectionSkeleton = () => {
           </div>
         ))}
       </div>
-    </LoadingSectionWithTitle>
+    </section>
   );
 };

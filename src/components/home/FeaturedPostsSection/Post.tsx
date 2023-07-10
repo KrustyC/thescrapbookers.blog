@@ -19,7 +19,7 @@ export const Post: React.FC<PostProps> = ({
   locale,
 }) => {
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full gap-2">
       <Link
         href={href}
         className="flex w-full aspect-square relative bg-gray-200 rounded-2xl"
@@ -35,8 +35,15 @@ export const Post: React.FC<PostProps> = ({
           style={{ objectFit: "cover" }}
         />
       </Link>
+
+      <Link href={href}>
+        <h3 className="text-2xl lg:text-2xl text-black font-medium mt-3">
+          {title}
+        </h3>
+      </Link>
+
       <div
-        className="flex items-center mt-6 md:mt-4 lg:mt-6 uppercase tracking-widest text-gray-400 text-sm md:text-xs lg:text-lg"
+        className="flex items-center uppercase tracking-widest text-gray-400 text-regular"
         style={poppins.style}
       >
         <span>{category}</span>
@@ -49,11 +56,6 @@ export const Post: React.FC<PostProps> = ({
           })}
         </span>
       </div>
-      <Link href={href}>
-        <h3 className="text-2xl lg:text-3xl my-2 md:my-3 lg:my-4 text-black font-medium">
-          {title}
-        </h3>
-      </Link>
 
       <PostDescription text={smallIntro} />
     </div>

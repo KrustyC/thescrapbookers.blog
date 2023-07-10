@@ -45,7 +45,7 @@ export const PostDescription: React.FC<PostDescriptionProps> = ({ text }) => {
                 onMouseEnter={onMouseEnter.bind(null, open)}
                 onMouseLeave={onMouseLeave.bind(null, open)}
               >
-                <span className="text-left text-lg lg:text-xl text-gray-500 line-clamp-3">
+                <span className="text-left text-lg text-gray-500 line-clamp-3">
                   {text}
                 </span>
               </Popover.Button>
