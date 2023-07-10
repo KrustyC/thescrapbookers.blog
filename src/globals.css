@@ -49,3 +49,9 @@ video {
   top: 0;
   left: 0;
 }
+
+mux-player {
+  --controls: none;
+  --media-object-fit: cover;
+  --media-object-position: center;
+}
