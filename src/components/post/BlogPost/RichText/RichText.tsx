@@ -10,6 +10,7 @@ import {
   MARKS,
 } from "@contentful/rich-text-types";
 
+import { RichText as RichTextType } from "@/types/global";
 import { crimsonText } from "@/utils/fonts";
 
 import {
@@ -24,7 +25,6 @@ import {
   Text,
   UnorderedList,
 } from "./Blocks";
-import { RichText as RichTextType } from "@/types/global";
 
 const EMOJI_REGEX =
   /(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/gi;

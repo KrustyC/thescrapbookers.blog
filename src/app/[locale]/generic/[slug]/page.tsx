@@ -4,7 +4,7 @@ import Link from "next-intl/link";
 import { getTranslator } from "next-intl/server";
 
 import { BlogPost } from "@/components/post/BlogPost/BlogPost";
-import { getPost } from "@/graphql/queries/posts.query";
+import { getPost } from "@/graphql/queries/get-post.query";
 import { ArticleNotFoundIcon } from "@/icons/ArticleNotFound";
 import { AppLocale } from "@/types/global";
 import { createAlternates } from "@/utils/urls";

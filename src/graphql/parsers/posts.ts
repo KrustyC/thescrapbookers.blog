@@ -6,18 +6,8 @@ import {
   Post as PostGraphQL,
 } from "@/types/generated/graphql";
 import { Country, Post, RichTextAsset } from "@/types/global";
+import { generatePostHref } from "@/utils/hrefs";
 import { extractImageDataFromContentfulAsset } from "@/utils/images";
-
-function generatePostHref(
-  slug: string,
-  country: Pick<Country, "slug" | "continent"> | undefined
-) {
-  if (!country) {
-    return `/generic/${slug}`;
-  }
-
-  return `/${country.continent?.slug}/${country.slug}/${slug}`;
-}
 
 function parseContentfulCountry(
   country: CountryGraphQL
@@ -98,3 +88,5 @@ export function parseGraphQLNextPost(nextPost: PostGraphQL): NextPost {
     mainImage,
   };
 }
+
+

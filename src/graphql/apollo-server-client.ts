@@ -7,6 +7,8 @@ import {
 
 import { AppLocale } from "@/types/global";
 
+import "server-only";
+
 const GRAPHQL_ENDPOINT = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`;
 
 interface GetApolloServerClientOptions {
@@ -22,8 +24,6 @@ export function getApolloServerClient(
   const token = isPreview
     ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
     : process.env.CONTENTFUL_ACCESS_TOKEN;
-
-  console.log(isPreview, token);
 
   const { getClient } = registerApolloClient(() => {
     return new NextSSRApolloClient({

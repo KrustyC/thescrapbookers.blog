@@ -1,10 +1,10 @@
-import { getPostsByCountry } from "@/api";
+import { getPostsByCountry } from "@/graphql/queries/get-posts-by-country.query";
 import { AppLocale, Country } from "@/types/global";
 
-import { CountryPost, CountryPostLoading } from "./Post";
+import { PostCard, PostCardLoading } from "@/components/PostCard/PostCard";
 
 interface CountryPostsProps {
-  country: Pick<Country, "slug" | "name">;
+  country: Required<Pick<Country, "slug" | "name" | "continent">>;
   locale: AppLocale;
 }
 
@@ -15,7 +15,7 @@ export const CountryPostsLoading = () => (
 
       <div className="grid gap-8 grid-cols-1 lg:grid-cols-3">
         {Array.from({ length: 6 }).map((_, i) => (
-          <CountryPostLoading key={i} />
+          <PostCardLoading key={i} />
         ))}
       </div>
     </div>
@@ -26,7 +26,7 @@ export default async function CountryPosts({
   country,
   locale,
 }: CountryPostsProps) {
-  const { posts } = await getPostsByCountry({ country: country.slug, locale });
+  const { posts } = await getPostsByCountry({ country, locale });
 
   return (
     <div className="px-8 lg:px-24 xl:px-48 mt-8 mb-24">
@@ -35,9 +35,9 @@ export default async function CountryPosts({
           Articles from {country.name}
         </h2>
 
-        <div className="grid gap-8 grid-cols-1 lg:grid-cols-3">
+        <div className="grid gap-x-12 gap-y-16 grid-cols-1 lg:grid-cols-3">
           {posts.map((post) => (
-            <CountryPost key={post.slug} post={post} locale={locale} />
+            <PostCard key={post.slug} post={post} locale={locale} />
           ))}
         </div>
       </div>
