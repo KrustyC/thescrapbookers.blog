@@ -32,7 +32,7 @@ export const Hero: React.FC<HeroProps> = ({ locale }) => {
 
       <Image
         src={homeHeroPic}
-        alt="A womand driving a scooter, with a man on the back. THey are out of focus. There is a sunset in the background."
+        alt="hanoi train street, on the left there is a man enjoying his coffee, while on the background we can see a a lot of plants hanging from the baclony of houses, which are right nect to the railtrack"
         sizes="100vw"
         priority
         fill

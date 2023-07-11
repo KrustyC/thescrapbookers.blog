@@ -8,7 +8,7 @@ export const PreviewBadge = () => {
         <Link href="/api/draft/disable" prefetch={false} className="text-yellow-600">
           Click here
         </Link>{" "}
-        to disable preview mode
+        to disable
       </div>
     </div>
   );
