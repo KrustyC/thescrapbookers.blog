@@ -1,9 +1,11 @@
 import { Metadata } from "next";
+import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 import { useLocale } from "next-intl";
 import { getTranslator } from "next-intl/server";
 
+import { PreviewBadge } from "@/components/PreviewBadge";
 import { AppLocale } from "@/types/global";
 import { poppins } from "@/utils/fonts";
 
@@ -76,7 +78,7 @@ export async function generateMetadata({
 
 export default function LocaleLayout({ children, params }: Props) {
   const locale = useLocale();
-
+  const { isEnabled } = draftMode();
   // Show a 404 error if the user requests an unknown locale
   if (params.locale !== locale) {
     notFound();
@@ -85,6 +87,8 @@ export default function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale} style={poppins.style}>
       <body>{children}</body>
+
+      {isEnabled && <PreviewBadge />}
 
       {process.env.environment === "production" && (
         <>

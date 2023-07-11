@@ -1,14 +1,17 @@
 import { type ContentfulClientApi, createClient } from "contentful";
 
-let cachedClient: ContentfulClientApi<undefined> | undefined;
+interface Options {
+  preview?: boolean;
+}
 
-export function getContentfulClient(): ContentfulClientApi<undefined> {
-  if (!cachedClient) {
-    return createClient({
-      space: process.env.CONTENTFUL_SPACE_ID as string,
-      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN as string,
-    });
-  }
-
-  return cachedClient;
+export function getContentfulClient({
+  preview = false,
+}: Options = {}): ContentfulClientApi<undefined> {
+  return createClient({
+    host: `${preview ? "preview" : "cdn"}.contentful.com`,
+    space: process.env.CONTENTFUL_SPACE_ID as string,
+    accessToken: preview
+      ? (process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN as string)
+      : (process.env.CONTENTFUL_ACCESS_TOKEN as string),
+  });
 }
