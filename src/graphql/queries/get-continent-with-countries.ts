@@ -1,12 +1,12 @@
 import { gql } from "@apollo/client";
 import { getApolloServerClient } from "src/graphql/apollo-server-client";
 
+import {
+  Continent as ContinentGraphQL,
+  Country as CountryGraphQL,
+} from "@/types/generated/graphql";
 import { AppLocale, Continent, ShortCountry } from "@/types/global";
 import { extractImageDataFromContentfulAsset } from "@/utils/images";
-import {
-  Country as CountryGraphQL,
-  Continent as ContinentGraphQL,
-} from "@/types/generated/graphql";
 
 type LinkedCountryGraphQL = Pick<
   CountryGraphQL,

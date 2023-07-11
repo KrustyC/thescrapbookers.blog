@@ -11,7 +11,7 @@ register();
 
 interface Slide {
   image: StaticImageData | string;
-  name: string;
+  name?: string;
   href: string;
 }
 
@@ -36,7 +36,7 @@ const CountriesCarousel: React.FC<CaoruselProps> = ({ slides }) => {
           key={slide.href}
           lazy
         >
-          <div className="h-full w-full bg-gray-200 relative rounded-2xl bg-gray-200">
+          <div className="h-full w-full bg-gray-200 relative rounded-2xl">
             <Link href={slide.href} prefetch={false}>
               <Image
                 className="rounded-2xl"

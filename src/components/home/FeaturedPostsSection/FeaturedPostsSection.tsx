@@ -1,8 +1,8 @@
 import { getTranslator } from "next-intl/server";
 
-import { getPosts } from "@/api";
-import type { AppLocale } from "@/types/global";
 import { PostCard } from "@/components/PostCard/PostCard";
+import { getPostsByTag } from "@/graphql/queries/get-post-by-tag.query";
+import { type AppLocale,Tag } from "@/types/global";
 
 import { FeaturedPostsSectionSkeleton } from "./FeaturedPostsSectionSkeleton";
 
@@ -14,7 +14,12 @@ export default async function FeaturedPostsSection({
   const t = await getTranslator(locale, "Home.Featured");
 
   try {
-    const { posts } = await getPosts({ tag: "featured", locale });
+    const { posts } = await getPostsByTag({
+      tag: Tag.FEATUERED,
+      limit: 3,
+      locale,
+      isPreview: false,
+    });
 
     return (
       <section className="section-layout">

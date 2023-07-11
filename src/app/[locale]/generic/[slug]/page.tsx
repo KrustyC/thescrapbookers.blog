@@ -78,8 +78,6 @@ export default async function PostPage({
 
   const t = await getTranslator(locale, "BlogPost");
 
-  console.log(post, locale, slug);
-
   if (!post) {
     return (
       <div className="flex flex-col items-center justify-center w-full py-12">

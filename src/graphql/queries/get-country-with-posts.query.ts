@@ -6,8 +6,9 @@ import {
   Post as PostGraphQL,
 } from "@/types/generated/graphql";
 import { AppLocale, Country, Post } from "@/types/global";
-import { extractImageDataFromContentfulAsset } from "@/utils/images";
 import { generatePostHref } from "@/utils/hrefs";
+import { extractImageDataFromContentfulAsset } from "@/utils/images";
+
 import { parseCheatsheet } from "../parsers/countries";
 
 type LinkedPostGraphQL = Pick<

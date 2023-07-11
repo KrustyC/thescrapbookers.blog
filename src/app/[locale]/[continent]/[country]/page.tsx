@@ -2,10 +2,10 @@ import { Metadata } from "next";
 
 import { Cheatsheet } from "@/components/country/Cheatsheet/Cheatsheet";
 import { CountryHero } from "@/components/country/CountryHero";
+import { PostCard } from "@/components/PostCard/PostCard";
 import { getCountryWithPosts } from "@/graphql/queries/get-country-with-posts.query";
 import { AppLocale } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
-import { PostCard } from "@/components/PostCard/PostCard";
 
 interface CountryPageProps {
   params: {
