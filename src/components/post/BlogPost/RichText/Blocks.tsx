@@ -2,6 +2,7 @@ import { Children, PropsWithChildren } from "react";
 import { Block, Inline } from "@contentful/rich-text-types";
 import parse from "html-react-parser";
 import Image from "next/image";
+
 import { RichTextAsset } from "@/types/global";
 
 export const Bold: React.FC<PropsWithChildren> = ({ children }) => (

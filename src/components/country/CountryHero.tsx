@@ -5,7 +5,7 @@ import { leagueGothic } from "@/utils/fonts";
 
 interface CountryHeroProps {
   name: string;
-  image: IImage;
+  image?: IImage;
 }
 
 export const CountryHeroLoading = () => (
@@ -22,14 +22,16 @@ export const CountryHero: React.FC<CountryHeroProps> = ({ name, image }) => {
         {name}
       </h1>
 
-      <Image
-        src={image.url}
-        alt={image.description}
-        sizes="100vw"
-        priority
-        fill
-        style={{ objectFit: "cover" }}
-      />
+      {image && (
+        <Image
+          src={image.url || ""}
+          alt={image.description || ""}
+          sizes="100vw"
+          priority
+          fill
+          style={{ objectFit: "cover" }}
+        />
+      )}
     </div>
   );
 };

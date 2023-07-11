@@ -2,9 +2,9 @@ import { getTranslator } from "next-intl/server";
 
 import { getPosts } from "@/api";
 import type { AppLocale } from "@/types/global";
+import { PostCard } from "@/components/PostCard/PostCard";
 
 import { FeaturedPostsSectionSkeleton } from "./FeaturedPostsSectionSkeleton";
-import { Post } from "./Post";
 
 export default async function FeaturedPostsSection({
   locale,
@@ -22,7 +22,7 @@ export default async function FeaturedPostsSection({
 
         <div className="flex flex-col md:flex-row gap-12 md:gap-8 lg:gap-16">
           {posts.map((post, i) => (
-            <Post key={i} post={post} locale={locale} />
+            <PostCard key={i} post={post} locale={locale} />
           ))}
         </div>
       </section>

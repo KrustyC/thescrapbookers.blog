@@ -31,7 +31,7 @@ export interface CountryCheatsheet {
   basicWords: CountryCheatsheetBasicWord[];
   dishes: string[];
   visaWebsite: string;
-  faveCoworkingSpace: CountryCheatsheetCoworkingSpace;
+  faveCoworkingSpace?: CountryCheatsheetCoworkingSpace;
 }
 
 export interface Country {

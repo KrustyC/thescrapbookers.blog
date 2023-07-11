@@ -96,7 +96,7 @@ export async function getPost({
       isPreview,
     }).query<PostQueryResposne>({
       query: GET_POST_QUERY,
-      variables: { slug, locale, preview: true },
+      variables: { slug, locale, preview: isPreview },
     });
 
     const post = data.data.postCollection.items[0];
