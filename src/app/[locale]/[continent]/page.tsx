@@ -1,10 +1,10 @@
 import { Metadata } from "next";
 
-import { getContinent, getCountriesForContinent } from "@/api";
 import { ContinentHero } from "@/components/continent/ContinentHero";
 import { Country } from "@/components/continent/Country";
 import { AppLocale } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
+import { getContinentWithCountries } from "@/graphql/queries/get-continent-with-countries";
 
 interface ContinentPageProps {
   params: {
@@ -28,17 +28,23 @@ interface ContinentPageProps {
 export async function generateMetadata({
   params: { continent: continentSlug, locale },
 }: ContinentPageProps): Promise<Metadata> {
-  const { continent } = await getContinent(continentSlug, locale);
+  const { continent } = await getContinentWithCountries({
+    slug: continentSlug,
+    locale,
+    isPreview: false,
+  });
 
   const title = continent.name;
   const description = continent.metaDescription;
-  const images = [
-    {
-      url: new URL(continent.mainImage.url),
-      height: continent.mainImage.details.height || 569,
-      width: continent.mainImage.details.width || 853,
-    },
-  ];
+  const images = continent.mainImage
+    ? [
+        {
+          url: new URL(continent.mainImage.url || ""),
+          height: continent.mainImage.details.height || 569,
+          width: continent.mainImage.details.width || 853,
+        },
+      ]
+    : [];
 
   return {
     title,
@@ -60,18 +66,22 @@ export async function generateMetadata({
 }
 
 export default async function ContinentPage({ params }: ContinentPageProps) {
-  const { continent } = await getContinent(params.continent, params.locale);
-  const { countries } = await getCountriesForContinent(
-    params.continent,
-    params.locale
-  );
+  const { continent } = await getContinentWithCountries({
+    slug: params.continent,
+    locale: params.locale,
+    isPreview: false,
+  });
 
   return (
     <div>
       <ContinentHero name={continent.name} image={continent.mainImage} />
       <div className="flex flex-col gap-y-16 px-8 lg:px-24 xl:px-48 pt-12 lg:pt-32 pb-12 lg:pb-24">
-        {countries.map((country, i) => (
-          <Country key={i} country={country} />
+        {continent.countries.map((country, i) => (
+          <Country
+            key={i}
+            country={country}
+            continentSlug={continent.slug || ""}
+          />
         ))}
       </div>
     </div>
