@@ -27,7 +27,6 @@ export async function getPostById(id: string) {
 
 export async function getCountryById(id: string) {
   const client = getContentfulClient({ preview: true });
-
   const result = await client.getEntries({
     "sys.id": id,
     content_type: "country",
