@@ -87,6 +87,11 @@ export async function getPostsByTag({
     }).query<PostByTagQueryResposne>({
       query: GET_POST__BY_TAG_QUERY,
       variables: { tag, limit, locale, preview: isPreview },
+      context: {
+        fetchOptions: {
+          next: { revalidate: isPreview ? 0 : undefined },
+        },
+      },
     });
 
     return {

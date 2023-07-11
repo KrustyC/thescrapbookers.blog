@@ -46,6 +46,11 @@ export async function getCountriesForContinent({
     }).query<CountryForContinentQueryResposne>({
       query: GET_COUNTRIES_FOR_CONTINENT,
       variables: { continentSlug, locale, preview: isPreview },
+      context: {
+        fetchOptions: {
+          next: { revalidate: isPreview ? 0 : undefined },
+        },
+      },
     });
 
     return {

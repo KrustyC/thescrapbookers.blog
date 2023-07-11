@@ -114,6 +114,11 @@ export async function getCountryWithPosts({
     }).query<CountryQueryResposne>({
       query: GET_COUNTRY_WITH_POSTS_QUERY,
       variables: { slug, locale, preview: isPreview },
+      context: {
+        fetchOptions: {
+          next: { revalidate: isPreview ? 0 : undefined },
+        },
+      },
     });
 
     const country = data.data.countryCollection.items[0];
