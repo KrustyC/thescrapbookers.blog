@@ -1,5 +1,14 @@
 import { Document } from "@contentful/rich-text-types";
 
+export enum Tag {
+  DIGITAL_NOMADING_HIGHLIGHTED = "digitalNomadingHighlighted",
+  DIGITAL_NOMADING = "digitalNomading",
+  RELIGION = "religion",
+  LIFESTYLE = "lifestyle",
+  NATURE = "nature",
+  FEATUERED = "featured",
+}
+
 export type AppLocale = "en" | "it";
 
 export interface Continent {

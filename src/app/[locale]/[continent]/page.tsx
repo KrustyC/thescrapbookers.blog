@@ -2,9 +2,9 @@ import { Metadata } from "next";
 
 import { ContinentHero } from "@/components/continent/ContinentHero";
 import { Country } from "@/components/continent/Country";
+import { getContinentWithCountries } from "@/graphql/queries/get-continent-with-countries";
 import { AppLocale } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
-import { getContinentWithCountries } from "@/graphql/queries/get-continent-with-countries";
 
 interface ContinentPageProps {
   params: {

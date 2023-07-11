@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 
-import { getCountriesForContinent } from "@/api";
+import { getCountriesForContinent } from "@/graphql/queries/get-countries-for-continent.query";
 import { AppLocale } from "@/types/global";
 
 import chiangMaiTower from "../../../../public/images/chiang-mai-tower.jpg";
@@ -12,7 +12,7 @@ import { CountriesCarouselSectionSkeleton } from "./CountriesCarouselSectionSkel
 
 const CountryCarousel = dynamic(() => import("./Carousel"), { ssr: false });
 
-function getImage(slug: string) {
+function getImage(slug: string | undefined) {
   switch (slug) {
     case "thailand":
       return chiangMaiTower;
@@ -32,7 +32,11 @@ export default async function CountriesCarouselSection({
 }: {
   locale: AppLocale;
 }) {
-  const { countries } = await getCountriesForContinent("asia", locale);
+  const { countries } = await getCountriesForContinent({
+    continentSlug: "asia",
+    locale,
+    isPreview: false,
+  });
 
   if (countries.length === 0) return null;
 

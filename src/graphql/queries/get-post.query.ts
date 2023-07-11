@@ -106,7 +106,7 @@ export async function getPost({
       nextPost: post.nextPost ? parseGraphQLNextPost(post.nextPost) : undefined,
     };
   } catch (error) {
-    console.log(error);
+    console.error(error);
     throw new Error("Failed to fetch post");
   }
 }
