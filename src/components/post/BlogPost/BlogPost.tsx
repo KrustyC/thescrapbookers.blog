@@ -61,7 +61,7 @@ export const BlogPost: React.FC<BlogPostProps> = ({
 
       <p className="w-full px-6 lg:px-0 lg:w-[720px] mx-auto border-t border-t-gray-200 mt-10 lg:mt-16 pt-10 lg:pt-16 text-2xl">
         <span className="text-gray-500">{copy.writtenByText}</span>{" "}
-        {post.author.name}
+        {post.author?.name}
       </p>
 
       {nextPost && <NextPost post={nextPost} locale={locale} />}

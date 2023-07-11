@@ -72,7 +72,7 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
           </h2>
           <p>{copy.description}</p>
         </div>
-        <div className="hidden lg:block relative w-[180px] w-[120px] rounded-xl">
+        <div className="hidden lg:block relative w-[180px] rounded-xl">
           Flag
         </div>
       </div>
@@ -116,14 +116,19 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
               {cheatsheet.visaWebsite}
             </Link>
           </DetailBox>
+
           <DetailBox title="Fave Coworking Space">
-            <Link
-              href={cheatsheet.faveCoworkingSpace.website}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {cheatsheet.faveCoworkingSpace.name}
-            </Link>
+            {cheatsheet?.faveCoworkingSpace ? (
+              <Link
+                href={cheatsheet?.faveCoworkingSpace?.website || ""}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {cheatsheet.faveCoworkingSpace.name}
+              </Link>
+            ) : (
+              <span>Missing coworking space</span>
+            )}
           </DetailBox>
         </div>
       </div>
