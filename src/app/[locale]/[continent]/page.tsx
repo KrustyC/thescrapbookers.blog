@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { draftMode } from "next/headers";
 
 import { ContinentHero } from "@/components/continent/ContinentHero";
 import { Country } from "@/components/continent/Country";
@@ -28,10 +29,11 @@ interface ContinentPageProps {
 export async function generateMetadata({
   params: { continent: continentSlug, locale },
 }: ContinentPageProps): Promise<Metadata> {
+  const { isEnabled } = draftMode();
   const { continent } = await getContinentWithCountries({
     slug: continentSlug,
     locale,
-    isPreview: false,
+    isPreview: isEnabled,
   });
 
   const title = continent.name;
@@ -66,10 +68,11 @@ export async function generateMetadata({
 }
 
 export default async function ContinentPage({ params }: ContinentPageProps) {
+  const { isEnabled } = draftMode();
   const { continent } = await getContinentWithCountries({
     slug: params.continent,
     locale: params.locale,
-    isPreview: false,
+    isPreview: isEnabled,
   });
 
   return (

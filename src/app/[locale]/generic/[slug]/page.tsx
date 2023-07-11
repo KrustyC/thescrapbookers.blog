@@ -20,8 +20,7 @@ export async function generateMetadata({
   params: { slug, locale },
 }: PostPageProps): Promise<Metadata> {
   try {
-    // const { isEnabled } = draftMode();
-    const isEnabled = true;
+    const { isEnabled } = draftMode();
     const { post } = await getPost({ slug, locale, isPreview: isEnabled });
 
     if (!post) {
@@ -68,8 +67,7 @@ export async function generateMetadata({
 export default async function PostPage({
   params: { slug, locale },
 }: PostPageProps) {
-  // const { isEnabled } = draftMode();
-  const isEnabled = true;
+  const { isEnabled } = draftMode();
   const { post, nextPost } = await getPost({
     slug,
     locale,

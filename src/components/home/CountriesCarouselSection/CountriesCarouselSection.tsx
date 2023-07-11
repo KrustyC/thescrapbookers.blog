@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import { draftMode } from "next/headers";
 
 import { getCountriesForContinent } from "@/graphql/queries/get-countries-for-continent.query";
 import { AppLocale } from "@/types/global";
@@ -32,10 +33,11 @@ export default async function CountriesCarouselSection({
 }: {
   locale: AppLocale;
 }) {
+  const { isEnabled } = draftMode();
   const { countries } = await getCountriesForContinent({
     continentSlug: "asia",
     locale,
-    isPreview: false,
+    isPreview: isEnabled,
   });
 
   if (countries.length === 0) return null;

@@ -1,3 +1,4 @@
+import { draftMode } from "next/headers";
 import { getTranslator } from "next-intl/server";
 
 import { PostCard } from "@/components/PostCard/PostCard";
@@ -12,13 +13,14 @@ export default async function FeaturedPostsSection({
   locale: AppLocale;
 }) {
   const t = await getTranslator(locale, "Home.Featured");
+  const { isEnabled } = draftMode();
 
   try {
     const { posts } = await getPostsByTag({
       tag: Tag.FEATUERED,
       limit: 3,
       locale,
-      isPreview: false,
+      isPreview: isEnabled,
     });
 
     return (

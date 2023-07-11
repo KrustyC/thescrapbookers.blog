@@ -1,5 +1,7 @@
+import { draftMode } from "next/headers";
+
 import { getPostsByTag } from "@/graphql/queries/get-post-by-tag.query";
-import { type AppLocale,Tag } from "@/types/global";
+import { type AppLocale, Tag } from "@/types/global";
 
 import { DigitalNomadingSectionSkeleton } from "./DigitalNomadingSectionSkeleton";
 import { SinglePost } from "./SinglePost";
@@ -9,12 +11,13 @@ export default async function DigitalNomadingSection({
 }: {
   locale: AppLocale;
 }) {
+  const { isEnabled } = draftMode();
   try {
     const { posts } = await getPostsByTag({
       tag: Tag.DIGITAL_NOMADING_HIGHLIGHTED,
       locale,
       limit: 1,
-      isPreview: false,
+      isPreview: isEnabled,
     });
 
     if (posts.length === 0) return null;
