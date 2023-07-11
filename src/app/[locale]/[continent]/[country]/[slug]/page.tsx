@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { draftMode } from "next/headers";
 import Link from "next-intl/link";
 import { getTranslator } from "next-intl/server";
 
@@ -19,7 +20,12 @@ export async function generateMetadata({
   params: { slug, locale },
 }: PostPageProps): Promise<Metadata> {
   try {
-    const { post } = await getPost({ slug, locale, isPreview: true });
+    const { isEnabled } = draftMode();
+    const { post } = await getPost({
+      slug,
+      locale,
+      isPreview: isEnabled,
+    });
 
     if (!post) {
       return {};
@@ -64,8 +70,13 @@ export async function generateMetadata({
 export default async function PostPage({
   params: { slug, locale },
 }: PostPageProps) {
-  // const { post, nextPost } = await getPost({ slug, locale, isPreview: true });
-  const { post, nextPost } = await getPost({ slug, locale, isPreview: true });
+  const { isEnabled } = draftMode();
+  const { post, nextPost } = await getPost({
+    slug,
+    locale,
+    isPreview: isEnabled,
+  });
+
   const t = await getTranslator(locale, "BlogPost");
 
   if (!post) {
