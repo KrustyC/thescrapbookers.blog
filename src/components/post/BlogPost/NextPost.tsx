@@ -22,8 +22,8 @@ export const NextPost: React.FC<NextPostHeroProps> = ({ post, locale }) => {
         <Image
           sizes="100%"
           fill
-          src={post.mainImage.url}
-          alt={post.mainImage.description}
+          src={post.mainImage?.url || ""}
+          alt={post.mainImage?.description || "missing image"}
           style={{ objectFit: "cover" }}
         />
       </Link>
@@ -34,11 +34,13 @@ export const NextPost: React.FC<NextPostHeroProps> = ({ post, locale }) => {
           style={poppins.style}
         >
           <span>
-            {formatDate({
-              date: new Date(post.date),
-              format: getFormat(locale),
-              locale,
-            })}
+            {post.date
+              ? formatDate({
+                  date: new Date(post.date),
+                  format: getFormat(locale),
+                  locale,
+                })
+              : "Missing Date"}
           </span>
         </div>
 

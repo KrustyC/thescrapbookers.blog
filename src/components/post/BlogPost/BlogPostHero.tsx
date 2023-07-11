@@ -41,8 +41,8 @@ export const BlogPostHero: React.FC<BlogPostHeroProps> = ({ post }) => {
         sizes="100%"
         fill
         priority
-        src={post.mainImage.url}
-        alt={post.mainImage.description}
+        src={post.mainImage?.url || ""}
+        alt={post.mainImage?.description || "missing image"}
         style={{ objectFit: "cover" }}
       />
     </div>

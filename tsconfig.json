@@ -38,6 +38,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "getContentfulEnvironment.js"  ],
+  ],
   "exclude": ["node_modules"]
 }

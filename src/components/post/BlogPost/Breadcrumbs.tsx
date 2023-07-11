@@ -1,16 +1,10 @@
 import Link from "next-intl/link";
 
+import { Country } from "@/types/global";
 import { poppins } from "@/utils/fonts";
 
 interface BreadcrumbsProps {
-  country: {
-    name: string;
-    slug: string;
-    continent: {
-      name: string;
-      slug: string;
-    };
-  };
+  country: Pick<Country, "name" | "slug" | "continent">;
 }
 
 export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ country }) => {
@@ -18,13 +12,13 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ country }) => {
 
   return (
     <div style={poppins.style} className="flex text-xl gap-x-2 text-white">
-      <Link href={`/${continent.slug}`} prefetch={false}>
-        {continent.name}
+      <Link href={`/${continent?.slug}`} prefetch={false}>
+        {continent?.name}
       </Link>
 
       <span className="font-bold mx-2 text-white">/</span>
 
-      <Link href={`/${continent.slug}/${country.slug}`} prefetch={false}>
+      <Link href={`/${continent?.slug}/${country.slug}`} prefetch={false}>
         {country.name}
       </Link>
     </div>
