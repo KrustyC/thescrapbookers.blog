@@ -1,14 +1,11 @@
-import { Suspense } from "react";
 import { Metadata } from "next";
 
 import { Cheatsheet } from "@/components/country/Cheatsheet/Cheatsheet";
 import { CountryHero } from "@/components/country/CountryHero";
-import CountryPosts, {
-  CountryPostsLoading,
-} from "@/components/country/CountryPosts";
-import { getCountry } from "@/graphql/queries/get-country.query";
+import { getCountryWithPosts } from "@/graphql/queries/get-country-with-posts.query";
 import { AppLocale } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
+import { PostCard } from "@/components/PostCard/PostCard";
 
 interface CountryPageProps {
   params: {
@@ -32,7 +29,7 @@ interface CountryPageProps {
 export async function generateMetadata({
   params: { country: countrySlug, locale },
 }: CountryPageProps): Promise<Metadata> {
-  const { country } = await getCountry({
+  const { country } = await getCountryWithPosts({
     slug: countrySlug,
     locale,
     isPreview: false,
@@ -69,10 +66,12 @@ export async function generateMetadata({
   };
 }
 
-export default async function CountryPage({ params }: CountryPageProps) {
-  const { country } = await getCountry({
-    slug: params.country,
-    locale: params.locale,
+export default async function CountryPage({
+  params: { country: countrySlug, locale },
+}: CountryPageProps) {
+  const { country } = await getCountryWithPosts({
+    slug: countrySlug,
+    locale,
     isPreview: false,
   });
 
@@ -90,17 +89,23 @@ export default async function CountryPage({ params }: CountryPageProps) {
         </div>
       ) : null}
 
-      {country.name && country.slug && country.continent && (
-        <Suspense fallback={<CountryPostsLoading />}>
-          <CountryPosts
-            country={{
-              name: country.name,
-              slug: country.slug,
-              continent: country.continent,
-            }}
-            locale={params.locale}
-          />
-        </Suspense>
+      {country.posts.length > 0 ? (
+        <div className="px-8 lg:px-24 xl:px-48 mt-8 mb-24">
+          <div className="w-full 2xl:w-max 2xl:mx-auto flex flex-col">
+            <h2 className="text-3xl lg:text-5xl font-semibold mb-8 lg:mb-12">
+              Articles from {country.name}
+            </h2>
+
+            <div className="grid gap-x-12 gap-y-16 grid-cols-1 lg:grid-cols-3">
+              {country.posts.map((post) => (
+                <PostCard key={post.slug} post={post} locale={locale} />
+              ))}
+            </div>
+          </div>
+        </div>
+      ) : (
+        // @TODO Proper empty state
+        <span>There is no post for this country yet</span>
       )}
     </div>
   );
