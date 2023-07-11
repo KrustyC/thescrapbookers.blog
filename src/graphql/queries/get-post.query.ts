@@ -97,6 +97,11 @@ export async function getPost({
     }).query<PostQueryResposne>({
       query: GET_POST_QUERY,
       variables: { slug, locale, preview: isPreview },
+      context: {
+        fetchOptions: {
+          next: { revalidate: isPreview ? 0 : undefined },
+        },
+      },
     });
 
     const post = data.data.postCollection.items[0];

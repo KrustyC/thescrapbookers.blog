@@ -94,6 +94,11 @@ export async function getContinentWithCountries({
     }).query<ContinentWithCountriesQueryResponse>({
       query: GET_CONTINENT_WITH_COUNTRIES,
       variables: { slug, locale, preview: isPreview },
+      context: {
+        fetchOptions: {
+          next: { revalidate: isPreview ? 0 : undefined },
+        },
+      },
     });
 
     const continent = data.data.continentCollection.items[0];
