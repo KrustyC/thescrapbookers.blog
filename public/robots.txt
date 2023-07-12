@@ -1,6 +1,5 @@
 User-Agent: *
 Allow: /
-Disallow: /en/api
-Disallow: /it/api
+Disallow: /api
 
 Sitemap: https://thescrapbookers.blog/sitemap.xml
