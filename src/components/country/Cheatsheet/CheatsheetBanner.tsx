@@ -1,28 +1,13 @@
 "use client";
 
-// import Image from "next/image";
-
 import { PropsWithChildren, useState } from "react";
 import classNames from "classnames";
 import Link from "next/link";
 
 import { ChevronDown } from "@/icons/ChevronDown";
-import { CountryCheatsheet } from "@/types/global";
+import { Country } from "@/types/global";
 
-interface CheatsheetBannerProps {
-  countryName: string;
-  cheatsheet: CountryCheatsheet;
-  copy: {
-    title: string;
-    description: string;
-    seeMore: string;
-  };
-}
-
-interface InfoBoxProps {
-  title: string;
-  value: number | string | string[];
-}
+import { Flag } from "./Flag";
 
 const formatValue = (value: number | string | string[]) => {
   if (Array.isArray(value)) {
@@ -35,6 +20,11 @@ const formatValue = (value: number | string | string[]) => {
 
   return value;
 };
+
+interface InfoBoxProps {
+  title: string;
+  value: number | string | string[];
+}
 
 const InfoBox: React.FC<InfoBoxProps> = ({ title, value }) => (
   <div className="flex gap-2 lg:flex-col w-full lg:w-auto">
@@ -53,28 +43,36 @@ const DetailBox: React.FC<PropsWithChildren<{ title: string }>> = ({
   </div>
 );
 
+interface CheatsheetBannerProps {
+  country: Required<Pick<Country, "name" | "slug" | "cheatsheet">>;
+  copy: {
+    title: string;
+    description: string;
+    seeMore: string;
+  };
+}
+
 export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
-  countryName,
+  country,
   copy,
-  cheatsheet,
 }) => {
+  const { name, slug, cheatsheet } = country;
   const [isExpanded, setIsExpanded] = useState(false);
 
   const onToggleExpanded = () => setIsExpanded((currentVal) => !currentVal);
 
   return (
     <div className="px-5 py-8 w-full 2xl:w-max 2xl:mx-auto flex flex-col rounded-2xl bg-cheatsheet/10 shadow-xl">
-      <div className="flex flex-col lg:flex-row lg:justify-between border-y border-black py-6">
+      <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center border-y border-black py-6">
         <div className="flex flex-col">
           <h2 className="text-3xl flex flex-col font-semibold mb-2">
-            <span>{countryName}</span>
+            <span>{name}</span>
             <span>{copy.title}</span>
           </h2>
           <p>{copy.description}</p>
         </div>
-        <div className="hidden lg:block relative w-[180px] rounded-xl">
-          Flag
-        </div>
+
+        <Flag slug={slug} />
       </div>
       <div
         className={classNames("transition-all duration-300 ease-in-out", {

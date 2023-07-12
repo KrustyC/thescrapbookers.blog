@@ -1,25 +1,23 @@
 import { useTranslations } from "next-intl";
 
-import { Country as ICountry, CountryCheatsheet } from "@/types/global";
+import { Country } from "@/types/global";
 
 import { CheatsheetBanner } from "./CheatsheetBanner";
 
 interface CheatsheetProps {
-  name: string;
-  cheatsheet: CountryCheatsheet;
+  country: Required<Pick<Country, "name" | "slug" | "cheatsheet">>;
 }
 
 export const CheatsheetLoading = () => (
   <div className="w-full aspect-square lg:aspect-auto h-[560px] 2xl:w-max 2xl:mx-auto rounded-2xl shadow-xl loading-background-animation" />
 );
 
-export const Cheatsheet: React.FC<CheatsheetProps> = ({ name, cheatsheet }) => {
+export const Cheatsheet: React.FC<CheatsheetProps> = ({ country }) => {
   const t = useTranslations("Country.Cheatsheet");
 
   return (
     <CheatsheetBanner
-      countryName={name}
-      cheatsheet={cheatsheet}
+      country={country}
       copy={{
         title: t("title"),
         description: t("description"),

@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { draftMode } from 'next/headers'
+import { draftMode } from "next/headers";
 
 import { Cheatsheet } from "@/components/country/Cheatsheet/Cheatsheet";
 import { CountryHero } from "@/components/country/CountryHero";
@@ -86,9 +86,15 @@ export default async function CountryPage({
         <span>Need to provide at least a name for the country</span>
       )}
 
-      {country.name && country.cheatsheet ? (
+      {country.name && country.slug && country.cheatsheet ? (
         <div className="px-4 lg:px-24 xl:px-48 pt-12 lg:pt-32 pb-12 lg:pb-24">
-          <Cheatsheet name={country.name} cheatsheet={country.cheatsheet} />
+          <Cheatsheet
+            country={{
+              name: country.name,
+              slug: country.slug,
+              cheatsheet: country.cheatsheet,
+            }}
+          />
         </div>
       ) : null}
 
