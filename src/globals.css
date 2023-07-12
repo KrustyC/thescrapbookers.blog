@@ -35,6 +35,10 @@ html {
   @apply bg-black text-white mx-4 lg:w-1/2 lg:mx-auto rounded-xl p-6 md:p-12 text-xl flex flex-col justify-between;
 }
 
+.country-continent-hero {
+  @apply w-full h-[740px] lg:h-[710px] 2xl:h-[820px] 4xl:h-[1800px];
+}
+
 .video-container {
   position: relative;
   width: 100%;

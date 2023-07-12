@@ -9,7 +9,7 @@ interface ContinentHeroProps {
 }
 
 export const ContinentHeroLoading = () => (
-  <div className="w-full h-[740px] lg:h-[650px] 2xl:h-[820px] 4xl:h-[1800px] bg-gray-300 animate-pulse" />
+  <div className="country-continent-hero bg-gray-300 animate-pulse" />
 );
 
 export const ContinentHero: React.FC<ContinentHeroProps> = ({
@@ -17,7 +17,7 @@ export const ContinentHero: React.FC<ContinentHeroProps> = ({
   image,
 }) => {
   return (
-    <div className="relative w-full h-[740px] lg:h-[650px] 2xl:h-[820px] 4xl:h-[1800px] flex justify-center lg:justify-start items-center lg:px-48">
+    <div className="relative country-continent-hero flex justify-center lg:justify-start items-center lg:px-48">
       <h1
         className="z-10 text-9xl text-white uppercase"
         style={leagueGothic.style}
