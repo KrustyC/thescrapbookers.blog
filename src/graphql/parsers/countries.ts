@@ -26,10 +26,8 @@ export function parseCheatsheet(
   const {
     language,
     capital,
-    mainReligions,
     currency,
     population,
-    area,
     basicWords,
     dishes,
     visaWebsite,
@@ -40,12 +38,9 @@ export function parseCheatsheet(
     typeof language !== "string" ||
     typeof capital !== "string" ||
     typeof currency !== "string" ||
-    typeof visaWebsite !== "string"
+    typeof visaWebsite !== "string" ||
+    typeof population !== "number"
   ) {
-    return undefined;
-  }
-
-  if (typeof area !== "number" || typeof population !== "number") {
     return undefined;
   }
 
@@ -54,9 +49,7 @@ export function parseCheatsheet(
     capital,
     currency,
     population,
-    area,
     visaWebsite,
-    mainReligions: Array.isArray(mainReligions) ? mainReligions : [],
     basicWords: Array.isArray(basicWords)
       ? basicWords?.map((basicWord) => ({
           word: basicWord.word,

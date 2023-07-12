@@ -50,7 +50,7 @@ export const BlogPost: React.FC<BlogPostProps> = ({
       <BlogPostHero post={post} />
 
       <div id="post-content" className="my-10 lg:my-20">
-        <p className="text-left px-6 lg:px-0 lg:w-[720px] lg:mx-auto text-black italic">
+        <p className="text-left px-6 lg:px-0 lg:w-[720px] lg:mx-auto text-black/40 text-4xl">
           {post.smallIntro}
         </p>
       </div>

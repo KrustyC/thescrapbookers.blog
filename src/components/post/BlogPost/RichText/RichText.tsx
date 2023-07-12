@@ -11,7 +11,7 @@ import {
 } from "@contentful/rich-text-types";
 
 import { RichText as RichTextType } from "@/types/global";
-import { cormorantGaramond } from "@/utils/fonts";
+import { merriweather } from "@/utils/fonts";
 
 import {
   Alert,
@@ -120,8 +120,8 @@ export const RichText: React.FC<{ richtext: RichTextType }> = ({
 
   return (
     <div
-      style={cormorantGaramond.style}
-      className="flex flex-col gap-y-6 text-2xl break-words"
+      style={merriweather.style}
+      className="flex flex-col gap-y-2 text-2xl break-words"
     >
       {documentToReactComponents(richtext.json, options)}
     </div>

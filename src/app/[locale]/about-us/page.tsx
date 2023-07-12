@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-import { cormorantGaramond, ooohBaby } from "@/utils/fonts";
+import { merriweather, ooohBaby } from "@/utils/fonts";
 
 import aboutUsPic from "../../../../public/images/about-us.jpg";
 import cameronHighlands from "../../../../public/images/cameron_highlands.png";
@@ -59,17 +59,17 @@ export default function AboutUsPage() {
 
         <div className="w-full lg:w-2/3 bg-white lg:mt-36 lg:pb-24 px-4 lg:px-0 py-12 lg:py-0">
           <div className="flex flex-col gap-y-6 text-2xl w-full lg:w-[720px] lg:mx-auto pb-[300px]">
-            <p style={cormorantGaramond.style}>{t("Generic.firstParagraph")}</p>
-            <p style={cormorantGaramond.style}>
+            <p style={merriweather.style}>{t("Generic.firstParagraph")}</p>
+            <p style={merriweather.style}>
               {t("Generic.secondParagraph")}
             </p>
-            <p style={cormorantGaramond.style}>{t("Generic.thirdParagraph")}</p>
-            <p style={cormorantGaramond.style}>
+            <p style={merriweather.style}>{t("Generic.thirdParagraph")}</p>
+            <p style={merriweather.style}>
               {t("Generic.fourthParagraph")}
             </p>
-            <p style={cormorantGaramond.style}>{t("Generic.fifthParagraph")}</p>
-            <p style={cormorantGaramond.style}>{t("Generic.sixthParagraph")}</p>
-            <p style={cormorantGaramond.style}>
+            <p style={merriweather.style}>{t("Generic.fifthParagraph")}</p>
+            <p style={merriweather.style}>{t("Generic.sixthParagraph")}</p>
+            <p style={merriweather.style}>
               {t("Generic.seventhParagraph")}
             </p>
           </div>

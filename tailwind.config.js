@@ -4,10 +4,8 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        "title-appear":
-          "scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1)",
-        "text-appear":
-          "fade-in 0.8s forwards cubic-bezier(0.11, 0, 0.5, 0)",
+        "title-appear": "scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1)",
+        "text-appear": "fade-in 0.8s forwards cubic-bezier(0.11, 0, 0.5, 0)",
       },
       backgroundImage: {
         "uk-flag": "url('/icons/uk.png')",
@@ -19,7 +17,38 @@ module.exports = {
         cheatsheet: "#FF7A00",
       },
       fontSize: {
-        "10xl": "10rem",
+        "3xl": [
+          "1.8rem",
+          {
+            lineHeight: "2rem",
+            letterSpacing: "0",
+            fontWeight: "400",
+          },
+        ],
+        "4xl": [
+          "2rem",
+          {
+            lineHeight: "2.5rem",
+            letterSpacing: "0",
+            fontWeight: "400",
+          },
+        ],
+        "9xl": [
+          "8rem",
+          {
+            lineHeight: "7.5rem",
+            letterSpacing: "0",
+            fontWeight: "500",
+          },
+        ],
+        "10xl": [
+          "10rem",
+          {
+            lineHeight: "9rem",
+            letterSpacing: "0",
+            fontWeight: "500",
+          },
+        ],
       },
       keyframes: {
         scale: {

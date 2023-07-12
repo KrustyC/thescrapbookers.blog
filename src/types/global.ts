@@ -32,11 +32,8 @@ export interface CountryCheatsheetCoworkingSpace {
 export interface CountryCheatsheet {
   language: string;
   capital: string;
-  mainReligions: string[];
   currency: string;
   population: number;
-  area: number;
-
   basicWords: CountryCheatsheetBasicWord[];
   dishes: string[];
   visaWebsite: string;

@@ -11,7 +11,7 @@ export const HighlightSection = () => {
 
   return (
     <div className="flex py-16 px-8 lg:px-24 lg:mt-16 relative w-full h-[880px] 2xl:h-[780px]">
-      <div className="flex flex-col justify-start md:justify-center z-10 text-white">
+      <div className="flex flex-col justify-start md:justify-center z-10 text-white relative">
         <h2
           style={leagueGothic.style}
           className="text-8xl md:text-8xl xl:text-9xl font-regular uppercase w-full md:w-2/3 lg:w-3/5"
@@ -23,13 +23,9 @@ export const HighlightSection = () => {
           {t("text")}
         </p>
 
-        <ButtonLink
-          href="/asia/laos/vang-vieng-to-luang-prabang"
-          type="submit"
-          variant="white"
-        >
-          {t("cta")}
-        </ButtonLink>
+        <div className="absolute left-0 bottom-[200px] md:left-[300px] md:bottom-[280px] xl:left-[390px] xl:bottom-[250px] z-50 text-white flex flex-col self-end w-fit bg-black uppercase p-6 rounded-xl -rotate-12 text-2xl font-bold border-2 border-black">
+          Coming soon!
+        </div>
       </div>
 
       <Image

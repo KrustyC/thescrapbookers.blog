@@ -18,7 +18,13 @@ type LinkedPostGraphQL = Pick<
 
 type CountryWithPostsGraphQL = Pick<
   CountryGraphQL,
-  "name" | "slug" | "metaDescription" | "continent" | "cheatsheet" | "mainImage"
+  | "name"
+  | "slug"
+  | "metaDescription"
+  | "description"
+  | "continent"
+  | "cheatsheet"
+  | "mainImage"
 > & {
   linkedFrom: {
     postCollection: {
@@ -68,6 +74,7 @@ const GET_COUNTRY_WITH_POSTS_QUERY = gql`
         name
         slug
         metaDescription
+        description
         continent {
           name
           slug
@@ -131,6 +138,7 @@ export async function getCountryWithPosts({
           ? parseCheatsheet(country.cheatsheet)
           : undefined,
         metaDescription: country.metaDescription,
+        description: country.description,
         continent: country.continent,
         mainImage: extractImageDataFromContentfulAsset(country.mainImage),
         posts: country.linkedFrom.postCollection.items.map((post) => ({

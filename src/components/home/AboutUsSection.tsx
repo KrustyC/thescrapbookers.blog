@@ -13,12 +13,12 @@ export const AboutUsSection: React.FC = () => {
     <div className="bg-gray-100 lg:bg-white lg:h-[450px] xl:h-[500px] flex flex-col-reverse lg:flex-row lg:justify-between gap-8 lg:gap-20 py-16 lg:py-0 lg:my-20 w-full">
       <div className="bg-gray-100 flex flex-col justify-center items-end w-full lg:w-7/12 xl:w-2/3 px-6 lg:p-12 xl:p-24 md:rounded-r-2xl">
         <div>
-          <h6
+          <h2
             style={poppins.style}
-            className="mb-4 xl:mb-6 uppercase font-semibold text-gray-400 text-sm tracking-widest"
+            className="mb-4 xl:mb-6 uppercase font-semibold text-gray-400 text-sm leading-[0.8rem] tracking-widest"
           >
             {t("title")}
-          </h6>
+          </h2>
           <p className="text-left text-2xl lg:max-w-[650px] mb-4 xl:mb-6">
             {t("text")}
           </p>

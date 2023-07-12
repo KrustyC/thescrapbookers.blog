@@ -27,7 +27,7 @@ interface InfoBoxProps {
 }
 
 const InfoBox: React.FC<InfoBoxProps> = ({ title, value }) => (
-  <div className="flex gap-2 lg:flex-col w-full lg:w-auto">
+  <div className="flex gap-2 lg:flex-col w-full">
     <h3 className="uppercase font-medium text-xl w-3/5 lg:w-full">{title}</h3>
     <span className="w-2/5 lg:w-full">{formatValue(value)}</span>
   </div>
@@ -83,10 +83,8 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
         <div className="py-8 flex flex-col lg:flex-row lg:justify-between gap-x-2 gap-y-4">
           <InfoBox title="Language" value={cheatsheet.language} />
           <InfoBox title="Capital" value={cheatsheet.capital} />
-          <InfoBox title="Main Religion" value={cheatsheet.mainReligions} />
           <InfoBox title="Currency" value={cheatsheet.currency} />
           <InfoBox title="Population" value={cheatsheet.population} />
-          <InfoBox title="Area" value={cheatsheet.area} />
         </div>
         <div className="py-8 flex flex-col lg:flex-row gap-y-8 border-t border-black">
           <DetailBox title="5 Basic Words">

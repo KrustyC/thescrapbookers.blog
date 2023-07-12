@@ -1,9 +1,9 @@
 import { Children, PropsWithChildren } from "react";
-import { Block, Inline } from "@contentful/rich-text-types";
 import parse from "html-react-parser";
 import Image from "next/image";
 
 import { RichTextAsset } from "@/types/global";
+import { poppins } from "@/utils/fonts";
 
 export const Bold: React.FC<PropsWithChildren> = ({ children }) => (
   <span className="font-bold">{children}</span>
@@ -34,7 +34,7 @@ export const Text: React.FC<PropsWithChildren> = ({ children }) => {
     return null;
   }
 
-  return <p className="rich-text-copy">{children}</p>;
+  return <p className="rich-text-copy mb-2 text-lg tracking-wide leading-[1.9rem]">{children}</p>;
 };
 
 export const UnorderedList: React.FC<PropsWithChildren> = ({ children }) => (
@@ -83,18 +83,42 @@ export const Heading: React.FC<PropsWithChildren<HeadingProps>> = ({
 }) => {
   switch (size) {
     case 1:
-      return <h1 className="rich-text-heading text-5xl">{children}</h1>;
+      return (
+        <h1 className="rich-text-heading text-5xl" style={poppins.style}>
+          {children}
+        </h1>
+      );
     case 2:
-      return <h2 className="rich-text-heading text-4xl">{children}</h2>;
+      return (
+        <h2 className="rich-text-heading text-4xl mt-12" style={poppins.style}>
+          {children}
+        </h2>
+      );
     case 3:
-      return <h3 className="rich-text-heading text-3xl">{children}</h3>;
+      return (
+        <h3 className="rich-text-heading text-3xl" style={poppins.style}>
+          {children}
+        </h3>
+      );
     case 4:
-      return <h4 className="rich-text-heading text-2xl">{children}</h4>;
+      return (
+        <h4 className="rich-text-heading text-2xl" style={poppins.style}>
+          {children}
+        </h4>
+      );
     case 5:
-      return <h5 className="rich-text-heading text-xl">{children}</h5>;
+      return (
+        <h5 className="rich-text-heading text-xl" style={poppins.style}>
+          {children}
+        </h5>
+      );
     case 4:
     default:
-      return <h6 className="rich-text-heading text-lg">{children}</h6>;
+      return (
+        <h6 className="rich-text-heading text-lg" style={poppins.style}>
+          {children}
+        </h6>
+      );
   }
 };
 

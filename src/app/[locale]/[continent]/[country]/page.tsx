@@ -81,7 +81,11 @@ export default async function CountryPage({
   return (
     <div className="flex flex-col">
       {country.name ? (
-        <CountryHero name={country.name} image={country.mainImage} />
+        <CountryHero
+          name={country.name}
+          description={country.description}
+          image={country.mainImage}
+        />
       ) : (
         <span>Need to provide at least a name for the country</span>
       )}
