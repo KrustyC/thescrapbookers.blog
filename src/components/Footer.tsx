@@ -67,7 +67,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
             <span style={ooohBaby.style} className="text-3xl mb-1 md:mb-2">
               {footer("notes")}
             </span>
-            <span className="text-3xl mb-2 font-semibold mb-4 md:mb-6">
+            <span className="text-3xl font-semibold mb-4 md:mb-6">
               {footer("newsletterMessage")}
             </span>
             <NewsletterForm

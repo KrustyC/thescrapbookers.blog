@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-import { crimsonText, leagueGothic } from "@/utils/fonts";
+import { cormorantGaramond, ooohBaby } from "@/utils/fonts";
 
 import aboutUsPic from "../../../../public/images/about-us.jpg";
 import cameronHighlands from "../../../../public/images/cameron_highlands.png";
@@ -18,14 +18,7 @@ const Sidebar: React.FC<SidebarProps> = ({ title, description }) => {
   return (
     <div className="w-full lg:w-1/3 bg-primary flex justify-center pb-24">
       <div className="lg:h-screen lg:sticky lg:top-5 lg:mt-36  flex-col px-8 lg:px-12 xl:px-20 pt-28 pb-16 lg:py-0 text-white">
-        <h1
-          className="lg:leading-[5rem] text-7xl lg:text-8xl"
-          style={leagueGothic.style}
-        >
-          {title}
-        </h1>
-
-        <div className="mt-2 lg:mt-6 mb-8 lg:mb-6 w-full aspect-square relative rounded-2xl border-4 border-black">
+        <div className="mb-8 lg:mb-6 w-full aspect-square relative rounded-2xl border-4 border-black">
           <Image
             className="rounded-xl"
             src={aboutUsPic}
@@ -37,7 +30,11 @@ const Sidebar: React.FC<SidebarProps> = ({ title, description }) => {
           />
         </div>
 
-        <div className="lg:pr-4">
+        <h1 className="lg:leading-[4rem] text-6xl mb-1" style={ooohBaby.style}>
+          {title}
+        </h1>
+
+        <div className="text-xl font-medium leading-[2rem]">
           <p>{description.part1}</p>
           <p>{description.part2}</p>
         </div>
@@ -62,13 +59,19 @@ export default function AboutUsPage() {
 
         <div className="w-full lg:w-2/3 bg-white lg:mt-36 lg:pb-24 px-4 lg:px-0 py-12 lg:py-0">
           <div className="flex flex-col gap-y-6 text-2xl w-full lg:w-[720px] lg:mx-auto pb-[300px]">
-            <p style={crimsonText.style}>{t("Generic.firstParagraph")}</p>
-            <p style={crimsonText.style}>{t("Generic.secondParagraph")}</p>
-            <p style={crimsonText.style}>{t("Generic.thirdParagraph")}</p>
-            <p style={crimsonText.style}>{t("Generic.fourthParagraph")}</p>
-            <p style={crimsonText.style}>{t("Generic.fifthParagraph")}</p>
-            <p style={crimsonText.style}>{t("Generic.sixthParagraph")}</p>
-            <p style={crimsonText.style}>{t("Generic.seventhParagraph")}</p>
+            <p style={cormorantGaramond.style}>{t("Generic.firstParagraph")}</p>
+            <p style={cormorantGaramond.style}>
+              {t("Generic.secondParagraph")}
+            </p>
+            <p style={cormorantGaramond.style}>{t("Generic.thirdParagraph")}</p>
+            <p style={cormorantGaramond.style}>
+              {t("Generic.fourthParagraph")}
+            </p>
+            <p style={cormorantGaramond.style}>{t("Generic.fifthParagraph")}</p>
+            <p style={cormorantGaramond.style}>{t("Generic.sixthParagraph")}</p>
+            <p style={cormorantGaramond.style}>
+              {t("Generic.seventhParagraph")}
+            </p>
           </div>
         </div>
       </div>

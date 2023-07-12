@@ -1,13 +1,13 @@
 import {
-  Crimson_Text,
+  Cormorant_Garamond,
   League_Gothic,
   Oooh_Baby,
   Poppins,
 } from "next/font/google";
 
-export const crimsonText = Crimson_Text({
+export const cormorantGaramond = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
