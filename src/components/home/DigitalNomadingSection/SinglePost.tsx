@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 import { ButtonLink } from "@/components/uikit/ButtonLink";
 import type { AppLocale, Post as IPost } from "@/types/global";
@@ -16,18 +17,12 @@ export const SinglePost: React.FC<PostProps> = ({
   post: { title, href, smallIntro, thumbnailImage, category, date },
   locale,
 }) => {
+  const t = useTranslations("Home.DigitalNomading");
+
   return (
     <div className="flex flex-col lg:flex-row gap-8">
-      <div
-        className="flex items-end w-full aspect-square lg:aspect-[4/3] relative bg-gray-200 rounded-2xl drop-shadow-lgformatDate({
-              date: new Date(date),
-              format: getFormat(locale),
-              locale,
-            }) border-2 border-black"
-      >
+      <div className="flex items-end w-full aspect-square lg:aspect-[4/3] relative bg-gray-200 rounded-2xl drop-shadow-lg border-2 overflow-hidden border-black">
         <Image
-          className="rounded-2xl"
-          sizes="100%"
           fill
           src={thumbnailImage?.url || ""}
           alt={thumbnailImage?.description || "missing image"}
@@ -62,7 +57,7 @@ export const SinglePost: React.FC<PostProps> = ({
           href={href || "/"}
           prefetch={false}
         >
-          Read More
+          {t("readMoreCTA")}
         </ButtonLink>
       </div>
     </div>

@@ -11,7 +11,7 @@
     "codegen": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
-    "@apollo/client": "^3.8.0-beta.6",
+    "@apollo/client": "^3.8.0-beta.7",
     "@apollo/experimental-nextjs-app-support": "^0.3.2",
     "@contentful/rich-text-react-renderer": "^15.17.0",
     "@headlessui/react": "^1.7.15",
@@ -26,16 +26,16 @@
     "contentful": "^10.3.4",
     "date-fns": "2.30.0",
     "eslint": "^8.44.0",
-    "eslint-config-next": "^13.4.8",
+    "eslint-config-next": "^13.4.9",
     "html-react-parser": "^4.0.0",
     "next": "^13.4.9",
-    "next-intl": "^3.0.0-beta.7",
+    "next-intl": "^3.0.0-beta.8",
     "qs": "^6.11.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.45.1",
     "server-only": "^0.0.1",
-    "sharp": "^0.32.1",
+    "sharp": "^0.32.2",
     "swiper": "^10.0.4",
     "typescript": "^5.1.6",
     "video.js": "^8.3.0"
