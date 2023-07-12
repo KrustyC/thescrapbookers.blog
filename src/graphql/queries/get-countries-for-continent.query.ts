@@ -54,7 +54,7 @@ export async function getCountriesForContinent({
       variables: { continentSlug, locale, preview: isPreview },
       context: {
         fetchOptions: {
-          next: { revalidate: isPreview ? 0 : undefined },
+          next: { revalidate: isPreview ? 0 : 3600 },
         },
       },
     });

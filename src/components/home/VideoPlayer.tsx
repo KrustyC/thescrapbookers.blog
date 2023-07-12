@@ -21,10 +21,12 @@ const Video = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setShowText(true);
+          setTimeout(() => {
+            setShowText(true);
+          }, 150);
         }
       },
-      { rootMargin: "-50px" }
+      { rootMargin: "-200px" }
     );
 
     if (ref.current) {

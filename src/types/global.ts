@@ -46,7 +46,6 @@ export interface Country {
   mainImage?: Image;
   thumbnailImage?: Image;
   description?: string;
-  shortDescription?: string;
   metaDescription?: string;
   cheatsheet?: CountryCheatsheet;
   continent?: Pick<Continent, "name" | "slug">;
@@ -55,7 +54,7 @@ export interface Country {
 export interface ShortCountry
   extends Pick<
     Country,
-    "name" | "slug" | "shortDescription" | "thumbnailImage" | "continent"
+    "name" | "slug" | "description" | "thumbnailImage" | "continent"
   > {}
 
 export interface Author {

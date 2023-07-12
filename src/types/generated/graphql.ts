@@ -77,7 +77,6 @@ export type Country = Entry & {
   mainImage?: Maybe<Asset>;
   metaDescription?: Maybe<Scalars["String"]["output"]>;
   name?: Maybe<Scalars["String"]["output"]>;
-  shortDescription?: Maybe<Scalars["String"]["output"]>;
   slug?: Maybe<Scalars["String"]["output"]>;
   thumbnailImage?: Maybe<Asset>;
 };

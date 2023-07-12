@@ -10,7 +10,7 @@ import { extractImageDataFromContentfulAsset } from "@/utils/images";
 
 type LinkedCountryGraphQL = Pick<
   CountryGraphQL,
-  "name" | "slug" | "shortDescription" | "thumbnailImage"
+  "name" | "slug" | "description" | "thumbnailImage"
 >;
 
 type ContinentWithCountriesGraphQL = Pick<
@@ -67,7 +67,7 @@ const GET_CONTINENT_WITH_COUNTRIES = gql`
             items {
               name
               slug
-              shortDescription
+              description
               thumbnailImage {
                 title
                 description
@@ -96,7 +96,7 @@ export async function getContinentWithCountries({
       variables: { slug, locale, preview: isPreview },
       context: {
         fetchOptions: {
-          next: { revalidate: isPreview ? 0 : undefined },
+          next: { revalidate: isPreview ? 0 : 3600 },
         },
       },
     });
@@ -114,7 +114,7 @@ export async function getContinentWithCountries({
           (country) => ({
             name: country.name,
             slug: country.slug,
-            shortDescription: country.shortDescription,
+            description: country.description,
             thumbnailImage: extractImageDataFromContentfulAsset(
               country.thumbnailImage
             ),
