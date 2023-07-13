@@ -34,8 +34,8 @@ export const ButtonLink: React.FC<PropsWithChildren<ButtonLinkProps>> = ({
           "bg-black text-white": variant === "black",
         },
         {
-          "text-sm lg:text-regular h-10 lg:h-12 min-w-16 lg:min-w-24 px-4 lg:px-8 rounded-xl": size === "sm",
-          "h-16 min-w-32 px-12 rounded-2xl": size === "md",
+          "text-sm lg:text-regular h-12 min-w-16 lg:min-w-24 w-full md:w-fit px-4 lg:px-8 rounded-lg": size === "sm",
+          "h-16 min-w-32 w-full md:w-fit px-12 rounded-2xl": size === "md",
         }
       )}
     >

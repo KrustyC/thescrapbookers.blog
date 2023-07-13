@@ -17,6 +17,14 @@ module.exports = {
         cheatsheet: "#FF7A00",
       },
       fontSize: {
+        "2xl": [
+          "1.6rem",
+          {
+            lineHeight: "1.6rem",
+            letterSpacing: "0",
+            fontWeight: "400",
+          },
+        ],
         "3xl": [
           "1.8rem",
           {

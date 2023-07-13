@@ -49,11 +49,10 @@ export const SinglePost: React.FC<PostProps> = ({
           </span>
         </div>
 
-        <span className="text-lg mb-4 lg:mb-8">{smallIntro}</span>
+        <span className="text-lg mb-4">{smallIntro}</span>
 
         <ButtonLink
           variant="black"
-          size="sm"
           href={href || "/"}
           prefetch={false}
         >
