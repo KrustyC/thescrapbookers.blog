@@ -14,6 +14,11 @@ const PLACEHOLDER_HASH =
 
 const Video = () => {
   const [isPlayerReady, setIsPlayerReady] = useState(false);
+  const [showText, setShowText] = useState(false);
+
+  const text = "stories of travel, food, culture and digital nomading";
+
+  const containerRef = useRef(null);
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -39,8 +44,30 @@ const Video = () => {
     }
   });
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && isPlayerReady) {
+          setTimeout(() => {
+            setShowText(true);
+          }, 150);
+        }
+      },
+      { rootMargin: "-200px" }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [isPlayerReady]);
+
   return (
-    <div className="relative w-full h-[70vh] lg:h-[650px] xl:h-[750px]">
+    <div
+      ref={containerRef}
+      className="relative w-full h-[70vh] lg:h-[650px] xl:h-[750px]"
+    >
       <video ref={videoRef} className="video-js" />
 
       {!isPlayerReady ? (
@@ -53,12 +80,24 @@ const Video = () => {
         />
       ) : (
         <div className="absolute h-full w-full top-0 bottom-0 left-0 right-0 z-10 px-6 lg:px-16 xl:px-48 flex items-center">
-          <h2
-            style={leagueGothic.style}
-            className="text-6xl lg:text-9xl text-white font-bold md:w-4/5 uppercase text-white/80"
-          >
-          stories of travel, food, culture and digital nomading
-          </h2>
+          {showText && (
+            <h2
+              style={leagueGothic.style}
+              className="scale-[0.94] animate-title-appear text-6xl lg:text-9xl text-white font-bold md:w-4/5 uppercase text-white/80"
+            >
+              {text.split(" ").map((word, i) => (
+                <span
+                  className="blur-[4px] opacity-0 inline-block animate-text-appear"
+                  key={i}
+                  style={{
+                    animationDelay: `${i * 0.1}s`,
+                  }}
+                >
+                  {word}&nbsp;
+                </span>
+              ))}
+            </h2>
+          )}
         </div>
       )}
     </div>
