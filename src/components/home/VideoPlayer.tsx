@@ -1,8 +1,8 @@
 "use client";
 
-// import MuxPlayer from "@mux/mux-player-react";
 import { useEffect, useRef, useState } from "react";
-import MuxVideo from "@mux/mux-video-react";
+import MuxPlayer from "@mux/mux-player-react";
+// import MuxVideo from "@mux/mux-video-react";
 import Image from "next/image";
 
 import { leagueGothic } from "@/utils/fonts";
@@ -43,7 +43,7 @@ const Video = () => {
     >
       <Image src={PLACEHOLDER_HASH} alt="placeholder for ban sen video" fill />
 
-      {/* <MuxPlayer
+      <MuxPlayer
         // style={{ height: "100%", maxWidth: "100%" }}
         onEnded={() => console.log("video ended")}
         // placeholder={PLACEHOLDER_HASH}
@@ -55,9 +55,9 @@ const Video = () => {
         autoPlay
         loop
         muted
-      /> */}
+      />
 
-      <MuxVideo
+      {/* <MuxVideo
         style={{ height: "100%", maxWidth: "100%" }}
         playbackId={PLAYBACK_ID}
         metadata={{
@@ -66,7 +66,7 @@ const Video = () => {
         autoPlay
         loop
         muted
-      />
+      /> */}
 
       {showText && (
         <div className="absolute h-full w-full top-0 bottom-0 left-0 right-0 z-10 px-6 lg:px-16 xl:px-48 flex items-center">
