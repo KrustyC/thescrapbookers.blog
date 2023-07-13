@@ -25,14 +25,31 @@ const CountriesCarousel: React.FC<CaoruselProps> = ({ slides }) => {
   return (
     <swiper-container
       cssMode
-      className="flex"
+      className="flex md:pr-6"
       ref={swiperElRef}
-      slidesPerView="auto"
-      spaceBetween={40}
+      slidesPerView={1}
+      breakpoints={{
+        720: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+        1600: {
+          slidesPerView: 4,
+        },
+        2000: {
+          slidesPerView: 5,
+        },
+        2400: {
+          slidesPerView: 6,
+        },
+      }}
+      spaceBetween={0}
     >
       {slides.map((slide) => (
         <swiper-slide
-          className="px-3 lg:px-0 h-[500px] md:h-[320px] lg:h-[550px] w-full lg:w-1/4"
+          className="px-3 lg:px-0 lg:pl-6 h-[500px] lg:h-[550px]"
           key={slide.href}
           lazy
         >
