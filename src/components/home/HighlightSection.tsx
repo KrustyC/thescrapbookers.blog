@@ -19,11 +19,11 @@ export const HighlightSection = () => {
           {t("title")}
         </h2>
 
-        <p className="py-4 lg:py-6 text-lg lg:text-xl font-light w-full md:w-[380px]">
+        <p className="py-4 lg:py-6 text-lg lg:text-xl font-light w-full md:w-[380px] lg:w-[460px]">
           {t("text")}
         </p>
 
-        <div className="absolute left-0 bottom-[200px] md:left-[300px] md:bottom-[280px] xl:left-[390px] xl:bottom-[250px] z-50 text-white flex flex-col self-end w-fit bg-black uppercase p-6 rounded-xl -rotate-12 text-2xl font-bold border-2 border-black">
+        <div className="absolute left-0 top-[200px] md:left-[300px] md:top-[350px] xl:left-[450px] xl:top-[350px] z-50 text-white flex flex-col self-end w-fit bg-black uppercase p-6 rounded-xl -rotate-12 text-2xl font-bold border-2 border-black">
           Coming soon!
         </div>
       </div>
