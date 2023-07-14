@@ -1,4 +1,4 @@
-type Messages = typeof import("./messages/en.json");
+type Messages = typeof import("../public/messages/en.json");
 declare interface IntlMessages extends Messages {}
 
 declare module '*.mp4' {
