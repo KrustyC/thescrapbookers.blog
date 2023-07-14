@@ -2,7 +2,7 @@ files:
   - source: /public/messages/en.json
     translation: /messages/%two_letters_code%.json
 targets:
-  - name: Blog
+  - name: Home
     sources:
       - /public/messages/en.json
     file: /public/messages/%two_letters_code%.json
