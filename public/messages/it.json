@@ -51,8 +51,8 @@
     },
     "title": "Chi Siamo",
     "description": {
-      "part1": "Siamo Beatrice e Davide, una graphic designer e uno sviluppatore software alla scoperta del mondo, partendo dal Sud Est Asiatico.",  
-      "part2": "Questi siamo noi nella giungla vicino a Chiang Mai, in Thailandia." 
+      "part1": "Siamo Beatrice e Davide, una graphic designer e uno sviluppatore software alla scoperta del mondo, partendo dal Sud Est Asiatico.",
+      "part2": "Questi siamo noi nella giungla vicino a Chiang Mai, in Thailandia."
     },
     "Generic": {
       "firstParagraph": "Eccoci dunque, avventurati nel Sud Est Asiatico, avidi di assorbire il più possibile da questa esperienza straordinaria. La decisione di documentare ciò che vediamo è scaturita dalla necessità di raccontare, di far vivere ad altri la nostra avventura, ma anche di spiegare come stiamo bilanciando lavoro e viaggio per un periodo di tempo così esteso. Siamo consapevoli del fiume in piena di blogger che già inonda il web, ma ciò non ci scoraggia. Il nostro obiettivo è quello di esplorare e raccontare ciò che riteniamo non sia stato ancora adeguatamente esposto. Siamo rimasti sorpresi nel notare quante storie, quante esperienze rimangono ancora inedite, incredibile ma vero! Infatti, l'immensità di ciò che potremmo raccontare è tale che probabilmente non riusciremo mai a restituire un'immagine completa di tutto ciò che vediamo.",
@@ -83,14 +83,14 @@
     "backHome": "torna alla home"
   },
   "Global": {
-    "LocaleSwitch": {
-      "helpText": "usa versione italiana del sitor"
-    },
     "NavbarLinks": {
       "asia": "Asia",
       "remoteRoaming": "Remote Roaming",
       "cheatsheets": "Cheatsheets",
       "aboutUs": "Chi SIamo"
+    },
+    "LocaleSwitch": {
+      "helpText": "usa versione italiana del sitor"
     },
     "NewsletterForm": {
       "inputPlaceholder": "Inserisci Email",
@@ -119,3 +119,5 @@
     }
   }
 }
+
+
