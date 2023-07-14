@@ -83,8 +83,8 @@
       "aboutUs": "Chi Siamo"
     },
     "LocaleSelector": {
-      "optionEnglish": "Inglese",
-      "optionItalian": "Italiano"
+      "optionEnglish": "English",
+      "optionItalian": "Italian"
     },
     "NewsletterForm": {
       "inputPlaceholder": "Inserisci Email",
@@ -112,3 +112,5 @@
     }
   }
 }
+
+
