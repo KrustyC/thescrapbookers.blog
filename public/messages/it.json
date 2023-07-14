@@ -1,8 +1,8 @@
 {
   "Home": {
     "Metadata": {
-      "title": "The Scrapbookers | Cultura , Nomaidsmo Digitale & Lifestyle. Travel Blog.",
-      "description": "Pensieri e consigli di viaggio per nomadi digitali ed amanti degli usi e costumi di culture straniere. Un blog per leggere storie su posti nuovi e a te sconosciuti."
+      "title": "The Scrapbookers | Cultura, Nomadismo Digitale & Lifestyle. Blog di Viaggi.",
+      "description": "Pensieri e consigli di viaggio per nomadi digitali e amanti degli usi e costumi di culture straniere. Un blog per leggere storie su posti nuovi e a te sconosciuti."
     },
     "Hero": {
       "title": {
@@ -25,11 +25,11 @@
     "HighlightSection": {
       "title": "Da Vang Vieng a Luang Prabang",
       "text": "Cronaca del nostro spostamento a bordo del treno che viaggia sula nuovissima rete ferroviaria, construita dal governo cinese. Tra i nostri compagni d'avventura era presente anche l'intera squadra di calcio del Mantha United.",
-      "cta": "Leggi Articolo"
+      "cta": "Leggi l'articolo"
     },
     "AboutUs": {
-      "title": "Chi Siamo",
-      "text": "Siamo Davide e Beatrice, un software engineer e una designer freelance. Ci siamo da poco avventurati nel nostro viaggio intorno al mondo ed abbiamo deciso di creare quest blog per condividere un po' delle nostre storie.",
+      "title": "Filosofia del blog",
+      "text": "Naturalmente, non siamo i primi  e non saremo gli ultimi ad iniziare un blog di viaggi. Onestamente, siamo un po' sorpresi anche di trovarci a farlo. È un viaggio di apprendimento, incontro di culture affascinanti e individui, poi condividere quelle storie attraverso articoli e chat con i locali e nomadi digitali. Grazie per il popping by, e siete più che benvenuto a tag lungo. (DA COMPLETARE)",
       "cta": "Scopri di più"
     },
     "NavbarLinks": {
@@ -85,7 +85,7 @@
       "aboutUs": "Chi Siamo"
     },
     "LocaleSwitch": {
-      "helpText": "usa versione italiana del sitor"
+      "helpText": "usa versione italiana del sito"
     },
     "NewsletterForm": {
       "inputPlaceholder": "Inserisci Email",
