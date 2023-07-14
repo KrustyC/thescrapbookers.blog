@@ -16,8 +16,8 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ title, description }) => {
   return (
-    <div className="w-full lg:w-1/3 bg-primary flex justify-center pb-24">
-      <div className="lg:h-screen lg:sticky lg:top-5 lg:mt-36  flex-col px-8 lg:px-12 xl:px-20 pt-28 pb-16 lg:py-0 text-white">
+    <div className="w-full lg:w-1/3 bg-primary flex justify-center pb-8 lg:pb-24">
+      <div className="lg:h-screen lg:sticky lg:top-5 lg:mt-36  flex-col px-8 xl:px-12 xl:px-20 pt-28 pb-16 lg:py-0 text-white">
         <div className="mb-8 lg:mb-6 w-full aspect-square relative rounded-2xl border-4 border-black">
           <Image
             className="rounded-xl"
@@ -34,7 +34,7 @@ const Sidebar: React.FC<SidebarProps> = ({ title, description }) => {
           {title}
         </h1>
 
-        <div className="text-xl font-medium leading-[2rem]">
+        <div className="text-lg lg:leading-[1.7rem] font-medium">
           <p>{description.part1}</p>
           <p>{description.part2}</p>
         </div>
@@ -57,8 +57,8 @@ export default function AboutUsPage() {
           }}
         />
 
-        <div className="w-full lg:w-2/3 bg-white lg:mt-36 lg:pb-24 px-4 lg:px-0 py-12 lg:py-0">
-          <div className="flex flex-col gap-y-6 text-2xl w-full lg:w-[720px] lg:mx-auto pb-[300px]">
+        <div className="w-full lg:w-2/3 bg-white lg:mt-36 lg:pb-24 px-5 md:px-16 lg:px-12 xl:px-0 py-12 lg:py-0">
+          <div className="flex flex-col gap-y-6 text-lg w-full xl:w-[720px] lg:mx-auto pb-[100px] xl:pb-[250px] leading-[1.9rem]">
             <p style={merriweather.style}>{t("Generic.firstParagraph")}</p>
             <p style={merriweather.style}>
               {t("Generic.secondParagraph")}
@@ -75,7 +75,7 @@ export default function AboutUsPage() {
           </div>
         </div>
       </div>
-      <div className="h-[800px] w-full relative -mt-[250px]">
+      <div className="h-[800px] w-full relative -mt-[300px] xl:-mt-[250px]">
         <Image
           src={cameronHighlands}
           alt="Tea plantation in Cameron Highlands, Tanha Rata, Malaysia"

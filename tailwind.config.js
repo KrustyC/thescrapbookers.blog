@@ -17,11 +17,27 @@ module.exports = {
         cheatsheet: "#FF7A00",
       },
       fontSize: {
+        "lg": [
+          "1.125rem",
+          {
+            lineHeight: "1.6rem",
+            letterSpacing: "0.025rem",
+            fontWeight: "400",
+          },
+        ],
+        "xl": [
+          "1.3rem",
+          {
+            lineHeight: "1.8rem",
+            letterSpacing: "0.025rem",
+            fontWeight: "400",
+          },
+        ],
         "2xl": [
           "1.6rem",
           {
-            lineHeight: "1.6rem",
-            letterSpacing: "0",
+            lineHeight: "1.9rem",
+            letterSpacing: "0.025rem",
             fontWeight: "400",
           },
         ],
@@ -29,7 +45,7 @@ module.exports = {
           "1.8rem",
           {
             lineHeight: "2rem",
-            letterSpacing: "0",
+            letterSpacing: "0.025rem",
             fontWeight: "400",
           },
         ],
@@ -37,7 +53,7 @@ module.exports = {
           "2rem",
           {
             lineHeight: "2.5rem",
-            letterSpacing: "0",
+            letterSpacing: "0.025rem",
             fontWeight: "400",
           },
         ],
@@ -45,7 +61,7 @@ module.exports = {
           "8rem",
           {
             lineHeight: "7.5rem",
-            letterSpacing: "0",
+            letterSpacing: "0.025rem",
             fontWeight: "500",
           },
         ],
@@ -53,7 +69,7 @@ module.exports = {
           "10rem",
           {
             lineHeight: "9rem",
-            letterSpacing: "0",
+            letterSpacing: "0.025rem",
             fontWeight: "500",
           },
         ],

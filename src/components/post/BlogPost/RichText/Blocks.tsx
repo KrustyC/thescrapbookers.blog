@@ -34,7 +34,7 @@ export const Text: React.FC<PropsWithChildren> = ({ children }) => {
     return null;
   }
 
-  return <p className="rich-text-copy mb-2 text-lg tracking-wide leading-[1.9rem]">{children}</p>;
+  return <p className="rich-text-copy mb-2">{children}</p>;
 };
 
 export const UnorderedList: React.FC<PropsWithChildren> = ({ children }) => (
@@ -50,7 +50,7 @@ export const OrderedList: React.FC<PropsWithChildren> = ({ children }) => (
 );
 
 export const ListItem: React.FC<PropsWithChildren> = ({ children }) => (
-  <li className="mb-4">{children}</li>
+  <li className="mb-2 text-lg">{children}</li>
 );
 
 interface HyperlinkProps {

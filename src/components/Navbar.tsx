@@ -40,7 +40,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           "text-black": blackText,
         })}
       >
-        <div className="hidden md:flex items-center uppercase">
+        <div className="hidden md:flex items-center gap-5 uppercase">
           <Link href={URLS.asiaArticles()}>{navbar("asia")}</Link>
           <Link href={URLS.aboutUs()}>{navbar("aboutUs")}</Link>
         </div>

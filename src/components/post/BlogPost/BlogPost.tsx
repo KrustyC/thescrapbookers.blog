@@ -59,10 +59,13 @@ export const BlogPost: React.FC<BlogPostProps> = ({
         <RichText richtext={post.richtext} />
       </div>
 
-      <p className="w-full px-6 lg:px-0 lg:w-[720px] mx-auto border-t border-t-gray-200 mt-10 lg:mt-16 pt-10 lg:pt-16 text-2xl">
-        <span className="text-gray-500">{copy.writtenByText}</span>{" "}
-        {post.author?.name}
-      </p>
+      <div className="w-full px-6 lg:px-0 lg:w-[720px] mx-auto border-t border-t-gray-200 mt-10 lg:mt-16 pt-10 lg:pt-12 flex flex-row items-center gap-4">
+        <div className="h-16 w-16 rounded-full bg-[red]">X</div>
+        <p className="text-xl">
+          <span className="text-gray-500">{copy.writtenByText}</span>{" "}
+          {post.author?.name}
+        </p>
+      </div>
 
       {nextPost && <NextPost post={nextPost} locale={locale} />}
     </div>

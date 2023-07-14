@@ -34,7 +34,7 @@ export const HeroNavbar: React.FC<HeroNavbarProps> = ({ locale }) => {
       </Link>
 
       <div className="flex items-center gap-5 text-white font-semibold">
-        <div className="hidden md:flex items-center uppercase">
+        <div className="hidden md:flex gap-5 items-center uppercase">
           <Link href={URLS.asiaArticles()}>{navbar("asia")}</Link>
           <Link href={URLS.aboutUs()}>{navbar("aboutUs")}</Link>
         </div>

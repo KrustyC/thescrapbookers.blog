@@ -58,7 +58,7 @@ export const PostCard: React.FC<PostProps> = ({
       </Link>
 
       <Link href={href || "/"}>
-        <h3 className="text-2xl lg:text-2xl text-black font-medium mt-3">
+        <h3 className="text-2xl text-black font-medium mt-3">
           {title}
         </h3>
       </Link>
