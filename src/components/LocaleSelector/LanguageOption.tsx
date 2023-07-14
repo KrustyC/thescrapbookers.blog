@@ -23,7 +23,7 @@ export const LanguageOption: React.FC<LanguageOptionProps> = ({
       role="button"
       tabIndex={0}
       className={classNames(
-        "lowercase px-4 py-2 first:rounded-t-md last:rounded-b-md focus:text-black/70 hover:bg-white/70 hover:text-black/70 transition-all",
+        "px-4 py-2 first:rounded-t-md last:rounded-b-md focus:text-black/70 hover:bg-white/70 hover:text-black/70 transition-all",
         {
           "bg-white/50": active,
           "bg-transparent": !active,
