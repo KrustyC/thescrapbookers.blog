@@ -82,8 +82,9 @@
       "cheatsheets": "Info in pillole",
       "aboutUs": "Chi Siamo"
     },
-    "LocaleSwitch": {
-      "helpText": "usa versione italiana del sito"
+    "LocaleSelector": {
+      "optionEnglish": "Inglese",
+      "optionItalian": "Italiano"
     },
     "NewsletterForm": {
       "inputPlaceholder": "Inserisci Email",
@@ -111,5 +112,3 @@
     }
   }
 }
-
-

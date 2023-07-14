@@ -82,8 +82,9 @@
       "cheatsheets": "Cheatsheets",
       "aboutUs": "About Us"
     },
-    "LocaleSwitch": {
-      "helpText": "switch to italian language"
+    "LocaleSelector": {
+      "optionEnglish": "English",
+      "optionItalian": "Italian"
     },
     "NewsletterForm": {
       "inputPlaceholder": "Enter Email",

@@ -3,11 +3,12 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import Link from "next-intl/link";
 
-import { LocaleSwitch } from "@/components/LocaleSwitch";
 import { AppLocale } from "@/types/global";
 import { URLS } from "@/utils/urls";
 
 import logoPic from "../../public/images/logo-white.png";
+
+import { LocaleSelector } from "./LocaleSelector/LocaleSelector";
 
 interface NavbarProps {
   blackText?: boolean;
@@ -18,7 +19,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   blackText = false,
   locale,
 }) => {
-  const localeSwitch = useTranslations("Global.LocaleSwitch");
+  const localeDropdown = useTranslations("Global.LocaleSelector");
   const navbar = useTranslations("Global.NavbarLinks");
 
   return (
@@ -45,10 +46,13 @@ export const Navbar: React.FC<NavbarProps> = ({
         <Link href={URLS.asiaArticles()}>{navbar("asia")}</Link>
         <Link href={URLS.aboutUs()}>{navbar("aboutUs")}</Link>
 
-        {/* <LocaleSwitch
+        <LocaleSelector
           currentLocale={locale}
-          helpText={localeSwitch("helpText")}
-        /> */}
+          copy={{
+            optionEnglish: localeDropdown("optionEnglish"),
+            optionItalian: localeDropdown("optionItalian"),
+          }}
+        />
       </div>
     </div>
   );
