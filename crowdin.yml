@@ -1,3 +1,9 @@
 files:
   - source: /public/messages/en.json
     translation: /messages/%two_letters_code%.json
+targets:
+  - name: Blog
+    sources:
+      - /public/messages/en.json
+    file: /public/messages/%two_letters_code%.json
+    format: crowdin-json
