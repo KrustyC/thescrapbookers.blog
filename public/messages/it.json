@@ -1,7 +1,7 @@
 {
   "Home": {
     "Metadata": {
-      "title": "The Scrapbookers | Cultura , Nomaidsmo Digitale & Lifestyle. Travel Blog.",
+      "title": "The Scrapbookers | Cultura , Nomaidsmo Digitale & Lifestyle. Blog di Viaggi.",
       "description": "Pensieri e consigli di viaggio per nomadi digitali ed amanti degli usi e costumi di culture straniere. Un blog per leggere storie su posti nuovi e a te sconosciuti."
     },
     "Hero": {
@@ -16,11 +16,6 @@
       "title": "Articoli Recenti",
       "error1": "Errore durante il caricamento dei post recenti...",
       "error2": "Ci scusiamo per il disagio, siamo già al lavoro per risolvere il problema, ti preghiamo di riprovare tra qualche minuto."
-    },
-    "PhotoDump": {
-      "title": "Photo Dump",
-      "text": "Okay, questo dovrebbe essre tradotto in italiano ad un certo punto.",
-      "cta": "Vai a Pinterest"
     },
     "DigitalNomading": {
       "readMoreCTA": "Leggi l'articolo",

@@ -17,11 +17,6 @@
       "error1": "An error happened while fetching featured post...",
       "error2": "Sorry for the incovenience, please bear with us, we are already working towards a fix."
     },
-    "PhotoDump": {
-      "title": "Photo Dump",
-      "text": "Okay, it takes a long time to understand what website is the real one to apply for visas and it.",
-      "cta": "Go to Pinterest"
-    },
     "DigitalNomading": {
       "readMoreCTA": "Read Article",
       "error1": "An error happened while fetching digital nomading post...",
