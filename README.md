@@ -1,3 +1,5 @@
+[![Crowdin](https://badges.crowdin.net/the-scrapbookers-blog/localized.svg)](https://crowdin.com)
+
 This is a [Next.js](https://nextjs.org/) project which implements the code for The Scrapbookers blog, which can be found at https://thescrapbookers.blog.
 
 ## Getting Started
