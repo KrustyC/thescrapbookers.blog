@@ -4,3 +4,6 @@ targets:
       - /public/messages/en.json
     file: /public/messages/%two_letters_code%.json
     format: crowdin-json
+files:
+  - source: /public/messages/en.json
+    translation: /%original_path%/%two_letters_code%.json
