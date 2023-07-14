@@ -69,6 +69,9 @@ const GET_POST__BY_TAG_QUERY = gql`
         country {
           name
           slug
+          continent {
+            slug
+          }
         }
       }
     }
