@@ -29,7 +29,7 @@
     },
     "HighlightSection": {
       "title": "Da Vang Vieng a Luang Prabang",
-      "text": "Our train ride on the brand new Chinese infrastructure with the whole Football team of Mantha United.",
+      "text": "Cronaca del nostro spostamento a bordo del treno che viaggia sula nuovissima rete ferroviaria, construita dal governo cinese. Tra i nostri compagni d'avventura era presente anche l'intera squadra di calcio del Mantha United.",
       "cta": "Leggi Articolo"
     },
     "AboutUs": {
@@ -39,8 +39,8 @@
     },
     "NavbarLinks": {
       "asia": "Asia",
-      "remoteRoaming": "Remote Roaming",
-      "cheatsheets": "Cheatsheets",
+      "remoteRoaming": "Nomadismo Digitale",
+      "cheatsheets": "Info in pillole",
       "aboutUs": "Chi SIamo"
     }
   },
@@ -85,9 +85,9 @@
   "Global": {
     "NavbarLinks": {
       "asia": "Asia",
-      "remoteRoaming": "Remote Roaming",
-      "cheatsheets": "Cheatsheets",
-      "aboutUs": "Chi SIamo"
+      "remoteRoaming": "Nomadismo Digitale",
+      "cheatsheets": "Info in pillole",
+      "aboutUs": "Chi Siamo"
     },
     "LocaleSwitch": {
       "helpText": "usa versione italiana del sitor"
@@ -113,7 +113,7 @@
       "newsletterMessage": "Dagli Scrapbookers",
       "Links": {
         "asia": "Asia",
-        "remoteRoaming": "Remote Roaming",
+        "remoteRoaming": "Nomadismo Digitale",
         "aboutUs": "Chi Siamo"
       }
     }
