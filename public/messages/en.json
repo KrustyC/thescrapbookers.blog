@@ -34,7 +34,6 @@
     },
     "NavbarLinks": {
       "asia": "Asia",
-      "remoteRoaming": "Remote Roaming",
       "cheatsheets": "Cheatsheets",
       "aboutUs": "About Us"
     }
@@ -80,7 +79,6 @@
   "Global": {
     "NavbarLinks": {
       "asia": "Asia",
-      "remoteRoaming": "Remote Roaming",
       "cheatsheets": "Cheatsheets",
       "aboutUs": "About Us"
     },
@@ -108,7 +106,6 @@
       "newsletterMessage": "From the Scrapbookers",
       "Links": {
         "asia": "Asia",
-        "remoteRoaming": "Remote Roaming",
         "aboutUs": "About Us"
       }
     }

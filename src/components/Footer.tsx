@@ -94,9 +94,6 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
 
           <div className="flex flex-col gap-4 uppercase font-semibold justify-center md:justify-end text-center md:text-right my-16 md:my-0">
             <Link href={URLS.asiaArticles()}>{footer("Links.asia")}</Link>
-            {/* <Link href={URLS.remoteRoaming()}>
-              {footer("Links.remoteRoaming")}
-            </Link> */}
             <Link href={URLS.aboutUs()}>{footer("Links.aboutUs")}</Link>
 
             <div className="flex gap-4 justify-center md:justify-end">

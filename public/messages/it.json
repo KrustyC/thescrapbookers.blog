@@ -34,7 +34,6 @@
     },
     "NavbarLinks": {
       "asia": "Asia",
-      "remoteRoaming": "Nomadismo Digitale",
       "cheatsheets": "Info in pillole",
       "aboutUs": "Chi SIamo"
     }
@@ -80,7 +79,6 @@
   "Global": {
     "NavbarLinks": {
       "asia": "Asia",
-      "remoteRoaming": "Nomadismo Digitale",
       "cheatsheets": "Info in pillole",
       "aboutUs": "Chi Siamo"
     },
@@ -108,7 +106,6 @@
       "newsletterMessage": "Dagli Scrapbookers",
       "Links": {
         "asia": "Asia",
-        "remoteRoaming": "Nomadismo Digitale",
         "aboutUs": "Chi Siamo"
       }
     }
