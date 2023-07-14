@@ -1,13 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import MuxPlayer from "@mux/mux-player-react";
+// import MuxPlayer from "@mux/mux-player-react";
 // import MuxVideo from "@mux/mux-video-react";
 import Image from "next/image";
 
 import { leagueGothic } from "@/utils/fonts";
 
-const PLAYBACK_ID = "tOV00Jf00oWm2Nw02tq3OAVaUa6Gv8xUQ3mkmuWVyiizDI";
+// const PLAYBACK_ID = "tOV00Jf00oWm2Nw02tq3OAVaUa6Gv8xUQ3mkmuWVyiizDI";
 const PLACEHOLDER_HASH =
   "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAASACADASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAwL/xAAdEAACAgIDAQAAAAAAAAAAAAAAAQIDBBEFISIx/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDAP/EABcRAQEBAQAAAAAAAAAAAAAAAAABEQL/2gAMAwEAAhEDEQA/AJ+NyMLX5KNd20SKceup+VooVTikHaXG9l+kJW5mn8G2oyRjOmtg0CBpW+wAVSGovo4mwA0T6f/Z";
 
@@ -43,7 +43,7 @@ const Video = () => {
     >
       <Image src={PLACEHOLDER_HASH} alt="placeholder for ban sen video" fill />
 
-      <MuxPlayer
+      {/* <MuxPlayer
         // style={{ height: "100%", maxWidth: "100%" }}
         onEnded={() => console.log("video ended")}
         // placeholder={PLACEHOLDER_HASH}
@@ -55,7 +55,7 @@ const Video = () => {
         autoPlay
         loop
         muted
-      />
+      /> */}
 
       {/* <MuxVideo
         style={{ height: "100%", maxWidth: "100%" }}

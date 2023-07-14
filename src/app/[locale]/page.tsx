@@ -20,7 +20,7 @@ import { AppLocale } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
 
 // const DynamicVideo = dynamic(() => import("../../components/home/VideoPlayer"));
-const DynamicVideo = dynamic(() => import("../../components/home/DeprecatedVideo"));
+const DynamicVideo = dynamic(() => import("../../components/home/Video"));
 
 interface HomePageProps {
   params: {
