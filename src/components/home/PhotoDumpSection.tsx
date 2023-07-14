@@ -1,8 +1,6 @@
 import Image from "next/image";
-import { useTranslations } from "next-intl";
 import Link from "next-intl/link";
 
-import { ButtonLink } from "@/components/uikit/ButtonLink";
 import { leagueGothic } from "@/utils/fonts";
 
 import chiangMaiTower from "../../../public/images/chiang-mai-tower.jpg";
@@ -11,7 +9,7 @@ import vientianeManWorkingWithCables from "../../../public/images/vientiane-man-
 import vientianeTemple from "../../../public/images/vientiane-temple.jpg";
 
 export const PhotoDumpSection: React.FC = () => {
-  const t = useTranslations("Home.PhotoDump");
+  // const t = useTranslations("Home.PhotoDump");
 
   return (
     <div className="mb-16 mt-32">
@@ -76,20 +74,6 @@ export const PhotoDumpSection: React.FC = () => {
           />
         </div>
       </div>
-
-      {/* <div className="absolute left-[20px] md:left-[120px] bottom-[340px] lg:left-[250px] lg:bottom-[80px] flex flex-col rounded-2xl p-6 lg:p-8 bg-white drop-shadow-2xl">
-        <h2 className="text-xl lg:text-4xl font-semibold  w-fit border-primary border-b-2 lg:border-b-[6px]">
-          {t("title")}
-        </h2>
-
-        <p className="text-regular lg:text-xl my-4 w-[280px] md:w-[380px] lg:w-[420px]">
-          {t("text")}
-        </p>
-
-        <ButtonLink size="sm" href="black" target="_blank" variant="black">
-          {t("cta")}
-        </ButtonLink>
-      </div> */}
     </div>
   );
 };
