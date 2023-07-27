@@ -28,35 +28,38 @@ const CountriesCarousel: React.FC<CaoruselProps> = ({ slides }) => {
   return (
     <swiper-container
       cssMode
-      className="flex md:pr-6"
+      freeMode
+      slidesPerGroupAuto
       ref={swiperElRef}
-      slidesPerView={1}
+      slidesPerView={1.2}
+      spaceBetween={15}
       breakpoints={{
         720: {
-          slidesPerView: 2,
+          slidesPerView: 2.3,
+          spaceBetween: 30,
         },
         1024: {
-          slidesPerView: 3,
+          slidesPerView: 3.3,
+          spaceBetween: 40,
         },
         1600: {
-          slidesPerView: 4,
+          slidesPerView: 4.2,
         },
         2000: {
-          slidesPerView: 5,
+          slidesPerView: 5.2,
         },
         2400: {
-          slidesPerView: 6,
+          slidesPerView: 6.2,
         },
       }}
-      spaceBetween={0}
     >
       {slides.map((slide) => (
         <swiper-slide
-          className="px-3 lg:px-0 lg:pl-6 h-[500px] lg:h-[550px]"
+          className="mt-5 h-[500px] lg:h-[550px] first:ml-4 lg:first:ml-8 last:mr-4 lg:last:mr-8"
           key={slide.href}
           lazy
         >
-          <div className="group h-full w-full bg-gray-200 relative rounded-2xl overflow-hidden">
+          <div className="group h-full w-full bg-gray-200 relative rounded-2xl overflow-hidden hover:-translate-y-5 transition duration-500">
             <Link href={slide.href} prefetch={false}>
               <Image
                 fill
