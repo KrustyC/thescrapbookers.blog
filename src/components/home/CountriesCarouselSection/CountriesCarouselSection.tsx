@@ -13,18 +13,34 @@ import { CountriesCarouselSectionSkeleton } from "./CountriesCarouselSectionSkel
 
 const CountryCarousel = dynamic(() => import("./Carousel"), { ssr: false });
 
+// @TODO Decide the final images and the fix alt description
 function getImage(slug: string | undefined) {
   switch (slug) {
     case "thailand":
-      return chiangMaiTower;
+      return {
+        src: chiangMaiTower,
+        alt: "a tower in Chiang Mai (Thailand)",
+      };
     case "laos":
-      return vientianeManWorkingWithCables;
+      return {
+        src: vientianeManWorkingWithCables,
+        alt: "a man on a step ladder working with a lot of cable in Vientiane (Laos)",
+      };
     case "vietnam":
-      return vientianeBuddhaStatue;
+      return {
+        src: vientianeBuddhaStatue,
+        alt: "a Buddha statue in Vientiane (Laos)",
+      }
     case "cambodia":
-      return vientianeTemple;
+      return {
+        src: vientianeTemple,
+        alt: "a temple in Vientiane (Laos)",
+      }
     default:
-      return vientianeBuddhaStatue;
+      return {
+        src: vientianeBuddhaStatue,
+        alt: "a Buddha statue in Vientiane (Laos)",
+      }
   }
 }
 
