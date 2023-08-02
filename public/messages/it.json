@@ -69,7 +69,8 @@
     "Cheatsheet": {
       "title": "Info in pillole",
       "description": "Una serie di informazioni utili, e interessanti, visibili in un colpo d'occhio",
-      "seeMore": "Espandi"
+      "seeMore": "Espandi",
+      "noArticles": "We are currently busy writing some articles, but fear none, you will find them here in just a few days."
     }
   },
   "NotFound": {
@@ -112,5 +113,3 @@
     }
   }
 }
-
-
