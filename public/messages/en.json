@@ -45,8 +45,8 @@
     },
     "title": "About us",
     "description": {
-      "part1": "We are Beatrice and Davide, a graphic designer and a software engineer traveling the world, starting from Southeast Asia.",  
-      "part2": "This is us the jungle near Chiang Mai, Thailand."  
+      "part1": "We are Beatrice and Davide, a graphic designer and a software engineer traveling the world, starting from Southeast Asia.",
+      "part2": "This is us the jungle near Chiang Mai, Thailand."
     },
     "Generic": {
       "firstParagraph": "So here we are travelling in South East Asia and trying to absorb as much as possible. We said we really needed to document it somehow, so we decided to start writing about our experience and how we are managing to balance travel and work. There are lots of amazing bloggers who do this already but we have found there are things which still haven't been talked about. Incredible but true. In fact, there is so much to write about that we will never manage to give you an accurate image of what we see.",
@@ -69,7 +69,8 @@
     "Cheatsheet": {
       "title": "Cheatsheet",
       "description": "A bunch of useful, and interesting facts, visible at a glance",
-      "seeMore": "See more"
+      "seeMore": "See more",
+      "noArticles": "We are currently busy writing some articles, but fear none, you will find them here in just a few days."
     }
   },
   "NotFound": {
@@ -112,5 +113,3 @@
     }
   }
 }
-
-

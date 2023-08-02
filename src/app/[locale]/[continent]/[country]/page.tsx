@@ -1,10 +1,12 @@
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
+import { getTranslator } from "next-intl/server";
 
 import { Cheatsheet } from "@/components/country/Cheatsheet/Cheatsheet";
 import { CountryHero } from "@/components/country/CountryHero";
 import { PostCard } from "@/components/PostCard/PostCard";
 import { getCountryWithPosts } from "@/graphql/queries/get-country-with-posts.query";
+import { ExamsIcon } from "@/icons/Exams";
 import { AppLocale } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
 
@@ -72,6 +74,9 @@ export default async function CountryPage({
   params: { country: countrySlug, locale },
 }: CountryPageProps) {
   const { isEnabled } = draftMode();
+  console.log("LOCALE", locale);
+  const t = await getTranslator(locale, "Country.Cheatsheet");
+
   const { country } = await getCountryWithPosts({
     slug: countrySlug,
     locale,
@@ -117,8 +122,14 @@ export default async function CountryPage({
           </div>
         </div>
       ) : (
-        // @TODO Proper empty state
-        <span>There is no post for this country yet</span>
+        <div className="px-4 lg:px-24 xl:px-48 pt-12 lg:pt-32 pb-12 lg:pb-24 flex flex-col items-center jusrtify-center gap-20">
+          <h2 className="text-xl lg:text-2xl text-center lg:w-[720px]">
+            {t("noArticles")}
+          </h2>
+          <div className="w-full lg:h-[400px] lg:w-[596px]">
+            <ExamsIcon />
+          </div>
+        </div>
       )}
     </div>
   );

@@ -69,7 +69,8 @@
     "Cheatsheet": {
       "title": "Info in pillole",
       "description": "Una serie di informazioni utili, e interessanti, visibili in un colpo d'occhio",
-      "seeMore": "Espandi"
+      "seeMore": "Espandi",
+      "noArticles": "Al momento non ci sono articoli per questo Paese, ma ci stiamo lavorando; torna tra un paio di giorni per trovare nuovi articoli."
     }
   },
   "NotFound": {
@@ -112,5 +113,3 @@
     }
   }
 }
-
-

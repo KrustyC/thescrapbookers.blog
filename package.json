@@ -11,12 +11,12 @@
     "codegen": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
-    "@apollo/client": "^3.8.0-rc.1",
+    "@apollo/client": "^3.8.0-rc.2",
     "@apollo/experimental-nextjs-app-support": "^0.4.1",
     "@contentful/rich-text-react-renderer": "^15.17.0",
     "@headlessui/react": "^1.7.16",
     "@mailchimp/mailchimp_marketing": "3.0.80",
-    "@sentry/nextjs": "^7.60.1",
+    "@sentry/nextjs": "^7.61.0",
     "@types/node": "18.11.9",
     "@types/react": "^18.2.18",
     "@types/react-dom": "^18.2.7",
