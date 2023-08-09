@@ -74,7 +74,6 @@ export default async function CountryPage({
   params: { country: countrySlug, locale },
 }: CountryPageProps) {
   const { isEnabled } = draftMode();
-  console.log("LOCALE", locale);
   const t = await getTranslator(locale, "Country.Cheatsheet");
 
   const { country } = await getCountryWithPosts({

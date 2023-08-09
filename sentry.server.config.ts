@@ -8,7 +8,7 @@ const SENTRY_DSN = process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN;
 
 Sentry.init({
   dsn: SENTRY_DSN,
-  tracesSampleRate: 1,
+  tracesSampleRate: 0.5,
   debug: false,
   // profilesSampleRate: 1.0, // Profiling sample rate is relative to tracesSampleRate
   // integrations: [

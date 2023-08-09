@@ -52,11 +52,11 @@ module.exports = withSentryConfig(
     silent: true,
     org: "the-scrapbookers",
     project: "the-scrapbookers-blog",
+    authToken: process.env.SENTRY_AUTH_TOKEN,
   },
   {
     // For all available options, see:
     // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
-
     widenClientFileUpload: true,
     transpileClientSDK: true,
     hideSourceMaps: true,

@@ -103,7 +103,6 @@ export async function getContinentWithCountries({
 
     const continent = data.data.continentCollection.items[0];
 
-    console.log(continent.mainImage);
     return {
       continent: {
         name: continent.name,
