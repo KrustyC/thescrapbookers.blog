@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
@@ -87,6 +88,7 @@ export default function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale} style={poppins.style}>
       <body>{children}</body>
+      <Analytics />
 
       {isEnabled && <PreviewBadge />}
 
