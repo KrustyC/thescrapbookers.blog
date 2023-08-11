@@ -145,7 +145,7 @@ export const Asset: React.FC<{ asset: RichTextAsset }> = ({ asset }) => {
   }
 
   return (
-    <div className="mx-auto my-8 lg:my-16">
+    <div className="mx-auto my-8 lg:my-16" style={{ width: `${asset.width}px`}}>
       <Image
         className="loading-background"
         src={url}

@@ -1,14 +1,15 @@
+import { ca } from "date-fns/locale";
 import Image from "next/image";
+import { StaticImageData } from "next/image";
+
 import { AppLocale, Post } from "@/types/global";
+
+import beaPic from "../../../../public/images/bea_with_bhan_mi.jpeg";
+import davidePic from "../../../../public/images/davide_holding_hero_rat.jpg";
 
 import { RichText } from "./RichText/RichText";
 import { BlogPostHero, BlogPostHeroLoading } from "./BlogPostHero";
 import { NextPost } from "./NextPost";
-
-import beaPic from "../../../../public/images/bea_with_bhan_mi.jpeg";
-import davidePic from "../../../../public/images/davide_holding_hero_rat.jpg";
-import { StaticImageData } from "next/image";
-import { ca } from "date-fns/locale";
 
 interface BlogPostProps {
   post: Post;
