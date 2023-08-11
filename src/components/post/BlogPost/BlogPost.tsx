@@ -1,8 +1,14 @@
+import Image from "next/image";
 import { AppLocale, Post } from "@/types/global";
 
 import { RichText } from "./RichText/RichText";
 import { BlogPostHero, BlogPostHeroLoading } from "./BlogPostHero";
 import { NextPost } from "./NextPost";
+
+import beaPic from "../../../../public/images/bea_with_bhan_mi.jpeg";
+import davidePic from "../../../../public/images/davide_holding_hero_rat.jpg";
+import { StaticImageData } from "next/image";
+import { ca } from "date-fns/locale";
 
 interface BlogPostProps {
   post: Post;
@@ -39,12 +45,31 @@ export const BlogPostLoading = () => (
   </div>
 );
 
+function getImage(authorName: string | undefined) {
+  switch (authorName) {
+    case "Davide Crestini":
+      return {
+        img: davidePic,
+        alt: "Davide smiling while holding a rat",
+      };
+    case "Beatrice Cox":
+      return {
+        img: beaPic,
+        alt: "Bea smiling while holding a bhan mi",
+      };
+    default:
+      return null;
+  }
+}
+
 export const BlogPost: React.FC<BlogPostProps> = ({
   post,
   nextPost,
   locale,
   copy,
 }) => {
+  const image = getImage(post.author?.name);
+
   return (
     <div className="flex flex-col">
       <BlogPostHero post={post} />
@@ -60,8 +85,19 @@ export const BlogPost: React.FC<BlogPostProps> = ({
       </div>
 
       <div className="w-full px-6 lg:px-0 lg:w-[720px] mx-auto border-t border-t-gray-200 mt-10 lg:mt-16 pt-10 lg:pt-12 flex flex-row items-center gap-4">
-        <div className="h-16 w-16 rounded-full bg-[red]">X</div>
-        <p className="text-xl">
+        {image ? (
+          <div className="h-16 w-16 rounded-full relative">
+            <Image
+              className="rounded-full"
+              src={image.img}
+              alt={image.alt}
+              fill
+              sizes="100%"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+        ) : null}
+        <p className="text-lg">
           <span className="text-gray-500">{copy.writtenByText}</span>{" "}
           {post.author?.name}
         </p>
