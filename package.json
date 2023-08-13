@@ -24,7 +24,7 @@
     "classnames": "^2.3.2",
     "contentful": "^10.4.2",
     "date-fns": "2.30.0",
-    "eslint": "^8.46.0",
+    "eslint": "^8.47.0",
     "eslint-config-next": "^13.4.13",
     "html-react-parser": "^4.2.1",
     "next": "^13.4.13",
