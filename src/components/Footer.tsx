@@ -64,7 +64,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
       <div className="flex flex-col px-16 md:px-16 pb-10 pt-6 md:pt-3 -mt-2 bg-primary">
         <div className="flex flex-col md:flex-row md:justify-between md:items-end md:mb-24">
           <div className="flex flex-col md:w-[280px] lg:w-fit">
-            <span style={ooohBaby.style} className="text-3xl mb-1 md:mb-2">
+            <span className={`text-3xl mb-1 md:mb-2 ${ooohBaby.className}`}>
               {footer("notes")}
             </span>
             <span className="text-3xl font-semibold mb-4 md:mb-6">

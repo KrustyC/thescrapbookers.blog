@@ -17,7 +17,7 @@ export default function PostError() {
   return (
     <div className="flex flex-col items-center w-full py-12">
       <BugFixingIcon className="h-[180px] w-[320px] lg:h-[480px] lg:w-[620px]" />
-      <h2 className="text-2xl lg:text-4xl w-[320px] w-[620px] mt-8">{ERROR_MESSAGES[locale]}</h2>
+      <h2 className="text-2xl lg:text-4xl w-[320px] lg:w-[620px] mt-8">{ERROR_MESSAGES[locale]}</h2>
     </div>
   );
 }

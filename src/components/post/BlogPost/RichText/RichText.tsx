@@ -120,8 +120,7 @@ export const RichText: React.FC<{ richtext: RichTextType }> = ({
 
   return (
     <div
-      style={merriweather.style}
-      className="flex flex-col gap-y-2 text-2xl break-words"
+      className={`flex flex-col gap-y-2 text-2xl break-words ${merriweather.className}`}
     >
       {documentToReactComponents(richtext.json, options)}
     </div>

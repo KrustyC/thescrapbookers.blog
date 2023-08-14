@@ -30,8 +30,7 @@ export const PhotoDumpSection: React.FC = () => {
 
           <div className="absolute z-10 top-0 left-0 bottom-0 right-0 h-full w-full flex items-center justify-center">
             <span
-              className="text-7xl text-white uppercase"
-              style={leagueGothic.style}
+              className={`text-7xl text-white uppercase ${leagueGothic.className}`}
             >
               Laos
             </span>

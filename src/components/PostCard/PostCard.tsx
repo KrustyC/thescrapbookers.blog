@@ -62,8 +62,7 @@ export const PostCard: React.FC<PostProps> = ({
       </Link>
 
       <div
-        className="flex items-center uppercase tracking-widest text-gray-400 text-regular"
-        style={poppins.style}
+        className={`flex items-center uppercase tracking-widest text-gray-400 text-regular ${poppins.className}`}
       >
         <span>{category}</span>
         <div className="border-r-2 h-3 mx-2" />

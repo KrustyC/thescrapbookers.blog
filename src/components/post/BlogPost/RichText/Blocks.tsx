@@ -84,38 +84,38 @@ export const Heading: React.FC<PropsWithChildren<HeadingProps>> = ({
   switch (size) {
     case 1:
       return (
-        <h1 className="rich-text-heading text-5xl" style={poppins.style}>
+        <h1 className={`rich-text-heading text-5xl ${poppins.className}`}>
           {children}
         </h1>
       );
     case 2:
       return (
-        <h2 className="rich-text-heading text-4xl mt-12" style={poppins.style}>
+        <h2 className={`rich-text-heading text-4xl mt-12 ${poppins.className}`}>
           {children}
         </h2>
       );
     case 3:
       return (
-        <h3 className="rich-text-heading text-3xl" style={poppins.style}>
+        <h3 className={`rich-text-heading text-3xl ${poppins.className}`}>
           {children}
         </h3>
       );
     case 4:
       return (
-        <h4 className="rich-text-heading text-2xl" style={poppins.style}>
+        <h4 className={`rich-text-heading text-2xl ${poppins.className}`}>
           {children}
         </h4>
       );
     case 5:
       return (
-        <h5 className="rich-text-heading text-xl" style={poppins.style}>
+        <h5 className={`rich-text-heading text-xl ${poppins.className}`}>
           {children}
         </h5>
       );
     case 4:
     default:
       return (
-        <h6 className="rich-text-heading text-lg" style={poppins.style}>
+        <h6 className={`rich-text-heading text-lg ${poppins.className}`}>
           {children}
         </h6>
       );
@@ -145,7 +145,10 @@ export const Asset: React.FC<{ asset: RichTextAsset }> = ({ asset }) => {
   }
 
   return (
-    <div className="mx-auto my-8 lg:my-16" style={{ width: `${asset.width}px`}}>
+    <div
+      className="mx-auto my-8 lg:my-16"
+      style={{ width: `${asset.width}px` }}
+    >
       <Image
         className="loading-background"
         src={url}

@@ -13,8 +13,7 @@ export const HighlightSection = () => {
     <div className="flex py-16 px-2 lg:px-24 lg:mt-16 relative w-full h-[880px] 2xl:h-[780px]">
       <div className="w-full md:w-[72vw] lg:w-[60vw] xl:w-[800px] flex flex-col justify-start md:justify-center z-10 text-white relative p-8 bg-black/50 h-fit rounded-xl">
         <h2
-          style={leagueGothic.style}
-          className="text-6xl md:text-8xl xl:text-9xl font-regular uppercase"
+          className={`text-6xl md:text-8xl xl:text-9xl font-regular uppercase ${leagueGothic.className}`}
         >
           {t("title")}
         </h2>

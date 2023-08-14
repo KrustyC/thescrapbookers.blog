@@ -30,8 +30,7 @@ export const NextPost: React.FC<NextPostHeroProps> = ({ post, locale }) => {
 
       <div className="flex flex-col px-6 lg:px-0">
         <div
-          className="mt-8 mb-6 text-gray-400 uppercase tracking-wider font-600 rounded-full"
-          style={poppins.style}
+          className={`mt-8 mb-6 text-gray-400 uppercase tracking-wider font-600 rounded-full ${poppins.className}`}
         >
           <span>
             {post.date

@@ -30,7 +30,7 @@ const Sidebar: React.FC<SidebarProps> = ({ title, description }) => {
           />
         </div>
 
-        <h1 className="lg:leading-[4rem] text-6xl mb-1" style={ooohBaby.style}>
+        <h1 className={`lg:leading-[4rem] text-6xl mb-1 ${ooohBaby.className}`}>
           {title}
         </h1>
 
@@ -59,17 +59,25 @@ export default function AboutUsPage() {
 
         <div className="w-full lg:w-2/3 bg-white lg:mt-36 lg:pb-24 px-5 md:px-16 lg:px-12 xl:px-0 py-12 lg:py-0">
           <div className="flex flex-col gap-y-6 text-lg w-full xl:w-[720px] lg:mx-auto pb-[100px] xl:pb-[250px] leading-[1.9rem]">
-            <p style={merriweather.style}>{t("Generic.firstParagraph")}</p>
-            <p style={merriweather.style}>
+            <p className={merriweather.className}>
+              {t("Generic.firstParagraph")}
+            </p>
+            <p className={merriweather.className}>
               {t("Generic.secondParagraph")}
             </p>
-            <p style={merriweather.style}>{t("Generic.thirdParagraph")}</p>
-            <p style={merriweather.style}>
+            <p className={merriweather.className}>
+              {t("Generic.thirdParagraph")}
+            </p>
+            <p className={merriweather.className}>
               {t("Generic.fourthParagraph")}
             </p>
-            <p style={merriweather.style}>{t("Generic.fifthParagraph")}</p>
-            <p style={merriweather.style}>{t("Generic.sixthParagraph")}</p>
-            <p style={merriweather.style}>
+            <p className={merriweather.className}>
+              {t("Generic.fifthParagraph")}
+            </p>
+            <p className={merriweather.className}>
+              {t("Generic.sixthParagraph")}
+            </p>
+            <p className={merriweather.className}>
               {t("Generic.seventhParagraph")}
             </p>
           </div>

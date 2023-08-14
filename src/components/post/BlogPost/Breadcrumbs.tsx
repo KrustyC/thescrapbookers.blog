@@ -11,7 +11,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ country }) => {
   const { continent } = country;
 
   return (
-    <div style={poppins.style} className="flex text-xl gap-x-2 text-white">
+    <div className={`flex text-xl gap-x-2 text-white ${poppins.className}`}>
       <Link href={`/${continent?.slug}`} prefetch={false}>
         {continent?.name}
       </Link>

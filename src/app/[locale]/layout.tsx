@@ -86,8 +86,8 @@ export default function LocaleLayout({ children, params }: Props) {
   }
 
   return (
-    <html lang={locale} style={poppins.style}>
-      <body>{children}</body>
+    <html lang={locale}>
+      <body className={poppins.className}>{children}</body>
       <Analytics />
 
       {isEnabled && <PreviewBadge />}

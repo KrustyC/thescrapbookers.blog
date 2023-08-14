@@ -14,8 +14,7 @@ export const AboutUsSection: React.FC = () => {
       <div className="bg-gray-100 flex flex-col justify-center items-end w-full lg:w-7/12 xl:w-2/3 px-6 lg:p-12 xl:p-24 md:rounded-r-2xl">
         <div>
           <h2
-            style={poppins.style}
-            className="mb-4 xl:mb-6 uppercase font-semibold text-gray-400 text-sm leading-[0.8rem] tracking-widest"
+            className={`mb-4 xl:mb-6 uppercase font-semibold text-gray-400 text-sm leading-[0.8rem] tracking-widest ${poppins.className}`}
           >
             {t("title")}
           </h2>
