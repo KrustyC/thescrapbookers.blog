@@ -81,6 +81,19 @@ const GET_POST_QUERY = gql`
           height
           url
         }
+        nextPost {
+          title
+          slug
+          smallIntro
+          date
+          mainImage {
+            title
+            description
+            width
+            height
+            url
+          }
+        }
       }
     }
   }

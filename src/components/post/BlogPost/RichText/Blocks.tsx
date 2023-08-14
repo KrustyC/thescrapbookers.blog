@@ -20,7 +20,7 @@ export const Blockquote: React.FC<PropsWithChildren> = ({ children }) => (
 
 export const Alert: React.FC<PropsWithChildren> = ({ children }) => (
   <div
-    className="w-full lg:w-fit lg:mx-auto p-4 bg-primary text-gray-100 shadow-md rounded-xl text-lg"
+    className="w-full lg:w-fit lg:mx-auto p-4 bg-red-100 text-gray-700 shadow-md rounded-xl text-lg"
     role="alert"
   >
     {children}
