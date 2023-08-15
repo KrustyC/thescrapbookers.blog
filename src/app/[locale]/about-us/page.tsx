@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-import aboutUsPic from "../../../../public/images/about-us.jpg";
+import aboutUsPic from "../../../../public/images/about-us.webp";
 import cameronHighlands from "../../../../public/images/cameron_highlands.png";
 
 interface SidebarProps {
