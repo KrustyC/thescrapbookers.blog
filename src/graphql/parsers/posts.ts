@@ -59,6 +59,9 @@ export function parseGraphQLPost(graphQLPost: PostGraphQL): Post {
         .filter((asset) => !!asset)
         .map(parseLinkToAsset),
     },
+    href: graphQLPost.slug
+      ? generatePostHref(graphQLPost.slug, graphQLPost.country)
+      : undefined,
     mainImage: mainImage,
     thumbnailImage: thumbnailImage,
   };
@@ -88,5 +91,3 @@ export function parseGraphQLNextPost(nextPost: PostGraphQL): NextPost {
     mainImage,
   };
 }
-
-

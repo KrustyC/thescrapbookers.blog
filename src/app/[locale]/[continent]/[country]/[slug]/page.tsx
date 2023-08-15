@@ -43,6 +43,8 @@ export async function generateMetadata({
         ]
       : [];
 
+    console.log(post);
+
     return {
       title,
       description,

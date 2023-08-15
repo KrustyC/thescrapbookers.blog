@@ -1,7 +1,9 @@
 const BASE_PATHS = ["", "/about-us"];
 
 async function fetchPostRoutes() {
-  const res = await fetch(`${process.env.baseUrl}/api/post`);
+  const res = await fetch(`${process.env.baseUrl}/api/post`, {
+    next: { revalidate: 30 },
+  });
   const { posts } = await res.json();
 
   return posts.map((post: { href: string; lastModified: Date }) => ({
@@ -11,7 +13,9 @@ async function fetchPostRoutes() {
 }
 
 async function fetchCountriesRoutes() {
-  const res = await fetch(`${process.env.baseUrl}/api/country`);
+  const res = await fetch(`${process.env.baseUrl}/api/country`, {
+    next: { revalidate: 30 },
+  });
   const { countries } = await res.json();
 
   return countries.map((country: { href: string; lastModified: Date }) => ({
@@ -21,7 +25,9 @@ async function fetchCountriesRoutes() {
 }
 
 async function fetchContinentsRoutes() {
-  const res = await fetch(`${process.env.baseUrl}/api/continent`);
+  const res = await fetch(`${process.env.baseUrl}/api/continent`, {
+    next: { revalidate: 30 },
+  });
   const { continents } = await res.json();
 
   return continents.map((continent: { href: string; lastModified: Date }) => ({
