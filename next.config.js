@@ -21,13 +21,13 @@ const nextConfig = withNextIntl({
     return [
       {
         // Cache all content pages
-        source: "/((?!_next|.*\\..*).*)",
+        source: "/((?!_next|!sitemap.xml|.*\\..*).*)",
         headers: [
           {
             key: "Cache-Control",
             value: [
               `s-maxage=` + ms("1d") / 1000,
-              `stale-while-revalidate=` + ms("1y") / 1000,
+              `stale-while-revalidate=` + ms("30d") / 1000,
             ].join(", "),
           },
         ],
