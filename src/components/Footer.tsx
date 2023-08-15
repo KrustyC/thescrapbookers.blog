@@ -6,7 +6,6 @@ import Link from "next-intl/link";
 import { InstagramIcon } from "@/icons/Instagram";
 import { TwitterIcon } from "@/icons/Twitter";
 import { AppLocale } from "@/types/global";
-import { ooohBaby } from "@/utils/fonts";
 import { URLS } from "@/utils/urls";
 
 import logoPic from "../../public/images/logo-black.png";
@@ -64,7 +63,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
       <div className="flex flex-col px-16 md:px-16 pb-10 pt-6 md:pt-3 -mt-2 bg-primary">
         <div className="flex flex-col md:flex-row md:justify-between md:items-end md:mb-24">
           <div className="flex flex-col md:w-[280px] lg:w-fit">
-            <span className={`text-3xl mb-1 md:mb-2 ${ooohBaby.className}`}>
+            <span className="text-3xl mb-1 md:mb-2 font-ohbaby">
               {footer("notes")}
             </span>
             <span className="text-3xl font-semibold mb-4 md:mb-6">
@@ -111,7 +110,11 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
           <span className="text-sm md:text-lg font-light md:mt-2">
             ©2023 | The Scrapbookers
           </span>
-          <Link className="hidden md:block relative h-20 w-56" href="/" target="_blank">
+          <Link
+            className="hidden md:block relative h-20 w-56"
+            href="/"
+            target="_blank"
+          >
             <Image
               src={logoPic}
               alt="the scrapbooker logo"

@@ -1,7 +1,6 @@
 import Link from "next-intl/link";
 
 import { Country } from "@/types/global";
-import { poppins } from "@/utils/fonts";
 
 interface BreadcrumbsProps {
   country: Pick<Country, "name" | "slug" | "continent">;
@@ -11,7 +10,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ country }) => {
   const { continent } = country;
 
   return (
-    <div className={`flex text-xl gap-x-2 text-white ${poppins.className}`}>
+    <div className="flex text-xl gap-x-2 text-white font-poppins">
       <Link href={`/${continent?.slug}`} prefetch={false}>
         {continent?.name}
       </Link>

@@ -3,7 +3,6 @@ import parse from "html-react-parser";
 import Image from "next/image";
 
 import { RichTextAsset } from "@/types/global";
-import { poppins } from "@/utils/fonts";
 
 export const Bold: React.FC<PropsWithChildren> = ({ children }) => (
   <span className="font-bold">{children}</span>
@@ -109,40 +108,30 @@ export const Heading: React.FC<PropsWithChildren<HeadingProps>> = ({
   switch (size) {
     case 1:
       return (
-        <h1 className={`rich-text-heading text-5xl ${poppins.className}`}>
-          {children}
-        </h1>
+        <h1 className="rich-text-heading text-5xl font-poppins">{children}</h1>
       );
     case 2:
       return (
-        <h2 className={`rich-text-heading text-4xl mt-12 ${poppins.className}`}>
+        <h2 className="rich-text-heading text-4xl mt-12 font-poppins">
           {children}
         </h2>
       );
     case 3:
       return (
-        <h3 className={`rich-text-heading text-3xl ${poppins.className}`}>
-          {children}
-        </h3>
+        <h3 className="rich-text-heading text-3xl font-poppins">{children}</h3>
       );
     case 4:
       return (
-        <h4 className={`rich-text-heading text-2xl ${poppins.className}`}>
-          {children}
-        </h4>
+        <h4 className="rich-text-heading text-2xl font-poppins">{children}</h4>
       );
     case 5:
       return (
-        <h5 className={`rich-text-heading text-xl ${poppins.className}`}>
-          {children}
-        </h5>
+        <h5 className="rich-text-heading text-xl font-poppins">{children}</h5>
       );
     case 4:
     default:
       return (
-        <h6 className={`rich-text-heading text-lg ${poppins.className}`}>
-          {children}
-        </h6>
+        <h6 className="rich-text-heading text-lg font-poppins">{children}</h6>
       );
   }
 };

@@ -4,8 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import videojs from "video.js";
 
-import { leagueGothic } from "@/utils/fonts";
-
 import "video.js/dist/video-js.css";
 
 const PLAYBACK_ID = "tOV00Jf00oWm2Nw02tq3OAVaUa6Gv8xUQ3mkmuWVyiizDI";
@@ -81,9 +79,7 @@ const Video = () => {
       ) : (
         <div className="absolute h-full w-full top-0 bottom-0 left-0 right-0 z-10 px-6 lg:px-16 xl:px-48 flex items-center">
           {showText && (
-            <h2
-              className={`scale-[0.94] animate-title-appear text-6xl lg:text-9xl text-white font-bold md:w-4/5 uppercase text-white/80 ${leagueGothic.className}`}
-            >
+            <h2 className="scale-[0.94] animate-title-appear text-6xl lg:text-9xl text-white font-bold md:w-4/5 uppercase text-white/80 font-league-gothic">
               {text.split(" ").map((word, i) => (
                 <span
                   className="blur-[4px] opacity-0 inline-block animate-text-appear"

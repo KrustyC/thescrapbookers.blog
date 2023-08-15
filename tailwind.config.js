@@ -16,8 +16,14 @@ module.exports = {
         black: "#1E1E1E",
         cheatsheet: "#FF7A00",
       },
+      fontFamily: {
+        merriweather: ["var(--font-merriweather)"],
+        poppins: ["var(--font-poppins)"],
+        ohbaby: ["var(--font-oooh-baby)"],
+        "league-gothic": ["var(--font-league-gothic)"],
+      },
       fontSize: {
-        "lg": [
+        lg: [
           "1.125rem",
           {
             lineHeight: "1.6rem",
@@ -25,7 +31,7 @@ module.exports = {
             fontWeight: "400",
           },
         ],
-        "xl": [
+        xl: [
           "1.3rem",
           {
             lineHeight: "1.8rem",

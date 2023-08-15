@@ -1,16 +1,12 @@
 import Image from "next/image";
 import Link from "next-intl/link";
 
-import { leagueGothic } from "@/utils/fonts";
-
 import chiangMaiTower from "../../../public/images/chiang-mai-tower.jpg";
 import vientianeBuddhaStatue from "../../../public/images/vientiane-buddha-statue.jpg";
 import vientianeManWorkingWithCables from "../../../public/images/vientiane-man-working-with-cables.jpg";
 import vientianeTemple from "../../../public/images/vientiane-temple.jpg";
 
 export const PhotoDumpSection: React.FC = () => {
-  // const t = useTranslations("Home.PhotoDump");
-
   return (
     <div className="mb-16 mt-32">
       <div className="flex flex-col lg:flex-row lg:justify-between gap-6 lg:gap-8 lg:h-[550px]">
@@ -29,9 +25,7 @@ export const PhotoDumpSection: React.FC = () => {
           />
 
           <div className="absolute z-10 top-0 left-0 bottom-0 right-0 h-full w-full flex items-center justify-center">
-            <span
-              className={`text-7xl text-white uppercase ${leagueGothic.className}`}
-            >
+            <span className="text-7xl text-white uppercase font-league-gothic">
               Laos
             </span>
           </div>

@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 import { Image as IImage } from "@/types/global";
-import { leagueGothic } from "@/utils/fonts";
 
 interface CountryHeroProps {
   name: string;
@@ -21,9 +20,7 @@ export const CountryHero: React.FC<CountryHeroProps> = ({
   return (
     <div className="relative country-continent-hero flex justify-center lg:justify-start items-center px-6 lg:px-48">
       <div className="flex flex-col z-10 text-white">
-        <h1
-          className={`text-8xl lg:text-9xl uppercase ${leagueGothic.className}`}
-        >
+        <h1 className="text-8xl lg:text-9xl uppercase font-league-gothic">
           {name}
         </h1>
 

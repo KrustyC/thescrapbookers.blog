@@ -3,7 +3,6 @@ import Link from "next-intl/link";
 
 import type { AppLocale, Post as IPost } from "@/types/global";
 import { formatDate, getFormat } from "@/utils/date";
-import { poppins } from "@/utils/fonts";
 
 import { PostDescription } from "./PostDescription";
 
@@ -62,7 +61,7 @@ export const PostCard: React.FC<PostProps> = ({
       </Link>
 
       <div
-        className={`flex items-center uppercase tracking-widest text-gray-400 text-regular ${poppins.className}`}
+        className="flex items-center uppercase tracking-widest text-gray-400 text-regular font-poppins"
       >
         <span>{category}</span>
         <div className="border-r-2 h-3 mx-2" />

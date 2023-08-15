@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 import { useSubscribeToNewsletterAction } from "@/hooks/useSubscribeToNewsletterAction";
-import { poppins } from "@/utils/fonts";
 
 import { ErrorDialog } from "./ErrorDialog";
 import { SuccessDialog } from "./SucessDialog";
@@ -64,7 +63,7 @@ export const NewsletterForm: React.FC<NewsletterFormProps> = ({ messages }) => {
     <>
       <form
         autoComplete="off"
-        className={`flex flex-col w-full lg:w-auto lg:flex-row lg:justify-end lg:h-16 ${poppins.className}`}
+        className="flex flex-col w-full lg:w-auto lg:flex-row lg:justify-end lg:h-16 font-poppins"
         onSubmit={handleSubmit(onSubscribe)}
       >
         <input

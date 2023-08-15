@@ -8,7 +8,7 @@ import { getTranslator } from "next-intl/server";
 
 import { PreviewBadge } from "@/components/PreviewBadge";
 import { AppLocale } from "@/types/global";
-import { poppins } from "@/utils/fonts";
+import { leagueGothic, merriweather, ooohBaby,poppins } from "@/utils/fonts";
 
 interface Props {
   children: React.ReactNode;
@@ -86,8 +86,11 @@ export default function LocaleLayout({ children, params }: Props) {
   }
 
   return (
-    <html lang={locale}>
-      <body className={poppins.className}>{children}</body>
+    <html
+      lang={locale}
+      className={`${poppins.variable} ${leagueGothic.variable} ${ooohBaby.variable} ${merriweather.variable}`}
+    >
+      <body className="font-poppins">{children}</body>
       <Analytics />
 
       {isEnabled && <PreviewBadge />}
