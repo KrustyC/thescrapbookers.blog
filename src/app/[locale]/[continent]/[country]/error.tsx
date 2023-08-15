@@ -7,8 +7,8 @@ import { BugFixingIcon } from "@/icons/BugFixing";
 import { AppLocale } from "@/types/global";
 
 const ERROR_MESSAGES = {
-  it: "Oops, sembra che si sia verificato un errore durante il ritrovameto del continente. Ti preghiamo di riprovare più tardi, o provare con un altro slug.",
-  en: "Oops, it seems that an error occurred while retrieving the continent data. Please try again later, or try with another slug.",
+  it: "Oops, sembra che si sia verificato un errore durante il ritrovameto del paese. Ti preghiamo di riprovare più tardi, o provare con un altro slug.",
+  en: "Oops, it seems that an error occurred while retrieving the country data. Please try again later, or try with another slug.",
 };
 
 const CTA = {
