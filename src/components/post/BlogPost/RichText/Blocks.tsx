@@ -54,17 +54,42 @@ export const ListItem: React.FC<PropsWithChildren> = ({ children }) => (
 );
 
 interface HyperlinkProps {
-  href: string;
+  uri: string;
 }
 
+const YOUTUBE_VIDEO_ID_REGEX =
+  /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+
 export const Hyperlink: React.FC<PropsWithChildren<HyperlinkProps>> = ({
-  href,
+  uri,
   children,
 }) => {
+  // Only process youtube links
+  if (uri.includes("youtube.com")) {
+    // Extract videoId from the URL
+    const match = YOUTUBE_VIDEO_ID_REGEX.exec(uri);
+    const videoId = match && match[7].length === 11 ? match[7] : null;
+
+    return (
+      videoId && (
+        <section className="w-full aspect-video mt-8">
+          <iframe
+            className="w-full h-full"
+            title={`https://youtube.com/embed/${videoId}`}
+            src={`https://youtube.com/embed/${videoId}`}
+            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+            frameBorder="0"
+            allowFullScreen={false}
+          />
+        </section>
+      )
+    );
+  }
+
   return (
     <a
       className="text-primary hover:underline"
-      href={href}
+      href={uri}
       target="_blank"
       rel="noreferrer"
     >
@@ -124,6 +149,7 @@ export const Heading: React.FC<PropsWithChildren<HeadingProps>> = ({
 
 export const Asset: React.FC<{ asset: RichTextAsset }> = ({ asset }) => {
   const url = asset.url;
+  const title = asset.title;
   const description = asset.description;
 
   if (!url) {
@@ -158,9 +184,9 @@ export const Asset: React.FC<{ asset: RichTextAsset }> = ({ asset }) => {
         height={asset.height}
         width={asset.width}
       />
-      {description ? (
+      {title ? (
         <span className="mt-2 mx-4 text-gray-600 text-sm italic">
-          {parse(description)}
+          {parse(title)}
         </span>
       ) : null}
     </div>

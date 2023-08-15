@@ -72,7 +72,7 @@ export const RichText: React.FC<{ richtext: RichTextType }> = ({
         return <Asset asset={asset} />;
       },
       [INLINES.HYPERLINK]: ({ data }, children) => (
-        <Hyperlink href={data.uri}>{children}</Hyperlink>
+        <Hyperlink uri={data.uri}>{children}</Hyperlink>
       ),
       [BLOCKS.PARAGRAPH]: (_, children: any) => <Text>{children}</Text>,
       [BLOCKS.HEADING_1]: (_, children: any) => (
@@ -107,7 +107,7 @@ export const RichText: React.FC<{ richtext: RichTextType }> = ({
               [BLOCKS.PARAGRAPH]: (_, children) => children,
               [BLOCKS.LIST_ITEM]: (_, children) => children,
               [INLINES.HYPERLINK]: ({ data }, children) => (
-                <Hyperlink href={data.uri}>{children}</Hyperlink>
+                <Hyperlink uri={data.uri}>{children}</Hyperlink>
               ),
             },
           }

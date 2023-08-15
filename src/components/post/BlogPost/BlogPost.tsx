@@ -1,6 +1,4 @@
-import { ca } from "date-fns/locale";
 import Image from "next/image";
-import { StaticImageData } from "next/image";
 
 import { AppLocale, Post } from "@/types/global";
 
