@@ -65,12 +65,17 @@
       "cta": "torna alla home"
     }
   },
+  "Continent": {
+    "Country": {
+      "cta": "Scopri di più"
+    }
+  },
   "Country": {
     "Cheatsheet": {
       "title": "Info in pillole",
       "description": "Una serie di informazioni utili, e interessanti, visibili in un colpo d'occhio",
       "seeMore": "Espandi",
-      "noArticles": "Al momento non ci sono articoli per questo Paese, ma ci stiamo lavorando; torna tra un paio di giorni per trovare nuovi articoli."
+      "noArticles": "Al momento non ci sono articoli per questo paese, ma siamo gia all'opera; torna tra qualche giorno per trovare nuovi contenuti."
     }
   },
   "NotFound": {

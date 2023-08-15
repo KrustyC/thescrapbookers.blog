@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 import { ButtonLink } from "@/components/uikit/ButtonLink";
 import { ShortCountry } from "@/types/global";
@@ -25,6 +26,8 @@ export const CountryLoading = () => (
 );
 
 export const Country: React.FC<CountryProps> = ({ country, continentSlug }) => {
+  const t = useTranslations("Continent.Country");
+
   return (
     <div className="w-full 2xl:w-max 2xl:mx-auto flex flex-col md:flex-row gap-6">
       <div className="w-full aspect-square md:w-3/4 md:aspect-auto md:h-[300px] relative rounded-xl loading-background">
@@ -47,7 +50,7 @@ export const Country: React.FC<CountryProps> = ({ country, continentSlug }) => {
           variant="black"
           href={`/${continentSlug}/${country.slug}`}
         >
-          Find out more
+          {t("cta")}
         </ButtonLink>
       </div>
     </div>

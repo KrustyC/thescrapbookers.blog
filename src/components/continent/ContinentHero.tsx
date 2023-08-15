@@ -16,7 +16,7 @@ export const ContinentHero: React.FC<ContinentHeroProps> = ({
   image,
 }) => {
   return (
-    <div className="relative country-continent-hero flex justify-center lg:justify-start items-center lg:px-48">
+    <div className="relative country-continent-hero flex justify-center lg:justify-start items-center lg:px-48 bg-gray-400">
       <h1 className="z-10 text-9xl text-white uppercase font-league-gothic">
         {name}
       </h1>

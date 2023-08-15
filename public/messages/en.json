@@ -65,6 +65,11 @@
       "cta": "back to homepage"
     }
   },
+  "Continent": {
+    "Country": {
+      "cta": "Find out More"
+    }
+  },
   "Country": {
     "Cheatsheet": {
       "title": "Cheatsheet",
