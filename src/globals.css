@@ -12,7 +12,7 @@ html {
 }
 
 .rich-text-heading {
-  @apply w-full lg:w-[720px] lg:mx-auto px-6 lg:px-0 font-bold mb-1;
+  @apply w-full lg:w-[720px] lg:mx-auto px-6 lg:px-0 font-semibold mb-1 font-poppins;
 }
 
 .loading-background {

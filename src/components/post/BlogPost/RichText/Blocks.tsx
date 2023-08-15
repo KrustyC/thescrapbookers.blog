@@ -19,7 +19,7 @@ export const Blockquote: React.FC<PropsWithChildren> = ({ children }) => (
 
 export const Alert: React.FC<PropsWithChildren> = ({ children }) => (
   <div
-    className="w-full lg:w-fit lg:mx-auto p-4 bg-red-100 text-gray-700 shadow-md rounded-xl text-lg"
+    className="w-fit mt-3 mb-8 mx-8 lg:mx-auto px-2 py-4 lg:p-4 bg-red-100 text-gray-700 shadow-md rounded-xl text-lg"
     role="alert"
   >
     {children}
@@ -38,13 +38,13 @@ export const Text: React.FC<PropsWithChildren> = ({ children }) => {
 
 export const UnorderedList: React.FC<PropsWithChildren> = ({ children }) => (
   <div className="rich-text-copy">
-    <ul className="list-disc ml-6">{children}</ul>
+    <ul className="list-disc ml-6 pl-3">{children}</ul>
   </div>
 );
 
 export const OrderedList: React.FC<PropsWithChildren> = ({ children }) => (
   <div className="rich-text-copy">
-    <ol className="list-decimal ml-6">{children}</ol>
+    <ol className="list-decimal ml-6 pl-3">{children}</ol>
   </div>
 );
 
@@ -107,32 +107,22 @@ export const Heading: React.FC<PropsWithChildren<HeadingProps>> = ({
 }) => {
   switch (size) {
     case 1:
-      return (
-        <h1 className="rich-text-heading text-5xl font-poppins">{children}</h1>
-      );
+      return <h1 className="rich-text-heading text-5xl">{children}</h1>;
     case 2:
       return (
-        <h2 className="rich-text-heading text-4xl mt-12 font-poppins">
+        <h2 className="rich-text-heading text-2xl lg:text-4xl mt-8 lg:mt-12">
           {children}
         </h2>
       );
     case 3:
-      return (
-        <h3 className="rich-text-heading text-3xl font-poppins">{children}</h3>
-      );
+      return <h3 className="rich-text-heading text-3xl">{children}</h3>;
     case 4:
-      return (
-        <h4 className="rich-text-heading text-2xl font-poppins">{children}</h4>
-      );
+      return <h4 className="rich-text-heading text-2xl">{children}</h4>;
     case 5:
-      return (
-        <h5 className="rich-text-heading text-xl font-poppins">{children}</h5>
-      );
-    case 4:
+      return <h5 className="rich-text-heading text-xl">{children}</h5>;
+    case 6:
     default:
-      return (
-        <h6 className="rich-text-heading text-lg font-poppins">{children}</h6>
-      );
+      return <h6 className="rich-text-heading text-lg">{children}</h6>;
   }
 };
 
@@ -162,21 +152,21 @@ export const Asset: React.FC<{ asset: RichTextAsset }> = ({ asset }) => {
   return (
     <div
       className="mx-auto my-8 lg:my-16"
-      style={{ width: `${asset.width}px` }}
+      style={{ maxWidth: `${asset.width}px` }}
     >
       <Image
-        className="loading-background"
+        className="w-screen loading-background"
         src={url}
         alt={
           description?.replace(/<\/?[^>]+(>|$)/g, "") || "image from the post"
-        } // @TODO Check for descriptions
+        }
         height={asset.height}
         width={asset.width}
       />
       {title ? (
-        <span className="mt-2 mx-4 text-gray-600 text-sm italic">
-          {parse(title)}
-        </span>
+        <p className="mt-2 px-4 text-gray-600 text-xs lg:text-sm italic">
+          {title}
+        </p>
       ) : null}
     </div>
   );
