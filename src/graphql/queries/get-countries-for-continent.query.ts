@@ -54,7 +54,10 @@ export async function getCountriesForContinent({
       variables: { continentSlug, locale, preview: isPreview },
       context: {
         fetchOptions: {
-          next: { revalidate: isPreview ? 0 : 3600 },
+          next: {
+            revalidate:
+              isPreview || process.env.DISABLE_CACHE === "true" ? 0 : 3600,
+          },
         },
       },
     });
@@ -62,7 +65,7 @@ export async function getCountriesForContinent({
     const countries = data.data.countryCollection.items;
 
     // Filter out countries that don't have a slug
-    const filteredCountries = countries.filter(country => !!country.slug)
+    const filteredCountries = countries.filter((country) => !!country.slug);
     filteredCountries.sort((a, b) => {
       if (!a.slug || !b.slug) return 0;
 

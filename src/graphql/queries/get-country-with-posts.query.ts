@@ -123,7 +123,10 @@ export async function getCountryWithPosts({
       variables: { slug, locale, preview: isPreview },
       context: {
         fetchOptions: {
-          next: { revalidate: isPreview ? 0 : 3600 },
+          next: {
+            revalidate:
+              isPreview || process.env.DISABLE_CACHE === "true" ? 0 : 3600,
+          },
         },
       },
     });
