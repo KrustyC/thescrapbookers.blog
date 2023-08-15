@@ -65,6 +65,11 @@
       "cta": "torna alla home"
     }
   },
+  "Continent": {
+    "Country": {
+      "cta": "Find out More"
+    }
+  },
   "Country": {
     "Cheatsheet": {
       "title": "Info in pillole",
