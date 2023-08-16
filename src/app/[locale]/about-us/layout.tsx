@@ -16,7 +16,7 @@ export async function generateMetadata({
   params: { locale },
 }: IntroductionPageProps): Promise<Metadata> {
   const t = await getTranslator(locale, "AboutUs.Metadata");
-  const baseUrl = process.env.baseUrl || "https://thescrapbookers.blog";
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://thescrapbookers.blog";
 
   return {
     title: `${t("title")} | The Scrapbookers`,

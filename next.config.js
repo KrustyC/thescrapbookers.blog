@@ -6,7 +6,7 @@ const { withSentryConfig } = require("@sentry/nextjs");
 const nextConfig = withNextIntl({
   env: {
     environment: process.env.ENVIRONMENT || "local",
-    baseUrl: process.env.BASE_URL || "http://localhost:3000",
+    baseUrl: process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000",
     googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID,
     disableCache: process.env.DISABLE_CACHE === "true" || false,
   },

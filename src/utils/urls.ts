@@ -17,7 +17,7 @@ interface CreateAlternatesOptions {
 export function createAlternates({
   path,
 }: CreateAlternatesOptions): AlternateURLs | null {
-  const baseUrl = process.env.baseUrl;
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
   if (!baseUrl) {
     return null;

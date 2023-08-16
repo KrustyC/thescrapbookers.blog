@@ -1,6 +1,8 @@
 import Image from "next/image";
 
-import { AppLocale, Post } from "@/types/global";
+import { ShareButton } from "@/components/ShareButton";
+import { AppLocale, Author, Post } from "@/types/global";
+import { formatDate, getFormat } from "@/utils/date";
 
 import beaPic from "../../../../public/images/bea_with_bhan_mi.jpeg";
 import davidePic from "../../../../public/images/davide_holding_hero_rat.jpg";
@@ -8,15 +10,6 @@ import davidePic from "../../../../public/images/davide_holding_hero_rat.jpg";
 import { RichText } from "./RichText/RichText";
 import { BlogPostHero, BlogPostHeroLoading } from "./BlogPostHero";
 import { NextPost } from "./NextPost";
-
-interface BlogPostProps {
-  post: Post;
-  nextPost?: Pick<Post, "title" | "slug" | "date" | "mainImage" | "smallIntro">;
-  locale: AppLocale;
-  copy: {
-    writtenByText: string;
-  };
-}
 
 export const BlogPostLoading = () => (
   <div className="flex felx-full">
@@ -61,20 +54,92 @@ function getImage(authorName: string | undefined) {
   }
 }
 
+interface ArticleAuthorAndPublishDateProps {
+  author: Author;
+  publishedDate: Date;
+  locale: AppLocale;
+  copy: {
+    shareText: string;
+    writtenByText: string;
+  };
+}
+
+const ArticleAuthorAndPublishDate: React.FC<
+  ArticleAuthorAndPublishDateProps
+> = ({ author, publishedDate, copy, locale }) => {
+  const authorImage = getImage(author.name);
+
+  return (
+    <div className="flex justify-between items-center mt-10 lg:mt-16 lg:w-[720px] mx-6 lg:mx-auto">
+      <div className="flex gap-3 md:gap-4">
+        <div>
+          {authorImage ? (
+            <div className="h-14 w-14 lg:h-16 lg:w-16 rounded-full relative">
+              <Image
+                className="rounded-full"
+                src={authorImage.img}
+                alt={authorImage.alt}
+                fill
+                sizes="100%"
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+          ) : null}
+        </div>
+        <div className="flex flex-col justify-center gap-1 text-sm md:text-base">
+          <p>
+            <span className="text-gray-500">{copy.writtenByText}</span>{" "}
+            {author?.name}
+          </p>
+
+          <p className="text-xs md:text-sm">
+            {formatDate({
+              date: new Date(publishedDate),
+              format: getFormat(locale),
+              locale,
+            })}
+
+            {/* - 9 min read */}
+          </p>
+        </div>
+      </div>
+
+      <ShareButton title="The Scrapbookers" text={copy.shareText} />
+    </div>
+  );
+};
+
+interface BlogPostProps {
+  post: Post;
+  nextPost?: Pick<Post, "title" | "slug" | "date" | "mainImage" | "smallIntro">;
+  locale: AppLocale;
+  copy: {
+    shareText: string;
+    writtenByText: string;
+  };
+}
+
 export const BlogPost: React.FC<BlogPostProps> = ({
   post,
   nextPost,
   locale,
   copy,
 }) => {
-  const image = getImage(post.author?.name);
-
   return (
     <div className="flex flex-col">
       <BlogPostHero post={post} />
 
-      <div id="post-content" className="my-10 lg:my-20">
-        <p className="text-left px-6 lg:px-0 lg:w-[720px] lg:mx-auto text-black/50 text-xl">
+      {post.author && post.date && (
+        <ArticleAuthorAndPublishDate
+          author={post.author}
+          publishedDate={post.date}
+          copy={copy}
+          locale={locale}
+        />
+      )}
+
+      <div id="post-content" className="my-10 lg:my-16">
+        <p className="text-left px-6 lg:px-0 lg:w-[920px] lg:mx-auto text-black/50 text-xl">
           {post.smallIntro}
         </p>
       </div>
@@ -83,24 +148,7 @@ export const BlogPost: React.FC<BlogPostProps> = ({
         <RichText richtext={post.richtext} />
       </div>
 
-      <div className="w-full px-6 lg:px-0 lg:w-[720px] mx-auto border-t border-t-gray-200 mt-10 lg:mt-16 pt-10 lg:pt-12 flex flex-row items-center gap-4">
-        {image ? (
-          <div className="h-16 w-16 rounded-full relative">
-            <Image
-              className="rounded-full"
-              src={image.img}
-              alt={image.alt}
-              fill
-              sizes="100%"
-              style={{ objectFit: "cover" }}
-            />
-          </div>
-        ) : null}
-        <p className="text-lg">
-          <span className="text-gray-500">{copy.writtenByText}</span>{" "}
-          {post.author?.name}
-        </p>
-      </div>
+      <div className="w-full px-6 lg:px-0 lg:w-[720px] mx-auto border-t border-t-gray-200 mt-10 lg:mt-16" />
 
       {nextPost && <NextPost post={nextPost} locale={locale} />}
     </div>

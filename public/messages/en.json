@@ -59,6 +59,7 @@
     }
   },
   "BlogPost": {
+    "shareText": "Check out this post by The Scrapbookers",
     "writtenBy": "Written by",
     "notFound": {
       "message": "Seems like the post you are looking for does not exist",
