@@ -97,6 +97,7 @@ export interface Post {
   richtext: RichText;
   date?: Date;
   href?: string;
+  timeToRead?: number;
   author?: Author;
   country?: Pick<Country, "name" | "slug" | "continent">;
 }

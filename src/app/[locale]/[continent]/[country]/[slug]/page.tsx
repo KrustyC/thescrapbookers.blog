@@ -103,6 +103,7 @@ export default async function PostPage({
       locale={locale}
       copy={{
         shareText: t("shareText"),
+        timeToRead: t("timeToRead"),
         writtenByText: t("writtenBy"),
       }}
     />

@@ -60,6 +60,7 @@
   },
   "BlogPost": {
     "shareText": "Leggi questo articolo dei The Scrapbookers",
+    "timeToRead": "min di lettura",
     "writtenBy": "Scritto da",
     "notFound": {
       "message": "Sembra che l'articolo che stai cercando non esista",

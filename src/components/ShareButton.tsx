@@ -31,8 +31,6 @@ export const ShareButton: React.FC<ShareButtonProps> = ({ text, title }) => {
   const shareDetails = { url: url, title, text };
 
   const handleSharing = async () => {
-    console.log(process.env.NEXT_PUBLIC_BASE_URL, pathname);
-
     if (navigator.share) {
       try {
         await navigator.share(shareDetails);

@@ -58,7 +58,9 @@ interface ArticleAuthorAndPublishDateProps {
   author: Author;
   publishedDate: Date;
   locale: AppLocale;
+  timeToRead: number;
   copy: {
+    timeToRead: string;
     shareText: string;
     writtenByText: string;
   };
@@ -66,7 +68,7 @@ interface ArticleAuthorAndPublishDateProps {
 
 const ArticleAuthorAndPublishDate: React.FC<
   ArticleAuthorAndPublishDateProps
-> = ({ author, publishedDate, copy, locale }) => {
+> = ({ author, timeToRead, publishedDate, copy, locale }) => {
   const authorImage = getImage(author.name);
 
   return (
@@ -97,9 +99,8 @@ const ArticleAuthorAndPublishDate: React.FC<
               date: new Date(publishedDate),
               format: getFormat(locale),
               locale,
-            })}
-
-            {/* - 9 min read */}
+            })}{" "}
+            • {timeToRead} {copy.timeToRead}
           </p>
         </div>
       </div>
@@ -114,6 +115,7 @@ interface BlogPostProps {
   nextPost?: Pick<Post, "title" | "slug" | "date" | "mainImage" | "smallIntro">;
   locale: AppLocale;
   copy: {
+    timeToRead: string;
     shareText: string;
     writtenByText: string;
   };
@@ -133,6 +135,7 @@ export const BlogPost: React.FC<BlogPostProps> = ({
         <ArticleAuthorAndPublishDate
           author={post.author}
           publishedDate={post.date}
+          timeToRead={post.timeToRead || 1}
           copy={copy}
           locale={locale}
         />

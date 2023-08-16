@@ -1,3 +1,4 @@
+import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
 import { Document } from "@contentful/rich-text-types";
 
 import {
@@ -6,6 +7,7 @@ import {
   Post as PostGraphQL,
 } from "@/types/generated/graphql";
 import { Country, Post, RichTextAsset } from "@/types/global";
+import { timeToRead } from "@/utils/content";
 import { generatePostHref } from "@/utils/hrefs";
 import { extractImageDataFromContentfulAsset } from "@/utils/images";
 
@@ -51,6 +53,10 @@ export function parseGraphQLPost(graphQLPost: PostGraphQL): Post {
     ? extractImageDataFromContentfulAsset(graphQLPost.thumbnailImage as any) // Contentful new types are fucking awful, so I had to hack around a bit
     : undefined;
 
+  const plainTextString = graphQLPost.richtext
+    ? documentToPlainTextString(graphQLPost.richtext.json)
+    : "";
+
   return {
     ...graphQLPost,
     richtext: {
@@ -59,6 +65,7 @@ export function parseGraphQLPost(graphQLPost: PostGraphQL): Post {
         .filter((asset) => !!asset)
         .map(parseLinkToAsset),
     },
+    timeToRead: timeToRead(plainTextString),
     href: graphQLPost.slug
       ? generatePostHref(graphQLPost.slug, graphQLPost.country)
       : undefined,
