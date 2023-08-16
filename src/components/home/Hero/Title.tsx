@@ -13,7 +13,7 @@ export const Title: React.FC<TitleProps> = ({
 }) => {
   return (
     <div className="-mt-24 lg:-mt-48 flex flex-col px-6 lg:px-16 xl:px-24 z-10 text-white/80">
-      <h1 className="text-8xl lg:text-9xl xl:text-10xl leading-[5.5rem] font-bold w-full uppercase font-league-gothic">
+      <h1 className="text-7xl lg:text-9xl xl:text-10xl leading-[4.5rem] lg:leading-[5.5rem] font-semibold w-full uppercase font-league-gothic">
         {titlePart1} <br />
         {titlePart2}
       </h1>
