@@ -52,7 +52,7 @@ export async function generateMetadata({
       locale,
       images: [
         {
-          url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/thescrapbookers.webp`,
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/the_scrapbookers.webp`,
           height: 569,
           width: 853,
         },
@@ -64,7 +64,7 @@ export async function generateMetadata({
       description: t("description"),
       images: [
         {
-          url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/thescrapbookers.webp`,
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/the_scrapbookers.webp`,
           height: 569,
           width: 853,
         },

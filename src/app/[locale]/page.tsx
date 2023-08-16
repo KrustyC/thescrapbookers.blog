@@ -46,40 +46,7 @@ export async function generateMetadata({
   const t = await getTranslator(locale, "Home.Metadata");
 
   return {
-    title: t("title"),
-    description: t("description"),
-    authors: [
-      { name: "Davide Crestini", url: "https://dcrestini.me" },
-      { name: "Beatrice Cox", url: "https://beatricecox.com" },
-    ],
     alternates: createAlternates({ path: "" }),
-    creator: "Davide Crestini",
-    publisher: "Beatrice Cox",
-    openGraph: {
-      title: t("title"),
-      description: t("description"),
-      siteName: "The Scrapbookers",
-      images: [
-        {
-          url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/the_scrapbookers.png`,
-          height: 569,
-          width: 853,
-        },
-      ],
-      locale,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t("title"),
-      description: t("description"),
-      images: [
-        {
-          url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/the_scrapbookers.png`,
-          height: 569,
-          width: 853,
-        },
-      ],
-    },
   };
 }
 

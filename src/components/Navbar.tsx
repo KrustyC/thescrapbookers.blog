@@ -6,7 +6,7 @@ import Link from "next-intl/link";
 import { AppLocale } from "@/types/global";
 import { URLS } from "@/utils/urls";
 
-import logoPic from "../../public/images/logo-white.png";
+import logoPic from "../../public/images/logo_white.png";
 
 import { LocaleSelector } from "./LocaleSelector/LocaleSelector";
 

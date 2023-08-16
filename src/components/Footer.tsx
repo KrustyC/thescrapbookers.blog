@@ -8,7 +8,7 @@ import { TwitterIcon } from "@/icons/Twitter";
 import { AppLocale } from "@/types/global";
 import { URLS } from "@/utils/urls";
 
-import logoPic from "../../public/images/logo-black.png";
+import logoPic from "../../public/images/logo_black.png";
 
 import { NewsletterForm } from "./NewsletterForm";
 

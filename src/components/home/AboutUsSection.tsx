@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 
 import { ButtonLink } from "@/components/uikit/ButtonLink";
 
-import aboutUsPic from "../../../public/images/about-us.webp";
+import aboutUsPic from "../../../public/images/about_us.webp";
 
 export const AboutUsSection: React.FC = () => {
   const t = useTranslations("Home.AboutUs");

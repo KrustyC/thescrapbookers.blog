@@ -35,7 +35,7 @@ export async function generateMetadata({
       siteName: "The Scrapbookers",
       images: [
         {
-          url: "/images/about-us.webp",
+          url: "/images/about_us.webp",
           height: 1792,
           width: 2048,
         },

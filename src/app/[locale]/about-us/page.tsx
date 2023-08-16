@@ -1,8 +1,52 @@
 import Image from "next/image";
+import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 
-import aboutUsPic from "../../../../public/images/about-us.webp";
+import aboutUsPic from "../../../../public/images/about_us.webp";
 import cameronHighlands from "../../../../public/images/cameron_highlands.webp";
+import { getTranslator } from "next-intl/server";
+
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const t = await getTranslator(locale, "AboutUs.Metadata");
+
+  return {
+    description: t("description"),
+    keywords: ["About Us", "South East Asia", "Blog", "Digital Nomads"],
+    authors: [
+      { name: "Davide Crestini", url: "https://dcrestini.me" },
+      { name: "Beatrice Cox", url: "https://beatricecox.com" },
+    ],
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      siteName: "The Scrapbookers",
+      locale,
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/about_us.webp`,
+          height: 900,
+          width: 1024,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/about_us.webp`,
+          height: 900,
+          width: 1024,
+        },
+      ],
+    },
+  };
+}
 
 interface SidebarProps {
   title: string;

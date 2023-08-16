@@ -6,7 +6,7 @@ import { LocaleSelector } from "@/components/LocaleSelector/LocaleSelector";
 import { AppLocale } from "@/types/global";
 import { URLS } from "@/utils/urls";
 
-import logoPic from "../../../../public/images/logo-white.png";
+import logoPic from "../../../../public/images/logo_white.png";
 
 interface HeroNavbarProps {
   locale: AppLocale;
