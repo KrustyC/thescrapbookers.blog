@@ -40,6 +40,20 @@ const nextConfig = withNextIntl({
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: '/en',
+        destination: '/',
+        permanent: true
+      },
+      {
+        source: '/en/:path*',
+        destination: '/:path*',
+        permanent: true
+      },
+    ]
+  },
 });
 
 // Injected content via Sentry wizard below
