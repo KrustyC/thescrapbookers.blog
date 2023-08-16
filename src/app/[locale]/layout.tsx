@@ -8,7 +8,7 @@ import { getTranslator } from "next-intl/server";
 
 import { PreviewBadge } from "@/components/PreviewBadge";
 import { AppLocale } from "@/types/global";
-import { leagueGothic, merriweather, ooohBaby,poppins } from "@/utils/fonts";
+import { leagueGothic, merriweather, ooohBaby, poppins } from "@/utils/fonts";
 
 interface Props {
   children: React.ReactNode;
@@ -21,10 +21,6 @@ export async function generateMetadata({
   const t = await getTranslator(locale, "Home.Metadata");
 
   return {
-    title: {
-      template: "%s | The Scrapbookers",
-      default: "The Scrapbookers",
-    },
     description: t("description"),
     keywords: ["Travel", "South East Asia", "Blog", "Digital Nomads"],
     authors: [

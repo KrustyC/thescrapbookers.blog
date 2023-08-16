@@ -39,7 +39,7 @@ export async function generateMetadata({
     isPreview: isEnabled,
   });
 
-  const title = country.name;
+  const title = `${country.name} | The Scrapbookers`;
   const description = country.metaDescription;
   const images = country.mainImage
     ? [

@@ -19,7 +19,7 @@ export async function generateMetadata({
   const baseUrl = process.env.baseUrl || "https://thescrapbookers.blog";
 
   return {
-    title: t("title"),
+    title: `${t("title")} | The Scrapbookers`,
     description: t("description"),
     metadataBase: new URL(baseUrl),
     alternates: createAlternates({ path: "/about-us" }),
