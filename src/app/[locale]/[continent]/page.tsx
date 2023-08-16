@@ -77,7 +77,12 @@ export default async function ContinentPage({ params }: ContinentPageProps) {
 
   return (
     <div>
-      <ContinentHero name={continent.name} image={continent.mainImage} />
+      <ContinentHero
+        name={continent.name}
+        description={continent.mainDescription}
+        image={continent.mainImage}
+      />
+
       <div className="flex flex-col gap-y-16 px-8 lg:px-24 xl:px-48 pt-12 lg:pt-32 pb-12 lg:pb-24">
         {continent.countries.map((country, i) => (
           <Country

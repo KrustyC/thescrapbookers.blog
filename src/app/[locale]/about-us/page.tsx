@@ -1,10 +1,10 @@
-import Image from "next/image";
 import { Metadata } from "next";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { getTranslator } from "next-intl/server";
 
 import aboutUsPic from "../../../../public/images/about_us.webp";
 import cameronHighlands from "../../../../public/images/cameron_highlands.webp";
-import { getTranslator } from "next-intl/server";
 
 export async function generateMetadata({
   params: { locale },
