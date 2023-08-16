@@ -4,8 +4,8 @@ import { ShareButton } from "@/components/ShareButton";
 import { AppLocale, Author, Post } from "@/types/global";
 import { formatDate, getFormat } from "@/utils/date";
 
-import beaPic from "../../../../public/images/bea_with_bhan_mi.jpeg";
-import davidePic from "../../../../public/images/davide_holding_hero_rat.jpg";
+import beaPic from "../../../../public/images/bea_near_a_wat.webp";
+import davidePic from "../../../../public/images/davide_holding_hero_rat.webp";
 
 import { RichText } from "./RichText/RichText";
 import { BlogPostHero, BlogPostHeroLoading } from "./BlogPostHero";

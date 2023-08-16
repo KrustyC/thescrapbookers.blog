@@ -4,9 +4,9 @@ import { draftMode } from "next/headers";
 import { getCountriesForContinent } from "@/graphql/queries/get-countries-for-continent.query";
 import { AppLocale } from "@/types/global";
 
-import chiangMaiTower from "../../../../public/images/chiang-mai-tower.jpg";
+import chiangMaiTower from "../../../../public/images/chiang-mai-tower.webp";
 import vientianeBuddhaStatue from "../../../../public/images/vientiane-buddha-statue.jpg";
-import vientianeManWorkingWithCables from "../../../../public/images/vientiane-man-working-with-cables.jpg";
+import vientianeManWorkingWithCables from "../../../../public/images/vientiane-man-working-with-cables.webp";
 import vientianeTemple from "../../../../public/images/vientiane-temple.jpg";
 
 import { CountriesCarouselSectionSkeleton } from "./CountriesCarouselSectionSkeleton";
