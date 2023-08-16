@@ -16,7 +16,7 @@ export const NextPostLoading = () => <div>Loading</div>;
 
 export const NextPost: React.FC<NextPostHeroProps> = ({ post, locale }) => {
   return (
-    <div className="w-full lg:w-[920px] 2xl:w-max mx-auto mt-10 lg:mt-24 flex flex-col">
+    <div className="w-full lg:w-[820px] 2xl:w-max mx-auto mt-10 lg:mt-24 flex flex-col">
       <Link
         href={post.href || ""}
         className="w-full h-[380px] relative loading-background"
