@@ -6,6 +6,7 @@ import {
   Country as CountryGraphQL,
 } from "@/types/generated/graphql";
 import { AppLocale, Continent, ShortCountry } from "@/types/global";
+import { sortCountries } from "@/utils/countries-sorter";
 import { extractImageDataFromContentfulAsset } from "@/utils/images";
 
 type LinkedCountryGraphQL = Pick<
@@ -106,6 +107,17 @@ export async function getContinentWithCountries({
 
     const continent = data.data.continentCollection.items[0];
 
+    const countries = continent.linkedFrom.countryCollection.items.map(
+      (country) => ({
+        name: country.name,
+        slug: country.slug,
+        description: country.description,
+        thumbnailImage: extractImageDataFromContentfulAsset(
+          country.thumbnailImage
+        ),
+      })
+    );
+
     return {
       continent: {
         name: continent.name,
@@ -113,16 +125,7 @@ export async function getContinentWithCountries({
         metaDescription: continent.metaDescription,
         mainDescription: continent.mainDescription,
         mainImage: extractImageDataFromContentfulAsset(continent.mainImage),
-        countries: continent.linkedFrom.countryCollection.items.map(
-          (country) => ({
-            name: country.name,
-            slug: country.slug,
-            description: country.description,
-            thumbnailImage: extractImageDataFromContentfulAsset(
-              country.thumbnailImage
-            ),
-          })
-        ),
+        countries: sortCountries(countries),
       },
     };
   } catch (error) {
