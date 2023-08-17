@@ -65,6 +65,7 @@ export type Continent = Entry & {
   mainDescription?: Maybe<Scalars["String"]["output"]>;
   mainImage?: Maybe<Asset>;
   metaDescription?: Maybe<Scalars["String"]["output"]>;
+  metaTitle?: Maybe<Scalars["String"]["output"]>;
   name?: Maybe<Scalars["String"]["output"]>;
   slug?: Maybe<Scalars["String"]["output"]>;
 };
@@ -76,6 +77,7 @@ export type Country = Entry & {
   description?: Maybe<Scalars["String"]["output"]>;
   mainImage?: Maybe<Asset>;
   metaDescription?: Maybe<Scalars["String"]["output"]>;
+  metaTitle?: Maybe<Scalars["String"]["output"]>;
   name?: Maybe<Scalars["String"]["output"]>;
   slug?: Maybe<Scalars["String"]["output"]>;
   thumbnailImage?: Maybe<Asset>;

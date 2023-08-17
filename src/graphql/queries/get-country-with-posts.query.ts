@@ -21,6 +21,7 @@ type CountryWithPostsGraphQL = Pick<
   | "name"
   | "slug"
   | "metaDescription"
+  | "metaTitle"
   | "description"
   | "continent"
   | "cheatsheet"
@@ -74,6 +75,7 @@ const GET_COUNTRY_WITH_POSTS_QUERY = gql`
         name
         slug
         metaDescription
+        metaTitle
         description
         continent {
           name
@@ -141,6 +143,7 @@ export async function getCountryWithPosts({
           ? parseCheatsheet(country.cheatsheet)
           : undefined,
         metaDescription: country.metaDescription,
+        metaTitle: country.metaTitle,
         description: country.description,
         continent: country.continent,
         mainImage: extractImageDataFromContentfulAsset(country.mainImage),

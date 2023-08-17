@@ -16,7 +16,7 @@ type LinkedCountryGraphQL = Pick<
 
 type ContinentWithCountriesGraphQL = Pick<
   ContinentGraphQL,
-  "name" | "slug" | "mainDescription" | "metaDescription" | "mainImage"
+  "name" | "slug" | "mainDescription" | "metaDescription" | "metaTitle" | "mainImage"
 > & {
   linkedFrom: {
     countryCollection: {
@@ -56,6 +56,7 @@ const GET_CONTINENT_WITH_COUNTRIES = gql`
         name
         mainDescription
         metaDescription
+        metaTitle
         mainImage {
           title
           description
@@ -123,6 +124,7 @@ export async function getContinentWithCountries({
         name: continent.name,
         slug: continent.slug,
         metaDescription: continent.metaDescription,
+        metaTitle: continent.metaTitle,
         mainDescription: continent.mainDescription,
         mainImage: extractImageDataFromContentfulAsset(continent.mainImage),
         countries: sortCountries(countries),

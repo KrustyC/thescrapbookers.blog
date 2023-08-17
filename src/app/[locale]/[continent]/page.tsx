@@ -36,7 +36,7 @@ export async function generateMetadata({
     isPreview: isEnabled,
   });
 
-  const title = `${continent.name} | The Scrapbookers`;
+  const title = `${continent.metaTitle} | The Scrapbookers`;
   const description = continent.metaDescription;
   const images = continent.mainImage
     ? [

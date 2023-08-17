@@ -17,6 +17,7 @@ export interface Continent {
   mainImage?: Image;
   mainDescription?: string;
   metaDescription?: string;
+  metaTitle?: string;
 }
 
 export interface CountryCheatsheetBasicWord {
@@ -43,6 +44,7 @@ export interface CountryCheatsheet {
 export interface Country {
   name?: string;
   slug?: string;
+  metaTitle?: string;
   mainImage?: Image;
   thumbnailImage?: Image;
   description?: string;
