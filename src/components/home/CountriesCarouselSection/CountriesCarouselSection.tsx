@@ -1,54 +1,65 @@
 import dynamic from "next/dynamic";
 import { draftMode } from "next/headers";
+import { getTranslator } from "next-intl/server";
 
 import { getCountriesForContinent } from "@/graphql/queries/get-countries-for-continent.query";
 import { AppLocale } from "@/types/global";
 
-import chiangMaiTower from "../../../../public/images/chiang_mai_tower.webp";
-import vientianeBuddhaStatue from "../../../../public/images/vientiane_buddha_statue.jpg";
-import vientianeManWorkingWithCables from "../../../../public/images/vientiane_man_working_with_cables.webp";
-import vientianeTemple from "../../../../public/images/vientiane_temple.jpg";
+import thailandPic from "../../../../public/images/chiang_mai_tower.webp";
+import cambodiaPic from "../../../../public/images/monk_walking_in_a_temple_near_angkor_wat.webp";
+import laosPic from "../../../../public/images/vientiane_man_working_with_cables.webp";
+import vietnamPic from "../../../../public/images/woman_pushing_a_bike_with_flowers_in_hanoi.webp";
 
 import { CountriesCarouselSectionSkeleton } from "./CountriesCarouselSectionSkeleton";
 
 const CountryCarousel = dynamic(() => import("./Carousel"), { ssr: false });
 
-// @TODO Decide the final images and the fix alt description
-function getImage(slug: string | undefined) {
+interface Copy {
+  thailand: string;
+  laos: string;
+  vietnam: string;
+  cambodia: string;
+}
+
+function getImage(slug: string | undefined, copy: Copy) {
   switch (slug) {
     case "thailand":
       return {
-        src: chiangMaiTower,
-        alt: "a tower in Chiang Mai (Thailand)",
+        src: thailandPic,
+        alt: copy.thailand,
       };
     case "laos":
       return {
-        src: vientianeManWorkingWithCables,
-        alt: "a man on a step ladder working with a lot of cable in Vientiane (Laos)",
+        src: laosPic,
+        alt: copy.laos,
       };
     case "vietnam":
       return {
-        src: vientianeBuddhaStatue,
-        alt: "a Buddha statue in Vientiane (Laos)",
-      }
+        src: vietnamPic,
+        alt: copy.vietnam,
+      };
     case "cambodia":
       return {
-        src: vientianeTemple,
-        alt: "a temple in Vientiane (Laos)",
-      }
+        src: cambodiaPic,
+        alt: copy.cambodia,
+      };
     default:
       return {
-        src: vientianeBuddhaStatue,
-        alt: "a Buddha statue in Vientiane (Laos)",
-      }
+        src: cambodiaPic,
+        alt: "",
+      };
   }
+}
+
+interface CountriesCarouselSectionProps {
+  locale: AppLocale;
 }
 
 export default async function CountriesCarouselSection({
   locale,
-}: {
-  locale: AppLocale;
-}) {
+}: CountriesCarouselSectionProps) {
+  const t = await getTranslator(locale, "Home.CountriesCarouselSection.Images");
+
   const { isEnabled } = draftMode();
   const { countries } = await getCountriesForContinent({
     continentSlug: "asia",
@@ -58,8 +69,15 @@ export default async function CountriesCarouselSection({
 
   if (countries.length === 0) return null;
 
+  const copy = {
+    thailand: t("thailand"),
+    laos: t("laos"),
+    vietnam: t("vietnam"),
+    cambodia: t("cambodia"),
+  };
+
   const slides = countries.map((country) => ({
-    image: getImage(country.slug),
+    image: getImage(country.slug, copy),
     name: country.name,
     href: `/asia/${country.slug}`,
   }));

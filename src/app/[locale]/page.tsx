@@ -1,7 +1,6 @@
 import { Suspense } from "react";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
-import { getTranslator } from "next-intl/server";
 
 import { Footer } from "@/components/Footer";
 import { AboutUsSection } from "@/components/home/AboutUsSection";
@@ -22,12 +21,6 @@ import { createAlternates } from "@/utils/urls";
 // const DynamicVideo = dynamic(() => import("../../components/home/VideoPlayer"));
 const DynamicVideo = dynamic(() => import("../../components/home/Video"));
 
-interface HomePageProps {
-  params: {
-    locale: AppLocale;
-  };
-}
-
 /**
  *
  * @TODO This is not yet supported by next-intl, but once it is it should be addded, in order to
@@ -40,11 +33,7 @@ interface HomePageProps {
 //   }));
 // }
 
-export async function generateMetadata({
-  params: { locale },
-}: HomePageProps): Promise<Metadata> {
-  const t = await getTranslator(locale, "Home.Metadata");
-
+export async function generateMetadata(): Promise<Metadata> {
   return {
     alternates: createAlternates({ path: "" }),
   };

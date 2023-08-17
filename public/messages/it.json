@@ -22,6 +22,14 @@
       "error1": "Errore durante il caricamento dei post sul nomadismo digitale...",
       "error2": "Ci scusiamo per il disagio, siamo già al lavoro per risolvere il problema, ti preghiamo di riprovare tra qualche minuto."
     },
+    "CountriesCarouselSection": {
+      "Images": {
+        "thailand": "una torre a Chiang Mai (Thailandia). La torre ha una forma conica realizzata in mattoni ed è circondata da molte piante verdi, che coprono la parte inferiore della torre",
+        "laos": "un uomo su una scala a pioli che lavora con molti cavi a Vientiane (Laos). L'uomo indossa un casco giallo e una camicia blu",
+        "vietnam": "una donna ad Hanoi (Vietnam) che spinge una bicicletta, con molti fiori. Non si può vedere il volto della donna, poiché è coperto da alcune piante verdi. È però possibile notare che indossa un cappello tradizionale a cono",
+        "cambodia": "un giovane monaco che cammina in un tempio vicino ad Angkor Wat (Cambogia). Il monaco indossa una veste arancione tradizionale"
+      }
+    },
     "HighlightSection": {
       "title": "Da Vang Vieng a Luang Prabang",
       "text": "Cronaca del nostro spostamento a bordo del treno che viaggia sulla nuovissima rete ferroviaria del Laos, costruita recentemente dal governo cinese. Tra i nostri compagni d'avventura era presente anche l'intera squadra di calcio del Mantha United.",
