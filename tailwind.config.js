@@ -52,7 +52,7 @@ module.exports = {
           {
             lineHeight: "2rem",
             letterSpacing: "0.025rem",
-            fontWeight: "400",
+            fontWeight: "600",
           },
         ],
         "4xl": [
@@ -60,7 +60,7 @@ module.exports = {
           {
             lineHeight: "2.5rem",
             letterSpacing: "0.025rem",
-            fontWeight: "400",
+            fontWeight: "600",
           },
         ],
         "5xl": [
@@ -68,7 +68,7 @@ module.exports = {
           {
             lineHeight: "3rem",
             letterSpacing: "0.025rem",
-            fontWeight: "400",
+            fontWeight: "600",
           },
         ],
         "9xl": [

@@ -36,7 +36,7 @@ html {
 }
 
 .country-continent-hero {
-  @apply w-full h-[740px] lg:h-[710px] 2xl:h-[820px] 4xl:h-[1800px];
+  @apply w-full h-[550px] xl:h-[650px] 2xl:h-[820px] 4xl:h-[1800px];
 }
 
 .video-container {
