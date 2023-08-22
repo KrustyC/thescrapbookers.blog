@@ -28,7 +28,7 @@ html {
 }
 
 .section-layout > h2 {
-  @apply text-3xl lg:text-5xl font-semibold mb-8 lg:mb-12 w-fit lg:leading-[3.5rem];
+  @apply text-3xl lg:text-5xl !font-semibold mb-8 lg:mb-12 w-fit lg:leading-[3.5rem];
 }
 
 .introduction-letter {

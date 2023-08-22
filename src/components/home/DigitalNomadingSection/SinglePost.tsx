@@ -1,7 +1,6 @@
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import Link from "next-intl/link";
 
-import { ButtonLink } from "@/components/uikit/ButtonLink";
 import type { AppLocale, Post as IPost } from "@/types/global";
 import { formatDate, getFormat } from "@/utils/date";
 
@@ -17,11 +16,9 @@ export const SinglePost: React.FC<PostProps> = ({
   post: { title, href, smallIntro, thumbnailImage, category, date },
   locale,
 }) => {
-  const t = useTranslations("Home.DigitalNomading");
-
   return (
-    <div className="flex flex-col lg:flex-row gap-8">
-      <div className="flex items-end w-full aspect-square lg:aspect-[4/3] relative bg-gray-200 rounded-2xl drop-shadow-lg border-2 overflow-hidden border-black">
+    <Link href={href || "/"}>
+      <div className="w-full aspect-square relative bg-gray-200 rounded-2xl drop-shadow-xl overflow-hidden border-black">
         <Image
           fill
           src={thumbnailImage?.url || ""}
@@ -29,36 +26,32 @@ export const SinglePost: React.FC<PostProps> = ({
           loading="lazy"
           style={{ objectFit: "cover" }}
         />
-      </div>
 
-      <div className="flex flex-col text-black lg:px-6 w-full">
-        <h3 className="text-3xl text-black font-semibold">{title}</h3>
+        <div className="absolute bottom-0 right-0 left-0 flex flex-col w-full p-5 bg-gradient-to-r from-black to-white/5">
+          <h3 className="text-xl lg:text-2xl text-white font-semibold">
+            {title}
+          </h3>
 
-        <div className="flex items-center my-2 uppercase tracking-widest text-regular">
-          <span>{category}</span>
-          <div className="border-r-2 border-black h-3 mx-2" />
+          <div className="flex items-center my-2 uppercase tracking-widest text-sm lg:text-base text-white">
+            <span>{category}</span>
+            <div className="border-r-2 border-white h-3 mx-2" />
 
-          <span>
-            {date
-              ? formatDate({
-                  date: new Date(date),
-                  format: getFormat(locale),
-                  locale,
-                })
-              : "Missing Date"}
+            <span>
+              {date
+                ? formatDate({
+                    date: new Date(date),
+                    format: getFormat(locale),
+                    locale,
+                  })
+                : "Missing Date"}
+            </span>
+          </div>
+
+          <span className="hidden lg:block text-sm line-clamp-4 xl:line-clamp-5 text-white">
+            {smallIntro}
           </span>
         </div>
-
-        <span className="text-lg mb-4">{smallIntro}</span>
-
-        <ButtonLink
-          variant="black"
-          href={href || "/"}
-          prefetch={false}
-        >
-          {t("readMoreCTA")}
-        </ButtonLink>
       </div>
-    </div>
+    </Link>
   );
 };

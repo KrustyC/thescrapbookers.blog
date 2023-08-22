@@ -6,8 +6,9 @@ import {
   Country as CountryGraphQL,
 } from "@/types/generated/graphql";
 import { AppLocale, Continent, ShortCountry } from "@/types/global";
-import { sortCountries } from "@/utils/countries-sorter";
+import { COUNTRY_ORDERED_SLUGS } from "@/utils/constants";
 import { extractImageDataFromContentfulAsset } from "@/utils/images";
+import { sortItemsWithSlug } from "@/utils/item-with-slug-sorter";
 
 type LinkedCountryGraphQL = Pick<
   CountryGraphQL,
@@ -127,7 +128,7 @@ export async function getContinentWithCountries({
         metaTitle: continent.metaTitle,
         mainDescription: continent.mainDescription,
         mainImage: extractImageDataFromContentfulAsset(continent.mainImage),
-        countries: sortCountries(countries),
+        countries: sortItemsWithSlug(countries, COUNTRY_ORDERED_SLUGS),
       },
     };
   } catch (error) {

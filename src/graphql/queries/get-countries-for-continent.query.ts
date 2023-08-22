@@ -3,7 +3,8 @@ import { getApolloServerClient } from "src/graphql/apollo-server-client";
 
 import { Country as CountryGraphQL } from "@/types/generated/graphql";
 import { AppLocale, Country } from "@/types/global";
-import { sortCountries } from "@/utils/countries-sorter";
+import { COUNTRY_ORDERED_SLUGS } from "@/utils/constants";
+import { sortItemsWithSlug } from "@/utils/item-with-slug-sorter";
 
 const GET_COUNTRIES_FOR_CONTINENT = gql`
   query ($continentSlug: String!, $locale: String!, $preview: Boolean!) {
@@ -59,7 +60,7 @@ export async function getCountriesForContinent({
 
     const countries = data.data.countryCollection.items;
     return {
-      countries: sortCountries(countries),
+      countries: sortItemsWithSlug(countries, COUNTRY_ORDERED_SLUGS),
     };
   } catch (error) {
     console.error(error);
