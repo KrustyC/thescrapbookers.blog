@@ -4,7 +4,7 @@ import { getApolloServerClient } from "src/graphql/apollo-server-client";
 import { Post as PostGraphQL } from "@/types/generated/graphql";
 import { AppLocale, Post } from "@/types/global";
 
-import { parseGraphQLNextPost,parseGraphQLPost } from "../parsers/posts";
+import { parseGraphQLNextPost, parseGraphQLPost } from "../parsers/posts";
 
 interface GetPostParams {
   slug: string;
@@ -33,6 +33,7 @@ const GET_POST_QUERY = gql`
     ) {
       items {
         title
+        metaTitle
         metaDescription
         slug
         smallIntro
@@ -112,7 +113,10 @@ export async function getPost({
       variables: { slug, locale, preview: isPreview },
       context: {
         fetchOptions: {
-          next: { revalidate: isPreview || process.env.DISABLE_CACHE === "true"  ? 0 : 3600 },
+          next: {
+            revalidate:
+              isPreview || process.env.DISABLE_CACHE === "true" ? 0 : 3600,
+          },
         },
       },
     });

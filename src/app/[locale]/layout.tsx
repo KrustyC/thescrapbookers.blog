@@ -21,6 +21,7 @@ export async function generateMetadata({
   const t = await getTranslator(locale, "Home.Metadata");
 
   return {
+    title: t("title"),
     description: t("description"),
     keywords: ["Travel", "South East Asia", "Blog", "Digital Nomads"],
     authors: [

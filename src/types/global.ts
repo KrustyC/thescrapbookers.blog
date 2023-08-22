@@ -90,6 +90,7 @@ export interface RichText {
 
 export interface Post {
   title?: string;
+  metaTitle?: string;
   metaDescription?: string;
   slug?: string;
   smallIntro?: string;

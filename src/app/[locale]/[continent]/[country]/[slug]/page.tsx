@@ -31,7 +31,7 @@ export async function generateMetadata({
       return {};
     }
 
-    const title = post.title;
+    const title = post.metaTitle;
     const description = post.smallIntro;
     const images = post.mainImage?.url
       ? [

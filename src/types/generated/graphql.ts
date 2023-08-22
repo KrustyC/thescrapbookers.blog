@@ -95,6 +95,7 @@ export type Post = Entry & {
   date?: Maybe<Scalars["DateTime"]["output"]>;
   mainImage?: Maybe<Asset>;
   metaDescription?: Maybe<Scalars["String"]["output"]>;
+  metaTitle?: Maybe<Scalars["String"]["output"]>;
   nextPost?: Maybe<Post>;
   richtext?: Maybe<PostRichtext>;
   slug?: Maybe<Scalars["String"]["output"]>;

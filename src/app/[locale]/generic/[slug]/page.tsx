@@ -27,7 +27,7 @@ export async function generateMetadata({
       return {};
     }
 
-    const title = post.title;
+    const title = post.metaTitle;
     const description = post.metaDescription;
 
     const images = post.mainImage?.url
