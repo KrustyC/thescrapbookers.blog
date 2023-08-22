@@ -44,7 +44,7 @@ export const Country: React.FC<CountryProps> = ({ country, continentSlug }) => {
 
       <div className="w-full md:w-1/4 flex flex-col gap-3 md:gap-4">
         <h2 className="text-2xl font-bold">{country.name}</h2>
-        <p className="mb-0.5"> {country.description}</p>
+        <p className="mb-0.5 line-clamp-6"> {country.description}</p>
         <ButtonLink
           size="sm"
           variant="black"
