@@ -42,12 +42,15 @@ const CountriesCarousel: React.FC<CaoruselProps> = ({ slides }) => {
         },
         1600: {
           slidesPerView: 4.2,
+          spaceBetween: 50,
         },
         2000: {
           slidesPerView: 5.2,
+          spaceBetween: 60,
         },
         2400: {
           slidesPerView: 6.2,
+          spaceBetween: 60,
         },
       }}
     >
