@@ -92,12 +92,12 @@ export default function LocaleLayout({ children, params }: Props) {
 
       {isEnabled && <PreviewBadge />}
 
-      {process.env.environment === "production" && (
+      {process.env.NEXT_PUBLIC_ENVIRONMENT === "production" && (
         <>
           <Script
             async
             strategy="lazyOnload"
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.googleAnalyticsId}`}
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
           />
           <Script id="ga-script" strategy="lazyOnload">
             {`
@@ -105,7 +105,7 @@ export default function LocaleLayout({ children, params }: Props) {
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
                 
-                gtag('config', '${process.env.googleAnalyticsId}');
+                gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');
                 `}
           </Script>
 

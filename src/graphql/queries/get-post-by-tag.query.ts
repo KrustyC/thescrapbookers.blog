@@ -95,7 +95,7 @@ export async function getPostsByTag({
         fetchOptions: {
           next: {
             revalidate:
-              isPreview || process.env.DISABLE_CACHE === "true" ? 0 : 0,
+              isPreview || process.env.DISABLE_CACHE === "true" ? 0 : 3600,
           },
         },
       },

@@ -4,12 +4,6 @@ const { withSentryConfig } = require("@sentry/nextjs");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = withNextIntl({
-  env: {
-    environment: process.env.ENVIRONMENT || "local",
-    baseUrl: process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000",
-    googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID,
-    disableCache: process.env.DISABLE_CACHE === "true" || false,
-  },
   experimental: {
     serverActions: true,
     // nextScriptWorkers: true, @TODO Enable once Partytown and worker are supported in the app folder
