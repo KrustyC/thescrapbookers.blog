@@ -17,6 +17,9 @@
       "error1": "Errore durante il caricamento dei post recenti...",
       "error2": "Ci scusiamo per il disagio, siamo già al lavoro per risolvere il problema, ti preghiamo di riprovare tra qualche minuto."
     },
+    "Video": {
+      "text": "stories of travel, food, culture and digital nomading"
+    },
     "DigitalNomading": {
       "readMoreCTA": "Leggi l'articolo",
       "error1": "Errore durante il caricamento dei post sul nomadismo digitale...",
@@ -37,7 +40,7 @@
     },
     "AboutUs": {
       "title": "Filosofia del blog",
-      "text": "Naturalmente, non siamo i primi  e non saremo gli ultimi ad iniziare un blog di viaggi. Onestamente, siamo un po' sorpresi anche di trovarci a farlo. È un viaggio di apprendimento, incontro di culture affascinanti e individui, poi condividere quelle storie attraverso articoli e chat con i locali e nomadi digitali. Grazie per il popping by, e siete più che benvenuto a tag lungo. (DA COMPLETARE)",
+      "text": "Beginning our travels in Southeast Asia, we encountered a world that called us to share more than mere picturesque scenes. This blog is a reflection of our desire to reveal the daily life, unique experiences, and often overlooked historical facets that characterise each destination. As a software engineer and a graphic designer, we combine our professional skills with a shared passion for travel, aiming to tell stories in a distinct way. Join us, and explore the world through a different lens.",
       "cta": "Scopri di più"
     },
     "NavbarLinks": {
