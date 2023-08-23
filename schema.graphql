@@ -40,6 +40,7 @@ type Asset {
 
 type Post implements Entry {
   title: String
+  metaTitle: String
   metaDescription: String
   slug: String
   smallIntro: String
@@ -74,6 +75,7 @@ type Country implements Entry {
   name: String
   slug: String
   metaDescription: String
+  metaTitle: String
   description: String
   mainImage: Asset
   thumbnailImage: Asset
@@ -86,5 +88,6 @@ type Continent implements Entry {
   slug: String
   mainImage: Asset
   mainDescription: String
+  metaTitle: String
   metaDescription: String
 }
