@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
+import { useTranslations } from "next-intl";
 
 import { Footer } from "@/components/Footer";
 import { AboutUsSection } from "@/components/home/AboutUsSection";
@@ -40,6 +41,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function Home({ params }: { params: { locale: AppLocale } }) {
+  const videoCopy = useTranslations("Home.Video");
+
   return (
     <>
       <div className="flex flex-col">
@@ -49,7 +52,7 @@ export default function Home({ params }: { params: { locale: AppLocale } }) {
           <FeaturedPostsSection locale={params.locale} />
         </Suspense>
 
-        <DynamicVideo />
+        <DynamicVideo text={videoCopy("text")} />
 
         <Suspense fallback={<DigitalNomadingSectionSkeleton />}>
           <DigitalNomadingSection locale={params.locale} />

@@ -17,6 +17,9 @@
       "error1": "An error happened while fetching featured post...",
       "error2": "Sorry for the incovenience, please bear with us, we are already working towards a fix."
     },
+    "Video": {
+      "text": "stories of travel, food, culture and digital nomading"
+    },
     "DigitalNomading": {
       "readMoreCTA": "Read Article",
       "error1": "An error happened while fetching digital nomading post...",
