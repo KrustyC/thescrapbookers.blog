@@ -15,7 +15,7 @@ export const AboutUsSection: React.FC = () => {
           <h2 className="mb-4 xl:mb-6 uppercase font-semibold text-gray-400 text-sm leading-[0.8rem] tracking-widest font-poppins">
             {t("title")}
           </h2>
-          <p className="text-left text-xl lg:max-w-[650px] mb-4 xl:mb-6">
+          <p className="text-left text-lg lg:max-w-[650px] mb-4 xl:mb-6">
             {t("text")}
           </p>
           <ButtonLink variant="black" href="/about-us">

@@ -3,6 +3,9 @@ export const COUNTRY_ORDERED_SLUGS = [
   "laos",
   "vietnam",
   "cambodia",
+  "malaysia",
+  "singapore",
+  "indonesia",
 ];
 
 export const DIGITAL_NOMADING_POSTS_ORDERED_SLUGS = [
