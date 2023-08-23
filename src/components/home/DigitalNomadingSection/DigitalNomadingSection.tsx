@@ -23,8 +23,6 @@ export default async function DigitalNomadingSection({
       isPreview: isEnabled,
     });
 
-    console.log(posts);
-
     if (posts.length === 0) return null;
 
     const orderedPost = sortItemsWithSlug(

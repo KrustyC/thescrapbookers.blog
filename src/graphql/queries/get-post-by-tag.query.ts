@@ -84,7 +84,6 @@ export async function getPostsByTag({
   locale,
   isPreview = false,
 }: GetPostByTagParams): Promise<GetPostByTagResponse> {
-  console.log(limit, tag)
   try {
     const data = await getApolloServerClient({
       isPreview,
