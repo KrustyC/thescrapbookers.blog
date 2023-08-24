@@ -1,5 +1,4 @@
 import { Children, PropsWithChildren } from "react";
-import parse from "html-react-parser";
 import Image from "next/image";
 
 import { RichTextAsset } from "@/types/global";
@@ -136,8 +135,9 @@ export const Asset: React.FC<{ asset: RichTextAsset }> = ({ asset }) => {
   }
 
   if (asset.contentType?.startsWith("video/")) {
+    console.log(asset);
     return (
-      <div className="relative mx-auto my-8 lg:my-16 loading-background w-full lg:w-[840px] aspect-video">
+      <div className="relative mx-auto my-8 lg:my-16 loading-background w-full lg:w-[840px] aspect-video flex flex-col gap-2">
         <video
           controls
           className="w-full h-full absolute top-0 left-0 object-cover"
@@ -145,6 +145,7 @@ export const Asset: React.FC<{ asset: RichTextAsset }> = ({ asset }) => {
           <source src={url} type="video/mp4" />
           Sorry, your browser doesn{"'"}t support videos.
         </video>
+        <span className="text-gray-600">{asset.title}</span>
       </div>
     );
   }

@@ -13,6 +13,8 @@ function getHref(slug: string, country: any) {
   return `/${continentSlug}/${countrySlug}/${slug}`;
 }
 
+export const revalidate = 0;
+
 export async function GET() {
   try {
     const client = getContentfulClient();
