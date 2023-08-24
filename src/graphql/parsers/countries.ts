@@ -1,64 +1,68 @@
 import {
   CountryCheatsheet,
+  CountryCheatsheetCommonPhrase,
   CountryCheatsheetCoworkingSpace,
 } from "@/types/global";
 
-function checkCoworkingSpace(
-  coworkingSpace: unknown
-): coworkingSpace is CountryCheatsheetCoworkingSpace {
-  if (typeof coworkingSpace !== "object" || coworkingSpace === null) {
-    return false;
+function parseCommonPhrases(
+  commonPhrases: unknown
+): CountryCheatsheetCommonPhrase[] {
+  if (!Array.isArray(commonPhrases)) {
+    return [];
   }
 
-  if (
-    !coworkingSpace.hasOwnProperty("name") ||
-    !coworkingSpace.hasOwnProperty("website")
-  ) {
-    return false;
+  return commonPhrases.map((commonPhrase) => ({
+    word: commonPhrase.word,
+    meaning: commonPhrase.meaning,
+  }));
+}
+
+function parseCoworkingSpaces(
+  coworkingSpaces: unknown
+): CountryCheatsheetCoworkingSpace[] {
+  if (!Array.isArray(coworkingSpaces)) {
+    return [];
   }
 
-  return true;
+  return coworkingSpaces.map((coworkingSpace) => ({
+    name: coworkingSpace.name,
+    website: coworkingSpace.website,
+  }));
 }
 
 export function parseCheatsheet(
   cheatsheet: Record<string, unknown>
 ): CountryCheatsheet | undefined {
   const {
-    language,
     capital,
-    currency,
+    lifeExpetancy,
     population,
-    basicWords,
-    dishes,
     visaWebsite,
-    faveCoworkingSpace,
+    currencies,
+    languages,
+    dishes,
+    commonPhrases,
+    coworkingSpaces,
   } = cheatsheet;
 
   if (
-    typeof language !== "string" ||
     typeof capital !== "string" ||
-    typeof currency !== "string" ||
     typeof visaWebsite !== "string" ||
-    typeof population !== "number"
+    typeof population !== "number" ||
+    typeof lifeExpetancy !== "number"
   ) {
     return undefined;
   }
 
   return {
-    language,
     capital,
-    currency,
     population,
     visaWebsite,
-    basicWords: Array.isArray(basicWords)
-      ? basicWords?.map((basicWord) => ({
-          word: basicWord.word,
-          meaning: basicWord.meaning,
-        }))
-      : [],
+    lifeExpetancy,
+    currencies: Array.isArray(currencies) ? currencies : [],
+    languages: Array.isArray(languages) ? languages : [],
     dishes: Array.isArray(dishes) ? dishes : [],
-    faveCoworkingSpace: checkCoworkingSpace(faveCoworkingSpace)
-      ? faveCoworkingSpace
-      : undefined,
+    commonPhrases: parseCommonPhrases(commonPhrases),
+    coworkingSpaces: parseCoworkingSpaces(coworkingSpaces),
   };
 }

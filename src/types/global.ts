@@ -20,7 +20,7 @@ export interface Continent {
   metaTitle?: string;
 }
 
-export interface CountryCheatsheetBasicWord {
+export interface CountryCheatsheetCommonPhrase {
   word: string;
   meaning: string;
 }
@@ -31,14 +31,15 @@ export interface CountryCheatsheetCoworkingSpace {
 }
 
 export interface CountryCheatsheet {
-  language: string;
   capital: string;
-  currency: string;
+  lifeExpetancy: number;
   population: number;
-  basicWords: CountryCheatsheetBasicWord[];
-  dishes: string[];
   visaWebsite: string;
-  faveCoworkingSpace?: CountryCheatsheetCoworkingSpace;
+  currencies: string[];
+  languages: string[];
+  dishes: string[];
+  commonPhrases: CountryCheatsheetCommonPhrase[];
+  coworkingSpaces: CountryCheatsheetCoworkingSpace[];
 }
 
 export interface Country {

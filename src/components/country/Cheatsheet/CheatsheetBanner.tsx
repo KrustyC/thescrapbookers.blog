@@ -7,9 +7,9 @@ import Link from "next/link";
 import { BookIcon } from "@/icons/Book";
 import { ChevronDown } from "@/icons/ChevronDown";
 import { CityIcon } from "@/icons/City";
-import { CurrencyEuroIcon } from "@/icons/CurrencyEuro";
-import { LanguageIcon } from "@/icons/Language";
-import { OfficeIcon } from "@/icons/Office";
+// import { CurrencyEuroIcon } from "@/icons/CurrencyEuro";
+// import { LanguageIcon } from "@/icons/Language";
+// import { OfficeIcon } from "@/icons/Office";
 import { PeopleIcon } from "@/icons/People";
 import { Country } from "@/types/global";
 
@@ -107,21 +107,21 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
         })}
       >
         <div className="py-8 flex flex-col lg:flex-row lg:justify-between gap-x-2 gap-y-4">
-          <InfoBox
+          {/* <InfoBox
             title="Language"
             value={cheatsheet.language}
             icon={<LanguageIcon className="w-5 h-5" />}
-          />
+          /> */}
           <InfoBox
             title="Capital"
             value={cheatsheet.capital}
             icon={<CityIcon className="w-5 h-5" />}
           />
-          <InfoBox
+          {/* <InfoBox
             title="Currency"
             value={cheatsheet.currency}
             icon={<CurrencyEuroIcon className="w-5 h-5" />}
-          />
+          /> */}
           <InfoBox
             title="Population"
             value={cheatsheet.population}
@@ -134,14 +134,14 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
             icon={<BookIcon className="w-5 h-5" />}
           >
             <ul>
-              {cheatsheet.basicWords.map(({ word, meaning }, i) => (
+              {cheatsheet.commonPhrases.map(({ word, meaning }, i) => (
                 <li key={i}>
                   {word} (<span className="italic">{meaning}</span>)
                 </li>
               ))}
             </ul>
           </DetailBox>
-          <DetailBox title="Fave Dishes">
+          <DetailBox title="Dishes to Look Out For">
             <ul>
               {cheatsheet.dishes.map((dish, i) => (
                 <li key={i}>{dish}</li>
@@ -158,7 +158,7 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
             </Link>
           </DetailBox>
 
-          <DetailBox
+          {/* <DetailBox
             title="Fave Coworking Space"
             icon={<OfficeIcon className="w-5 h-5" />}
           >
@@ -173,7 +173,7 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
             ) : (
               <span>Missing coworking space</span>
             )}
-          </DetailBox>
+          </DetailBox> */}
         </div>
       </div>
 
