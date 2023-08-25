@@ -142,18 +142,8 @@ export const Asset: React.FC<{ asset: RichTextAsset }> = ({ asset }) => {
   }
 
   if (asset.contentType?.startsWith("video/")) {
-    return (
-      <div className="relative mx-auto my-8 lg:my-16 loading-background w-full lg:w-[840px] aspect-video flex flex-col gap-2">
-        <video
-          controls
-          className="w-full h-full absolute top-0 left-0 object-cover"
-        >
-          <source src={url} type="video/mp4" />
-          Sorry, your browser doesn{"'"}t support videos.
-        </video>
-        <span className="text-gray-600">{asset.title}</span>
-      </div>
-    );
+    // Videos should be directly added tothe richtext, but should instead be added through the Video Entity
+    return null;
   }
 
   return (
@@ -171,9 +161,7 @@ export const Asset: React.FC<{ asset: RichTextAsset }> = ({ asset }) => {
         width={asset.width}
       />
       {title ? (
-        <p className="mt-2 px-4 text-gray-600 text-xs lg:text-sm italic">
-          {title}
-        </p>
+        <p className="mt-2 px-4 text-gray-600 text-xs italic">{title}</p>
       ) : null}
     </div>
   );

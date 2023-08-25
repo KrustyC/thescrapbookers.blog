@@ -29,8 +29,8 @@ const MuxVideo: React.FC<MuxVideoProps> = ({ video }) => {
 
       <div
         className={classNames("relative", {
-          "w-full lg:w-[760px]": video.ratio === "16:9",
-          "w-full lg:w-[420px]": video.ratio === "9:16",
+          "w-full lg:w-[760px] xl:w-[800px]": video.ratio === "16:9",
+          "w-full lg:w-[420px] xl:w-[450px]": video.ratio === "9:16",
         })}
       >
         <p className="mt-2 text-gray-600 text-xs italic">{video.description}</p>
