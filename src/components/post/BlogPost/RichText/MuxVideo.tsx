@@ -11,11 +11,11 @@ interface MuxVideoProps {
 
 const MuxVideo: React.FC<MuxVideoProps> = ({ video }) => {
   return (
-    <div className="flex items-center flex-col mx-auto my-12">
+    <div className="flex items-center flex-col gap-2 mx-auto my-12">
       <div
         className={classNames("relative", {
-          "w-full lg:w-[760px] aspect-video": video.ratio === "16:9",
-          "w-full lg:w-[320px] aspect-[9/16]": video.ratio === "9:16",
+          "w-screen lg:w-[760px] aspect-video": video.ratio === "16:9",
+          "w-screen md:w-[320px] aspect-[9/16]": video.ratio === "9:16",
         })}
       >
         <MuxVideoReact
@@ -33,7 +33,7 @@ const MuxVideo: React.FC<MuxVideoProps> = ({ video }) => {
           "w-full lg:w-[420px] xl:w-[450px]": video.ratio === "9:16",
         })}
       >
-        <p className="mt-2 text-gray-600 text-xs italic">{video.description}</p>
+        <p className="px-4 md:px-0 text-gray-600 text-xs italic">{video.description}</p>
       </div>
     </div>
   );
