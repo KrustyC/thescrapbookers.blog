@@ -42,6 +42,18 @@ const GET_POST_QUERY = gql`
         richtext {
           json
           links {
+            entries {
+              block {
+                sys {
+                  id
+                }
+                ... on Video {
+                  video
+                  name
+                  description
+                }
+              }
+            }
             assets {
               block {
                 sys {

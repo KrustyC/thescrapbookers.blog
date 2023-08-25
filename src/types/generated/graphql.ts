@@ -84,6 +84,7 @@ export type Country = Entry & {
 };
 
 export type Entry = {
+  __typename?: String;
   contentfulMetadata: ContentfulMetadata;
 };
 
@@ -116,8 +117,23 @@ export type PostRichtextAssets = {
 };
 
 export type PostRichtextLinks = {
-  __typename?: "PostRichtextLinks";
+  __typename?: 'PostRichtextLinks';
   assets: PostRichtextAssets;
+  entries: PostRichtextEntries;
+};
+
+export type PostRichtextEntries = {
+  __typename?: 'PostRichtextEntries';
+  block: Array<Maybe<Entry>>;
+};
+
+export type Video = Entry & {
+  __typename?: 'Video';
+  contentfulMetadata: ContentfulMetadata;
+  name?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  sys: Sys;
+  video?: Maybe<Scalars['JSON']['output']>;
 };
 
 export type Sys = {

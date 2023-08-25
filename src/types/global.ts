@@ -84,9 +84,33 @@ export interface RichTextAsset {
   url?: string;
 }
 
+export interface VideoCaption {
+  id: string;
+  name: string;
+  type: string;
+  status: string;
+  text_type: string;
+  text_source: string;
+  language_code: string;
+  closed_captions: boolean;
+}
+
+export interface Video {
+  type?: "video";
+  id: string;
+  description: string;
+  ratio: string;
+  ready: boolean;
+  assetId: string;
+  playbackId: string;
+  version: number;
+  captions: VideoCaption[];
+}
+
 export interface RichText {
   json?: Document;
   assets?: Array<RichTextAsset | undefined>;
+  entries?: Array<Video | undefined>;
 }
 
 export interface Post {

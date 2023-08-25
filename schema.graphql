@@ -38,6 +38,13 @@ type Asset {
   height: Int
 }
 
+type Video implements Entry {
+  sys: Sys!
+  contentfulMetadata: ContentfulMetadata!
+  name(locale: String): String
+  video(locale: String): JSON
+}
+
 type Post implements Entry {
   title: String
   metaTitle: String
@@ -61,10 +68,15 @@ type PostRichtext {
 
 type PostRichtextLinks {
   assets: PostRichtextAssets!
+  entries: PostRichtextEntries!
 }
 
 type PostRichtextAssets {
   block: [Asset]!
+}
+
+type PostRichtextEntries {
+  block: [Entry]!
 }
 
 type Author implements Entry {

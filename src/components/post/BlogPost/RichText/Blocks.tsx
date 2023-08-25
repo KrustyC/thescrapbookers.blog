@@ -1,7 +1,10 @@
 import { Children, PropsWithChildren } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 
-import { RichTextAsset } from "@/types/global";
+import { RichTextAsset, Video } from "@/types/global";
+
+const DynamicVideo = dynamic(() => import("./MuxVideo"), { ssr: true });
 
 export const Bold: React.FC<PropsWithChildren> = ({ children }) => (
   <span className="font-bold">{children}</span>
@@ -125,6 +128,10 @@ export const Heading: React.FC<PropsWithChildren<HeadingProps>> = ({
   }
 };
 
+export const MuxVideo = ({ video }: { video: Video }) => (
+  <DynamicVideo video={video} />
+);
+
 export const Asset: React.FC<{ asset: RichTextAsset }> = ({ asset }) => {
   const url = asset.url;
   const title = asset.title;
@@ -135,7 +142,6 @@ export const Asset: React.FC<{ asset: RichTextAsset }> = ({ asset }) => {
   }
 
   if (asset.contentType?.startsWith("video/")) {
-    console.log(asset);
     return (
       <div className="relative mx-auto my-8 lg:my-16 loading-background w-full lg:w-[840px] aspect-video flex flex-col gap-2">
         <video

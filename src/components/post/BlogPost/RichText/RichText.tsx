@@ -20,6 +20,7 @@ import {
   Heading,
   Hyperlink,
   ListItem,
+  MuxVideo,
   OrderedList,
   Text,
   UnorderedList,
@@ -52,12 +53,16 @@ export const RichText: React.FC<{ richtext: RichTextType }> = ({
       [MARKS.BOLD]: (text) => <Bold>{text}</Bold>,
     },
     renderNode: {
-      [BLOCKS.QUOTE]: (block, children) => {
-        if (isBlockAnAlert(block)) {
-          return <Alert>{children}</Alert>;
+      [BLOCKS.EMBEDDED_ENTRY]: (block) => {
+        const entry = richtext.entries?.find((entry) => {
+          return entry?.id === block.data.target.sys.id;
+        });
+
+        if (!entry) {
+          return null;
         }
 
-        return <Blockquote>{children}</Blockquote>;
+        return <MuxVideo video={entry} />;
       },
       [BLOCKS.EMBEDDED_ASSET]: (block) => {
         const asset = richtext.assets?.find((asset) => {
@@ -69,6 +74,13 @@ export const RichText: React.FC<{ richtext: RichTextType }> = ({
         }
 
         return <Asset asset={asset} />;
+      },
+      [BLOCKS.QUOTE]: (block, children) => {
+        if (isBlockAnAlert(block)) {
+          return <Alert>{children}</Alert>;
+        }
+
+        return <Blockquote>{children}</Blockquote>;
       },
       [INLINES.HYPERLINK]: ({ data }, children) => (
         <Hyperlink uri={data.uri}>{children}</Hyperlink>

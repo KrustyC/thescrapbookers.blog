@@ -4,9 +4,11 @@ import { Document } from "@contentful/rich-text-types";
 import {
   Asset as AssetGraphQL,
   Country as CountryGraphQL,
+  Entry,
   Post as PostGraphQL,
+  Video as VideoGraphQL,
 } from "@/types/generated/graphql";
-import { Country, Post, RichTextAsset } from "@/types/global";
+import { Country, Post, RichTextAsset, Video } from "@/types/global";
 import { timeToRead } from "@/utils/content";
 import { generatePostHref } from "@/utils/hrefs";
 import { extractImageDataFromContentfulAsset } from "@/utils/images";
@@ -44,6 +46,33 @@ function parseLinkToAsset(
   };
 }
 
+function EntryIsVideo(entry: Entry): entry is VideoGraphQL {
+  return entry.__typename === "Video";
+}
+
+function parseLinkToEntry(graphQLLink: Entry | undefined): Video | undefined {
+  // if more type of Entries are added, this should be changed to accomodate them
+  if (!graphQLLink) {
+    return undefined;
+  }
+
+  if (EntryIsVideo(graphQLLink)) {
+    return {
+      type: "video",
+      id: graphQLLink.sys.id,
+      description: graphQLLink.description || "",
+      ratio: graphQLLink.video.ratio,
+      ready: graphQLLink.video.ready,
+      assetId: graphQLLink.video.assetId,
+      playbackId: graphQLLink.video.playbackId,
+      version: graphQLLink.video.version,
+      captions: graphQLLink.video.captions || [],
+    };
+  }
+
+  return undefined;
+}
+
 export function parseGraphQLPost(graphQLPost: PostGraphQL): Post {
   const mainImage = graphQLPost.mainImage
     ? extractImageDataFromContentfulAsset(graphQLPost.mainImage as any) // Contentful new types are fucking awful, so I had to hack around a bit
@@ -64,6 +93,9 @@ export function parseGraphQLPost(graphQLPost: PostGraphQL): Post {
       assets: graphQLPost.richtext?.links.assets.block
         .filter((asset) => !!asset)
         .map(parseLinkToAsset),
+      entries: graphQLPost.richtext?.links.entries.block
+        .filter((entry) => !!entry)
+        .map(parseLinkToEntry),
     },
     timeToRead: timeToRead(plainTextString),
     href: graphQLPost.slug
