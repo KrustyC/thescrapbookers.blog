@@ -9,13 +9,19 @@ interface MuxVideoProps {
   video: Video;
 }
 
+// const LANDSCAPE_ASPECT_RATIOS = ["16:9", "455:256"];
+const PORTRAIT_ASPECT_RATIOS = ["9:16"];
+
 const MuxVideo: React.FC<MuxVideoProps> = ({ video }) => {
+  const isPortrait = PORTRAIT_ASPECT_RATIOS.includes(video.ratio);
+  const isLandscape = !isPortrait;
+
   return (
     <div className="flex items-center flex-col gap-2 mx-auto my-12">
       <div
-        className={classNames("relative", {
-          "w-screen lg:w-[760px] aspect-video": video.ratio === "16:9",
-          "w-screen md:w-[320px] aspect-[9/16]": video.ratio === "9:16",
+        className={classNames("bg-gray-200 relative", {
+          "w-screen lg:w-[760px] xl:w-[800px] aspect-video": isLandscape,
+          "w-screen md:w-[320px] xl:w-[450px] aspect-[9/16]": isPortrait,
         })}
       >
         <MuxVideoReact
@@ -29,11 +35,13 @@ const MuxVideo: React.FC<MuxVideoProps> = ({ video }) => {
 
       <div
         className={classNames("relative", {
-          "w-full lg:w-[760px] xl:w-[800px]": video.ratio === "16:9",
-          "w-full lg:w-[420px] xl:w-[450px]": video.ratio === "9:16",
+          "w-full lg:w-[760px] xl:w-[800px]": isLandscape,
+          "w-full lg:w-[420px] xl:w-[450px]": isPortrait,
         })}
       >
-        <p className="px-4 md:px-0 text-gray-600 text-xs italic">{video.description}</p>
+        <p className="px-4 md:px-0 text-gray-600 text-xs italic">
+          {video.description}
+        </p>
       </div>
     </div>
   );
