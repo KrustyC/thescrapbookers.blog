@@ -8,6 +8,8 @@ export const URLS = {
     "https://www.instagram.com/the_scrapbookers?igshid=OTjhZDVkZWE=",
   twitterURL: () =>
     "https://twitter.com/TScrapbookers?t=oRRXwZatlSixeDLlCJXc3w&s=09",
+  mediumURL: () => "https://medium.com/@the_scrapbookers",
+  pinterestURL: () => "https://www.pinterest.com/The_Scrapbookers",
 };
 
 interface CreateAlternatesOptions {

@@ -4,6 +4,8 @@ import { useTranslations } from "next-intl";
 import Link from "next-intl/link";
 
 import { InstagramIcon } from "@/icons/Instagram";
+import { MediumIcon } from "@/icons/Medium";
+import { PinterestIcon } from "@/icons/Pinterest";
 import { TwitterIcon } from "@/icons/Twitter";
 import { AppLocale } from "@/types/global";
 import { URLS } from "@/utils/urls";
@@ -98,6 +100,12 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
             <div className="flex gap-4 justify-center md:justify-end">
               <CircularLink href={URLS.instagramURL()}>
                 <InstagramIcon className="text-black fill-primary h-6" />
+              </CircularLink>
+              <CircularLink href={URLS.pinterestURL()}>
+                <PinterestIcon className="text-black fill-primary h-6" />
+              </CircularLink>
+              <CircularLink href={URLS.mediumURL()}>
+                <MediumIcon className="text-primary fill-black h-6" />
               </CircularLink>
               <CircularLink href={URLS.twitterURL()}>
                 <TwitterIcon className="text-black fill-primary h-6" />
