@@ -41,12 +41,12 @@ interface InfoBoxProps {
 }
 
 const InfoBox: React.FC<InfoBoxProps> = ({ title, icon, value }) => (
-  <div className="flex gap-2 lg:flex-col">
+  <div className="flex items-center justify-between gap-2 lg:flex-col lg:items-start">
     <div className="flex items-start gap-1">
-      {icon ? <div className="mt-1">{icon}</div> : null}
-      <h3 className="uppercase font-medium text-lg md:text-xl">{title}</h3>
+      {icon ? <div className="mt-0.5 lg:mt-1">{icon}</div> : null}
+      <h3 className="uppercase font-medium text-base lg:text-xl">{title}</h3>
     </div>
-    <span>{formatValue(value)}</span>
+    <span className="ml-6 text-sm lg:text-base">{formatValue(value)}</span>
   </div>
 );
 
@@ -62,8 +62,8 @@ const DetailBox: React.FC<PropsWithChildren<DetailBoxProps>> = ({
 }) => (
   <div className="flex flex-col gap-2">
     <div className="flex items-start gap-1">
-      {icon ? <div className="mt-1">{icon}</div> : null}
-      <h3 className="uppercase font-medium text-xl w-3/5 lg:w-full">{title}</h3>
+      {icon ? <div className="mt-0.5 lg:mt-1">{icon}</div> : null}
+      <h3 className="uppercase font-medium text-base lg:text-xl">{title}</h3>
     </div>
     {children}
   </div>
@@ -107,11 +107,11 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
   const onToggleExpanded = () => setIsExpanded((currentVal) => !currentVal);
 
   return (
-    <div className="px-6 pt-12 pb-4 w-full 2xl:w-max 2xl:mx-auto flex flex-col rounded-2xl bg-cheatsheet/10 shadow-xl">
+    <div className="px-3 lg:px-6 pt-12 pb-4 w-full 2xl:w-max 2xl:mx-auto flex flex-col rounded-2xl bg-cheatsheet/10 shadow-xl">
       <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center border-y border-black py-6 px-2">
         <div className="flex flex-col">
           <div className="flex justify-between items-end mb-2">
-            <h2 className="text-3xl flex flex-col font-semibold">
+            <h2 className="text-2xl lg:text-3xl flex flex-col font-semibold">
               <span>{name}</span>
               <span>{copy.title}</span>
             </h2>
@@ -120,10 +120,10 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
             </div>
           </div>
           <p>{copy.description}</p>
-          <div className="flex items-center gap-2 pt-6">
+          <div className="flex items-center gap-1 lg:gap-2 pt-4 lg:pt-6">
             <VisaIcon className="w-10 h-10" />
             <a
-              className="underline font-medium text-xl"
+              className="underline font-medium text-base lg:text-xl"
               href={copy.info.eVisa.value}
               target="_blank"
               rel="noopener noreferrer"
@@ -143,7 +143,7 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
           "block h-auto": isExpanded,
         })}
       >
-        <div className="py-8 flex flex-col lg:flex-row lg:justify-between gap-x-2 gap-y-4 px-2">
+        <div className="py-8 flex flex-col lg:flex-row lg:justify-between flex-wrap gap-x-2 gap-y-6 px-2">
           <InfoBox
             title={copy.info.capital.heading}
             value={copy.info.capital.value}
@@ -179,7 +179,9 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
             >
               <ul>
                 {copy.info.dishes.value.map((dish, i) => (
-                  <li key={i}>{dish}</li>
+                  <li key={i} className="text-sm lg:text-base">
+                    {dish}
+                  </li>
                 ))}
               </ul>
             </DetailBox>
@@ -192,10 +194,15 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
             >
               <ul>
                 {copy.info.phrases.value.map(({ phrase, meaning }, i) => (
-                  <li key={i} className="flex items-center">
-                    <span className="h-full leading-7">{phrase} - </span>
-                    <span className="text-sm italic h-full leading-7">
-                      {meaning}
+                  <li
+                    key={i}
+                    className="flex flex-col lg:flex-row lg:items-center mb-3 last:mb-0 lg:mb-0"
+                  >
+                    <span className="h-full lg:leading-7 text-sm lg:text-base lg:mr-0.5">
+                      {phrase}
+                    </span>
+                    <span className="text-sm italic h-full lg:leading-7">
+                      - {meaning}
                     </span>
                   </li>
                 ))}
@@ -209,21 +216,25 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
             title={copy.info.coworkingSpaces.heading}
             icon={<OfficeIcon className="w-5 h-5" />}
           >
-            <div className="w-full flex flex-wrap gap-8 pt-2">
-              {copy.info.coworkingSpaces.value.map((space, i) => (
-                <div className="flex flex-col gap-2" key={i}>
-                  <Link
-                    className="text-2xl font-extralight font-poppins uppercase"
-                    href={space.website || ""}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {space.name}
-                  </Link>
-                  <span className="text-sm">{space.reason}</span>
-                </div>
-              ))}
-            </div>
+            {copy.info.coworkingSpaces.value.length > 0 ? (
+              <div className="w-full flex flex-wrap gap-4 lg:gap-8 pt-2">
+                {copy.info.coworkingSpaces.value.map((space, i) => (
+                  <div className="flex flex-col gap-0.5 lg:gap-2" key={i}>
+                    <Link
+                      className="text-lg lg:text-2xl !font-extralight font-poppins uppercase"
+                      href={space.website || ""}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {space.name}
+                    </Link>
+                    <span className="text-sm">{space.reason}</span>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <span className="font-semibold">N/A</span>
+            )}
           </DetailBox>
         </div>
       </div>

@@ -21,7 +21,7 @@ export const SouthKoreaFlag = () => {
         <path
           fill="none"
           stroke="#252422"
-          stroke-width={1.6002}
+          strokeWidth={1.6002}
           d="M12.54,15.01l5.32-7.99 M10.54,13.68l5.33-7.99 M8.55,12.35l5.33-7.99"
         />
         <path
@@ -31,13 +31,13 @@ export const SouthKoreaFlag = () => {
         <path
           fill="none"
           stroke="#252422"
-          stroke-width={1.6002}
+          strokeWidth={1.6002}
           d="M41.83,34.54l5.33-7.99 M39.83,33.21l5.33-7.99 M37.83,31.88l5.33-7.99"
         />
         <line
           fill="none"
           stroke="#FEFEFE"
-          stroke-width="0.7999"
+          strokeWidth="0.7999"
           x1="39.17"
           y1="26.99"
           x2="45.82"
@@ -58,7 +58,7 @@ export const SouthKoreaFlag = () => {
         <path
           fill="none"
           stroke="#252422"
-          stroke-width={1.6002}
+          strokeWidth={1.6002}
           d="M17.86,31.88l-5.32-7.99 M15.87,33.21l-5.33-7.99 M13.87,34.54l-5.33-7.99"
         />
         <path
@@ -68,7 +68,7 @@ export const SouthKoreaFlag = () => {
         <path
           fill="none"
           stroke="#252422"
-          stroke-width={1.6002}
+          strokeWidth={1.6002}
           d="M47.15,12.35l-5.33-7.99 M45.16,13.68l-5.33-7.99 M43.16,15.01l-5.33-7.99"
         />
         <path
@@ -78,7 +78,7 @@ export const SouthKoreaFlag = () => {
         <path
           fill="none"
           stroke="#FEFEFE"
-          stroke-width="0.7999"
+          strokeWidth="0.7999"
           d="M43.49,9.02l2-1.33 M39.17,11.91l2.33-1.55 M12.21,29.88l2-1.33"
         />
       </g>

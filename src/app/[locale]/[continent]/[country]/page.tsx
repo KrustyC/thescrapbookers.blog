@@ -83,8 +83,6 @@ export default async function CountryPage({
     isPreview: isEnabled,
   });
 
-  console.log(country.preposition)
-
   return (
     <div className="flex flex-col">
       {country.name ? (

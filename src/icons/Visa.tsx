@@ -22,7 +22,7 @@ export const VisaIcon: React.FC<VisaIconProps> = ({
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-miterlimit="10"
-        stroke-width="3"
+        strokeWidth="3"
         width="42.407"
         x="14.229"
         y="5.433"
@@ -35,7 +35,7 @@ export const VisaIcon: React.FC<VisaIconProps> = ({
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-miterlimit="10"
-        stroke-width="3"
+        strokeWidth="3"
       />
 
       <path
@@ -45,7 +45,7 @@ export const VisaIcon: React.FC<VisaIconProps> = ({
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-miterlimit="10"
-        stroke-width="3"
+        strokeWidth="3"
       />
 
       <path
@@ -55,7 +55,7 @@ export const VisaIcon: React.FC<VisaIconProps> = ({
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-miterlimit="10"
-        stroke-width="3"
+        strokeWidth="3"
       />
 
       <g>

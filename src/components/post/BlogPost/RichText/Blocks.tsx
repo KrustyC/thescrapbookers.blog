@@ -71,19 +71,20 @@ export const Hyperlink: React.FC<PropsWithChildren<HyperlinkProps>> = ({
     const match = YOUTUBE_VIDEO_ID_REGEX.exec(uri);
     const videoId = match && match[7].length === 11 ? match[7] : null;
 
+    if (!videoId) {
+      return null;
+    }
+    
     return (
-      videoId && (
-        <section className="w-full aspect-video mt-8">
-          <iframe
-            className="w-full h-full"
-            title={`https://youtube.com/embed/${videoId}`}
-            src={`https://youtube.com/embed/${videoId}`}
-            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-            frameBorder="0"
-            allowFullScreen={false}
-          />
-        </section>
-      )
+      <section className="w-full aspect-video mt-8">
+        <iframe
+          className="w-full h-full"
+          title={`https://youtube.com/embed/${videoId}`}
+          src={`https://youtube.com/embed/${videoId}`}
+          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen={false}
+        />
+      </section>
     );
   }
 
