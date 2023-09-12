@@ -88,6 +88,23 @@
       "title": "Info in pillole",
       "description": "Una serie di informazioni utili, e interessanti, visibili in un colpo d'occhio",
       "seeMore": "Espandi",
+      "seeLess": "Riduci",
+      "Headings": {
+        "capital": "Capitale",
+        "population": "Popolazione",
+        "languages": "Lingue Parlate",
+        "lifeExpectancy": "Asppettativa di Vita",
+        "currencies": "Valute",
+        "eVisa": "E-visa",
+        "dishes": "Piatti Tipici",
+        "phrases": "Frasi Utili",
+        "coworkingSpaces": "Spazi di Coworking preferiti e perchè"
+      },
+      "Values": {
+        "lifeExpectancy": "{years} anni"
+      }
+    },
+    "Articles": {
       "noArticles": "Al momento non ci sono articoli per questo paese, ma siamo gia all'opera; torna tra qualche giorno per trovare nuovi contenuti."
     }
   },

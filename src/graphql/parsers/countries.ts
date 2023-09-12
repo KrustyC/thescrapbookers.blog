@@ -12,7 +12,7 @@ function parseCommonPhrases(
   }
 
   return commonPhrases.map((commonPhrase) => ({
-    word: commonPhrase.word,
+    phrase: commonPhrase.phrase,
     meaning: commonPhrase.meaning,
   }));
 }
@@ -35,7 +35,7 @@ export function parseCheatsheet(
 ): CountryCheatsheet | undefined {
   const {
     capital,
-    lifeExpetancy,
+    lifeExpectancy,
     population,
     visaWebsite,
     currencies,
@@ -49,7 +49,7 @@ export function parseCheatsheet(
     typeof capital !== "string" ||
     typeof visaWebsite !== "string" ||
     typeof population !== "number" ||
-    typeof lifeExpetancy !== "number"
+    typeof lifeExpectancy !== "number"
   ) {
     return undefined;
   }
@@ -58,7 +58,7 @@ export function parseCheatsheet(
     capital,
     population,
     visaWebsite,
-    lifeExpetancy,
+    lifeExpectancy,
     currencies: Array.isArray(currencies) ? currencies : [],
     languages: Array.isArray(languages) ? languages : [],
     dishes: Array.isArray(dishes) ? dishes : [],

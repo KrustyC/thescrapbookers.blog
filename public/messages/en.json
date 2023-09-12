@@ -88,6 +88,23 @@
       "title": "Cheatsheet",
       "description": "A bunch of useful, and interesting facts, visible at a glance",
       "seeMore": "See more",
+      "seeLess": "See less",
+      "Headings": {
+        "capital": "Capital",
+        "population": "Population",
+        "languages": "Languages",
+        "lifeExpectancy": "Life Expectancy",
+        "currencies": "Currencies",
+        "eVisa": "E-visa",
+        "dishes": "Dishes to Look Out For",
+        "phrases": "Basic phrases",
+        "coworkingSpaces": "Favourite Coworking Space(s) & Why"
+      },
+      "Values": {
+        "lifeExpectancy": "{years} years"
+      }
+    },
+    "Articles": {
       "noArticles": "We are currently busy writing some articles, but fear none, you will find them here in just a few days."
     }
   },

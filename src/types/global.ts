@@ -21,7 +21,7 @@ export interface Continent {
 }
 
 export interface CountryCheatsheetCommonPhrase {
-  word: string;
+  phrase: string;
   meaning: string;
 }
 
@@ -32,7 +32,7 @@ export interface CountryCheatsheetCoworkingSpace {
 
 export interface CountryCheatsheet {
   capital: string;
-  lifeExpetancy: number;
+  lifeExpectancy: number;
   population: number;
   visaWebsite: string;
   currencies: string[];

@@ -74,7 +74,8 @@ export default async function CountryPage({
   params: { country: countrySlug, locale },
 }: CountryPageProps) {
   const { isEnabled } = draftMode();
-  const t = await getTranslator(locale, "Country.Cheatsheet");
+
+  const tArticles = await getTranslator(locale, "Country.Articles");
 
   const { country } = await getCountryWithPosts({
     slug: countrySlug,
@@ -127,7 +128,7 @@ export default async function CountryPage({
       ) : (
         <div className="px-4 lg:px-24 xl:px-48 pt-12 lg:pt-32 pb-12 lg:pb-24 flex flex-col items-center jusrtify-center gap-20">
           <h2 className="text-xl lg:text-2xl text-center lg:w-[720px]">
-            {t("noArticles")}
+            {tArticles("noArticles")}
           </h2>
           <div className="w-full lg:h-[400px] lg:w-[596px]">
             <ExamsIcon />

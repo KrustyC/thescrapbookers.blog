@@ -5,13 +5,19 @@ import classNames from "classnames";
 import Link from "next/link";
 
 import { BookIcon } from "@/icons/Book";
+import { CakeIcon } from "@/icons/Cake";
 import { ChevronDown } from "@/icons/ChevronDown";
 import { CityIcon } from "@/icons/City";
-// import { CurrencyEuroIcon } from "@/icons/CurrencyEuro";
-// import { LanguageIcon } from "@/icons/Language";
-// import { OfficeIcon } from "@/icons/Office";
+import { CurrencyEuroIcon } from "@/icons/CurrencyEuro";
+import { FoodBowlIcon } from "@/icons/FoodBowl";
+import { LanguageIcon } from "@/icons/Language";
+import { OfficeIcon } from "@/icons/Office";
 import { PeopleIcon } from "@/icons/People";
-import { Country } from "@/types/global";
+import {
+  Country,
+  CountryCheatsheetCommonPhrase,
+  CountryCheatsheetCoworkingSpace,
+} from "@/types/global";
 
 import { Flag } from "./Flag";
 
@@ -34,12 +40,12 @@ interface InfoBoxProps {
 }
 
 const InfoBox: React.FC<InfoBoxProps> = ({ title, icon, value }) => (
-  <div className="flex gap-2 lg:flex-col w-full">
+  <div className="flex gap-2 lg:flex-col">
     <div className="flex items-start gap-1">
       {icon ? <div className="mt-1">{icon}</div> : null}
-      <h3 className="uppercase font-medium text-xl w-3/5 lg:w-full">{title}</h3>
+      <h3 className="uppercase font-medium text-lg md:text-xl">{title}</h3>
     </div>
-    <span className="w-2/5 lg:w-full">{formatValue(value)}</span>
+    <span>{formatValue(value)}</span>
   </div>
 );
 
@@ -53,7 +59,7 @@ const DetailBox: React.FC<PropsWithChildren<DetailBoxProps>> = ({
   icon,
   children,
 }) => (
-  <div className="flex flex-col gap-2 w-full">
+  <div className="flex flex-col gap-2">
     <div className="flex items-start gap-1">
       {icon ? <div className="mt-1">{icon}</div> : null}
       <h3 className="uppercase font-medium text-xl w-3/5 lg:w-full">{title}</h3>
@@ -62,12 +68,31 @@ const DetailBox: React.FC<PropsWithChildren<DetailBoxProps>> = ({
   </div>
 );
 
+interface CheatsheetBannerInfo<T> {
+  heading: string;
+  value: T;
+}
+
+export interface CheatsheetBannerInfos {
+  capital: CheatsheetBannerInfo<string>;
+  population: CheatsheetBannerInfo<string>;
+  lifeExpectancy: CheatsheetBannerInfo<string>;
+  languages: CheatsheetBannerInfo<string[]>;
+  currencies: CheatsheetBannerInfo<string[]>;
+  eVisa: CheatsheetBannerInfo<string>;
+  dishes: CheatsheetBannerInfo<string[]>;
+  phrases: CheatsheetBannerInfo<CountryCheatsheetCommonPhrase[]>;
+  coworkingSpaces: CheatsheetBannerInfo<CountryCheatsheetCoworkingSpace[]>;
+}
+
 interface CheatsheetBannerProps {
   country: Required<Pick<Country, "name" | "slug" | "cheatsheet">>;
   copy: {
     title: string;
     description: string;
     seeMore: string;
+    seeLess: string;
+    info: CheatsheetBannerInfos;
   };
 }
 
@@ -75,13 +100,13 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
   country,
   copy,
 }) => {
-  const { name, slug, cheatsheet } = country;
+  const { name, slug } = country;
   const [isExpanded, setIsExpanded] = useState(false);
 
   const onToggleExpanded = () => setIsExpanded((currentVal) => !currentVal);
 
   return (
-    <div className="px-5 py-8 w-full 2xl:w-max 2xl:mx-auto flex flex-col rounded-2xl bg-cheatsheet/10 shadow-xl">
+    <div className="px-5 pt-12 pb-4 w-full 2xl:w-max 2xl:mx-auto flex flex-col rounded-2xl bg-cheatsheet/10 shadow-xl">
       <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center border-y border-black py-6">
         <div className="flex flex-col">
           <div className="flex justify-between items-end mb-2">
@@ -107,73 +132,97 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
         })}
       >
         <div className="py-8 flex flex-col lg:flex-row lg:justify-between gap-x-2 gap-y-4">
-          {/* <InfoBox
-            title="Language"
-            value={cheatsheet.language}
-            icon={<LanguageIcon className="w-5 h-5" />}
-          /> */}
           <InfoBox
-            title="Capital"
-            value={cheatsheet.capital}
+            title={copy.info.capital.heading}
+            value={copy.info.capital.value}
             icon={<CityIcon className="w-5 h-5" />}
           />
-          {/* <InfoBox
-            title="Currency"
-            value={cheatsheet.currency}
-            icon={<CurrencyEuroIcon className="w-5 h-5" />}
-          /> */}
           <InfoBox
-            title="Population"
-            value={cheatsheet.population}
+            title={copy.info.population.heading}
+            value={copy.info.population.value}
             icon={<PeopleIcon className="w-5 h-5" />}
           />
-        </div>
-        <div className="py-8 flex flex-col lg:flex-row gap-y-8 border-t border-black">
-          <DetailBox
-            title="5 Basic Words"
-            icon={<BookIcon className="w-5 h-5" />}
-          >
-            <ul>
-              {cheatsheet.commonPhrases.map(({ word, meaning }, i) => (
-                <li key={i}>
-                  {word} (<span className="italic">{meaning}</span>)
-                </li>
-              ))}
-            </ul>
-          </DetailBox>
-          <DetailBox title="Dishes to Look Out For">
-            <ul>
-              {cheatsheet.dishes.map((dish, i) => (
-                <li key={i}>{dish}</li>
-              ))}
-            </ul>
-          </DetailBox>
-          <DetailBox title="Visa Website">
-            <Link
+          <InfoBox
+            title={copy.info.languages.heading}
+            value={copy.info.languages.value}
+            icon={<LanguageIcon className="w-5 h-5" />}
+          />
+          <InfoBox
+            title={copy.info.lifeExpectancy.heading}
+            value={copy.info.lifeExpectancy.value}
+            icon={<CakeIcon className="w-5 h-5" />}
+          />
+          <InfoBox
+            title={copy.info.currencies.heading}
+            value={copy.info.currencies.value}
+            icon={<CurrencyEuroIcon className="w-5 h-5" />}
+          />
+          {/* <DetailBox title={copy.headings["e-visa"]} icon={<BookIcon className="w-5 h-5" />}>
+            <a
+              className="underline text-primary"
               href={cheatsheet.visaWebsite}
               target="_blank"
               rel="noopener noreferrer"
             >
-              {cheatsheet.visaWebsite}
-            </Link>
-          </DetailBox>
+              Link
+            </a>
+          </DetailBox> */}
+        </div>
 
-          {/* <DetailBox
-            title="Fave Coworking Space"
+        <div className="flex flex-col lg:flex-row border-t border-black">
+          <div className="py-8 border-b lg:border-b-0 lg:border-r border-black flex-1 lg:pr-12">
+            <DetailBox
+              title={copy.info.dishes.heading}
+              icon={<FoodBowlIcon className="w-5 h-5" />}
+            >
+              <ul>
+                {copy.info.dishes.value.map((dish, i) => (
+                  <li key={i}>{dish}</li>
+                ))}
+              </ul>
+            </DetailBox>
+          </div>
+
+          <div className="py-8 flex-1 lg:pl-12">
+            <DetailBox
+              title={copy.info.phrases.heading}
+              icon={<BookIcon className="w-5 h-5" />}
+            >
+              <ul>
+                {copy.info.phrases.value.map(({ phrase, meaning }, i) => (
+                  <li key={i} className="flex items-center">
+                    <span className="h-full leading-7">{phrase} - </span>
+                    <span className="text-sm italic h-full leading-7">
+                      {meaning}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </DetailBox>
+          </div>
+        </div>
+
+        <div className="flex flex-col lg:flex-row gap-y-8 border-t border-black py-8">
+          <DetailBox
+            title={copy.info.coworkingSpaces.heading}
             icon={<OfficeIcon className="w-5 h-5" />}
           >
-            {cheatsheet?.faveCoworkingSpace ? (
-              <Link
-                href={cheatsheet?.faveCoworkingSpace?.website || ""}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {cheatsheet.faveCoworkingSpace.name}
-              </Link>
-            ) : (
-              <span>Missing coworking space</span>
-            )}
-          </DetailBox> */}
+            <div className="w-full flex gap-8 pt-2">
+              {copy.info.coworkingSpaces.value.map((space, i) => (
+                <div className="flex flex-col gap-2" key={i}>
+                  <Link
+                    className="text-2xl font-extralight font-poppins uppercase"
+                    href={space.website || ""}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {space.name}
+                  </Link>
+                  <span className="text-sm">Culture/food/un sacco de fica</span>
+                </div>
+              ))}
+            </div>
+          </DetailBox>
         </div>
       </div>
 
@@ -189,7 +238,7 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
             }
           )}
         />
-        <span>{copy.seeMore}</span>
+        <span>{isExpanded ? copy.seeLess : copy.seeMore}</span>
         <ChevronDown
           className={classNames(
             "w-5 h-5 transition-rotate duration-300 ease-in-out",
