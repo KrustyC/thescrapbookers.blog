@@ -54,6 +54,7 @@ export async function generateMetadata({
         siteName: "The Scrapbookers",
         images,
         locale,
+        url: new URL(`/locale${post.href || ""}`, process.env.NEXT_PUBLIC_BASE_URL),
       },
       twitter: {
         card: "summary_large_image",

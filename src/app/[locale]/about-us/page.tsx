@@ -25,6 +25,7 @@ export async function generateMetadata({
       description: t("description"),
       siteName: "The Scrapbookers",
       locale,
+      url: new URL("/about-us", process.env.NEXT_PUBLIC_BASE_URL),
       images: [
         {
           url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/about_us.webp`,
