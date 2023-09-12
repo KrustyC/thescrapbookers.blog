@@ -35,7 +35,7 @@ export const ShareButton: React.FC<ShareButtonProps> = ({ text, title }) => {
       try {
         await navigator.share(shareDetails);
       } catch (error) {
-        console.log(`Oops! I couldn't share to the world because: ${error}`);
+        console.log(`Oops! I couldn not share to the world because: ${error}`);
       }
     } else {
       setShowPanel(true);
