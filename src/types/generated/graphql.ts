@@ -80,6 +80,7 @@ export type Country = Entry & {
   metaTitle?: Maybe<Scalars["String"]["output"]>;
   name?: Maybe<Scalars["String"]["output"]>;
   slug?: Maybe<Scalars["String"]["output"]>;
+  preposition?: Maybe<Scalars['String']['output']>;
   thumbnailImage?: Maybe<Asset>;
 };
 

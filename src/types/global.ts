@@ -28,6 +28,7 @@ export interface CountryCheatsheetCommonPhrase {
 export interface CountryCheatsheetCoworkingSpace {
   name: string;
   website: string;
+  reason: string;
 }
 
 export interface CountryCheatsheet {
@@ -42,6 +43,16 @@ export interface CountryCheatsheet {
   coworkingSpaces: CountryCheatsheetCoworkingSpace[];
 }
 
+export type CountryPreposition =
+  | "simple"
+  | "articulateMaleSingularCut"
+  | "articulateMaleSingular"
+  | "articulateFemaleSingular"
+  | "articulateMalePluralRegular"
+  | "articulateMalePluralOdd"
+  | "articulateFemalePluralRegular"
+  | "articulatePluralApostrophe";
+
 export interface Country {
   name?: string;
   slug?: string;
@@ -50,6 +61,7 @@ export interface Country {
   thumbnailImage?: Image;
   description?: string;
   metaDescription?: string;
+  preposition?: CountryPreposition;
   cheatsheet?: CountryCheatsheet;
   continent?: Pick<Continent, "name" | "slug">;
 }

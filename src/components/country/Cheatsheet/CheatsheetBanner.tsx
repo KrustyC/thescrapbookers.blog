@@ -207,7 +207,7 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
             title={copy.info.coworkingSpaces.heading}
             icon={<OfficeIcon className="w-5 h-5" />}
           >
-            <div className="w-full flex gap-8 pt-2">
+            <div className="w-full flex flex-wrap gap-8 pt-2">
               {copy.info.coworkingSpaces.value.map((space, i) => (
                 <div className="flex flex-col gap-2" key={i}>
                   <Link
@@ -218,7 +218,7 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
                   >
                     {space.name}
                   </Link>
-                  <span className="text-sm">Culture/food/un sacco de fica</span>
+                  <span className="text-sm">{space.reason}</span>
                 </div>
               ))}
             </div>

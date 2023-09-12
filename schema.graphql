@@ -91,6 +91,7 @@ type Country implements Entry {
   description: String
   mainImage: Asset
   thumbnailImage: Asset
+  preposition: String
   continent: Continent
   cheatsheet: JSON
 }

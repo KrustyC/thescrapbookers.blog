@@ -5,7 +5,7 @@ import {
   Country as CountryGraphQL,
   Post as PostGraphQL,
 } from "@/types/generated/graphql";
-import { AppLocale, Country, Post } from "@/types/global";
+import { AppLocale, Country, CountryPreposition, Post } from "@/types/global";
 import { generatePostHref } from "@/utils/hrefs";
 import { extractImageDataFromContentfulAsset } from "@/utils/images";
 
@@ -20,6 +20,7 @@ type CountryWithPostsGraphQL = Pick<
   CountryGraphQL,
   | "name"
   | "slug"
+  | "preposition"
   | "metaDescription"
   | "metaTitle"
   | "description"
@@ -77,6 +78,7 @@ const GET_COUNTRY_WITH_POSTS_QUERY = gql`
         metaDescription
         metaTitle
         description
+        preposition
         continent {
           name
           slug
@@ -139,6 +141,9 @@ export async function getCountryWithPosts({
       country: {
         name: country.name,
         slug: country.slug,
+        preposition: country.preposition
+          ? (country.preposition as CountryPreposition)
+          : undefined,
         cheatsheet: country.cheatsheet
           ? parseCheatsheet(country.cheatsheet)
           : undefined,

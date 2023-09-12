@@ -92,8 +92,8 @@
       "Headings": {
         "capital": "Capitale",
         "population": "Popolazione",
-        "languages": "Lingue Parlate",
-        "lifeExpectancy": "Asppettativa di Vita",
+        "languages": "Lingue Ufficiali",
+        "lifeExpectancy": "Aspettativa di Vita",
         "currencies": "Valute",
         "eVisa": "E-visa",
         "dishes": "Piatti Tipici",
@@ -105,6 +105,7 @@
       }
     },
     "Articles": {
+      "heading": "Articoli {preposition, select, simple {da} articulateMaleSingularCut {dal} articulateMaleSingular {dallo} articulateFemaleSingular {dalla} articulateMalePluralRegular {dai} articulateMalePluralOdd {dagli} articulateFemalePluralRegular {dalle} articulatePluralApostrophe {dall’} other {da}} {country}",
       "noArticles": "Al momento non ci sono articoli per questo paese, ma siamo gia all'opera; torna tra qualche giorno per trovare nuovi contenuti."
     }
   },

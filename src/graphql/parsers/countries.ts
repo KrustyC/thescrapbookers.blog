@@ -27,6 +27,7 @@ function parseCoworkingSpaces(
   return coworkingSpaces.map((coworkingSpace) => ({
     name: coworkingSpace.name,
     website: coworkingSpace.website,
+    reason: coworkingSpace.reason,
   }));
 }
 
@@ -41,6 +42,7 @@ export function parseCheatsheet(
     currencies,
     languages,
     dishes,
+    preposition,
     commonPhrases,
     coworkingSpaces,
   } = cheatsheet;

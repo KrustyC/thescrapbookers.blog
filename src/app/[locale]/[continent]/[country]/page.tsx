@@ -83,6 +83,8 @@ export default async function CountryPage({
     isPreview: isEnabled,
   });
 
+  console.log(country.preposition)
+
   return (
     <div className="flex flex-col">
       {country.name ? (
@@ -115,7 +117,10 @@ export default async function CountryPage({
         <div className="px-8 lg:px-24 xl:px-48 mt-8 mb-24">
           <div className="w-full 2xl:w-max 2xl:mx-auto flex flex-col">
             <h2 className="text-3xl lg:text-5xl font-semibold mb-8 lg:mb-12">
-              Articles from {country.name}
+              {tArticles("heading", {
+                preposition: country.preposition,
+                country: country.name,
+              })}
             </h2>
 
             <div className="grid gap-x-12 gap-y-16 grid-cols-1 lg:grid-cols-3">

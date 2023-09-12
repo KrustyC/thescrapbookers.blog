@@ -105,6 +105,7 @@
       }
     },
     "Articles": {
+      "heading": "Articles from {country}",
       "noArticles": "We are currently busy writing some articles, but fear none, you will find them here in just a few days."
     }
   },
