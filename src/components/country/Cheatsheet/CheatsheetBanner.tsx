@@ -4,15 +4,16 @@ import { PropsWithChildren, useState } from "react";
 import classNames from "classnames";
 import Link from "next/link";
 
+import { BanknotesIcon } from "@/icons/Banknotes";
 import { BookIcon } from "@/icons/Book";
 import { CakeIcon } from "@/icons/Cake";
 import { ChevronDown } from "@/icons/ChevronDown";
 import { CityIcon } from "@/icons/City";
-import { CurrencyEuroIcon } from "@/icons/CurrencyEuro";
 import { FoodBowlIcon } from "@/icons/FoodBowl";
 import { LanguageIcon } from "@/icons/Language";
 import { OfficeIcon } from "@/icons/Office";
 import { PeopleIcon } from "@/icons/People";
+import { VisaIcon } from "@/icons/Visa";
 import {
   Country,
   CountryCheatsheetCommonPhrase,
@@ -106,8 +107,8 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
   const onToggleExpanded = () => setIsExpanded((currentVal) => !currentVal);
 
   return (
-    <div className="px-5 pt-12 pb-4 w-full 2xl:w-max 2xl:mx-auto flex flex-col rounded-2xl bg-cheatsheet/10 shadow-xl">
-      <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center border-y border-black py-6">
+    <div className="px-6 pt-12 pb-4 w-full 2xl:w-max 2xl:mx-auto flex flex-col rounded-2xl bg-cheatsheet/10 shadow-xl">
+      <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center border-y border-black py-6 px-2">
         <div className="flex flex-col">
           <div className="flex justify-between items-end mb-2">
             <h2 className="text-3xl flex flex-col font-semibold">
@@ -119,6 +120,17 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
             </div>
           </div>
           <p>{copy.description}</p>
+          <div className="flex items-center gap-2 pt-6">
+            <VisaIcon className="w-10 h-10" />
+            <a
+              className="underline font-medium text-xl"
+              href={copy.info.eVisa.value}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {copy.info.eVisa.heading}
+            </a>
+          </div>
         </div>
 
         <div className="hidden lg:block">
@@ -131,7 +143,7 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
           "block h-auto": isExpanded,
         })}
       >
-        <div className="py-8 flex flex-col lg:flex-row lg:justify-between gap-x-2 gap-y-4">
+        <div className="py-8 flex flex-col lg:flex-row lg:justify-between gap-x-2 gap-y-4 px-2">
           <InfoBox
             title={copy.info.capital.heading}
             value={copy.info.capital.value}
@@ -155,21 +167,11 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
           <InfoBox
             title={copy.info.currencies.heading}
             value={copy.info.currencies.value}
-            icon={<CurrencyEuroIcon className="w-5 h-5" />}
+            icon={<BanknotesIcon className="w-5 h-5" />}
           />
-          {/* <DetailBox title={copy.headings["e-visa"]} icon={<BookIcon className="w-5 h-5" />}>
-            <a
-              className="underline text-primary"
-              href={cheatsheet.visaWebsite}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Link
-            </a>
-          </DetailBox> */}
         </div>
 
-        <div className="flex flex-col lg:flex-row border-t border-black">
+        <div className="flex flex-col lg:flex-row border-t border-black px-2">
           <div className="py-8 border-b lg:border-b-0 lg:border-r border-black flex-1 lg:pr-12">
             <DetailBox
               title={copy.info.dishes.heading}
@@ -202,7 +204,7 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-y-8 border-t border-black py-8">
+        <div className="flex flex-col lg:flex-row gap-y-8 border-t border-black py-8 px-2">
           <DetailBox
             title={copy.info.coworkingSpaces.heading}
             icon={<OfficeIcon className="w-5 h-5" />}
