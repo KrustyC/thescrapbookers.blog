@@ -88,6 +88,24 @@
       "title": "Info in pillole",
       "description": "Una serie di informazioni utili, e interessanti, visibili in un colpo d'occhio",
       "seeMore": "Espandi",
+      "seeLess": "See less",
+      "Headings": {
+        "capital": "Capital",
+        "population": "Population",
+        "languages": "Languages",
+        "lifeExpectancy": "Life Expectancy",
+        "currencies": "Currencies",
+        "eVisa": "Official website for visa and e-visa",
+        "dishes": "Dishes to Look Out For",
+        "phrases": "Basic phrases",
+        "coworkingSpaces": "Favourite Coworking Space(s) & Why"
+      },
+      "Values": {
+        "lifeExpectancy": "{years} years"
+      }
+    },
+    "Articles": {
+      "heading": "Articles from {country}",
       "noArticles": "We are currently busy writing some articles, but fear none, you will find them here in just a few days."
     }
   },
