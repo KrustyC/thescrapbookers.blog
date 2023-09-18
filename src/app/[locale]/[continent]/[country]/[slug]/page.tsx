@@ -1,9 +1,11 @@
+import format from "date-fns/format";
 import type { Metadata } from "next";
 import { draftMode } from "next/headers";
 import Link from "next-intl/link";
 import { getTranslator } from "next-intl/server";
+import { BlogPosting, WithContext } from "schema-dts";
 
-import { BlogPost } from "@/components/post/BlogPost/BlogPost";
+import { BlogPost, getAuthorImage } from "@/components/post/BlogPost/BlogPost";
 import { getPost } from "@/graphql/queries/get-post.query";
 import { ArticleNotFoundIcon } from "@/icons/ArticleNotFound";
 import { AppLocale } from "@/types/global";
@@ -54,7 +56,10 @@ export async function generateMetadata({
         siteName: "The Scrapbookers",
         images,
         locale,
-        url: new URL(`/locale${post.href || ""}`, process.env.NEXT_PUBLIC_BASE_URL),
+        url: new URL(
+          `/${locale}${post.href || ""}`,
+          process.env.NEXT_PUBLIC_BASE_URL
+        ),
       },
       twitter: {
         card: "summary_large_image",
@@ -97,16 +102,49 @@ export default async function PostPage({
     );
   }
 
+  const url = `${process.env.NEXT_PUBLIC_BASE_URL}/${locale}${post.href || ""}`;
+
+  const jsonLd: WithContext<BlogPosting> = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${url}/#BlogPosting`,
+    name: post.title,
+    description: post.metaDescription,
+    datePublished: post.date
+      ? format(new Date(post.date), "yyyy-MM-dd")
+      : undefined,
+    author: {
+      "@type": "Person",
+      "@id": `${post.author?.name}/#Person`,
+      name: post.author?.name,
+    },
+    image: {
+      "@type": "ImageObject",
+      "@id": `${post.thumbnailImage?.url}/#ImageObject`,
+      url: post.thumbnailImage?.url,
+      height: "362",
+      width: "388",
+    },
+    url,
+  };
+
   return (
-    <BlogPost
-      post={post}
-      nextPost={nextPost}
-      locale={locale}
-      copy={{
-        shareText: t("shareText"),
-        timeToRead: t("timeToRead"),
-        writtenByText: t("writtenBy"),
-      }}
-    />
+    <>
+      <BlogPost
+        post={post}
+        nextPost={nextPost}
+        locale={locale}
+        copy={{
+          shareText: t("shareText"),
+          timeToRead: t("timeToRead"),
+          writtenByText: t("writtenBy"),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+    </>
   );
 }

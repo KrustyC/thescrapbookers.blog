@@ -23,7 +23,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   const navbar = useTranslations("Global.NavbarLinks");
 
   return (
-    <div className="flex justify-between w-full h-24 bg-transparent absolute top-0 left-0 right-0 z-50 px-6 lg:px-24">
+    <nav className="flex justify-between w-full h-24 bg-transparent absolute top-0 left-0 right-0 z-50 px-6 lg:px-24">
       <Link className="relative h-full w-44 md:w-56" href="/">
         <Image
           src={logoPic}
@@ -53,6 +53,6 @@ export const Navbar: React.FC<NavbarProps> = ({
           }}
         />
       </div>
-    </div>
+    </nav>
   );
 };

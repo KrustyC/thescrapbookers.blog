@@ -37,7 +37,7 @@ export const BlogPostLoading = () => (
   </div>
 );
 
-function getImage(authorName: string | undefined) {
+export function getAuthorImage(authorName: string | undefined) {
   switch (authorName) {
     case "Davide Crestini":
       return {
@@ -69,7 +69,7 @@ interface ArticleAuthorAndPublishDateProps {
 const ArticleAuthorAndPublishDate: React.FC<
   ArticleAuthorAndPublishDateProps
 > = ({ author, timeToRead, publishedDate, copy, locale }) => {
-  const authorImage = getImage(author.name);
+  const authorImage = getAuthorImage(author.name);
 
   return (
     <div className="flex justify-between items-center mt-10 lg:mt-16 lg:w-[720px] mx-6 lg:mx-auto">

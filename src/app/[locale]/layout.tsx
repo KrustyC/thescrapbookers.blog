@@ -3,8 +3,9 @@ import { Metadata } from "next";
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import Script from "next/script";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { getTranslator } from "next-intl/server";
+import { WebSite, WithContext } from "schema-dts";
 
 import { PreviewBadge } from "@/components/PreviewBadge";
 import { AppLocale } from "@/types/global";
@@ -78,10 +79,23 @@ export async function generateMetadata({
 export default function LocaleLayout({ children, params }: Props) {
   const locale = useLocale();
   const { isEnabled } = draftMode();
+
   // Show a 404 error if the user requests an unknown locale
   if (params.locale !== locale) {
     notFound();
   }
+
+  const jsonLd: WithContext<WebSite> = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    url: process.env.NEXT_PUBLIC_BASE_URL,
+    name: "The Scrapbookers",
+    // potentialAction: {
+    //   "@type": "SearchAction",
+    //   target: "http://example.com/search?&q={query}",
+    //   query: "required",
+    // },
+  };
 
   return (
     <html
@@ -109,6 +123,11 @@ export default function LocaleLayout({ children, params }: Props) {
                 gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');
                 `}
           </Script>
+
+          <Script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
 
           {/* @TODO
            * Check this https://nextjs.org/docs/app/building-your-application/optimizing/scripts
