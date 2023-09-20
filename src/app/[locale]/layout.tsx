@@ -125,6 +125,7 @@ export default function LocaleLayout({ children, params }: Props) {
           </Script>
 
           <Script
+            id="website-json-ld"
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           />

@@ -1,11 +1,11 @@
 import { draftMode, headers } from "next/headers";
-import { redirect } from "next/navigation";
+import { NextResponse } from "next/server";
 
-export async function GET(request: Request) {
+export async function GET(_: Request) {
   draftMode().disable();
 
   const headersList = headers();
   const referer = headersList.get("referer");
 
-  redirect(referer || "/");
+  return NextResponse.redirect(referer || "/");
 }

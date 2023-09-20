@@ -141,8 +141,8 @@ export default async function PostPage({
         }}
       />
 
-      {/* eslint-disable-next-line @next/next/inline-script-id */}
       <script
+        id="json-ld-article"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
