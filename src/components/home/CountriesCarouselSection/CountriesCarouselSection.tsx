@@ -6,6 +6,7 @@ import { getCountriesForContinent } from "@/graphql/queries/get-countries-for-co
 import { AppLocale } from "@/types/global";
 
 import thailandPic from "../../../../public/images/chiang_mai_tower.webp";
+import malaysiaPic from "../../../../public/images/kuala_lumpur_mosque.webp";
 import cambodiaPic from "../../../../public/images/monk_walking_in_a_temple_near_angkor_wat.webp";
 import laosPic from "../../../../public/images/vientiane_man_working_with_cables.webp";
 import vietnamPic from "../../../../public/images/woman_pushing_a_bike_with_flowers_in_hanoi.webp";
@@ -19,6 +20,7 @@ interface Copy {
   laos: string;
   vietnam: string;
   cambodia: string;
+  malaysia: string;
 }
 
 function getImage(slug: string | undefined, copy: Copy) {
@@ -42,6 +44,11 @@ function getImage(slug: string | undefined, copy: Copy) {
       return {
         src: cambodiaPic,
         alt: copy.cambodia,
+      };
+    case "malaysia":
+      return {
+        src: malaysiaPic,
+        alt: copy.malaysia,
       };
     default:
       return {
@@ -74,6 +81,7 @@ export default async function CountriesCarouselSection({
     laos: t("laos"),
     vietnam: t("vietnam"),
     cambodia: t("cambodia"),
+    malaysia: t("malaysia"),
   };
 
   const slides = countries.map((country) => ({
