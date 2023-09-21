@@ -18,7 +18,7 @@ export const Title: React.FC<TitleProps> = ({
         {titlePart2}
       </h1>
       <div className="flex flex-col-reverse lg:flex-row lg:justify-between lg:items-start gap-4 lg:gap-0">
-        <p className="lg:max-w-[600px] text-xl md:text-2xl lg:text-3xl !font-light font-poppins">
+        <p className="lg:max-w-[600px] text-xl md:text-2xl lg:text-3xl lg:!font-light font-poppins">
           {subtitle}
         </p>
         <span className="uppercase text-4xl lg:text-7xl font-league-gothic">
