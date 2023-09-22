@@ -5,7 +5,7 @@ import { unstable_setRequestLocale } from "next-intl/server";
 import { ContinentHero } from "@/components/continent/ContinentHero";
 import { Country } from "@/components/continent/Country";
 import { getContinentWithCountries } from "@/graphql/queries/get-continent-with-countries";
-import { AppLocale } from "@/types/global";
+import { AppLocale, Continent } from "@/types/global";
 import { LOCALES } from "@/utils/constants";
 import { createAlternates } from "@/utils/urls";
 
@@ -14,10 +14,6 @@ interface ContinentPageProps {
     continent: string;
     locale: AppLocale;
   };
-}
-
-export function generateStaticParams() {
-  return LOCALES.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
@@ -63,6 +59,23 @@ export async function generateMetadata({
       images,
     },
   };
+}
+
+export async function generateStaticParams() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/continent`, {
+    next: { revalidate: 3600 },
+  });
+
+  const { continents } = await res.json();
+
+  return LOCALES.map((locale) => {
+    return continents.map((continent: Continent) => ({
+      params: {
+        continent: continent.slug,
+        locale,
+      },
+    }));
+  });
 }
 
 export default async function ContinentPage({ params }: ContinentPageProps) {

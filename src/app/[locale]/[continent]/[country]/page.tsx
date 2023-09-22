@@ -7,6 +7,7 @@ import { CountryHero } from "@/components/country/CountryHero";
 import { PostCard } from "@/components/PostCard/PostCard";
 import { getCountryWithPosts } from "@/graphql/queries/get-country-with-posts.query";
 import { ExamsIcon } from "@/icons/Exams";
+import { Country } from "@/types/generated/graphql";
 import { AppLocale } from "@/types/global";
 import { LOCALES } from "@/utils/constants";
 import { createAlternates } from "@/utils/urls";
@@ -63,8 +64,21 @@ export async function generateMetadata({
   };
 }
 
-export function generateStaticParams() {
-  return LOCALES.map((locale) => ({ locale }));
+export async function generateStaticParams() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/country`, {
+    next: { revalidate: 3600 },
+  });
+
+  const { countries } = await res.json();
+
+  return LOCALES.map((locale) => {
+    return countries.map((country: Country) => ({
+      params: {
+        country: country.slug,
+        locale,
+      },
+    }));
+  });
 }
 
 export default async function CountryPage({

@@ -74,9 +74,9 @@ export async function generateMetadata({
   }
 }
 
-export function generateStaticParams() {
-  return LOCALES.map((locale) => ({ locale }));
-}
+// export function generateStaticParams() {
+//   return LOCALES.map((locale) => ({ locale }));
+// }
 
 export default async function PostPage({
   params: { slug, locale },
