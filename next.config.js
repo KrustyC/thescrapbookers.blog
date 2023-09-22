@@ -11,42 +11,28 @@ const nextConfig = withNextIntl({
   images: {
     domains: ["images.ctfassets.net"],
   },
-  headers() {
-    return [
-      {
-        // Cache all content pages
-        source: "/((?!_next|!sitemap.xml|.*\\..*).*)",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: [
-              `s-maxage=` + ms("1d") / 1000,
-              `stale-while-revalidate=` + ms("30d") / 1000,
-            ].join(", "),
-          },
-        ],
-        missing: [
-          {
-            type: "header",
-            key: "Next-Router-Prefetch",
-          },
-        ],
-      },
-    ];
-  },
-  // async redirects() {
+  // headers() {
   //   return [
   //     {
-  //       source: '/en',
-  //       destination: '/',
-  //       permanent: true
+  //       // Cache all content pages
+  //       source: "/((?!_next|!sitemap.xml|.*\\..*).*)",
+  //       headers: [
+  //         {
+  //           key: "Cache-Control",
+  //           value: [
+  //             `s-maxage=` + ms("1d") / 1000,
+  //             `stale-while-revalidate=` + ms("30d") / 1000,
+  //           ].join(", "),
+  //         },
+  //       ],
+  //       missing: [
+  //         {
+  //           type: "header",
+  //           key: "Next-Router-Prefetch",
+  //         },
+  //       ],
   //     },
-  //     {
-  //       source: '/en/:path*',
-  //       destination: '/:path*',
-  //       permanent: true
-  //     },
-  //   ]
+  //   ];
   // },
 });
 

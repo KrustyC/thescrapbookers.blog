@@ -1,3 +1,5 @@
+export const LOCALES = ["en", "it"];
+
 export const COUNTRY_ORDERED_SLUGS = [
   "thailand",
   "laos",

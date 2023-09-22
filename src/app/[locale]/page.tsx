@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 import { Footer } from "@/components/Footer";
 import { AboutUsSection } from "@/components/home/AboutUsSection";
@@ -17,22 +18,15 @@ import FeaturedPostsSection, {
 import { Hero } from "@/components/home/Hero/Hero";
 import { HighlightSection } from "@/components/home/HighlightSection";
 import { AppLocale } from "@/types/global";
+import { LOCALES } from "@/utils/constants";
 import { createAlternates } from "@/utils/urls";
 
 // const DynamicVideo = dynamic(() => import("../../components/home/VideoPlayer"));
 const DynamicVideo = dynamic(() => import("../../components/home/Video"));
 
-/**
- *
- * @TODO This is not yet supported by next-intl, but once it is it should be addded, in order to
- * build static pages at build time and therefore improve performance
- *
- */
-// export async function generateStaticParams() {
-//   return ["en", "it"].map((locale) => ({
-//     locale,
-//   }));
-// }
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
+}
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -41,6 +35,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function Home({ params }: { params: { locale: AppLocale } }) {
+  unstable_setRequestLocale(params.locale);
+
   const videoCopy = useTranslations("Home.Video");
 
   return (

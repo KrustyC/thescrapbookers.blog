@@ -1,7 +1,9 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { getTranslator } from "next-intl/server";
+import { getTranslator, unstable_setRequestLocale} from "next-intl/server";
+
+import { LOCALES } from "@/utils/constants";
 
 import aboutUsPic from "../../../../public/images/about_us.webp";
 import cameronHighlands from "../../../../public/images/cameron_highlands.webp";
@@ -84,7 +86,13 @@ const Sidebar: React.FC<SidebarProps> = ({ title, description }) => {
   );
 };
 
-export default function AboutUsPage() {
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
+}
+
+export default function AboutUsPage({ params }: { params: { locale: string }}) {
+  unstable_setRequestLocale(params.locale);
+
   const t = useTranslations("AboutUs");
 
   return (

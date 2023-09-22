@@ -1,10 +1,12 @@
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 import { ContinentHero } from "@/components/continent/ContinentHero";
 import { Country } from "@/components/continent/Country";
 import { getContinentWithCountries } from "@/graphql/queries/get-continent-with-countries";
 import { AppLocale } from "@/types/global";
+import { LOCALES } from "@/utils/constants";
 import { createAlternates } from "@/utils/urls";
 
 interface ContinentPageProps {
@@ -14,17 +16,9 @@ interface ContinentPageProps {
   };
 }
 
-/**
- *
- * @TODO This is not yet supported by next-intl, but once it is it should be addded, in order to
- * build static pages at build time and therefore improve performance
- *
- */
-// export async function generateStaticParams() {
-//   return ["en", "it"].map((locale) => ({
-//     locale,
-//   }));
-// }
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
+}
 
 export async function generateMetadata({
   params: { continent: continentSlug, locale },
@@ -57,7 +51,10 @@ export async function generateMetadata({
       description,
       images,
       locale,
-      url: new URL(`/${locale}/${continentSlug}`, process.env.NEXT_PUBLIC_BASE_URL),
+      url: new URL(
+        `/${locale}/${continentSlug}`,
+        process.env.NEXT_PUBLIC_BASE_URL
+      ),
     },
     twitter: {
       card: "summary_large_image",
@@ -69,6 +66,8 @@ export async function generateMetadata({
 }
 
 export default async function ContinentPage({ params }: ContinentPageProps) {
+  unstable_setRequestLocale(params.locale);
+
   const { isEnabled } = draftMode();
   const { continent } = await getContinentWithCountries({
     slug: params.continent,

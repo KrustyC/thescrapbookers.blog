@@ -3,8 +3,8 @@ import { Metadata } from "next";
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import Script from "next/script";
-import { useLocale, useTranslations } from "next-intl";
-import { getTranslator } from "next-intl/server";
+import { useLocale } from "next-intl";
+import { getTranslator, unstable_setRequestLocale } from "next-intl/server";
 import { WebSite, WithContext } from "schema-dts";
 
 import { PreviewBadge } from "@/components/PreviewBadge";
@@ -85,16 +85,13 @@ export default function LocaleLayout({ children, params }: Props) {
     notFound();
   }
 
+  unstable_setRequestLocale(locale);
+
   const jsonLd: WithContext<WebSite> = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     url: process.env.NEXT_PUBLIC_BASE_URL,
     name: "The Scrapbookers",
-    // potentialAction: {
-    //   "@type": "SearchAction",
-    //   target: "http://example.com/search?&q={query}",
-    //   query: "required",
-    // },
   };
 
   return (

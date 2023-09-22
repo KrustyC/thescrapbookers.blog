@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
-import { getTranslator } from "next-intl/server";
+import { getTranslator, unstable_setRequestLocale } from "next-intl/server";
 
 import { Cheatsheet } from "@/components/country/Cheatsheet/Cheatsheet";
 import { CountryHero } from "@/components/country/CountryHero";
@@ -8,6 +8,7 @@ import { PostCard } from "@/components/PostCard/PostCard";
 import { getCountryWithPosts } from "@/graphql/queries/get-country-with-posts.query";
 import { ExamsIcon } from "@/icons/Exams";
 import { AppLocale } from "@/types/global";
+import { LOCALES } from "@/utils/constants";
 import { createAlternates } from "@/utils/urls";
 
 interface CountryPageProps {
@@ -16,18 +17,6 @@ interface CountryPageProps {
     locale: AppLocale;
   };
 }
-
-/**
- *
- * @TODO This is not yet supported by next-intl, but once it is it should be addded, in order to
- * build static pages at build time and therefore improve performance
- *
- */
-// export async function generateStaticParams() {
-//   return ["en", "it"].map((locale) => ({
-//     locale,
-//   }));
-// }
 
 export async function generateMetadata({
   params: { country: countrySlug, locale },
@@ -74,9 +63,15 @@ export async function generateMetadata({
   };
 }
 
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
+}
+
 export default async function CountryPage({
   params: { country: countrySlug, locale },
 }: CountryPageProps) {
+  unstable_setRequestLocale(locale);
+
   const { isEnabled } = draftMode();
 
   const tArticles = await getTranslator(locale, "Country.Articles");

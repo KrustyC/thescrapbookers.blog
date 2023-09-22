@@ -2,13 +2,14 @@ import format from "date-fns/format";
 import type { Metadata } from "next";
 import { draftMode } from "next/headers";
 import Link from "next-intl/link";
-import { getTranslator } from "next-intl/server";
+import { getTranslator, unstable_setRequestLocale } from "next-intl/server";
 import { BlogPosting, WithContext } from "schema-dts";
 
 import { BlogPost, getAuthorImage } from "@/components/post/BlogPost/BlogPost";
 import { getPost } from "@/graphql/queries/get-post.query";
 import { ArticleNotFoundIcon } from "@/icons/ArticleNotFound";
 import { AppLocale } from "@/types/global";
+import { LOCALES } from "@/utils/constants";
 import { createAlternates } from "@/utils/urls";
 
 interface PostPageProps {
@@ -73,9 +74,15 @@ export async function generateMetadata({
   }
 }
 
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
+}
+
 export default async function PostPage({
   params: { slug, locale },
 }: PostPageProps) {
+  unstable_setRequestLocale(locale);
+
   const { isEnabled } = draftMode();
   const { post, nextPost } = await getPost({
     slug,
