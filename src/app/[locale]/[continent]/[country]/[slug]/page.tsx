@@ -5,11 +5,11 @@ import Link from "next-intl/link";
 import { getTranslator, unstable_setRequestLocale } from "next-intl/server";
 import { BlogPosting, WithContext } from "schema-dts";
 
-import { BlogPost, getAuthorImage } from "@/components/post/BlogPost/BlogPost";
+import { BlogPost } from "@/components/post/BlogPost/BlogPost";
 import { getPost } from "@/graphql/queries/get-post.query";
 import { ArticleNotFoundIcon } from "@/icons/ArticleNotFound";
 import { AppLocale } from "@/types/global";
-import { LOCALES } from "@/utils/constants";
+// import { LOCALES } from "@/utils/constants";
 import { createAlternates } from "@/utils/urls";
 
 interface PostPageProps {
