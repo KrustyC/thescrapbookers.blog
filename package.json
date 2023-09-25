@@ -19,7 +19,7 @@
     "@mailchimp/mailchimp_marketing": "3.0.80",
     "@mux/mux-video-react": "^0.7.20",
     "@sentry/nextjs": "^7.70.0",
-    "@types/node": "^20.6.4",
+    "@types/node": "^20.6.5",
     "@types/react": "^18.2.22",
     "@types/react-dom": "^18.2.7",
     "@vercel/analytics": "^1.0.2",
