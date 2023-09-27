@@ -110,12 +110,12 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
     <div className="px-3 lg:px-6 pt-12 pb-4 w-full 2xl:w-max 2xl:mx-auto flex flex-col rounded-2xl bg-cheatsheet/10 shadow-xl">
       <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center border-y border-black py-6 px-2">
         <div className="flex flex-col">
-          <div className="flex justify-between items-end mb-2">
+          <div className="flex justify-between items-center mb-2">
             <h2 className="text-2xl lg:text-3xl flex flex-col font-semibold">
               <span>{name}</span>
               <span>{copy.title}</span>
             </h2>
-            <div className="block lg:hidden pr-2 mb-0.5">
+            <div className="flex items-center lg:hidden pr-1 mb-0.5">
               <Flag slug={slug} />
             </div>
           </div>

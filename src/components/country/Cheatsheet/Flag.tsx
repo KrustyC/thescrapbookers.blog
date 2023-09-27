@@ -37,7 +37,7 @@ const FlagIcon: React.FC<{ slug: string }> = ({ slug }) => {
 
 export const Flag: React.FC<{ slug: string }> = ({ slug }) => {
   return (
-    <div className="flex w-20 lg:w-28 h-fit rounded-xl drop-shadow-lg">
+    <div className="flex w-18 h-12 lg:h-20 lg:w-32 rounded-xl drop-shadow-lg">
       <FlagIcon slug={slug} />
     </div>
   );
