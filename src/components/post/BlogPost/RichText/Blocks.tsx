@@ -1,4 +1,5 @@
 import { Children, PropsWithChildren } from "react";
+import parse from "html-react-parser";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 
@@ -74,7 +75,7 @@ export const Hyperlink: React.FC<PropsWithChildren<HyperlinkProps>> = ({
     if (!videoId) {
       return null;
     }
-    
+
     return (
       <section className="w-full aspect-video mt-8">
         <iframe
@@ -162,7 +163,7 @@ export const Asset: React.FC<{ asset: RichTextAsset }> = ({ asset }) => {
         width={asset.width}
       />
       {title ? (
-        <p className="mt-2 px-4 text-gray-600 text-xs italic">{title}</p>
+        <p className="mt-2 px-4 text-gray-600 text-xs italic">{parse(title)}</p>
       ) : null}
     </div>
   );
