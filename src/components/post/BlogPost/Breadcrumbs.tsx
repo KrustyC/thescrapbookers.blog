@@ -1,6 +1,5 @@
-import Link from "next-intl/link";
-
 import { Country } from "@/types/global";
+import { Link } from "@/utils/navigation";
 
 interface BreadcrumbsProps {
   country: Pick<Country, "name" | "slug" | "continent">;

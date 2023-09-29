@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
 import { useTranslations } from "next-intl";
 
 import { LocaleSelector } from "@/components/LocaleSelector/LocaleSelector";
 import { AppLocale } from "@/types/global";
+import { Link } from "@/utils/navigation";
 import { URLS } from "@/utils/urls";
 
 import logoPic from "../../../../public/images/logo_white.png";

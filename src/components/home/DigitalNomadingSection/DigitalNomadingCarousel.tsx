@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next-intl/link";
 
 import type { Post as IPost } from "@/types/global";
+import { Link } from "@/utils/navigation";
 
 type DigitalNomadingPost = Pick<
   IPost,

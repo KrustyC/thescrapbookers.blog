@@ -2,8 +2,9 @@
 
 import { useRef } from "react";
 import Image, { StaticImageData } from "next/image";
-import Link from "next-intl/link";
 import { register } from "swiper/element/bundle";
+
+import { Link } from "@/utils/navigation";
 
 register();
 

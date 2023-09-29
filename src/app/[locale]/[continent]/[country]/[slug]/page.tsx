@@ -1,7 +1,6 @@
 import format from "date-fns/format";
 import type { Metadata } from "next";
 import { draftMode } from "next/headers";
-import Link from "next-intl/link";
 import { getTranslator, unstable_setRequestLocale } from "next-intl/server";
 import { BlogPosting, WithContext } from "schema-dts";
 
@@ -9,6 +8,7 @@ import { BlogPost } from "@/components/post/BlogPost/BlogPost";
 import { getPost } from "@/graphql/queries/get-post.query";
 import { ArticleNotFoundIcon } from "@/icons/ArticleNotFound";
 import { AppLocale } from "@/types/global";
+import { Link } from "@/utils/navigation";
 // import { LOCALES } from "@/utils/constants";
 import { createAlternates } from "@/utils/urls";
 

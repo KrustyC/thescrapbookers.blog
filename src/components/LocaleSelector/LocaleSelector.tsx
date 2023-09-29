@@ -2,11 +2,10 @@
 
 import React, { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
-import { useRouter } from "next/navigation";
-import { usePathname } from "next-intl/client";
 
 import { Globe } from "@/icons/Globe";
 import { AppLocale } from "@/types/global";
+import { usePathname, useRouter } from "@/utils/navigation";
 
 import { LanguageOption } from "./LanguageOption";
 
@@ -26,7 +25,7 @@ export const LocaleSelector: React.FC<LocaleSelectorProps> = ({
   const pathname = usePathname();
 
   const onChange = (newLocale: AppLocale) => {
-    router.replace(`/${newLocale}${pathname}`);
+    router.replace(pathname, { locale: newLocale });
   };
 
   return (

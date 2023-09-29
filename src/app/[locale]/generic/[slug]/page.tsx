@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { draftMode } from "next/headers";
-import Link from "next-intl/link";
 import { getTranslator } from "next-intl/server";
 
 import { BlogPost } from "@/components/post/BlogPost/BlogPost";
 import { getPost } from "@/graphql/queries/get-post.query";
 import { ArticleNotFoundIcon } from "@/icons/ArticleNotFound";
 import { AppLocale } from "@/types/global";
+import { Link } from "@/utils/navigation";
 import { createAlternates } from "@/utils/urls";
 
 interface PostPageProps {
