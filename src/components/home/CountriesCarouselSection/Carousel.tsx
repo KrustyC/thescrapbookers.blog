@@ -57,11 +57,11 @@ const CountriesCarousel: React.FC<CaoruselProps> = ({ slides }) => {
     >
       {slides.map((slide) => (
         <swiper-slide
-          className="mt-5 h-[500px] lg:h-[550px] first:ml-4 lg:first:ml-8 last:mr-4 lg:last:mr-8"
+          className="mt-5 h-[500px] lg:h-[550px] first:ml-4 lg:first:ml-8 last:mr-4 lg:last:mr-8 rounded-2xl hover:-translate-y-5 transition duration-500 group bg-gray-200"
           key={slide.href}
           lazy
         >
-          <div className="group h-full w-full bg-gray-200 relative rounded-2xl overflow-hidden hover:-translate-y-5 transition duration-500">
+          <div className="h-full w-full relative rounded-2xl overflow-hidden">
             <Link href={slide.href} prefetch={false}>
               <Image
                 fill
