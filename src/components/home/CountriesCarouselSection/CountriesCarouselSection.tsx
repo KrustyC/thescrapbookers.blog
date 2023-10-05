@@ -12,8 +12,9 @@ import laosPic from "../../../../public/images/vientiane_man_working_with_cables
 import vietnamPic from "../../../../public/images/woman_pushing_a_bike_with_flowers_in_hanoi.webp";
 
 import { CountriesCarouselSectionSkeleton } from "./CountriesCarouselSectionSkeleton";
+import { NativeCarousel } from "./NativeCarousel";
 
-const CountryCarousel = dynamic(() => import("./Carousel"), { ssr: false });
+// const CountryCarousel = dynamic(() => import("./Carousel"), { ssr: false });
 
 interface Copy {
   thailand: string;
@@ -93,7 +94,7 @@ export default async function CountriesCarouselSection({
   return (
     <div className="mt-8 mb-16 lg:mt-14 lg:mb-0">
       <div className="min-h-[500px] lg:min-h-[550px]">
-        <CountryCarousel slides={slides} />
+        <NativeCarousel slides={slides} />
       </div>
     </div>
   );

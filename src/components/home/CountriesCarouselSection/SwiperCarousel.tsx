@@ -2,11 +2,11 @@
 
 import { useRef } from "react";
 import Image, { StaticImageData } from "next/image";
-import { register } from "swiper/element/bundle";
 
+// import { register } from "swiper/element/bundle";
 import { Link } from "@/utils/navigation";
 
-register();
+// register();
 
 interface Slide {
   image: {
@@ -57,11 +57,11 @@ const CountriesCarousel: React.FC<CaoruselProps> = ({ slides }) => {
     >
       {slides.map((slide) => (
         <swiper-slide
-          className="mt-5 h-[500px] lg:h-[550px] first:ml-4 lg:first:ml-8 last:mr-4 lg:last:mr-8 rounded-2xl hover:-translate-y-5 transition duration-500 group bg-gray-200"
+          className="h-[500px] lg:h-[550px] mt-5 first:ml-4 lg:first:ml-8 last:mr-4 lg:last:mr-8 rounded-2xl hover:-translate-y-5 transition duration-500 group bg-gray-200"
           key={slide.href}
           lazy
         >
-          <div className="h-full w-full relative rounded-2xl overflow-hidden">
+          <div className="h-full w-full relative rounded-2xl overflow-hidden mr-12">
             <Link href={slide.href} prefetch={false}>
               <Image
                 fill
