@@ -26,6 +26,7 @@ export const HeroNavbar: React.FC<HeroNavbarProps> = ({ locale }) => {
         <Image
           src={logoPic}
           alt="the scrapbooker logo"
+          title="logo"
           sizes="100%"
           fill
           priority

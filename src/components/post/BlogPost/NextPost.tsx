@@ -26,6 +26,7 @@ export const NextPost: React.FC<NextPostHeroProps> = ({ post, locale }) => {
           fill
           src={post.mainImage?.url || ""}
           alt={post.mainImage?.description || "missing image"}
+          title={post.mainImage?.title || "missing image"}
           style={{ objectFit: "cover" }}
         />
       </Link>

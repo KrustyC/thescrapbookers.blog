@@ -24,7 +24,8 @@ export const HighlightSection = () => {
 
       <Image
         src={highlightPic}
-        alt="Picture of Vange Vieng"
+        alt="In the forefornt there are many cows, of brown colour, grazing. In the background there is a mountain with a small house in front of it."
+        title="Picture of Vang Vieng"
         placeholder="blur"
         sizes="100vw"
         priority={false}

@@ -42,7 +42,12 @@ const Video: React.FC<VideoProps> = ({ text }) => {
       ref={ref}
       className="relative w-full h-[70vh] lg:h-[650px] xl:h-[750px]"
     >
-      <Image src={PLACEHOLDER_HASH} alt="placeholder for ban sen video" fill />
+      <Image
+        src={PLACEHOLDER_HASH}
+        alt="placeholder for ban sen video"
+        title="placeholder for ban sen video"
+        fill
+      />
 
       {/* <MuxPlayer
         // style={{ height: "100%", maxWidth: "100%" }}

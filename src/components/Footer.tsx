@@ -126,6 +126,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
             <Image
               src={logoPic}
               alt="the scrapbooker logo"
+              title="logo"
               sizes="100%"
               fill
               style={{ objectFit: "contain" }}

@@ -51,6 +51,7 @@ export const PostCard: React.FC<PostProps> = ({
           fill
           src={thumbnailImage?.url || ""}
           alt={thumbnailImage?.description || "missing image"}
+          title={thumbnailImage?.title || "missing image"}
           loading="lazy"
           style={{ objectFit: "cover" }}
         />

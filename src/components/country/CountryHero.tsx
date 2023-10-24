@@ -22,6 +22,7 @@ export const CountryHero: React.FC<CountryHeroProps> = ({ name, image }) => {
         <Image
           src={image.url || ""}
           alt={image.description || ""}
+          title={image.title || ""}
           sizes="100vw"
           priority
           fill

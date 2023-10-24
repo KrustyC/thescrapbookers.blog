@@ -30,31 +30,37 @@ function getImage(slug: string | undefined, copy: Copy) {
       return {
         src: thailandPic,
         alt: copy.thailand,
+        title: "Thailand",
       };
     case "laos":
       return {
         src: laosPic,
         alt: copy.laos,
+        title: "Laos",
       };
     case "vietnam":
       return {
         src: vietnamPic,
         alt: copy.vietnam,
+        title: "Vietnam",
       };
     case "cambodia":
       return {
         src: cambodiaPic,
         alt: copy.cambodia,
+        title: "Cambodia",
       };
     case "malaysia":
       return {
         src: malaysiaPic,
         alt: copy.malaysia,
+        title: "Malaysia",
       };
     default:
       return {
         src: cambodiaPic,
         alt: "",
+        title: "",
       };
   }
 }

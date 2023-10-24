@@ -28,6 +28,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <Image
           src={logoPic}
           alt="the scrapbooker logo"
+          title="logo"
           sizes="100%"
           fill
           style={{ objectFit: "contain" }}

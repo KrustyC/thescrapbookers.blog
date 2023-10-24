@@ -68,6 +68,7 @@ const Sidebar: React.FC<SidebarProps> = ({ title, description }) => {
             className="rounded-xl"
             src={aboutUsPic}
             alt="us taking a selfie in the jungle"
+            title="us taking a selfie in the jungle"
             placeholder="blur"
             fill
             sizes="100%"
@@ -121,7 +122,8 @@ export default function AboutUsPage({ params }: { params: { locale: string }}) {
       <div className="h-[800px] w-full relative -mt-[300px] xl:-mt-[250px]">
         <Image
           src={cameronHighlands}
-          alt="Tea plantation in Cameron Highlands, Tanha Rata, Malaysia"
+          alt="Fields of tea plantations disposed over a hill "
+          title="Tea plantation in Cameron Highlands, Tanha Rata, Malaysia"
           placeholder="blur"
           fill
           sizes="100%"

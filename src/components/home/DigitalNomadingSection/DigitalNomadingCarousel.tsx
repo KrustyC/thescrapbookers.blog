@@ -24,6 +24,7 @@ export const DigitalNomadingCarousel: React.FC<PostProps> = ({ posts }) => {
                 className="rounded-xl bg-gray-300"
                 src={post.thumbnailImage?.url || ""}
                 alt={post.thumbnailImage?.description || "missing image"}
+                title={post.thumbnailImage?.title || "missing image"}
                 loading="lazy"
                 style={{ objectFit: "cover" }}
               />

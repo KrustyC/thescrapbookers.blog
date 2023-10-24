@@ -29,6 +29,7 @@ export const AboutUsSection: React.FC = () => {
           className="rounded-2xl lg:rounded-r-none"
           src={aboutUsPic}
           alt="us taking a selfie in the jungle"
+          title="us taking a selfie in the jungle"
           placeholder="blur"
           fill
           sizes="100%"

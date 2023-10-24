@@ -159,6 +159,7 @@ export const Asset: React.FC<{ asset: RichTextAsset }> = ({ asset }) => {
         alt={
           description?.replace(/<\/?[^>]+(>|$)/g, "") || "image from the post"
         }
+        title={title}
         height={asset.height}
         width={asset.width}
       />

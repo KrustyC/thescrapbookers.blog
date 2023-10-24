@@ -77,6 +77,7 @@ const Video: React.FC<VideoProps> = ({ text }) => {
           className="w-full h-full absolute top-0 left-0 object-cover"
           src={PLACEHOLDER_HASH}
           alt="Placeholder image"
+          title="Placeholder image"
         />
       ) : (
         <div className="absolute h-full w-full top-0 bottom-0 left-0 right-0 z-10 px-6 lg:px-16 xl:px-48 flex items-center">

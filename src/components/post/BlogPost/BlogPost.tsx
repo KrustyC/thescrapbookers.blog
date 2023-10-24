@@ -43,11 +43,13 @@ export function getAuthorImage(authorName: string | undefined) {
       return {
         img: davidePic,
         alt: "Davide smiling while holding a rat",
+        title: "Davide",
       };
     case "Beatrice Cox":
       return {
         img: beaPic,
         alt: "Bea smiling while holding a bhan mi",
+        title: "Bea",
       };
     default:
       return null;
@@ -81,6 +83,7 @@ const ArticleAuthorAndPublishDate: React.FC<
                 className="rounded-full"
                 src={authorImage.img}
                 alt={authorImage.alt}
+                title={authorImage.title}
                 fill
                 sizes="100%"
                 style={{ objectFit: "cover" }}

@@ -43,6 +43,7 @@ export const BlogPostHero: React.FC<BlogPostHeroProps> = ({ post }) => {
         priority
         src={post.mainImage?.url || ""}
         alt={post.mainImage?.description || "missing image"}
+        title={post.mainImage?.title || "missing image"}
         style={{ objectFit: "cover" }}
       />
     </div>

@@ -6,6 +6,7 @@ interface Slide {
   image: {
     src: StaticImageData | string;
     alt: string;
+    title: string;
   };
   name?: string;
   href: string;
@@ -28,6 +29,7 @@ export const NativeCarousel: React.FC<CaoruselProps> = ({ slides }) => (
           fill
           src={slide.image.src}
           alt={slide.image.alt}
+          title={slide.image.title}
           className="rounded-2xl group-hover:scale-125 transition duration-500"
           style={{ objectFit: "cover" }}
           sizes="100%"

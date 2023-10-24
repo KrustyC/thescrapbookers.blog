@@ -35,6 +35,7 @@ export const Country: React.FC<CountryProps> = ({ country, continentSlug }) => {
           className="rounded-xl"
           src={country.thumbnailImage?.url || ""}
           alt={country.thumbnailImage?.description || "missing image"}
+          title={country.thumbnailImage?.title || "missing image"}
           sizes="100vw"
           priority
           fill

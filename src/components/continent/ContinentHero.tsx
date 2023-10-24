@@ -25,6 +25,7 @@ export const ContinentHero: React.FC<ContinentHeroProps> = ({
         <Image
           src={image.url || ""}
           alt={image.description || "missing image"}
+          title={image.title || "missing image"}
           sizes="100vw"
           priority
           fill
