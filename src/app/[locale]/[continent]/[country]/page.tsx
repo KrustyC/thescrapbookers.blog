@@ -44,7 +44,7 @@ export async function generateMetadata({
   return {
     title,
     description,
-    alternates: createAlternates({ path: `/${countrySlug}` }),
+    alternates: createAlternates({ path: `/${country.continent?.slug}/${countrySlug}` }),
     openGraph: {
       title,
       description,
