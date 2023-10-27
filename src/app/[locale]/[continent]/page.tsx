@@ -48,7 +48,7 @@ export async function generateMetadata({
       images,
       locale,
       url: new URL(
-        `/${locale}/${continentSlug}`,
+        `${locale === "it" ? `/${locale}` : ""}/${continentSlug}`,
         process.env.NEXT_PUBLIC_BASE_URL
       ),
     },

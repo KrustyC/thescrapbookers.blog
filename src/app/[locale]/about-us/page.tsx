@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { getTranslator, unstable_setRequestLocale} from "next-intl/server";
+import { getTranslator, unstable_setRequestLocale } from "next-intl/server";
 
 import { LOCALES } from "@/utils/constants";
 
@@ -27,7 +27,10 @@ export async function generateMetadata({
       description: t("description"),
       siteName: "The Scrapbookers",
       locale,
-      url: new URL("/about-us", process.env.NEXT_PUBLIC_BASE_URL),
+      url: new URL(
+        `${locale === "it" ? `/${locale}` : ""}/about-us`,
+        process.env.NEXT_PUBLIC_BASE_URL
+      ),
       images: [
         {
           url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/about_us.webp`,
@@ -91,7 +94,11 @@ export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
 }
 
-export default function AboutUsPage({ params }: { params: { locale: string }}) {
+export default function AboutUsPage({
+  params,
+}: {
+  params: { locale: string };
+}) {
   unstable_setRequestLocale(params.locale);
 
   const t = useTranslations("AboutUs");
