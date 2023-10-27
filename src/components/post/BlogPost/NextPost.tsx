@@ -45,7 +45,7 @@ export const NextPost: React.FC<NextPostHeroProps> = ({ post, locale }) => {
         </div>
 
         <Link href={post.href || ""}>
-          <h1 className="text-5xl font-semibold text-black">{post.title}</h1>
+          <h2 className="text-5xl font-semibold text-black">{post.title}</h2>
         </Link>
 
         <span className="text-base mt-8 text-gray-500 w-full xl:w-3/4">
