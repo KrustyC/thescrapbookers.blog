@@ -4,7 +4,7 @@ import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 import { useLocale } from "next-intl";
-import { getTranslator, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { WebSite, WithContext } from "schema-dts";
 
 import { PreviewBadge } from "@/components/PreviewBadge";
@@ -19,7 +19,7 @@ interface Props {
 export async function generateMetadata({
   params: { locale },
 }: Pick<Props, "params">): Promise<Metadata> {
-  const t = await getTranslator(locale, "Home.Metadata");
+  const t = await getTranslations({ locale, namespace: "Home.Metadata" });
 
   return {
     title: t("title"),

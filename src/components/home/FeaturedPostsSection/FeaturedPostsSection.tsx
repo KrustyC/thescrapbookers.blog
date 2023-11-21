@@ -1,5 +1,5 @@
 import { draftMode } from "next/headers";
-import { getTranslator } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
 import { PostCard } from "@/components/PostCard/PostCard";
 import { getPostsByTag } from "@/graphql/queries/get-post-by-tag.query";
@@ -12,7 +12,7 @@ export default async function FeaturedPostsSection({
 }: {
   locale: AppLocale;
 }) {
-  const t = await getTranslator(locale, "Home.Featured");
+  const t = await getTranslations({ locale, namespace: "Home.Featured" });
   const { isEnabled } = draftMode();
 
   try {

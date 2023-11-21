@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { getTranslator } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
@@ -15,7 +15,8 @@ interface IntroductionPageProps {
 export async function generateMetadata({
   params: { locale },
 }: IntroductionPageProps): Promise<Metadata> {
-  const t = await getTranslator(locale, "AboutUs.Metadata");
+  const t = await getTranslations({ locale, namespace: "AboutUs.Metadata" });
+  
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://thescrapbookers.blog";
 
   return {

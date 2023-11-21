@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
-import { getTranslator, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 import { Cheatsheet } from "@/components/country/Cheatsheet/Cheatsheet";
 import { CountryHero } from "@/components/country/CountryHero";
@@ -88,7 +88,7 @@ export default async function CountryPage({
 
   const { isEnabled } = draftMode();
 
-  const tArticles = await getTranslator(locale, "Country.Articles");
+  const tArticles = await getTranslations({ locale, namespace: "Country.Articles" });
 
   const { country } = await getCountryWithPosts({
     slug: countrySlug,

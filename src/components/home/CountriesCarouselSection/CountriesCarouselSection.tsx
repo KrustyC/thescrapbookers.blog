@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import { draftMode } from "next/headers";
-import { getTranslator } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
 import { getCountriesForContinent } from "@/graphql/queries/get-countries-for-continent.query";
 import { AppLocale } from "@/types/global";
@@ -13,8 +13,6 @@ import vietnamPic from "../../../../public/images/woman_pushing_a_bike_with_flow
 
 import { CountriesCarouselSectionSkeleton } from "./CountriesCarouselSectionSkeleton";
 import { NativeCarousel } from "./NativeCarousel";
-
-// const CountryCarousel = dynamic(() => import("./Carousel"), { ssr: false });
 
 interface Copy {
   thailand: string;
@@ -72,7 +70,7 @@ interface CountriesCarouselSectionProps {
 export default async function CountriesCarouselSection({
   locale,
 }: CountriesCarouselSectionProps) {
-  const t = await getTranslator(locale, "Home.CountriesCarouselSection.Images");
+  const t = await getTranslations({ locale, namespace: "Home.CountriesCarouselSection.Images" });
 
   const { isEnabled } = draftMode();
   const { countries } = await getCountriesForContinent({

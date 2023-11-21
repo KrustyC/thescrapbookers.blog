@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { getTranslator, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 import { LOCALES } from "@/utils/constants";
 
@@ -13,7 +13,7 @@ export async function generateMetadata({
 }: {
   params: { locale: string };
 }): Promise<Metadata> {
-  const t = await getTranslator(locale, "AboutUs.Metadata");
+  const t = await getTranslations({ locale, namespace: "AboutUs.Metadata" });
 
   return {
     description: t("description"),

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { draftMode } from "next/headers";
-import { getTranslator } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
 import { BlogPost } from "@/components/post/BlogPost/BlogPost";
 import { getPost } from "@/graphql/queries/get-post.query";
@@ -78,7 +78,7 @@ export default async function PostPage({
     isPreview: isEnabled,
   });
 
-  const t = await getTranslator(locale, "BlogPost");
+  const t = await getTranslations({ locale, namespace: "BlogPost" });
 
   if (!post) {
     return (

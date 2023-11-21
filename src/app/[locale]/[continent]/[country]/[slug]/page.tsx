@@ -1,7 +1,7 @@
 import format from "date-fns/format";
 import type { Metadata } from "next";
 import { draftMode } from "next/headers";
-import { getTranslator, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { BlogPosting, WithContext } from "schema-dts";
 
 import { BlogPost } from "@/components/post/BlogPost/BlogPost";
@@ -90,7 +90,7 @@ export default async function PostPage({
     isPreview: isEnabled,
   });
 
-  const t = await getTranslator(locale, "BlogPost");
+  const t = await getTranslations({ locale, namespace: "BlogPost" });
 
   if (!post) {
     return (
