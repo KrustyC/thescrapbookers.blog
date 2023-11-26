@@ -4,7 +4,7 @@ const { withSentryConfig } = require("@sentry/nextjs");
 /** @type {import('next').NextConfig} */
 const nextConfig = withNextIntl({
   experimental: {
-    serverActions: true,
+    // serverActions: true,
     // nextScriptWorkers: true, @TODO Enable once Partytown and worker are supported in the app folder
   },
   images: {

@@ -16,6 +16,7 @@ import FeaturedPostsSection, {
   FeaturedPostsSectionSkeleton,
 } from "@/components/home/FeaturedPostsSection/FeaturedPostsSection";
 import { Hero } from "@/components/home/Hero/Hero";
+import { ExhibitionBanner } from "@/components/home/ExhibitionBanner";
 import { HighlightSection } from "@/components/home/HighlightSection";
 import { AppLocale } from "@/types/global";
 import { LOCALES } from "@/utils/constants";
@@ -47,6 +48,8 @@ export default function Home({ params }: { params: { locale: AppLocale } }) {
         <Suspense fallback={<FeaturedPostsSectionSkeleton />}>
           <FeaturedPostsSection locale={params.locale} />
         </Suspense>
+
+        <ExhibitionBanner />
 
         <DynamicVideo text={videoCopy("text")} />
 
