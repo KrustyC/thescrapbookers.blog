@@ -20,7 +20,7 @@ export const VisaIcon: React.FC<VisaIconProps> = ({
         height="60"
         stroke="#040000"
         stroke-linecap="round"
-        stroke-linejoin="round"
+        stroke-Linejoin="round"
         stroke-miterlimit="10"
         strokeWidth="3"
         width="42.407"
@@ -33,7 +33,7 @@ export const VisaIcon: React.FC<VisaIconProps> = ({
         fill="#FFFFFF"
         stroke="#040000"
         stroke-linecap="round"
-        stroke-linejoin="round"
+        stroke-Linejoin="round"
         stroke-miterlimit="10"
         strokeWidth="3"
       />
@@ -43,7 +43,7 @@ export const VisaIcon: React.FC<VisaIconProps> = ({
         fill="#FFFFFF"
         stroke="#040000"
         stroke-linecap="round"
-        stroke-linejoin="round"
+        stroke-Linejoin="round"
         stroke-miterlimit="10"
         strokeWidth="3"
       />
@@ -53,7 +53,7 @@ export const VisaIcon: React.FC<VisaIconProps> = ({
         fill="#FFFFFF"
         stroke="#040000"
         stroke-linecap="round"
-        stroke-linejoin="round"
+        stroke-Linejoin="round"
         stroke-miterlimit="10"
         strokeWidth="3"
       />

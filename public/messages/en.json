@@ -14,8 +14,10 @@
     },
     "ExhibitionBanner": {
       "title": "Asia in Equilibrio, Tra Viaggio e Lavoro",
+      "exhibition": "Photo exhibition",
       "location": "Palazzo Pretorio, Sansepolcro (AR)",
-      "description": "A collection of our favourite photos from our travels"
+      "description": "Balancing travel and work, we found ourselves taking some shots in simple yet significant moments. Each shot does not aim to define an absolute truth, nor does it intend to distort reality; it is rather a fragment of our reflections, a visual tale of places that have transformed us.",
+      "cta": "Contact Us"
     },
     "Featured": {
       "title": "Recent Articles",

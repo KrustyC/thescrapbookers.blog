@@ -13,9 +13,11 @@
       "subtitle": "The scary burning or smoky season had already made the air heavy and hazy in the north."
     },
     "ExhibitionBanner": {
-      "title": "Asia in Equilibrio, Tra Viaggio e Lavoro",
+      "title": "Asia in Equilibrio <br /> Tra Viaggio e Lavoro",
+      "exhibition": "Mostra fotografica",
       "location": "Palazzo Pretorio, Sansepolcro (AR)",
-      "description": "Pensieri e consigli di viaggio per nomadi digitali e amanti degli usi e costumi di culture straniere. Un blog per leggere storie su posti nuovi e a te sconosciuti."
+      "description": "Bilanciando il viaggiare e il lavoro ci siamo trovati a fare qualche scatto in momenti semplici ma significativi. Ogni scatto non mira a definire una verità assoluta, né pretende di distorcere la realtà; è piuttosto un frammento delle nostre riflessioni, un racconto visivo di luoghi che ci hanno trasformati.",
+      "cta": "Contattaci"
     },
     "Featured": {
       "title": "Articoli Recenti",

@@ -12,11 +12,11 @@ import CountriesCarouselSection, {
 import DigitalNomadingSection, {
   DigitalNomadingSectionSkeleton,
 } from "@/components/home/DigitalNomadingSection/DigitalNomadingSection";
+import { ExhibitionBanner } from "@/components/home/ExhibitionBanner";
 import FeaturedPostsSection, {
   FeaturedPostsSectionSkeleton,
 } from "@/components/home/FeaturedPostsSection/FeaturedPostsSection";
 import { Hero } from "@/components/home/Hero/Hero";
-import { ExhibitionBanner } from "@/components/home/ExhibitionBanner";
 import { HighlightSection } from "@/components/home/HighlightSection";
 import { AppLocale } from "@/types/global";
 import { LOCALES } from "@/utils/constants";
