@@ -8,7 +8,12 @@ const nextConfig = withNextIntl({
     // nextScriptWorkers: true, @TODO Enable once Partytown and worker are supported in the app folder
   },
   images: {
-    domains: ["images.ctfassets.net"],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.ctfassets.net',
+      },
+    ],
   },
 });
 
