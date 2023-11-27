@@ -25,7 +25,7 @@ export const ExhibitionBanner = () => {
             />
           </h2>
 
-          <div className="flex items-end mt-2 mb-2">
+          <div className="flex flex-col lg:flex-row lg:items-end my-4 lg:my-2">
             <div className="flex items-center mr-4">
               <CameraIcon className="stroke-white w-4 h-4 mr-1" />
 
@@ -47,7 +47,7 @@ export const ExhibitionBanner = () => {
 
           <Link
             href="mailto:hello@thescrapbookers.blog?subject=Info Mostra Palazzo Pretorio"
-            className="flex justify-center w-full lg:w-fit bg-black text-white hover:bg-white hover:text-black transition-all border-2 border-white py-3 lg:py-4 px-4 lg:px-10 mt-8 lg:mt-6 text-4xl rounded-xl"
+            className="mt-4 flex justify-center items-center rounded-2xl h-16 text-xl w-full lg:w-fit bg-black text-white hover:bg-white hover:text-black transition-all border-2 border-white px-12"
           >
             {t("cta")}
           </Link>
