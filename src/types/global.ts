@@ -141,3 +141,27 @@ export interface Post {
   author?: Author;
   country?: Pick<Country, "name" | "slug" | "continent">;
 }
+
+
+export interface Exhibition {
+  title?: string;
+  slug?: string;
+  description: RichText;
+  thumbnailImage?: Image;
+  mainImage?: Image;
+  startDate?: Date;
+  endDate?: Date;
+  photos?: ExhibitionImage[];
+  locationName?: string;
+  location?: any; // @TODO I have no idea what this type is, needs to sort out once I found out
+  href?: string;
+}
+
+
+export interface ExhibitionImage {
+  title?: string;
+  description: RichText;
+  photos?: Image[];
+  year?: number;
+  place?: string;
+}

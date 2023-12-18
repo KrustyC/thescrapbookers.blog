@@ -117,6 +117,12 @@
       "noArticles": "Al momento non ci sono articoli per questo paese, ma siamo gia all'opera; torna tra qualche giorno per trovare nuovi contenuti."
     }
   },
+  "Exhibition": {
+    "notFound": {
+      "message": "L'esibizione che stai cercando non esiste",
+      "cta": "torna alla home"
+    }
+  },
   "NotFound": {
     "title": "mmmh... forse vi siete persi durante il viaggio",
     "backHome": "torna alla home"

@@ -14,3 +14,11 @@ export function generatePostHref(
 
   return `/${country.continent?.slug}/${country.slug}/${postSlug}`;
 }
+
+export function generateExhibitionHref(exhibitionSlug: string | undefined) {
+  if (!exhibitionSlug) {
+    return "/";
+  }
+
+  return `/${exhibitionSlug}`;
+}

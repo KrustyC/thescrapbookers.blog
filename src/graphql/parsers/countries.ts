@@ -42,7 +42,7 @@ export function parseCheatsheet(
     currencies,
     languages,
     dishes,
-    preposition,
+    // preposition,
     commonPhrases,
     coworkingSpaces,
   } = cheatsheet;

@@ -1,31 +1,30 @@
 import { gql } from "@apollo/client";
 import { getApolloServerClient } from "src/graphql/apollo-server-client";
 
-import { Post as PostGraphQL } from "@/types/generated/graphql";
-import { AppLocale, Post } from "@/types/global";
+import { Exhibition as ExhibitionGraphQL } from "@/types/generated/graphql";
+import { AppLocale, Exhibition } from "@/types/global";
 
-import { parseGraphQLNextPost, parseGraphQLPost } from "../parsers/posts";
+import { parseGraphQLExhibition } from "../parsers/exhibitions";
 
-interface GetPostParams {
+interface GetExhibitionParams {
   slug: string;
   locale: AppLocale;
   isPreview?: boolean;
 }
 
-interface PostQueryResposne {
-  postCollection: {
-    items: PostGraphQL[];
+interface ExhibitionQueryResposne {
+  exhibitionCollection: {
+    items: ExhibitionGraphQL[];
   };
 }
 
-interface GetPostResponse {
-  post: Post;
-  nextPost?: Pick<Post, "title" | "slug" | "date" | "mainImage" | "smallIntro">;
+interface GetExhibitionResponse {
+  exhibition: Exhibition;
 }
 
-const GET_POST_QUERY = gql`
+const GET_EXHIBITION_QUERY = gql`
   query ($slug: String!, $locale: String!, $preview: Boolean!) {
-    postCollection(
+    exhibitionCollection(
       where: { slug: $slug }
       preview: $preview
       locale: $locale
@@ -33,53 +32,9 @@ const GET_POST_QUERY = gql`
     ) {
       items {
         title
-        metaTitle
-        metaDescription
         slug
-        smallIntro
-        date
-        category
-        richtext {
-          json
-          links {
-            entries {
-              block {
-                sys {
-                  id
-                }
-                ... on Video {
-                  video
-                  name
-                  description
-                }
-              }
-            }
-            assets {
-              block {
-                sys {
-                  id
-                }
-                contentType
-                title
-                description
-                width
-                height
-                url
-              }
-            }
-          }
-        }
-        author {
-          name
-        }
-        country {
-          name
-          slug
-          continent {
-            name
-            slug
-          }
-        }
+        startDate
+        endDate
         mainImage {
           title
           description
@@ -94,34 +49,21 @@ const GET_POST_QUERY = gql`
           height
           url
         }
-        nextPost {
-          title
-          slug
-          smallIntro
-          date
-          mainImage {
-            title
-            description
-            width
-            height
-            url
-          }
-        }
       }
     }
   }
 `;
 
-export async function getPost({
+export async function getExhibition({
   slug,
   locale,
   isPreview = false,
-}: GetPostParams): Promise<GetPostResponse> {
+}: GetExhibitionParams): Promise<GetExhibitionResponse> {
   try {
     const data = await getApolloServerClient({
       isPreview,
-    }).query<PostQueryResposne>({
-      query: GET_POST_QUERY,
+    }).query<ExhibitionQueryResposne>({
+      query: GET_EXHIBITION_QUERY,
       variables: { slug, locale, preview: isPreview },
       context: {
         fetchOptions: {
@@ -133,14 +75,13 @@ export async function getPost({
       },
     });
 
-    const post = data.data.postCollection.items[0];
+    const exhibition = data.data.exhibitionCollection.items[0];
 
     return {
-      post: parseGraphQLPost(post),
-      nextPost: post.nextPost ? parseGraphQLNextPost(post.nextPost) : undefined,
+      exhibition: parseGraphQLExhibition(exhibition),
     };
   } catch (error) {
     console.error(error);
-    throw new Error("Failed to fetch post");
+    throw new Error("Failed to fetch exhibition");
   }
 }

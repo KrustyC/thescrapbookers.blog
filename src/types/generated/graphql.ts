@@ -1,5 +1,5 @@
 /* eslint-disable */
-export type Maybe<T> = T | null;
+export type Maybe<T> = T | undefined;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = {
   [K in keyof T]: T[K];
@@ -104,10 +104,12 @@ export type Exhibition = Entry & {
   location?: Maybe<Location>;
   locationName?: Maybe<Scalars["String"]["output"]>;
   mainImage?: Maybe<Asset>;
+  thumbnailImage?: Maybe<Asset>;
   photos?: Maybe<Array<Maybe<ExhibitionImage>>>;
   startDate?: Maybe<Scalars["DateTime"]["output"]>;
   sys: Sys;
   title?: Maybe<Scalars["String"]["output"]>;
+  slug?: Maybe<Scalars["String"]["output"]>;
 };
 
 export type ExhibitionDescriptionArgs = {
