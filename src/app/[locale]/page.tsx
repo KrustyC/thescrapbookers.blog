@@ -12,7 +12,6 @@ import CountriesCarouselSection, {
 import DigitalNomadingSection, {
   DigitalNomadingSectionSkeleton,
 } from "@/components/home/DigitalNomadingSection/DigitalNomadingSection";
-import { ExhibitionBanner } from "@/components/home/ExhibitionBanner";
 import FeaturedPostsSection, {
   FeaturedPostsSectionSkeleton,
 } from "@/components/home/FeaturedPostsSection/FeaturedPostsSection";
@@ -48,8 +47,6 @@ export default function Home({ params }: { params: { locale: AppLocale } }) {
         <Suspense fallback={<FeaturedPostsSectionSkeleton />}>
           <FeaturedPostsSection locale={params.locale} />
         </Suspense>
-
-        <ExhibitionBanner />
 
         <DynamicVideo text={videoCopy("text")} />
 
