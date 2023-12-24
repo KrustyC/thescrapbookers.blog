@@ -8,6 +8,7 @@ type Props = {
 };
 
 export const metadata: Metadata = {
+  title: "The Scrapbookers",
   metadataBase: new URL("https://thescrapbookers.blog"),
   alternates: {
     canonical: "/",

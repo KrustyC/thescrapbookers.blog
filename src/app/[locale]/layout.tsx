@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
@@ -101,6 +102,7 @@ export default function LocaleLayout({ children, params }: Props) {
     >
       <body className="font-poppins">{children}</body>
       <Analytics />
+      <SpeedInsights />
 
       {isEnabled && <PreviewBadge />}
 
