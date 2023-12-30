@@ -8,6 +8,8 @@ import { ArticleNotFoundIcon } from "@/icons/ArticleNotFound";
 import { AppLocale } from "@/types/global";
 import { Link } from "@/utils/navigation";
 import { createAlternates } from "@/utils/urls";
+import { Footer } from "@/components/Footer";
+import { Shop } from "@/components/exhibition/Shop";
 
 interface ExhibitionPageProps {
   params: {
@@ -103,8 +105,16 @@ export default async function ExhibitionPage({
   }
 
   return (
-    <div className="flex flex-col">
+    <div className="absolute top-0 left-0 right-0 flex flex-col">
       <ExhibitionHero title={exhibition.title} image={exhibition.mainImage} />
+
+      <div className="flex flex-col items-center justify-center w-full h-48 py-12">
+        Ciao
+      </div>
+
+      <Shop />
+
+      <Footer locale={locale} />
     </div>
   );
 }
