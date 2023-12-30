@@ -93,6 +93,15 @@ export type Country = Entry & {
 };
 
 export type Entry = {
+  __typename:
+    | "Asset"
+    | "Author"
+    | "Continent"
+    | "Country"
+    | "Exhibition"
+    | "ExhibitionImage"
+    | "Post"
+    | "Video";
   contentfulMetadata: ContentfulMetadata;
 };
 
@@ -277,6 +286,7 @@ export type Video = Entry & {
   name?: Maybe<Scalars["String"]["output"]>;
   sys: Sys;
   video?: Maybe<Scalars["JSON"]["output"]>;
+  description?: Maybe<Scalars["String"]["output"]>;
 };
 
 export type VideoNameArgs = {

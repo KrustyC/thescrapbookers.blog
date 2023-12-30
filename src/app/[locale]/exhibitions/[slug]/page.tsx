@@ -3,13 +3,13 @@ import { draftMode } from "next/headers";
 import { getTranslations } from "next-intl/server";
 
 import { ExhibitionHero } from "@/components/exhibition/ExhibitionHero";
+import { Shop } from "@/components/exhibition/Shop";
+import { Footer } from "@/components/Footer";
 import { getExhibition } from "@/graphql/queries/get-exhibition.query";
 import { ArticleNotFoundIcon } from "@/icons/ArticleNotFound";
 import { AppLocale } from "@/types/global";
 import { Link } from "@/utils/navigation";
 import { createAlternates } from "@/utils/urls";
-import { Footer } from "@/components/Footer";
-import { Shop } from "@/components/exhibition/Shop";
 
 interface ExhibitionPageProps {
   params: {

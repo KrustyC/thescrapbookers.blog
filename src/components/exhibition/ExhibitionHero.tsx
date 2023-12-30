@@ -1,5 +1,6 @@
-import { Image as IImage } from "@/types/global";
 import Image from "next/image";
+
+import { Image as IImage } from "@/types/global";
 
 interface ExhibitionHeroProps {
   title?: string;
