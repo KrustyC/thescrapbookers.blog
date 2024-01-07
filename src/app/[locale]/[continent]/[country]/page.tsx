@@ -50,6 +50,7 @@ export async function generateMetadata({
       description,
       images,
       locale,
+      siteName: "The Scrapbookers",
       url: new URL(
         `${locale === "it" ? `/${locale}` : ""}/${country.continent?.slug}/${countrySlug}`,
         process.env.NEXT_PUBLIC_BASE_URL

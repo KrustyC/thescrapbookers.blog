@@ -17,12 +17,25 @@ export const metadata: Metadata = {
       it: "/it",
     },
   },
+  openGraph: {
+    title: "The Scrapbookers",
+    siteName: "The Scrapbookers",
+    url: new URL("/", process.env.NEXT_PUBLIC_BASE_URL),
+    images: [
+      {
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/the_scrapbookers.webp`,
+        height: 569,
+        width: 853,
+      },
+    ],
+  },
   icons: {
     icon: {
-      url: "/favicon.ico",
+      url: "/icons/favicon-48x48.png",
       type: "image/png",
+      sizes: "48x48",
     },
-    shortcut: { url: "/favicon.png", type: "image/png" },
+    shortcut: { url: "/icons/favicon-48x48.png", type: "image/png" },
   },
 };
 
