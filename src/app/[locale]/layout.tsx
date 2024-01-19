@@ -1,5 +1,6 @@
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
@@ -122,7 +123,10 @@ export default function LocaleLayout({ children, params }: Props) {
 
       {process.env.NEXT_PUBLIC_ENVIRONMENT === "production" && (
         <>
-          <Script
+          <GoogleAnalytics
+            gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID as string}
+          />
+          {/* <Script
             async
             strategy="lazyOnload"
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
@@ -135,7 +139,7 @@ export default function LocaleLayout({ children, params }: Props) {
                 
                 gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');
                 `}
-          </Script>
+          </Script> */}
 
           {/* @TODO
            * Check this https://nextjs.org/docs/app/building-your-application/optimizing/scripts
