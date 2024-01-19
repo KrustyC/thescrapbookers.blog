@@ -28,7 +28,7 @@ export function createAlternates({
   return {
     canonical: `${baseUrl}${path}`,
     languages: {
-      en: `${baseUrl}${path}`,
+      // en: `${baseUrl}${path}`,
       it: `${baseUrl}/it${path}`,
     },
   };
