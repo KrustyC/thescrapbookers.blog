@@ -31,27 +31,6 @@ export async function generateMetadata({
       { name: "Davide Crestini", url: "https://dcrestini.me" },
       { name: "Beatrice Cox", url: "https://beatricecox.com" },
     ],
-    icons: {
-      icon: "/favicon.ico",
-      apple: "/icons/apple-touch-icon.png",
-      other: [
-        {
-          url: "/icons/favicon-48x48.png",
-          type: "image/png",
-          sizes: "48x48",
-        },
-        {
-          url: "/icons/favicon-32x32.png",
-          type: "image/png",
-          sizes: "32x32",
-        },
-        {
-          url: "/icons/favicon-16x16.png",
-          type: "image/png",
-          sizes: "16x16",
-        },
-      ],
-    },
     creator: "Davide Crestini",
     publisher: "Beatrice Cox",
     openGraph: {

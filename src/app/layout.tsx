@@ -30,12 +30,26 @@ export const metadata: Metadata = {
     ],
   },
   icons: {
-    icon: {
-      url: "/icons/favicon-48x48.png",
-      type: "image/png",
-      sizes: "48x48",
-    },
+    icon: "/favicon.ico",
+    apple: "/icons/apple-touch-icon.png",
     shortcut: { url: "/icons/favicon-48x48.png", type: "image/png" },
+    other: [
+      {
+        url: "/icons/favicon-48x48.png",
+        type: "image/png",
+        sizes: "48x48",
+      },
+      {
+        url: "/icons/favicon-32x32.png",
+        type: "image/png",
+        sizes: "32x32",
+      },
+      {
+        url: "/icons/favicon-16x16.png",
+        type: "image/png",
+        sizes: "16x16",
+      },
+    ],
   },
 };
 
