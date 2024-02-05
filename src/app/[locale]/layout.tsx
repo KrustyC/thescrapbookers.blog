@@ -90,7 +90,6 @@ export default function LocaleLayout({ children, params }: Props) {
         <Script
           id="website-json-ld"
           type="application/ld+json"
-          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
