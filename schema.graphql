@@ -104,3 +104,84 @@ type Continent implements Entry {
   metaTitle: String
   metaDescription: String
 }
+
+type Exhibition implements Entry {
+  sys: Sys!
+  contentfulMetadata: ContentfulMetadata!
+  title(locale: String): String
+  description(locale: String): ExhibitionDescription
+  photos(skip: Int = 0, limit: Int = 100, locale: String): [ExhibitionImage]
+  startDate: DateTime
+  endDate: DateTime
+  mainImage(locale: String): Asset
+  location(locale: String): Location
+  locationName(locale: String): String
+}
+
+type ExhibitionDescription {
+  json: JSON!
+  links: ExhibitionDescriptionLinks!
+}
+
+type ExhibitionDescriptionLinks {
+  entries: ExhibitionDescriptionEntries!
+  assets: ExhibitionDescriptionAssets!
+}
+
+type ExhibitionDescriptionEntries {
+  inline: [Entry]!
+  hyperlink: [Entry]!
+  block: [Entry]!
+}
+
+type ExhibitionDescriptionAssets {
+  hyperlink: [Asset]!
+  block: [Asset]!
+}
+
+type Location {
+  lat: Float
+  lon: Float
+}
+
+type ExhibitionImage implements Entry {
+  sys: Sys!
+  contentfulMetadata: ContentfulMetadata!
+  title(locale: String): String
+  description(locale: String): ExhibitionImageDescription
+  photosCollection(
+    skip: Int = 0
+    limit: Int = 100
+    locale: String
+  ): AssetCollection
+  place(locale: String): String
+  year(locale: String): Int
+}
+
+type AssetCollection {
+  total: Int!
+  skip: Int!
+  limit: Int!
+  items: [Asset]!
+}
+
+type ExhibitionImageDescription {
+  json: JSON!
+  links: ExhibitionImageDescriptionLinks!
+}
+
+type ExhibitionImageDescriptionLinks {
+  entries: ExhibitionImageDescriptionEntries!
+  assets: ExhibitionImageDescriptionAssets!
+}
+
+type ExhibitionImageDescriptionEntries {
+  inline: [Entry]!
+  hyperlink: [Entry]!
+  block: [Entry]!
+}
+
+type ExhibitionImageDescriptionAssets {
+  hyperlink: [Asset]!
+  block: [Asset]!
+}

@@ -117,6 +117,12 @@
       "noArticles": "We are currently busy writing some articles, but fear none, you will find them here in just a few days."
     }
   },
+  "Exhibition": {
+    "notFound": {
+      "message": "The exhibition you are looking for does not exist",
+      "cta": "back to homepage"
+    }
+  },
   "NotFound": {
     "title": "mmmh... maybe you are a bit ahead of our travel",
     "backHome": "back to homepage"

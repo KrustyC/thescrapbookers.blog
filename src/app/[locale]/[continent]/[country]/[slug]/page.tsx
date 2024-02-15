@@ -96,7 +96,7 @@ export default async function PostPage({
     return (
       <div className="flex flex-col items-center justify-center w-full py-12">
         <ArticleNotFoundIcon className="h-[180px] w-[320px] lg:h-[480px] lg:w-[620px]" />
-        <h2 className="text-2xl lg:text-4xl w-[320px] mt-8 text-center">
+        <h2 className="text-2xl lg:text-3xl w-[320px] mt-8 text-center">
           {t("notFound.message")}
         </h2>
         <Link

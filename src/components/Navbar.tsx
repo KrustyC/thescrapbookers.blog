@@ -6,7 +6,8 @@ import { AppLocale } from "@/types/global";
 import { Link } from "@/utils/navigation";
 import { URLS } from "@/utils/urls";
 
-import logoPic from "../../public/images/logo_white.png";
+import logoPicBlack from "../../public/images/logo_black.png";
+import logoPicWhite from "../../public/images/logo_white.png";
 
 import { LocaleSelector } from "./LocaleSelector/LocaleSelector";
 
@@ -26,7 +27,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     <nav className="flex justify-between w-full h-24 bg-transparent absolute top-0 left-0 right-0 z-50 px-6 lg:px-24">
       <Link className="relative h-full w-44 md:w-56" href="/">
         <Image
-          src={logoPic}
+          src={blackText ? logoPicBlack : logoPicWhite}
           alt="the scrapbooker logo"
           title="logo"
           sizes="100%"

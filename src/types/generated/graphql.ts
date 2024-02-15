@@ -32,16 +32,24 @@ export type Scalars = {
 
 export type Asset = {
   __typename?: "Asset";
-  sys: Sys;
   contentType?: Maybe<Scalars["String"]["output"]>;
   contentfulMetadata: ContentfulMetadata;
   description?: Maybe<Scalars["String"]["output"]>;
   fileName?: Maybe<Scalars["String"]["output"]>;
   height?: Maybe<Scalars["Int"]["output"]>;
   size?: Maybe<Scalars["Int"]["output"]>;
+  sys: Sys;
   title?: Maybe<Scalars["String"]["output"]>;
   url?: Maybe<Scalars["String"]["output"]>;
   width?: Maybe<Scalars["Int"]["output"]>;
+};
+
+export type AssetCollection = {
+  __typename?: "AssetCollection";
+  items: Array<Maybe<Asset>>;
+  limit: Scalars["Int"]["output"];
+  skip: Scalars["Int"]["output"];
+  total: Scalars["Int"]["output"];
 };
 
 export type Author = Entry & {
@@ -79,14 +87,153 @@ export type Country = Entry & {
   metaDescription?: Maybe<Scalars["String"]["output"]>;
   metaTitle?: Maybe<Scalars["String"]["output"]>;
   name?: Maybe<Scalars["String"]["output"]>;
+  preposition?: Maybe<Scalars["String"]["output"]>;
   slug?: Maybe<Scalars["String"]["output"]>;
-  preposition?: Maybe<Scalars['String']['output']>;
   thumbnailImage?: Maybe<Asset>;
 };
 
 export type Entry = {
-  __typename?: String;
+  __typename:
+    | "Asset"
+    | "Author"
+    | "Continent"
+    | "Country"
+    | "Exhibition"
+    | "ExhibitionImage"
+    | "Post"
+    | "Video";
   contentfulMetadata: ContentfulMetadata;
+};
+
+export type Exhibition = Entry & {
+  __typename?: "Exhibition";
+  contentfulMetadata: ContentfulMetadata;
+  description?: Maybe<ExhibitionDescription>;
+  endDate?: Maybe<Scalars["DateTime"]["output"]>;
+  location?: Maybe<Location>;
+  locationName?: Maybe<Scalars["String"]["output"]>;
+  mainImage?: Maybe<Asset>;
+  thumbnailImage?: Maybe<Asset>;
+  photos?: Maybe<Array<Maybe<ExhibitionImage>>>;
+  startDate?: Maybe<Scalars["DateTime"]["output"]>;
+  sys: Sys;
+  title?: Maybe<Scalars["String"]["output"]>;
+  slug?: Maybe<Scalars["String"]["output"]>;
+};
+
+export type ExhibitionDescriptionArgs = {
+  locale?: InputMaybe<Scalars["String"]["input"]>;
+};
+
+export type ExhibitionLocationArgs = {
+  locale?: InputMaybe<Scalars["String"]["input"]>;
+};
+
+export type ExhibitionLocationNameArgs = {
+  locale?: InputMaybe<Scalars["String"]["input"]>;
+};
+
+export type ExhibitionMainImageArgs = {
+  locale?: InputMaybe<Scalars["String"]["input"]>;
+};
+
+export type ExhibitionPhotosArgs = {
+  limit?: InputMaybe<Scalars["Int"]["input"]>;
+  locale?: InputMaybe<Scalars["String"]["input"]>;
+  skip?: InputMaybe<Scalars["Int"]["input"]>;
+};
+
+export type ExhibitionTitleArgs = {
+  locale?: InputMaybe<Scalars["String"]["input"]>;
+};
+
+export type ExhibitionDescription = {
+  __typename?: "ExhibitionDescription";
+  json: Scalars["JSON"]["output"];
+  links: ExhibitionDescriptionLinks;
+};
+
+export type ExhibitionDescriptionAssets = {
+  __typename?: "ExhibitionDescriptionAssets";
+  block: Array<Maybe<Asset>>;
+  hyperlink: Array<Maybe<Asset>>;
+};
+
+export type ExhibitionDescriptionEntries = {
+  __typename?: "ExhibitionDescriptionEntries";
+  block: Array<Maybe<Entry>>;
+  hyperlink: Array<Maybe<Entry>>;
+  inline: Array<Maybe<Entry>>;
+};
+
+export type ExhibitionDescriptionLinks = {
+  __typename?: "ExhibitionDescriptionLinks";
+  assets: ExhibitionDescriptionAssets;
+  entries: ExhibitionDescriptionEntries;
+};
+
+export type ExhibitionImage = Entry & {
+  __typename?: "ExhibitionImage";
+  contentfulMetadata: ContentfulMetadata;
+  description?: Maybe<ExhibitionImageDescription>;
+  photosCollection?: Maybe<AssetCollection>;
+  place?: Maybe<Scalars["String"]["output"]>;
+  sys: Sys;
+  title?: Maybe<Scalars["String"]["output"]>;
+  year?: Maybe<Scalars["Int"]["output"]>;
+};
+
+export type ExhibitionImageDescriptionArgs = {
+  locale?: InputMaybe<Scalars["String"]["input"]>;
+};
+
+export type ExhibitionImagePhotosCollectionArgs = {
+  limit?: InputMaybe<Scalars["Int"]["input"]>;
+  locale?: InputMaybe<Scalars["String"]["input"]>;
+  skip?: InputMaybe<Scalars["Int"]["input"]>;
+};
+
+export type ExhibitionImagePlaceArgs = {
+  locale?: InputMaybe<Scalars["String"]["input"]>;
+};
+
+export type ExhibitionImageTitleArgs = {
+  locale?: InputMaybe<Scalars["String"]["input"]>;
+};
+
+export type ExhibitionImageYearArgs = {
+  locale?: InputMaybe<Scalars["String"]["input"]>;
+};
+
+export type ExhibitionImageDescription = {
+  __typename?: "ExhibitionImageDescription";
+  json: Scalars["JSON"]["output"];
+  links: ExhibitionImageDescriptionLinks;
+};
+
+export type ExhibitionImageDescriptionAssets = {
+  __typename?: "ExhibitionImageDescriptionAssets";
+  block: Array<Maybe<Asset>>;
+  hyperlink: Array<Maybe<Asset>>;
+};
+
+export type ExhibitionImageDescriptionEntries = {
+  __typename?: "ExhibitionImageDescriptionEntries";
+  block: Array<Maybe<Entry>>;
+  hyperlink: Array<Maybe<Entry>>;
+  inline: Array<Maybe<Entry>>;
+};
+
+export type ExhibitionImageDescriptionLinks = {
+  __typename?: "ExhibitionImageDescriptionLinks";
+  assets: ExhibitionImageDescriptionAssets;
+  entries: ExhibitionImageDescriptionEntries;
+};
+
+export type Location = {
+  __typename?: "Location";
+  lat?: Maybe<Scalars["Float"]["output"]>;
+  lon?: Maybe<Scalars["Float"]["output"]>;
 };
 
 export type Post = Entry & {
@@ -117,27 +264,35 @@ export type PostRichtextAssets = {
   block: Array<Maybe<Asset>>;
 };
 
-export type PostRichtextLinks = {
-  __typename?: 'PostRichtextLinks';
-  assets: PostRichtextAssets;
-  entries: PostRichtextEntries;
-};
-
 export type PostRichtextEntries = {
-  __typename?: 'PostRichtextEntries';
+  __typename?: "PostRichtextEntries";
   block: Array<Maybe<Entry>>;
 };
 
-export type Video = Entry & {
-  __typename?: 'Video';
-  contentfulMetadata: ContentfulMetadata;
-  name?: Maybe<Scalars['String']['output']>;
-  description?: Maybe<Scalars['String']['output']>;
-  sys: Sys;
-  video?: Maybe<Scalars['JSON']['output']>;
+export type PostRichtextLinks = {
+  __typename?: "PostRichtextLinks";
+  assets: PostRichtextAssets;
+  entries: PostRichtextEntries;
 };
 
 export type Sys = {
   __typename?: "Sys";
   id: Scalars["String"]["output"];
+};
+
+export type Video = Entry & {
+  __typename?: "Video";
+  contentfulMetadata: ContentfulMetadata;
+  name?: Maybe<Scalars["String"]["output"]>;
+  sys: Sys;
+  video?: Maybe<Scalars["JSON"]["output"]>;
+  description?: Maybe<Scalars["String"]["output"]>;
+};
+
+export type VideoNameArgs = {
+  locale?: InputMaybe<Scalars["String"]["input"]>;
+};
+
+export type VideoVideoArgs = {
+  locale?: InputMaybe<Scalars["String"]["input"]>;
 };

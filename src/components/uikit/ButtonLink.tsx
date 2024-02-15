@@ -6,7 +6,7 @@ import { Link } from "@/utils/navigation";
 interface ButtonLinkProps {
   href: string;
   size?: "sm" | "md";
-  variant: "white" | "black";
+  variant: "white" | "black" | "black-outlined";
   target?: "_blank";
   type?: "button" | "submit";
   prefetch?: boolean;
@@ -33,6 +33,7 @@ export const ButtonLink: React.FC<PropsWithChildren<ButtonLinkProps>> = ({
         {
           "bg-white text-black": variant === "white",
           "bg-black text-white": variant === "black",
+          "bg-black text-white border border-white hover:text-black hover:bg-white transition-all": variant === "black-outlined",
         },
         {
           "text-sm lg:text-regular h-12 min-w-16 lg:min-w-24 w-full md:w-fit px-4 lg:px-8 rounded-lg": size === "sm",
