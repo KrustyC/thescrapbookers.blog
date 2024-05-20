@@ -1,9 +1,11 @@
+"use client";
+
 import Image from "next/image";
 
 import type { AppLocale, Post as IPost } from "@/types/global";
 import { formatDate, getFormat } from "@/utils/date";
 import { Link } from "@/utils/navigation";
-
+import { Variants, motion } from "framer-motion";
 import { PostDescription } from "./PostDescription";
 
 interface PostProps {
@@ -34,12 +36,27 @@ export const PostCardLoading = () => (
   </div>
 );
 
+const variants: Variants = {
+  offscreen: {
+    y: 20,
+    opacity: 0,
+  },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      duration: 1,
+    },
+  },
+};
+
 export const PostCard: React.FC<PostProps> = ({
   post: { title, href, smallIntro, thumbnailImage, category, date },
   locale,
 }) => {
   return (
-    <div className="flex flex-col w-full gap-2">
+    <motion.div variants={variants} className="flex flex-col w-full gap-2">
       <Link
         href={href || "/"}
         className="flex w-full aspect-square relative bg-gray-200 rounded-2xl"
@@ -61,9 +78,7 @@ export const PostCard: React.FC<PostProps> = ({
         <h3 className="text-2xl text-black font-medium mt-3">{title}</h3>
       </Link>
 
-      <div
-        className="flex items-center uppercase tracking-widest text-gray-400 text-regular font-poppins"
-      >
+      <div className="flex items-center uppercase tracking-widest text-gray-400 text-regular font-poppins">
         <span>{category}</span>
         <div className="border-r-2 h-3 mx-2" />
         <span>
@@ -82,6 +97,6 @@ export const PostCard: React.FC<PostProps> = ({
       ) : (
         <span>Missing description</span>
       )}
-    </div>
+    </motion.div>
   );
 };

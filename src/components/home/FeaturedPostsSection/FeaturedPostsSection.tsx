@@ -3,9 +3,10 @@ import { getTranslations } from "next-intl/server";
 
 import { PostCard } from "@/components/PostCard/PostCard";
 import { getPostsByTag } from "@/graphql/queries/get-post-by-tag.query";
-import { type AppLocale,Tag } from "@/types/global";
+import { type AppLocale, Tag } from "@/types/global";
 
 import { FeaturedPostsSectionSkeleton } from "./FeaturedPostsSectionSkeleton";
+import { PostcardRail } from "@/components/PostCard/PostcardTail";
 
 export default async function FeaturedPostsSection({
   locale,
@@ -27,11 +28,11 @@ export default async function FeaturedPostsSection({
       <section className="section-layout">
         <h2 className="text-black">{t("title")}</h2>
 
-        <div className="flex flex-col md:flex-row gap-12 md:gap-8 lg:gap-16">
+        <PostcardRail>
           {posts.map((post, i) => (
             <PostCard key={i} post={post} locale={locale} />
           ))}
-        </div>
+        </PostcardRail>
       </section>
     );
   } catch (error) {
