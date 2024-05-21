@@ -141,3 +141,14 @@ export interface Post {
   author?: Author;
   country?: Pick<Country, "name" | "slug" | "continent">;
 }
+
+export type ShortPost = Pick<
+  Post,
+  | "slug"
+  | "title"
+  | "href"
+  | "smallIntro"
+  | "thumbnailImage"
+  | "category"
+  | "date"
+>;

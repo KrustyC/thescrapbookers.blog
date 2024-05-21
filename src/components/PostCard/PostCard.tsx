@@ -1,11 +1,12 @@
 "use client";
 
+import { motion,Variants } from "framer-motion";
 import Image from "next/image";
 
 import type { AppLocale, Post as IPost } from "@/types/global";
 import { formatDate, getFormat } from "@/utils/date";
 import { Link } from "@/utils/navigation";
-import { Variants, motion } from "framer-motion";
+
 import { PostDescription } from "./PostDescription";
 
 interface PostProps {
@@ -38,7 +39,7 @@ export const PostCardLoading = () => (
 
 const variants: Variants = {
   offscreen: {
-    y: 20,
+    y: 40,
     opacity: 0,
   },
   onscreen: {
@@ -46,7 +47,8 @@ const variants: Variants = {
     opacity: 1,
     transition: {
       type: "spring",
-      duration: 1,
+      bounce: 0.2,
+      duration: 1.1,
     },
   },
 };
@@ -74,11 +76,16 @@ export const PostCard: React.FC<PostProps> = ({
         />
       </Link>
 
-      <Link href={href || "/"}>
-        <h3 className="text-2xl text-black font-medium mt-3">{title}</h3>
-      </Link>
+      <motion.div variants={variants}>
+        <Link href={href || "/"}>
+          <h3 className="text-2xl text-black font-medium mt-3">{title}</h3>
+        </Link>
+      </motion.div>
 
-      <div className="flex items-center uppercase tracking-widest text-gray-400 text-regular font-poppins">
+      <motion.div
+        variants={variants}
+        className="flex items-center uppercase tracking-widest text-gray-400 text-regular font-poppins"
+      >
         <span>{category}</span>
         <div className="border-r-2 h-3 mx-2" />
         <span>
@@ -90,13 +97,15 @@ export const PostCard: React.FC<PostProps> = ({
               })
             : "Missing Date"}
         </span>
-      </div>
+      </motion.div>
 
-      {smallIntro ? (
-        <PostDescription text={smallIntro} />
-      ) : (
-        <span>Missing description</span>
-      )}
+      <motion.div variants={variants}>
+        {smallIntro ? (
+          <PostDescription text={smallIntro} />
+        ) : (
+          <span>Missing description</span>
+        )}
+      </motion.div>
     </motion.div>
   );
 };

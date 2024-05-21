@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 import { getApolloServerClient } from "src/graphql/apollo-server-client";
 
 import { Post as PostGraphQL } from "@/types/generated/graphql";
-import { AppLocale, Post, Tag } from "@/types/global";
+import { AppLocale, ShortPost, Tag } from "@/types/global";
 import { generatePostHref } from "@/utils/hrefs";
 import { extractImageDataFromContentfulAsset } from "@/utils/images";
 
@@ -30,16 +30,6 @@ interface PostByTagQueryResposne {
   };
 }
 
-type ShortPost = Pick<
-  Post,
-  | "slug"
-  | "title"
-  | "href"
-  | "smallIntro"
-  | "thumbnailImage"
-  | "category"
-  | "date"
->;
 
 interface GetPostByTagResponse {
   posts: ShortPost[];

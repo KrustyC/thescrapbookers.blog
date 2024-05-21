@@ -1,12 +1,11 @@
 import { draftMode } from "next/headers";
 import { getTranslations } from "next-intl/server";
 
-import { PostCard } from "@/components/PostCard/PostCard";
 import { getPostsByTag } from "@/graphql/queries/get-post-by-tag.query";
 import { type AppLocale, Tag } from "@/types/global";
 
+import { AnimatedPostsSection } from "./AnimatedPostsSection";
 import { FeaturedPostsSectionSkeleton } from "./FeaturedPostsSectionSkeleton";
-import { PostcardRail } from "@/components/PostCard/PostcardTail";
 
 export default async function FeaturedPostsSection({
   locale,
@@ -25,15 +24,7 @@ export default async function FeaturedPostsSection({
     });
 
     return (
-      <section className="section-layout">
-        <h2 className="text-black">{t("title")}</h2>
-
-        <PostcardRail>
-          {posts.map((post, i) => (
-            <PostCard key={i} post={post} locale={locale} />
-          ))}
-        </PostcardRail>
-      </section>
+      <AnimatedPostsSection title={t("title")} posts={posts} locale={locale} />
     );
   } catch (error) {
     return (
