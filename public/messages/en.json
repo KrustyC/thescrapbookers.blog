@@ -5,12 +5,8 @@
       "description": "Travel blog digital nomads and culturally curious travellers  who wants to travel the world while working, connect with locals and other like minded travellers."
     },
     "Hero": {
-      "title": {
-        "part1": "Take only memories,",
-        "part2": "leave only footprints."
-      },
-      "author": "Chief Seattle",
-      "subtitle": "Finding the sustainable side of digital nomading, one discovery at a time"
+      "title": "On the lookout for the sustainable side of digital nomading",
+      "heroImgAlt": "View of the Langtang Valley (Nepal) surrounded by mountains. In the front there is a small traditional house"
     },
     "ExhibitionBanner": {
       "title": "Asia in Equilibrio, Tra Viaggio e Lavoro",
