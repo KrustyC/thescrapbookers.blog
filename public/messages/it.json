@@ -1,19 +1,19 @@
 {
   "Home": {
     "Metadata": {
-      "title": "Cultura, Nomadismo Digitale & Lifestyle | The Scrapbookers",
+      "title": "Culture, Digital Nomads, & Lifestyle | The Scrapbookers ",
       "description": "Pensieri e consigli di viaggio per nomadi digitali e amanti degli usi e costumi di culture straniere. Un blog per leggere storie su posti nuovi e a te sconosciuti."
     },
     "Hero": {
-      "title": "Alla ricerca della sostenibilità nel nomadismo digitale",
-      "heroImgAlt": "Vista della Valle di Langtang (Nepal) circondata da montagne. In primo piano c'è una piccola casa tradizionale"
+      "title": "On the lookout for the sustainable side of digital nomading",
+      "heroImgAlt": "View of the Langtang Valley (Nepal) surrounded by mountains. In the front there is a small traditional house"
     },
     "ExhibitionBanner": {
-      "title": "Asia in Equilibrio <br /> Tra Viaggio e Lavoro",
-      "exhibition": "Mostra fotografica",
+      "title": "Asia in Equilibrio, Tra Viaggio e Lavoro",
+      "exhibition": "Photo exhibition",
       "location": "Palazzo Pretorio, Sansepolcro (AR)",
-      "description": "Bilanciando il viaggiare e il lavoro ci siamo trovati a fare qualche scatto in momenti semplici ma significativi. Ogni scatto non mira a definire una verità assoluta, né pretende di distorcere la realtà; è piuttosto un frammento delle nostre riflessioni, un racconto visivo di luoghi che ci hanno trasformati.",
-      "cta": "Contattaci"
+      "description": "Balancing travel and work, we found ourselves taking some shots in simple yet significant moments. Each shot does not aim to define an absolute truth, nor does it intend to distort reality; it is rather a fragment of our reflections, a visual tale of places that have transformed us.",
+      "cta": "Contact Us"
     },
     "Featured": {
       "title": "Articoli Recenti",
@@ -21,7 +21,7 @@
       "error2": "Ci scusiamo per il disagio, siamo già al lavoro per risolvere il problema, ti preghiamo di riprovare tra qualche minuto."
     },
     "Video": {
-      "text": "storie di viaggio, cibo, cultura e nomadismo digitale"
+      "text": "stories of travel, food, culture and digital nomading"
     },
     "DigitalNomading": {
       "readMoreCTA": "Leggi l'articolo",
@@ -30,11 +30,11 @@
     },
     "CountriesCarouselSection": {
       "Images": {
-        "thailand": "una torre a Chiang Mai (Thailandia). La torre ha una forma conica realizzata in mattoni ed è circondata da molte piante verdi, che coprono la parte inferiore della torre",
-        "laos": "un uomo su una scala a pioli che lavora con molti cavi a Vientiane (Laos). L'uomo indossa un casco giallo e una camicia blu",
-        "vietnam": "una donna ad Hanoi (Vietnam) che spinge una bicicletta, con molti fiori. Non si può vedere il volto della donna, poiché è coperto da alcune piante verdi. È però possibile notare che indossa un cappello tradizionale a cono",
-        "cambodia": "un giovane monaco che cammina in un tempio vicino ad Angkor Wat (Cambogia). Il monaco indossa una veste arancione tradizionale",
-        "malaysia": "Immagine in prospettiva del minareto della Moschea Nazionale della Malesia a Kuala Lumpur. Lungo la via per il minareto, c'è una piscina colma di acqua di un azzurro brillante. Ai lati della piscina, due corridoi con numerose colonne nere e un tetto bianco"
+        "thailand": "a tower in Chiang Mai (Thailand). The tower is of a cone shape made of bricks and it's surrounded by a lot of green plants, which are covering the bottom of the tower",
+        "laos": "a man on a step ladder working with a lot of cable in Vientiane (Laos). The man is wearing a yellow helmet and a blue shirt",
+        "vietnam": "a woman in Hanoi (Vietnam) pushing a bike, with a lot of flowers. You can not see the face of the woman, as it's covered by some green plants. It is possible though to notice that she is wearing a traditional hat",
+        "cambodia": "a young monk walking in a temple near Angkor Wat (Cambodia). The monk is wearing a traditional orange robe",
+        "malaysia": "picture in perspective of the minaret of the National Mosque of Malaysia in Kuala Lumpur. On thw way to the minaret there is pool full of bright blue water. On the side of the pool, two corridors with a lot of black columns and a white roof"
       }
     },
     "HighlightSection": {
@@ -44,7 +44,7 @@
     },
     "AboutUs": {
       "title": "Filosofia del blog",
-      "text": "Iniziando il nostro viaggio nel sud-est asiatico, abbiamo scoperto un mondo che ci ha spinti a condividere non solo luoghi e paesaggi, ma anche le sfumature della vita quotidiana e le esperienze che caratterizzano ogni meta, così come pezzi di storia spesso poco conosciuti. Questo blog è frutto di quell'ispirazione, una sintesi delle nostre abilità di sviluppatore e graphic designer, della nostra passione per i viaggi e del desiderio di raccontare. Unitevi a noi, ed esplorate il mondo attraverso una lente differente.",
+      "text": "Beginning our travels in Southeast Asia, we encountered a world that called us to share more than mere picturesque scenes. This blog is a reflection of our desire to reveal the daily life, unique experiences, and often overlooked historical facets that characterise each destination. As a software engineer and a graphic designer, we combine our professional skills with a shared passion for travel, aiming to tell stories in a distinct way. Join us, and explore the world through a different lens.",
       "cta": "Scopri di più"
     },
     "NavbarLinks": {
@@ -55,7 +55,7 @@
   },
   "AboutUs": {
     "Metadata": {
-      "title": "Chi Siamo, Scopri di Più sulla nostra Storia",
+      "title": "About Us, Discover More about our Story",
       "description": "Nomadi digitali in viaggio: unisciti alle nostre avventure, scopri chi siamo, come viaggiamo e le sfide che affrontiamo lavorando in movimento!"
     },
     "title": "Chi Siamo",
@@ -74,8 +74,8 @@
     }
   },
   "BlogPost": {
-    "shareText": "Leggi questo articolo dei The Scrapbookers",
-    "timeToRead": "min di lettura",
+    "shareText": "Check out this post by The Scrapbookers",
+    "timeToRead": "min read",
     "writtenBy": "Scritto da",
     "notFound": {
       "message": "Sembra che l'articolo che stai cercando non esista",
@@ -84,7 +84,7 @@
   },
   "Continent": {
     "Country": {
-      "cta": "Scopri di più"
+      "cta": "Find out More"
     }
   },
   "Country": {
@@ -92,25 +92,25 @@
       "title": "Info in pillole",
       "description": "Una serie di informazioni utili, e interessanti, visibili in un colpo d'occhio",
       "seeMore": "Espandi",
-      "seeLess": "Riduci",
+      "seeLess": "See less",
       "Headings": {
-        "capital": "Capitale",
-        "population": "Popolazione",
-        "languages": "Lingue Ufficiali",
-        "lifeExpectancy": "Aspettativa di Vita",
-        "currencies": "Valute",
-        "eVisa": "Sito ufficiale per visa ed e-visa",
-        "dishes": "Piatti Tipici",
-        "phrases": "Frasi Utili",
-        "coworkingSpaces": "Spazi di Co-working preferiti e perchè"
+        "capital": "Capital",
+        "population": "Population",
+        "languages": "Languages",
+        "lifeExpectancy": "Life Expectancy",
+        "currencies": "Currencies",
+        "eVisa": "Official website for visa and e-visa",
+        "dishes": "Dishes to Look Out For",
+        "phrases": "Basic phrases",
+        "coworkingSpaces": "Favourite Co-working Space(s) & Why"
       },
       "Values": {
-        "lifeExpectancy": "{years} anni"
+        "lifeExpectancy": "{years} years"
       }
     },
     "Articles": {
-      "heading": "Articoli {preposition, select, simple {da} articulateMaleSingularCut {dal} articulateMaleSingular {dallo} articulateFemaleSingular {dalla} articulateMalePluralRegular {dai} articulateMalePluralOdd {dagli} articulateFemalePluralRegular {dalle} articulatePluralApostrophe {dall’} other {da}} {country}",
-      "noArticles": "Al momento non ci sono articoli per questo paese, ma siamo gia all'opera; torna tra qualche giorno per trovare nuovi contenuti."
+      "heading": "Articles from {country}",
+      "noArticles": "We are currently busy writing some articles, but fear none, you will find them here in just a few days."
     }
   },
   "NotFound": {
