@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 
 import { AppLocale } from "@/types/global";
 
-import homeHeroPic from "../../../../public/images/hero_wave.webp";
+import homeHeroPic from "../../../../public/images/nepal_hero.webp";
 
 import { HeroNavbar } from "./HeroNavbar";
 import { Title } from "./Title";
@@ -16,26 +16,20 @@ export const Hero: React.FC<HeroProps> = ({ locale }) => {
   const t = useTranslations("Home.Hero");
 
   return (
-    <div className="relative w-full h-[740px] lg:h-[790px] 2xl:h-[940px] 4xl:h-[1800px] flex flex-col">
+    <div className="relative w-full h-[740px] lg:h-[680px] 2xl:h-[740px] 4xl:h-[1800px] flex flex-col">
       <div className="flex z-50">
         <HeroNavbar locale={locale} />
       </div>
 
-      <div className="flex flex-1 items-center justify-center">
-        <Title
-          titlePart1={t("title.part1")}
-          titlePart2={t("title.part2")}
-          subtitle={t("subtitle")}
-          author={t("author")}
-        />
-      </div>
+      <Title title={t("title")} />
 
       <Image
         src={homeHeroPic}
-        alt="hanoi train street, on the left there is a man enjoying his coffee, while on the background we can see a a lot of plants hanging from the baclony of houses, which are right nect to the railtrack"
-        title="hanoi train street"
+        alt={t("heroImgAlt")}
+        title="Langtang Valley"
         sizes="100vw"
         priority
+        className=""
         fill
         style={{ objectFit: "cover" }}
       />

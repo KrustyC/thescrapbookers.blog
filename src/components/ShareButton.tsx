@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Popover, Transition } from "@headlessui/react";
+import { Popover, PopoverButton, PopoverPanel, Transition } from "@headlessui/react";
 import { usePathname } from "next/navigation";
 import {
   EmailIcon,
@@ -44,9 +44,9 @@ export const ShareButton: React.FC<ShareButtonProps> = ({ text, title }) => {
 
   return (
     <Popover className="relative">
-      <Popover.Button onClick={handleSharing}>
+      <PopoverButton onClick={handleSharing}>
         <ShareIcon />
-      </Popover.Button>
+      </PopoverButton>
 
       {showPanel && (
         <Transition
@@ -57,7 +57,7 @@ export const ShareButton: React.FC<ShareButtonProps> = ({ text, title }) => {
           leaveFrom="transform scale-100 opacity-100"
           leaveTo="transform scale-95 opacity-0"
         >
-          <Popover.Panel
+          <PopoverPanel
             static
             className="bg-white p-4 rounded-lg drop-shadow absolute flex flex-col gap-3"
           >
@@ -95,7 +95,7 @@ export const ShareButton: React.FC<ShareButtonProps> = ({ text, title }) => {
                 <span className="text-sm">Email</span>
               </div>
             </EmailShareButton>
-          </Popover.Panel>
+          </PopoverPanel>
         </Transition>
       )}
     </Popover>

@@ -82,7 +82,7 @@ const Video: React.FC<VideoProps> = ({ text }) => {
       ) : (
         <div className="absolute h-full w-full top-0 bottom-0 left-0 right-0 z-10 px-6 lg:px-16 xl:px-48 flex items-center">
           {showText && (
-            <h2 className="scale-[0.94] animate-title-appear text-6xl lg:text-9xl text-white font-bold md:w-4/5 uppercase text-white/80 font-league-gothic">
+            <h2 className="scale-[0.94] animate-title-appear md:w-4/5 2xl:w-3/5 4xl:w-1/2 text-white/80 text-[80px] lg:text-8xl leading-[4.5rem] lg:leading-[5.5rem] font-medium uppercase font-league-gothic ">
               {text.split(" ").map((word, i) => (
                 <span
                   className="blur-[4px] opacity-0 inline-block animate-text-appear"
