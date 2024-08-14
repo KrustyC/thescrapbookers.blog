@@ -5,24 +5,25 @@ import { useTranslations } from "next-intl";
 import { unstable_setRequestLocale } from "next-intl/server";
 
 import { Footer } from "@/components/Footer";
-import { AboutUsSection } from "@/components/home/AboutUsSection";
-import CountriesCarouselSection, {
-  CountriesCarouselSectionSkeleton,
-} from "@/components/home/CountriesCarouselSection/CountriesCarouselSection";
-import DigitalNomadingSection, {
-  DigitalNomadingSectionSkeleton,
-} from "@/components/home/DigitalNomadingSection/DigitalNomadingSection";
-import FeaturedPostsSection, {
-  FeaturedPostsSectionSkeleton,
-} from "@/components/home/FeaturedPostsSection/FeaturedPostsSection";
-import { Hero } from "@/components/home/Hero/Hero";
-import { HighlightSection } from "@/components/home/HighlightSection";
 import { AppLocale } from "@/types/global";
 import { LOCALES } from "@/utils/constants";
 import { createAlternates } from "@/utils/urls";
 
+import { AboutUsSection } from "./_components/AboutUsSection";
+import CountriesCarouselSection, {
+  CountriesCarouselSectionSkeleton,
+} from "./_components/CountriesCarouselSection/CountriesCarouselSection";
+import DigitalNomadingSection, {
+  DigitalNomadingSectionSkeleton,
+} from "./_components/DigitalNomadingSection/DigitalNomadingSection";
+import FeaturedPostsSection, {
+  FeaturedPostsSectionSkeleton,
+} from "./_components/FeaturedPostsSection/FeaturedPostsSection";
+import { Hero } from "./_components/Hero/Hero";
+import { HighlightSection } from "./_components/HighlightSection";
+
 // const DynamicVideo = dynamic(() => import("../../components/home/VideoPlayer"));
-const DynamicVideo = dynamic(() => import("../../components/home/Video"));
+const DynamicVideo = dynamic(() => import("./_components/Video"));
 
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));

@@ -6,7 +6,7 @@ import { AppLocale } from "@/types/global";
 import { Link } from "@/utils/navigation";
 import { URLS } from "@/utils/urls";
 
-import logoPic from "../../../../public/images/logo_white.png";
+import logoPic from "../../../../../public/images/logo_white.png";
 
 interface HeroNavbarProps {
   locale: AppLocale;

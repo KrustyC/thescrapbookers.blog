@@ -1,11 +1,12 @@
 "use client";
 
-import { motion,Variants } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 
 import type { AppLocale, Post as IPost } from "@/types/global";
 import { formatDate, getFormat } from "@/utils/date";
 import { Link } from "@/utils/navigation";
+import { smoothSpring } from "@/utils/transitions";
 
 import { PostDescription } from "./PostDescription";
 
@@ -45,11 +46,7 @@ const variants: Variants = {
   onscreen: {
     y: 0,
     opacity: 1,
-    transition: {
-      type: "spring",
-      bounce: 0.2,
-      duration: 1.1,
-    },
+    transition: smoothSpring,
   },
 };
 

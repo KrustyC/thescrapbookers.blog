@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 
 import { AppLocale } from "@/types/global";
 
-import homeHeroPic from "../../../../public/images/nepal_hero.webp";
+import homeHeroPic from "../../../../../public/images/nepal_hero.webp";
 
 import { HeroNavbar } from "./HeroNavbar";
 import { Title } from "./Title";

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-import highlightPic from "../../../public/images/vang_vieng.webp";
+import highlightPic from "../../../../public/images/vang_vieng.webp";
 
 export const HighlightSection = () => {
   const t = useTranslations("Home.HighlightSection");
