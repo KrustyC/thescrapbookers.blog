@@ -32,11 +32,11 @@ export const AnimatedPostsSection: React.FC<AnimatedPostsSectionProps> = ({
 }) => {
   return (
     <motion.section
+      id="featured-articles"
       className="section-layout"
       initial="offscreen"
       whileInView="onscreen"
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ staggerChildren: 0.3 }}
+      viewport={{ once: true, amount: 0.1 }}
     >
       <motion.h2 className="text-black" variants={titleVariants}>
         {title}

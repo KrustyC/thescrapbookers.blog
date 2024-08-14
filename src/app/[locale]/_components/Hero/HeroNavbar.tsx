@@ -17,9 +17,9 @@ export const HeroNavbar: React.FC<HeroNavbarProps> = ({ locale }) => {
   const navbar = useTranslations("Home.NavbarLinks");
 
   return (
-    <div className="w-full h-24 flex items-center justify-between px-6 lg:px-24">
+    <div className="z-50 w-full flex items-center justify-between md:px-6 lg:px-12 py-6">
       <Link
-        className="relative w-44 lg:w-72 xl:w-56 h-full xl:h-20"
+        className="relative w-44 lg:w-72 xl:w-56 h-8 xl:h-20"
         href="/"
         target="_blank"
       >
@@ -34,7 +34,7 @@ export const HeroNavbar: React.FC<HeroNavbarProps> = ({ locale }) => {
         />
       </Link>
 
-      <div className="flex items-center gap-5 text-white font-semibold">
+      <div className="flex items-center gap-5 text-white font-semibold pr-4 md:pr-0">
         <div className="hidden md:flex gap-5 items-center uppercase">
           <Link href={URLS.asiaArticles()}>{navbar("asia")}</Link>
           <Link href={URLS.aboutUs()}>{navbar("aboutUs")}</Link>
