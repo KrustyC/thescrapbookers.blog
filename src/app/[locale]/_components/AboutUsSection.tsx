@@ -15,9 +15,10 @@ export const AboutUsSection: React.FC = () => {
           <h2 className="mb-4 xl:mb-6 uppercase font-semibold text-gray-400 text-sm leading-[0.8rem] tracking-widest font-poppins">
             {t("title")}
           </h2>
-          <p className="text-left text-lg lg:max-w-[650px] mb-4 xl:mb-6">
-            {t("text")}
-          </p>
+          <div className="flex flex-col gap-3 lg:max-w-[600px] 2xl:max-w-[650px] mb-4 xl:mb-6">
+            <p className="text-left">{t("textFirstPar")}</p>
+            <p className="text-left">{t("textSecondPar")}</p>
+          </div>
           <ButtonLink variant="black" href="/about-us">
             {t("cta")}
           </ButtonLink>

@@ -34,7 +34,8 @@
         "laos": "un uomo su una scala a pioli che lavora con molti cavi a Vientiane (Laos). L'uomo indossa un casco giallo e una camicia blu",
         "vietnam": "una donna ad Hanoi (Vietnam) che spinge una bicicletta, con molti fiori. Non si può vedere il volto della donna, poiché è coperto da alcune piante verdi. È però possibile notare che indossa un cappello tradizionale a cono",
         "cambodia": "un giovane monaco che cammina in un tempio vicino ad Angkor Wat (Cambogia). Il monaco indossa una veste arancione tradizionale",
-        "malaysia": "Immagine in prospettiva del minareto della Moschea Nazionale della Malesia a Kuala Lumpur. Lungo la via per il minareto, c'è una piscina colma di acqua di un azzurro brillante. Ai lati della piscina, due corridoi con numerose colonne nere e un tetto bianco"
+        "malaysia": "Immagine in prospettiva del minareto della Moschea Nazionale della Malesia a Kuala Lumpur. Lungo la via per il minareto, c'è una piscina colma di acqua di un azzurro brillante. Ai lati della piscina, due corridoi con numerose colonne nere e un tetto bianco",
+        "nepal": "un ragazzo nepalese dondola in un'altalena di legno costruita a mano"
       }
     },
     "HighlightSection": {
@@ -44,7 +45,8 @@
     },
     "AboutUs": {
       "title": "Filosofia del blog",
-      "text": "Abbiamo iniziato i nostri viaggi nel sud-est asiatico all'inizio del 2023, sperimentando con le nostre competenze professionali e la nostra passione per i viaggi, progettando e costruendo un blog che riflettesse le nostre esperienze, mettesse in evidenza eventi storici trascurati ed esplorasse argomenti interessanti. Il nostro ritmo di viaggio lento ha influenzato anche la produzione dei contenuti, ma abbiate pazienza: crediamo che l'’'attesa valga la pena. Unitevi a noi, tramite la nostra newsletter o sui social media, e cercheremo di farvi sentire come se steste viaggiando anche voi, ovunque vi troviate.",
+      "textFirstPar": "Abbiamo iniziato i nostri viaggi nel sud-est asiatico all'inizio del 2023, sperimentando con le nostre competenze professionali e la nostra passione per i viaggi, progettando e costruendo un blog che riflettesse le nostre esperienze, mettesse in evidenza eventi storici trascurati ed esplorasse argomenti interessanti. ",
+      "textSecondPar": "Il nostro ritmo di viaggio lento ha influenzato anche la produzione dei contenuti, ma abbiate pazienza: crediamo che l'’'attesa valga la pena. Unitevi a noi, tramite la nostra newsletter o sui social media, e cercheremo di farvi sentire come se steste viaggiando anche voi, ovunque vi troviate.",
       "cta": "Scopri di più"
     },
     "NavbarLinks": {
