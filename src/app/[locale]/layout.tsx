@@ -26,7 +26,7 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
-    keywords: ["Travel", "South East Asia", "Blog", "Digital Nomads"],
+    keywords: ["Travel", "South East Asia", "Asia", "Europe", "Blog", "Digital Nomads"],
     authors: [
       { name: "Davide Crestini", url: "https://dcrestini.me" },
       { name: "Beatrice Cox", url: "https://beatricecox.com" },
@@ -104,20 +104,6 @@ export default function LocaleLayout({ children, params }: Props) {
           <GoogleAnalytics
             gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID as string}
           />
-          {/* <Script
-            async
-            strategy="lazyOnload"
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
-          />
-          <Script id="ga-script" strategy="lazyOnload">
-            {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                
-                gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');
-                `}
-          </Script> */}
 
           {/* @TODO
            * Check this https://nextjs.org/docs/app/building-your-application/optimizing/scripts

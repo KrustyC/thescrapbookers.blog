@@ -122,7 +122,6 @@ export default function AboutUsPage({
             <p className="font-merriweather">{t("Generic.fourthParagraph")}</p>
             <p className="font-merriweather">{t("Generic.fifthParagraph")}</p>
             <p className="font-merriweather">{t("Generic.sixthParagraph")}</p>
-            <p className="font-merriweather">{t("Generic.seventhParagraph")}</p>
           </div>
         </div>
       </div>
