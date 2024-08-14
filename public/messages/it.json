@@ -34,7 +34,8 @@
         "laos": "a man on a step ladder working with a lot of cable in Vientiane (Laos). The man is wearing a yellow helmet and a blue shirt",
         "vietnam": "a woman in Hanoi (Vietnam) pushing a bike, with a lot of flowers. You can not see the face of the woman, as it's covered by some green plants. It is possible though to notice that she is wearing a traditional hat",
         "cambodia": "a young monk walking in a temple near Angkor Wat (Cambodia). The monk is wearing a traditional orange robe",
-        "malaysia": "picture in perspective of the minaret of the National Mosque of Malaysia in Kuala Lumpur. On thw way to the minaret there is pool full of bright blue water. On the side of the pool, two corridors with a lot of black columns and a white roof"
+        "malaysia": "picture in perspective of the minaret of the National Mosque of Malaysia in Kuala Lumpur. On thw way to the minaret there is pool full of bright blue water. On the side of the pool, two corridors with a lot of black columns and a white roof",
+        "nepal": "a Nepalese guy is having fun on a handmade wooden swing"
       }
     },
     "HighlightSection": {
@@ -44,7 +45,8 @@
     },
     "AboutUs": {
       "title": "Filosofia del blog",
-      "text": "We began our travels in Southeast Asia at the beginning of 2023. We decided to experiment with our professional skills and shared passion for travel by designing and building a blog that could reflect our experiences, highlight overlooked historical events, and explore general subjects we found interesting along the way. Our slow travel pace has also rubbed off on our speed at producing content, but please be patient—we believe you will find our discoveries worth the wait. Join us here, in our newsletter, or on social media, and we'll help you feel like you're traveling to these places from wherever you are.",
+      "textFirstPar": "We began our travels in Southeast Asia at the beginning of 2023. We decided to experiment with our professional skills and shared passion for travel by designing and building a blog that could reflect our experiences, highlight overlooked historical events, and explore general subjects we found interesting along the way.",
+      "textSecondPar": "Our slow travel pace has also rubbed off on our speed at producing content, but please be patient—we believe you will find our discoveries worth the wait. Join us here, in our newsletter, or on social media, and we'll help you feel like you're travelling to these places, from wherever you are.",
       "cta": "Scopri di più"
     },
     "NavbarLinks": {
