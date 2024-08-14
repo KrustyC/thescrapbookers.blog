@@ -80,7 +80,7 @@ export type Country = Entry & {
   metaTitle?: Maybe<Scalars["String"]["output"]>;
   name?: Maybe<Scalars["String"]["output"]>;
   slug?: Maybe<Scalars["String"]["output"]>;
-  preposition?: Maybe<Scalars['String']['output']>;
+  preposition?: Maybe<Scalars["String"]["output"]>;
   thumbnailImage?: Maybe<Asset>;
 };
 
@@ -118,23 +118,23 @@ export type PostRichtextAssets = {
 };
 
 export type PostRichtextLinks = {
-  __typename?: 'PostRichtextLinks';
+  __typename?: "PostRichtextLinks";
   assets: PostRichtextAssets;
   entries: PostRichtextEntries;
 };
 
 export type PostRichtextEntries = {
-  __typename?: 'PostRichtextEntries';
+  __typename?: "PostRichtextEntries";
   block: Array<Maybe<Entry>>;
 };
 
 export type Video = Entry & {
-  __typename?: 'Video';
+  __typename?: "Video";
   contentfulMetadata: ContentfulMetadata;
-  name?: Maybe<Scalars['String']['output']>;
-  description?: Maybe<Scalars['String']['output']>;
+  name?: Maybe<Scalars["String"]["output"]>;
+  description?: Maybe<Scalars["String"]["output"]>;
   sys: Sys;
-  video?: Maybe<Scalars['JSON']['output']>;
+  video?: Maybe<Scalars["JSON"]["output"]>;
 };
 
 export type Sys = {

@@ -1,7 +1,12 @@
 "use client";
 
 import React, { Fragment } from "react";
-import { Popover, PopoverButton, PopoverPanel, Transition } from "@headlessui/react";
+import {
+  Popover,
+  PopoverButton,
+  PopoverPanel,
+  Transition,
+} from "@headlessui/react";
 
 import { Globe } from "@/icons/Globe";
 import { AppLocale } from "@/types/global";

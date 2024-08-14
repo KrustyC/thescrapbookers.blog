@@ -44,7 +44,9 @@ export async function generateMetadata({
   return {
     title,
     description,
-    alternates: createAlternates({ path: `/${country.continent?.slug}/${countrySlug}` }),
+    alternates: createAlternates({
+      path: `/${country.continent?.slug}/${countrySlug}`,
+    }),
     openGraph: {
       title,
       description,
@@ -89,7 +91,10 @@ export default async function CountryPage({
 
   const { isEnabled } = draftMode();
 
-  const tArticles = await getTranslations({ locale, namespace: "Country.Articles" });
+  const tArticles = await getTranslations({
+    locale,
+    namespace: "Country.Articles",
+  });
 
   const { country } = await getCountryWithPosts({
     slug: countrySlug,

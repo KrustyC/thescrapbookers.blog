@@ -30,7 +30,6 @@ interface PostByTagQueryResposne {
   };
 }
 
-
 interface GetPostByTagResponse {
   posts: ShortPost[];
 }

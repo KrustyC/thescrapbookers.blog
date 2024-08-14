@@ -17,7 +17,12 @@ type LinkedCountryGraphQL = Pick<
 
 type ContinentWithCountriesGraphQL = Pick<
   ContinentGraphQL,
-  "name" | "slug" | "mainDescription" | "metaDescription" | "metaTitle" | "mainImage"
+  | "name"
+  | "slug"
+  | "mainDescription"
+  | "metaDescription"
+  | "metaTitle"
+  | "mainImage"
 > & {
   linkedFrom: {
     countryCollection: {

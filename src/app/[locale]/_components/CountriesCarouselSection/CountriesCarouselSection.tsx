@@ -69,7 +69,10 @@ interface CountriesCarouselSectionProps {
 export default async function CountriesCarouselSection({
   locale,
 }: CountriesCarouselSectionProps) {
-  const t = await getTranslations({ locale, namespace: "Home.CountriesCarouselSection.Images" });
+  const t = await getTranslations({
+    locale,
+    namespace: "Home.CountriesCarouselSection.Images",
+  });
 
   const { isEnabled } = draftMode();
   const { countries } = await getCountriesForContinent({

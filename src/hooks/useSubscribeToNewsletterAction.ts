@@ -17,7 +17,7 @@ type UseSubscribeToNewsletterActionReturn = [
   },
   {
     onSubscribe: (data: FormData) => Promise<void>;
-  }
+  },
 ];
 
 export const useSubscribeToNewsletterAction =

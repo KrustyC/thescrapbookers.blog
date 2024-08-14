@@ -32,7 +32,9 @@ export default async function DigitalNomadingSection({
 
     return (
       <section className="bg-primary flex flex-col py-16 lg:py-20 px-6 lg:px-16 xl:px-48 2xl:px-48 pt-16 md:py-16 gap-8 md:gap-16">
-        <h2 className="text-black text-3xl lg:text-5xl !font-semibold">Digital Nomading</h2>
+        <h2 className="text-black text-3xl lg:text-5xl !font-semibold">
+          Digital Nomading
+        </h2>
 
         <div className="flex flex-col lg:flex-row gap-12 overflow-scroll">
           <div className="lg:flex-1">

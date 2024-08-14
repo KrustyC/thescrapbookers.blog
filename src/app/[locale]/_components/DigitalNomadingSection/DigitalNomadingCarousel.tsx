@@ -29,7 +29,9 @@ export const DigitalNomadingCarousel: React.FC<PostProps> = ({ posts }) => {
                 style={{ objectFit: "cover" }}
               />
             </div>
-            <h3 className="text-sm lg:text-base text-black font-semibold">{post.title}</h3>
+            <h3 className="text-sm lg:text-base text-black font-semibold">
+              {post.title}
+            </h3>
           </div>
         </Link>
       ))}

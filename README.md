@@ -9,6 +9,7 @@ First, install all dependencies with `npm run install`.
 Then you will need to setup the environemnt variables for the project. The easiest way is to copy the `.env` file into a `.env.local` file and then populate the variables with the right values.
 
 Once the variable are populated, you can run the app with:
+
 ```bash
 npm run dev
 ```

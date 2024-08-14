@@ -1,7 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { Popover, PopoverButton, PopoverPanel, Transition } from "@headlessui/react";
+import {
+  Popover,
+  PopoverButton,
+  PopoverPanel,
+  Transition,
+} from "@headlessui/react";
 import { usePathname } from "next/navigation";
 import {
   EmailIcon,
