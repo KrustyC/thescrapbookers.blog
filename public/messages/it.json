@@ -78,6 +78,10 @@
     "shareText": "Check out this post by The Scrapbookers",
     "timeToRead": "min read",
     "writtenBy": "Scritto da",
+    "Newsletter": {
+      "title": "Liked this article?",
+      "description": "Subscribe to our newsletter for weekly updates on our latest discoveries and articles."
+    },
     "notFound": {
       "message": "Sembra che l'articolo che stai cercando non esista",
       "cta": "torna alla home"
@@ -135,12 +139,14 @@
       "dialogs": {
         "success": {
           "title": "Grazie dell l'iscrizione!",
-          "message": "Ti terremo aggiornato/a sui nostri nuovi post e sulle new, ma promettiamo che non sparemmero la tu casella di posta."
+          "message": "Ti terremo aggiornato/a sui nostri nuovi post e sulle new, ma promettiamo che non sparemmero la tu casella di posta.",
+          "cta": "Close"
         },
         "error": {
           "title": "Oops! Qualcosa è andato storto...",
           "generic": "Non siamo riusciti a registrarti alla nostra newsletter, ti preghiamo di riprovare tra qualche minuto.",
-          "userAlreadyExist": "Questa email è già registrata, apprezziamo il tuo interesse, ma non c'è bisogno di iscriversi di nuovo :)"
+          "userAlreadyExist": "Questa email è già registrata, apprezziamo il tuo interesse, ma non c'è bisogno di iscriversi di nuovo :)",
+          "cta": "Close"
         }
       }
     },
