@@ -18,10 +18,12 @@ interface NewsletterFormProps {
     ctaText: string;
     dialogs: {
       success: {
+        cta: string;
         title: string;
         message: string;
       };
       error: {
+        cta: string;
         title: string;
         generic: string;
         userAlreadyExist: string;
@@ -67,7 +69,7 @@ export const NewsletterForm: React.FC<NewsletterFormProps> = ({ messages }) => {
         onSubmit={handleSubmit(onSubscribe)}
       >
         <input
-          className="h-12 md:h-16 lg:h-full px-6 w-full lg:w-72 mb-4 lg:mb-0 lg:mr-4 md:border-2 md:border-black rounded-full md:rounded-2xl"
+          className="h-12 md:h-16 lg:h-full px-6 w-full mb-4 lg:mb-0 lg:mr-2 md:border-2 md:border-black rounded-full md:rounded-2xl"
           type="email"
           autoComplete="off"
           disabled={isPending || isSuccess}
@@ -83,7 +85,7 @@ export const NewsletterForm: React.FC<NewsletterFormProps> = ({ messages }) => {
 
         <button
           type="submit"
-          className="rounded-full md:rounded-2xl h-12 md:h-16 lg:h-full w-full lg:w-56 bg-black text-white px-12 lg:ml-4 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="whitespace-nowrap rounded-full md:rounded-2xl h-12 md:h-16 lg:h-full w-full lg:w-56 bg-black text-white px-12 lg:ml-4 disabled:opacity-50 disabled:cursor-not-allowed"
           disabled={!isValid || !isDirty || isPending || isSuccess}
         >
           {messages.ctaText}

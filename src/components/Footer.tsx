@@ -54,7 +54,7 @@ const CircularLink: React.FC<PropsWithChildren<CircularButtonLinkProps>> = ({
   );
 };
 
-export const Footer: React.FC<FooterProps> = ({ locale }) => {
+export const Footer: React.FC<FooterProps> = () => {
   const footer = useTranslations("Global.Footer");
   const newsletter = useTranslations("Global.NewsletterForm");
 
@@ -64,7 +64,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
 
       <div className="flex flex-col px-16 md:px-16 pb-10 pt-6 md:pt-3 -mt-2 bg-primary">
         <div className="flex flex-col md:flex-row md:justify-between md:items-end md:mb-24">
-          <div className="flex flex-col md:w-[280px] lg:w-fit">
+          <div className="flex flex-col md:w-[280px] lg:w-[580px]">
             <span className="text-3xl mb-1 md:mb-2 font-ohbaby">
               {footer("notes")}
             </span>
@@ -80,6 +80,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
                   success: {
                     title: newsletter("dialogs.success.title"),
                     message: newsletter("dialogs.success.message"),
+                    cta: newsletter("dialogs.success.cta"),
                   },
                   error: {
                     title: newsletter("dialogs.error.title"),
@@ -87,6 +88,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
                     userAlreadyExist: newsletter(
                       "dialogs.error.userAlreadyExist"
                     ),
+                    cta: newsletter("dialogs.error.cta"),
                   },
                 },
               }}

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { draftMode } from "next/headers";
 import { getTranslations } from "next-intl/server";
 
-import { BlogPost } from "@/components/post/BlogPost/BlogPost";
+import { BlogPost } from "@/components/BlogPost/BlogPost";
 import { getPost } from "@/graphql/queries/get-post.query";
 import { ArticleNotFoundIcon } from "@/icons/ArticleNotFound";
 import { AppLocale } from "@/types/global";

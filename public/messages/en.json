@@ -78,6 +78,10 @@
     "shareText": "Check out this post by The Scrapbookers",
     "timeToRead": "min read",
     "writtenBy": "Written by",
+    "Newsletter": {
+      "title": "Liked this article?",
+      "description": "Subscribe to our newsletter for weekly updates on our latest discoveries and articles."
+    },
     "notFound": {
       "message": "Seems like the post you are looking for does not exist",
       "cta": "back to homepage"
@@ -135,12 +139,14 @@
       "dialogs": {
         "success": {
           "title": "Thank you for subscribing!",
-          "message": "We will keep you updated with our latest posts and news."
+          "message": "We will keep you updated with our latest posts and news.",
+          "cta": "Close"
         },
         "error": {
           "title": "Something went wrong",
           "generic": "We couldn't subscribe you to our newsletter. Please try again later",
-          "userAlreadyExist": "This email is already subscribed, we appreciate your interest, but there is no need to subscribe again :)"
+          "userAlreadyExist": "This email is already subscribed, we appreciate your interest, but there is no need to subscribe again :)",
+          "cta": "Close"
         }
       }
     },
