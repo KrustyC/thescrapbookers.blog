@@ -17,6 +17,7 @@
     },
     "Featured": {
       "title": "Articoli Recenti",
+      "subtitle": "Qui puoi trovare i nostri ultimi articoli. Siamo piuttosto lenti a scrivere, ma se non puoi aspettare di leggere il prossimo, puoi sempre iscriverti alla nostra newsletter e ti faremo sapere quando avremo pubblicato qualcosa di nuovo! 😉",
       "error1": "Errore durante il caricamento dei post recenti...",
       "error2": "Ci scusiamo per il disagio, siamo già al lavoro per risolvere il problema, ti preghiamo di riprovare tra qualche minuto."
     },
@@ -24,6 +25,8 @@
       "text": "storie di viaggio, cibo, cultura e nomadismo digitale"
     },
     "DigitalNomading": {
+      "title": "Nomadismo Digitale",
+      "subtitle": "Stiamo viaggiando e lavorando, quindi abbiamo pensato di aggiornare anche le persone sulle nostre esperienze di lavoro/viaggio lungo il percorso e su come riusciamo a non farci distrarre troppo.",
       "readMoreCTA": "Leggi l'articolo",
       "error1": "Errore durante il caricamento dei post sul nomadismo digitale...",
       "error2": "Ci scusiamo per il disagio, siamo già al lavoro per risolvere il problema, ti preghiamo di riprovare tra qualche minuto."

@@ -15,7 +15,7 @@ export const AboutUsSection: React.FC = () => {
           <h2 className="mb-4 xl:mb-6 uppercase font-semibold text-gray-400 text-sm leading-[0.8rem] tracking-widest font-poppins">
             {t("title")}
           </h2>
-          <div className="flex flex-col gap-3 lg:max-w-[600px] 2xl:max-w-[650px] mb-4 xl:mb-6">
+          <div className="flex flex-col gap-3 lg:max-w-[600px] 2xl:max-w-[650px] mb-12 xl:mb-6">
             <p className="text-left">{t("textFirstPar")}</p>
             <p className="text-left">{t("textSecondPar")}</p>
           </div>

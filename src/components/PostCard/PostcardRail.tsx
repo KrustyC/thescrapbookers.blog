@@ -8,7 +8,7 @@ export const PostcardRail: React.FC<PropsWithChildren> = ({ children }) => {
     <motion.div
       initial="offscreen"
       whileInView="onscreen"
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.2 }}
       transition={{ staggerChildren: 0.35 }}
       className="flex flex-col md:flex-row gap-12 md:gap-8 lg:gap-16"
     >

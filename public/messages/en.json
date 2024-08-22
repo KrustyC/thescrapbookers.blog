@@ -17,6 +17,7 @@
     },
     "Featured": {
       "title": "Recent Articles",
+      "subtitle": "Here you can you find our latest articles. We are quite slow writers, but if you can't wait to read our next one, you can always subscribe to our newletter and we'll let you know when we have published something new! 😉",
       "error1": "An error happened while fetching featured post...",
       "error2": "Sorry for the incovenience, please bear with us, we are already working towards a fix."
     },
@@ -24,6 +25,8 @@
       "text": "stories of travel, food, culture and digital nomading"
     },
     "DigitalNomading": {
+      "title": "Digital Nomading",
+      "subtitle": "We’re travelling and working, so we thought we would also update people on our work/travel experiences along the way and also how we manage not to get too distracted.",
       "readMoreCTA": "Read Article",
       "error1": "An error happened while fetching digital nomading post...",
       "error2": "Sorry for the incovenience, please bear with us, we are already working towards a fix."

@@ -1,20 +1,27 @@
 import { draftMode } from "next/headers";
+import { getTranslations } from "next-intl/server";
 
 import { getPostsByTag } from "@/graphql/queries/get-post-by-tag.query";
 import { type AppLocale, Tag } from "@/types/global";
 import { DIGITAL_NOMADING_POSTS_ORDERED_SLUGS } from "@/utils/constants";
 import { sortItemsWithSlug } from "@/utils/item-with-slug-sorter";
 
-import { DigitalNomadingCarousel } from "./DigitalNomadingCarousel";
+import { DigitalNomadingSectionContent } from "./DigitalNomadingSectionContent";
 import { DigitalNomadingSectionSkeleton } from "./DigitalNomadingSectionSkeleton";
-import { SinglePost } from "./SinglePost";
+
+interface DigitalNomadingSectionProps {
+  locale: AppLocale;
+}
 
 export default async function DigitalNomadingSection({
   locale,
-}: {
-  locale: AppLocale;
-}) {
+}: DigitalNomadingSectionProps) {
   const { isEnabled } = draftMode();
+  const t = await getTranslations({
+    locale,
+    namespace: "Home.DigitalNomading",
+  });
+
   try {
     const { posts } = await getPostsByTag({
       tag: Tag.DIGITAL_NOMADING_HIGHLIGHTED,
@@ -31,20 +38,12 @@ export default async function DigitalNomadingSection({
     );
 
     return (
-      <section className="bg-primary flex flex-col py-16 lg:py-20 px-6 lg:px-16 xl:px-48 2xl:px-48 pt-16 md:py-16 gap-8 md:gap-16">
-        <h2 className="text-black text-3xl lg:text-5xl !font-semibold">
-          Digital Nomading
-        </h2>
-
-        <div className="flex flex-col lg:flex-row gap-12 overflow-scroll">
-          <div className="lg:flex-1">
-            <SinglePost post={orderedPost[0]} locale={locale} />
-          </div>
-          <div className="lg:flex-1">
-            <DigitalNomadingCarousel posts={orderedPost.slice(1)} />
-          </div>
-        </div>
-      </section>
+      <DigitalNomadingSectionContent
+        title={t("title")}
+        subtitle={t("subtitle")}
+        locale={locale}
+        posts={orderedPost}
+      />
     );
   } catch (error) {
     return null;

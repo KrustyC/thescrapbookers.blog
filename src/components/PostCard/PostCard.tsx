@@ -8,13 +8,8 @@ import { formatDate, getFormat } from "@/utils/date";
 import { Link } from "@/utils/navigation";
 import { smoothSpring } from "@/utils/transitions";
 
-import { PostDescription } from "./PostDescription";
-
 interface PostProps {
-  post: Pick<
-    IPost,
-    "title" | "href" | "smallIntro" | "thumbnailImage" | "category" | "date"
-  >;
+  post: Pick<IPost, "title" | "href" | "thumbnailImage" | "category" | "date">;
   locale: AppLocale;
 }
 
@@ -51,14 +46,14 @@ const variants: Variants = {
 };
 
 export const PostCard: React.FC<PostProps> = ({
-  post: { title, href, smallIntro, thumbnailImage, category, date },
+  post: { title, href, thumbnailImage, category, date },
   locale,
 }) => {
   return (
     <motion.div variants={variants} className="flex flex-col w-full gap-2">
       <Link
         href={href || "/"}
-        className="flex w-full aspect-square relative bg-gray-200 rounded-2xl"
+        className="flex w-full aspect-video relative bg-gray-200 rounded-2xl"
         prefetch={false}
       >
         <Image
@@ -73,17 +68,11 @@ export const PostCard: React.FC<PostProps> = ({
         />
       </Link>
 
-      <motion.div variants={variants}>
-        <Link href={href || "/"}>
-          <h3 className="text-2xl text-black font-medium mt-3">{title}</h3>
-        </Link>
-      </motion.div>
-
       <motion.div
         variants={variants}
-        className="flex items-center uppercase tracking-widest text-gray-400 text-regular font-poppins"
+        className="px-4 mt-2 flex items-center uppercase tracking-widest text-gray-400 text-sm font-poppins"
       >
-        <span>{category}</span>
+        <span className="text-primary">{category}</span>
         <div className="border-r-2 h-3 mx-2" />
         <span>
           {date
@@ -96,12 +85,12 @@ export const PostCard: React.FC<PostProps> = ({
         </span>
       </motion.div>
 
-      <motion.div variants={variants}>
-        {smallIntro ? (
-          <PostDescription text={smallIntro} />
-        ) : (
-          <span>Missing description</span>
-        )}
+      <motion.div className="px-4" variants={variants}>
+        <Link href={href || "/"}>
+          <h3 className="text-lg 2xl:text-xl text-black font-medium">
+            {title}
+          </h3>
+        </Link>
       </motion.div>
     </motion.div>
   );
