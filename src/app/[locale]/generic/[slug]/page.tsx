@@ -4,9 +4,9 @@ import { getTranslations } from "next-intl/server";
 
 import { BlogPost } from "@/components/BlogPost/BlogPost";
 import { getPost } from "@/graphql/queries/get-post.query";
+import { Link } from "@/i18n/navigation";
 import { ArticleNotFoundIcon } from "@/icons/ArticleNotFound";
 import { AppLocale } from "@/types/global";
-import { Link } from "@/i18n/navigation";
 import { createAlternates } from "@/utils/urls";
 
 interface PostPageProps {

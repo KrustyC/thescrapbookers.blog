@@ -5,13 +5,13 @@ import { Metadata } from "next";
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import Script from "next/script";
-import { getMessages, setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import { Organization, WithContext } from "schema-dts";
 
-import { routing } from "@/i18n/routing";
 import { PreviewBadge } from "@/components/PreviewBadge";
+import { routing } from "@/i18n/routing";
 import { AppLocale } from "@/types/global";
 import { leagueGothic, merriweather, ooohBaby, poppins } from "@/utils/fonts";
 

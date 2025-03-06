@@ -1,9 +1,10 @@
 import { Suspense } from "react";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
-import { routing } from "@/i18n/routing";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { Footer } from "@/components/Footer";
+import { routing } from "@/i18n/routing";
 import { AppLocale } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
 
@@ -19,7 +20,6 @@ import FeaturedPostsSection, {
 } from "./_components/FeaturedPostsSection/FeaturedPostsSection";
 import { Hero } from "./_components/Hero/Hero";
 import { HighlightSection } from "./_components/HighlightSection";
-import { getTranslations, setRequestLocale } from "next-intl/server";
 
 // const DynamicVideo = dynamic(() => import("../../components/home/VideoPlayer"));
 const DynamicVideo = dynamic(() => import("./_components/Video"));

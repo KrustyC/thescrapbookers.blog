@@ -1,5 +1,5 @@
-import { Country } from "@/types/global";
 import { Link } from "@/i18n/navigation";
+import { Country } from "@/types/global";
 
 interface BreadcrumbsProps {
   country: Pick<Country, "name" | "slug" | "continent">;

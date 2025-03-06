@@ -4,8 +4,8 @@ import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 
 import { LocaleSelector } from "@/components/LocaleSelector/LocaleSelector";
-import { AppLocale } from "@/types/global";
 import { Link } from "@/i18n/navigation";
+import { AppLocale } from "@/types/global";
 import { smoothSpring } from "@/utils/transitions";
 import { URLS } from "@/utils/urls";
 

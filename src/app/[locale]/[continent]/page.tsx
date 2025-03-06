@@ -1,13 +1,13 @@
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
+import { setRequestLocale } from "next-intl/server";
 
 import { ContinentHero } from "@/components/continent/ContinentHero";
 import { Country } from "@/components/continent/Country";
 import { getContinentWithCountries } from "@/graphql/queries/get-continent-with-countries";
-import { AppLocale, Continent } from "@/types/global";
 import { routing } from "@/i18n/routing";
+import { AppLocale, Continent } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
-import { setRequestLocale } from "next-intl/server";
 
 interface ContinentPageProps {
   params: Promise<{ continent: string; locale: AppLocale }>;

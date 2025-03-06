@@ -2,12 +2,12 @@ import { PropsWithChildren } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
+import { Link } from "@/i18n/navigation";
 import { InstagramIcon } from "@/icons/Instagram";
 import { MediumIcon } from "@/icons/Medium";
 import { PinterestIcon } from "@/icons/Pinterest";
 import { TwitterIcon } from "@/icons/Twitter";
 import { AppLocale } from "@/types/global";
-import { Link } from "@/i18n/navigation";
 import { URLS } from "@/utils/urls";
 
 import logoPic from "../../public/images/logo_black.png";

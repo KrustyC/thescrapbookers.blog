@@ -6,11 +6,11 @@ import { Cheatsheet } from "@/components/country/Cheatsheet/Cheatsheet";
 import { CountryHero } from "@/components/country/CountryHero";
 import { PostCard } from "@/components/PostCard/PostCard";
 import { getCountryWithPosts } from "@/graphql/queries/get-country-with-posts.query";
+import { routing } from "@/i18n/routing";
 import { ExamsIcon } from "@/icons/Exams";
 import { Country } from "@/types/generated/graphql";
 import { AppLocale } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
-import { routing } from "@/i18n/routing";
 
 interface CountryPageProps {
   params: Promise<{ country: string; locale: AppLocale }>;

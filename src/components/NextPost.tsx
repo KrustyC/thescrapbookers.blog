@@ -1,8 +1,8 @@
 import Image from "next/image";
 
+import { Link } from "@/i18n/navigation";
 import { AppLocale, Post } from "@/types/global";
 import { formatDate, getFormat } from "@/utils/date";
-import { Link } from "@/i18n/navigation";
 
 interface NextPostHeroProps {
   post: Pick<

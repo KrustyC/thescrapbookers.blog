@@ -3,6 +3,7 @@
 import { PropsWithChildren, useState } from "react";
 import classNames from "classnames";
 
+import { Link } from "@/i18n/navigation";
 import { BanknotesIcon } from "@/icons/Banknotes";
 import { BookIcon } from "@/icons/Book";
 import { CakeIcon } from "@/icons/Cake";
@@ -18,7 +19,6 @@ import {
   CountryCheatsheetCommonPhrase,
   CountryCheatsheetCoworkingSpace,
 } from "@/types/global";
-import { Link } from "@/i18n/navigation";
 
 import { Flag } from "./Flag";
 

@@ -2,8 +2,8 @@ import classNames from "classnames";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-import { AppLocale } from "@/types/global";
 import { Link } from "@/i18n/navigation";
+import { AppLocale } from "@/types/global";
 import { URLS } from "@/utils/urls";
 
 import logoPic from "../../public/images/logo_white.png";
