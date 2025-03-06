@@ -1,18 +1,18 @@
 import { Metadata } from "next";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
-import { LOCALES } from "@/utils/constants";
+import { routing } from "@/i18n/routing";
 
 import aboutUsPic from "../../../../public/images/about_us.webp";
 import cameronHighlands from "../../../../public/images/cameron_highlands.webp";
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "AboutUs.Metadata" });
 
   return {
@@ -56,10 +56,7 @@ export async function generateMetadata({
 
 interface SidebarProps {
   title: string;
-  description: {
-    part1: string;
-    part2: string;
-  };
+  description: { part1: string; part2: string };
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ title, description }) => {
@@ -91,17 +88,19 @@ const Sidebar: React.FC<SidebarProps> = ({ title, description }) => {
 };
 
 export function generateStaticParams() {
-  return LOCALES.map((locale) => ({ locale }));
+  return routing.locales.map((locale) => ({ locale }));
 }
 
-export default function AboutUsPage({
+export default async function AboutUsPage({
   params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  unstable_setRequestLocale(params.locale);
+  const { locale } = await params;
 
-  const t = useTranslations("AboutUs");
+  setRequestLocale(locale);
+
+  const t = await getTranslations({ locale, namespace: "AboutUs" });
 
   return (
     <div className="flex flex-col">

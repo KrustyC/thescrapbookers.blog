@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from "react";
 import classNames from "classnames";
 
-import { Link } from "@/utils/navigation";
+import { Link } from "@/i18n/navigation";
 
 interface ButtonLinkProps {
   href: string;

@@ -18,7 +18,7 @@ import {
   CountryCheatsheetCommonPhrase,
   CountryCheatsheetCoworkingSpace,
 } from "@/types/global";
-import { Link } from "@/utils/navigation";
+import { Link } from "@/i18n/navigation";
 
 import { Flag } from "./Flag";
 

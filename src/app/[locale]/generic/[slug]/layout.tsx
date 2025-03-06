@@ -2,20 +2,22 @@ import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import { AppLocale } from "@/types/global";
 
-export default function GenericLayout({
+export default async function GenericLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: AppLocale };
+  params: Promise<{ locale: AppLocale }>;
 }) {
+  const { locale } = await params;
+
   return (
     <div>
-      <Navbar locale={params.locale} />
+      <Navbar locale={locale} />
 
       <div>{children}</div>
 
-      <Footer locale={params.locale} />
+      <Footer locale={locale} />
     </div>
   );
 }

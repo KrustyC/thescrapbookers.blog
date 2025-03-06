@@ -7,14 +7,14 @@ import { AppLocale } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
 
 interface IntroductionPageProps {
-  params: {
-    locale: AppLocale;
-  };
+  params: Promise<{ locale: AppLocale }>;
 }
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: IntroductionPageProps): Promise<Metadata> {
+  const { locale } = await params;
+
   const t = await getTranslations({ locale, namespace: "AboutUs.Metadata" });
 
   const baseUrl =
@@ -35,33 +35,29 @@ export async function generateMetadata({
       title: t("title"),
       description: t("description"),
       siteName: "The Scrapbookers",
-      images: [
-        {
-          url: "/images/about_us.webp",
-          height: 1792,
-          width: 2048,
-        },
-      ],
+      images: [{ url: "/images/about_us.webp", height: 1792, width: 2048 }],
       locale,
     },
   };
 }
 
-export default function AboutUsLayout({
+export default async function AboutUsLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: AppLocale };
+  params: Promise<{ locale: AppLocale }>;
 }) {
+  const { locale } = await params;
+
   return (
     <div>
-      <Navbar blackText locale={params.locale} />
+      <Navbar blackText locale={locale} />
 
       <div className="w-full">{children}</div>
 
       <div className="-mt-12 sm:-mt-24 md:-mt-28 lg:-mt-40 2xl:-mt-48">
-        <Footer locale={params.locale} />
+        <Footer locale={locale} />
       </div>
     </div>
   );

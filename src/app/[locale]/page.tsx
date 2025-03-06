@@ -1,12 +1,10 @@
 import { Suspense } from "react";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
-import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { routing } from "@/i18n/routing";
 
 import { Footer } from "@/components/Footer";
 import { AppLocale } from "@/types/global";
-import { LOCALES } from "@/utils/constants";
 import { createAlternates } from "@/utils/urls";
 
 import { AboutUsSection } from "./_components/AboutUsSection";
@@ -21,42 +19,47 @@ import FeaturedPostsSection, {
 } from "./_components/FeaturedPostsSection/FeaturedPostsSection";
 import { Hero } from "./_components/Hero/Hero";
 import { HighlightSection } from "./_components/HighlightSection";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 // const DynamicVideo = dynamic(() => import("../../components/home/VideoPlayer"));
 const DynamicVideo = dynamic(() => import("./_components/Video"));
 
 export function generateStaticParams() {
-  return LOCALES.map((locale) => ({ locale }));
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  return {
-    alternates: createAlternates({ path: "" }),
-  };
+  return { alternates: createAlternates({ path: "" }) };
 }
 
-export default function Home({ params }: { params: { locale: AppLocale } }) {
-  unstable_setRequestLocale(params.locale);
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: AppLocale }>;
+}) {
+  const locale = (await params).locale;
 
-  const videoCopy = useTranslations("Home.Video");
+  setRequestLocale(locale);
+
+  const t = await getTranslations({ locale, namespace: "Home.Video" });
 
   return (
     <>
       <div className="flex flex-col">
-        <Hero locale={params.locale} />
+        <Hero locale={locale} />
 
         <Suspense fallback={<FeaturedPostsSectionSkeleton />}>
-          <FeaturedPostsSection locale={params.locale} />
+          <FeaturedPostsSection locale={locale} />
         </Suspense>
 
-        <DynamicVideo text={videoCopy("text")} />
+        <DynamicVideo text={t("text")} />
 
         <Suspense fallback={<DigitalNomadingSectionSkeleton />}>
-          <DigitalNomadingSection locale={params.locale} />
+          <DigitalNomadingSection locale={locale} />
         </Suspense>
 
         <Suspense fallback={<CountriesCarouselSectionSkeleton />}>
-          <CountriesCarouselSection locale={params.locale} />
+          <CountriesCarouselSection locale={locale} />
         </Suspense>
 
         <AboutUsSection />
@@ -64,7 +67,7 @@ export default function Home({ params }: { params: { locale: AppLocale } }) {
         <HighlightSection />
 
         <div className="-mt-[160px] 2xl:-mt-[200px] z-50 block">
-          <Footer locale={params.locale} />
+          <Footer locale={locale} />
         </div>
       </div>
     </>

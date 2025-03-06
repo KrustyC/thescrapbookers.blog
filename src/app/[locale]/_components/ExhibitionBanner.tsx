@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 
 import { CameraIcon } from "@/icons/Camera";
 import { LocationPinIcon } from "@/icons/LocationPin";
-import { Link } from "@/utils/navigation";
+import { Link } from "@/i18n/navigation";
 
 const PALAZZO_PRETORIO_LINK = "https://maps.app.goo.gl/qPo61i3BWgHJZTGp6";
 

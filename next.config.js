@@ -1,19 +1,16 @@
-const withNextIntl = require("next-intl/plugin")("./src/i18n.ts");
+// const withNextIntl = require("next-intl/plugin")("./src/i18n.ts");
+const createNextIntlPlugin = require("next-intl/plugin");
 const { withSentryConfig } = require("@sentry/nextjs");
+
+const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = withNextIntl({
   experimental: {
-    instrumentationHook: true,
     // nextScriptWorkers: true, @TODO Enable once Partytown and worker are supported in the app folder
   },
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.ctfassets.net",
-      },
-    ],
+    remotePatterns: [{ protocol: "https", hostname: "images.ctfassets.net" }],
   },
 });
 

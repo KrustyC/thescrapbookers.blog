@@ -1,4 +1,4 @@
-import { Link } from "@/utils/navigation";
+import { Link } from "@/i18n/navigation";
 
 export const PreviewBadge = () => {
   return (

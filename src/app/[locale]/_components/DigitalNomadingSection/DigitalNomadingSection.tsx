@@ -16,7 +16,7 @@ interface DigitalNomadingSectionProps {
 export default async function DigitalNomadingSection({
   locale,
 }: DigitalNomadingSectionProps) {
-  const { isEnabled } = draftMode();
+  const { isEnabled } = await draftMode();
   const t = await getTranslations({
     locale,
     namespace: "Home.DigitalNomading",

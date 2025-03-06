@@ -13,7 +13,7 @@ export default async function FeaturedPostsSection({
   locale: AppLocale;
 }) {
   const t = await getTranslations({ locale, namespace: "Home.Featured" });
-  const { isEnabled } = draftMode();
+  const { isEnabled } = await draftMode();
 
   try {
     const { posts } = await getPostsByTag({

@@ -1,34 +1,28 @@
 import { format } from "date-fns";
 import type { Metadata } from "next";
 import { draftMode } from "next/headers";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { BlogPosting, WithContext } from "schema-dts";
 
 import { BlogPost } from "@/components/BlogPost/BlogPost";
 import { getPost } from "@/graphql/queries/get-post.query";
 import { ArticleNotFoundIcon } from "@/icons/ArticleNotFound";
 import { AppLocale } from "@/types/global";
-import { Link } from "@/utils/navigation";
+import { Link } from "@/i18n/navigation";
 // import { LOCALES } from "@/utils/constants";
 import { createAlternates } from "@/utils/urls";
 
 interface PostPageProps {
-  params: {
-    slug: string;
-    locale: AppLocale;
-  };
+  params: Promise<{ slug: string; locale: AppLocale }>;
 }
 
 export async function generateMetadata({
-  params: { slug, locale },
+  params,
 }: PostPageProps): Promise<Metadata> {
+  const { slug, locale } = await params;
   try {
-    const { isEnabled } = draftMode();
-    const { post } = await getPost({
-      slug,
-      locale,
-      isPreview: isEnabled,
-    });
+    const { isEnabled } = await draftMode();
+    const { post } = await getPost({ slug, locale, isPreview: isEnabled });
 
     if (!post) {
       return {};
@@ -62,12 +56,7 @@ export async function generateMetadata({
           process.env.NEXT_PUBLIC_BASE_URL
         ),
       },
-      twitter: {
-        card: "summary_large_image",
-        title,
-        description,
-        images,
-      },
+      twitter: { card: "summary_large_image", title, description, images },
     };
   } catch (error) {
     return {};
@@ -78,12 +67,12 @@ export async function generateMetadata({
 //   return LOCALES.map((locale) => ({ locale }));
 // }
 
-export default async function PostPage({
-  params: { slug, locale },
-}: PostPageProps) {
-  unstable_setRequestLocale(locale);
+export default async function PostPage({ params }: PostPageProps) {
+  const { slug, locale } = await params;
 
-  const { isEnabled } = draftMode();
+   
+
+  const { isEnabled } = await draftMode();
   const { post, nextPost } = await getPost({
     slug,
     locale,

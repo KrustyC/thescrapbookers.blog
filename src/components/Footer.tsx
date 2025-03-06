@@ -7,7 +7,7 @@ import { MediumIcon } from "@/icons/Medium";
 import { PinterestIcon } from "@/icons/Pinterest";
 import { TwitterIcon } from "@/icons/Twitter";
 import { AppLocale } from "@/types/global";
-import { Link } from "@/utils/navigation";
+import { Link } from "@/i18n/navigation";
 import { URLS } from "@/utils/urls";
 
 import logoPic from "../../public/images/logo_black.png";

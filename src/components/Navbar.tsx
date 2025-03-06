@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 import { AppLocale } from "@/types/global";
-import { Link } from "@/utils/navigation";
+import { Link } from "@/i18n/navigation";
 import { URLS } from "@/utils/urls";
 
 import logoPic from "../../public/images/logo_white.png";

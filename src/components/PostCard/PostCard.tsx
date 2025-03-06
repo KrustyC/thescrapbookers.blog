@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import type { AppLocale, Post as IPost } from "@/types/global";
 import { formatDate, getFormat } from "@/utils/date";
-import { Link } from "@/utils/navigation";
+import { Link } from "@/i18n/navigation";
 import { smoothSpring } from "@/utils/transitions";
 
 interface PostProps {

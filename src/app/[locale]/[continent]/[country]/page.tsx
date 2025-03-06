@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { Cheatsheet } from "@/components/country/Cheatsheet/Cheatsheet";
 import { CountryHero } from "@/components/country/CountryHero";
@@ -9,20 +9,18 @@ import { getCountryWithPosts } from "@/graphql/queries/get-country-with-posts.qu
 import { ExamsIcon } from "@/icons/Exams";
 import { Country } from "@/types/generated/graphql";
 import { AppLocale } from "@/types/global";
-import { LOCALES } from "@/utils/constants";
 import { createAlternates } from "@/utils/urls";
+import { routing } from "@/i18n/routing";
 
 interface CountryPageProps {
-  params: {
-    country: string;
-    locale: AppLocale;
-  };
+  params: Promise<{ country: string; locale: AppLocale }>;
 }
 
 export async function generateMetadata({
-  params: { country: countrySlug, locale },
+  params,
 }: CountryPageProps): Promise<Metadata> {
-  const { isEnabled } = draftMode();
+  const { country: countrySlug, locale } = await params;
+  const { isEnabled } = await draftMode();
   const { country } = await getCountryWithPosts({
     slug: countrySlug,
     locale,
@@ -58,12 +56,7 @@ export async function generateMetadata({
         process.env.NEXT_PUBLIC_BASE_URL
       ),
     },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images,
-    },
+    twitter: { card: "summary_large_image", title, description, images },
   };
 }
 
@@ -74,22 +67,21 @@ export async function generateStaticParams() {
 
   const { countries } = await res.json();
 
-  return LOCALES.map((locale) => {
+  return routing.locales.map((locale) => {
     return countries.map((country: Country) => ({
-      params: {
-        country: country.slug,
-        locale,
-      },
+      params: { country: country.slug, locale },
     }));
   });
 }
 
 export default async function CountryPage({
-  params: { country: countrySlug, locale },
+  params,
 }: CountryPageProps) {
-  unstable_setRequestLocale(locale);
+  const { country: countrySlug, locale } = await params;
 
-  const { isEnabled } = draftMode();
+   setRequestLocale(locale);
+
+  const { isEnabled } = await draftMode();
 
   const tArticles = await getTranslations({
     locale,

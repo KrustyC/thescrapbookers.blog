@@ -5,22 +5,25 @@ import { Metadata } from "next";
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import Script from "next/script";
-import { useLocale } from "next-intl";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
+import { NextIntlClientProvider } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Organization, WithContext } from "schema-dts";
 
+import { routing } from "@/i18n/routing";
 import { PreviewBadge } from "@/components/PreviewBadge";
 import { AppLocale } from "@/types/global";
 import { leagueGothic, merriweather, ooohBaby, poppins } from "@/utils/fonts";
 
 interface Props {
   children: React.ReactNode;
-  params: { locale: AppLocale };
+  params: Promise<{ locale: AppLocale }>;
 }
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: Pick<Props, "params">): Promise<Metadata> {
+  const locale = (await params).locale;
   const t = await getTranslations({ locale, namespace: "Home.Metadata" });
 
   return {
@@ -69,16 +72,18 @@ export async function generateMetadata({
   };
 }
 
-export default function LocaleLayout({ children, params }: Props) {
-  const locale = useLocale();
-  const { isEnabled: isPreviewEnabled } = draftMode();
+export default async function LocaleLayout({ children, params }: Props) {
+  const { isEnabled: isPreviewEnabled } = await draftMode();
 
-  // Show a 404 error if the user requests an unknown locale
-  if (params.locale !== locale) {
+  const { locale } = await params;
+
+  if (!routing.locales.includes(locale)) {
     notFound();
   }
 
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
+
+  const messages = await getMessages();
 
   const jsonLd: WithContext<Organization> = {
     "@context": "https://schema.org",
@@ -100,7 +105,12 @@ export default function LocaleLayout({ children, params }: Props) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-poppins">{children}</body>
+      <body className="font-poppins">
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
+      </body>
+
       <Analytics />
       <SpeedInsights />
 

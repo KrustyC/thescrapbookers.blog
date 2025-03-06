@@ -6,21 +6,19 @@ import { BlogPost } from "@/components/BlogPost/BlogPost";
 import { getPost } from "@/graphql/queries/get-post.query";
 import { ArticleNotFoundIcon } from "@/icons/ArticleNotFound";
 import { AppLocale } from "@/types/global";
-import { Link } from "@/utils/navigation";
+import { Link } from "@/i18n/navigation";
 import { createAlternates } from "@/utils/urls";
 
 interface PostPageProps {
-  params: {
-    slug: string;
-    locale: AppLocale;
-  };
+  params: Promise<{ slug: string; locale: AppLocale }>;
 }
 
 export async function generateMetadata({
-  params: { slug, locale },
+  params,
 }: PostPageProps): Promise<Metadata> {
+  const { slug, locale } = await params;
   try {
-    const { isEnabled } = draftMode();
+    const { isEnabled } = await draftMode();
     const { post } = await getPost({ slug, locale, isPreview: isEnabled });
 
     if (!post) {
@@ -56,22 +54,17 @@ export async function generateMetadata({
           process.env.NEXT_PUBLIC_BASE_URL
         ),
       },
-      twitter: {
-        card: "summary_large_image",
-        title,
-        description,
-        images,
-      },
+      twitter: { card: "summary_large_image", title, description, images },
     };
   } catch (error) {
     return {};
   }
 }
 
-export default async function PostPage({
-  params: { slug, locale },
-}: PostPageProps) {
-  const { isEnabled } = draftMode();
+export default async function PostPage({ params }: PostPageProps) {
+  const { slug, locale } = await params;
+
+  const { isEnabled } = await draftMode();
   const { post, nextPost } = await getPost({
     slug,
     locale,

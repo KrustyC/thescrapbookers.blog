@@ -44,7 +44,8 @@ export async function GET(request: Request) {
     });
   }
 
-  draftMode().enable();
+  const draft = await draftMode();
+  draft.enable();
 
   redirect(href);
 }

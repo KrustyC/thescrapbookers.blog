@@ -82,7 +82,7 @@ export default async function CountriesCarouselSection({
     namespace: "Home.CountriesCarouselSection.Images",
   });
 
-  const { isEnabled } = draftMode();
+  const { isEnabled } = await draftMode();
   const { countries } = await getCountriesForContinent({
     continentSlug: "asia",
     locale,

@@ -1,25 +1,24 @@
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
-import { unstable_setRequestLocale } from "next-intl/server";
 
 import { ContinentHero } from "@/components/continent/ContinentHero";
 import { Country } from "@/components/continent/Country";
 import { getContinentWithCountries } from "@/graphql/queries/get-continent-with-countries";
 import { AppLocale, Continent } from "@/types/global";
-import { LOCALES } from "@/utils/constants";
+import { routing } from "@/i18n/routing";
 import { createAlternates } from "@/utils/urls";
+import { setRequestLocale } from "next-intl/server";
 
 interface ContinentPageProps {
-  params: {
-    continent: string;
-    locale: AppLocale;
-  };
+  params: Promise<{ continent: string; locale: AppLocale }>;
 }
 
 export async function generateMetadata({
-  params: { continent: continentSlug, locale },
+  params,
 }: ContinentPageProps): Promise<Metadata> {
-  const { isEnabled } = draftMode();
+  const { continent: continentSlug, locale } = await params;
+
+  const { isEnabled } = await draftMode();
   const { continent } = await getContinentWithCountries({
     slug: continentSlug,
     locale,
@@ -69,23 +68,22 @@ export async function generateStaticParams() {
 
   const { continents } = await res.json();
 
-  return LOCALES.map((locale) => {
+  return routing.locales.map((locale) => {
     return continents.map((continent: Continent) => ({
-      params: {
-        continent: continent.slug,
-        locale,
-      },
+      params: { continent: continent.slug, locale },
     }));
   });
 }
 
 export default async function ContinentPage({ params }: ContinentPageProps) {
-  unstable_setRequestLocale(params.locale);
+  const { continent: continentSlug, locale } = await params;
 
-  const { isEnabled } = draftMode();
+  setRequestLocale(locale);
+
+  const { isEnabled } = await draftMode();
   const { continent } = await getContinentWithCountries({
-    slug: params.continent,
-    locale: params.locale,
+    slug: continentSlug,
+    locale,
     isPreview: isEnabled,
   });
 
