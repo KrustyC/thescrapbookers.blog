@@ -1,6 +1,90 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --animate-title-appear: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+  --animate-text-appear: fade-in 0.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
+
+  --background-image-uk-flag: url('/icons/uk.png');
+  --background-image-ita-flag: url('/icons/ita.png');
+
+  --color-primary: #fb7a7a;
+  --color-black: #1e1e1e;
+  --color-cheatsheet: #ff7a00;
+
+  --font-merriweather: var(--font-merriweather);
+  --font-poppins: var(--font-poppins);
+  --font-ohbaby: var(--font-oooh-baby);
+  --font-league-gothic: var(--font-league-gothic);
+
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.6rem;
+  --text-lg--letter-spacing: 0.025rem;
+  --text-lg--font-weight: 400;
+  --text-xl: 1.3rem;
+  --text-xl--line-height: 1.8rem;
+  --text-xl--letter-spacing: 0.025rem;
+  --text-xl--font-weight: 400;
+  --text-2xl: 1.6rem;
+  --text-2xl--line-height: 1.9rem;
+  --text-2xl--letter-spacing: 0.025rem;
+  --text-2xl--font-weight: 400;
+  --text-3xl: 1.8rem;
+  --text-3xl--line-height: 2rem;
+  --text-3xl--letter-spacing: 0.025rem;
+  --text-3xl--font-weight: 600;
+  --text-4xl: 2rem;
+  --text-4xl--line-height: 2.5rem;
+  --text-4xl--letter-spacing: 0.025rem;
+  --text-4xl--font-weight: 600;
+  --text-5xl: 2.8rem;
+  --text-5xl--line-height: 3rem;
+  --text-5xl--letter-spacing: 0.025rem;
+  --text-5xl--font-weight: 600;
+  --text-9xl: 8rem;
+  --text-9xl--line-height: 7.5rem;
+  --text-9xl--letter-spacing: 0.025rem;
+  --text-9xl--font-weight: 500;
+  --text-10xl: 10rem;
+  --text-10xl--line-height: 9rem;
+  --text-10xl--letter-spacing: 0.025rem;
+  --text-10xl--font-weight: 500;
+
+  --breakpoint-3xl: 1600px;
+  --breakpoint-4xl: 2000px;
+  --breakpoint-5xl: 2400px;
+
+  --width-max: 1240px;
+
+  @keyframes scale {
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes fade-in {
+    100% {
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
 
 html {
   @apply text-slate-900;
@@ -28,7 +112,7 @@ html {
 }
 
 .section-layout > h2 {
-  @apply text-3xl lg:text-[35px] !font-semibold mb-8 lg:mb-12 w-fit lg:leading-[3.5rem];
+  @apply text-3xl lg:text-[35px] font-semibold! mb-8 lg:mb-12 w-fit lg:leading-[3.5rem];
 }
 
 .introduction-letter {

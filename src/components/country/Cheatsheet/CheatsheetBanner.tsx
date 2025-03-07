@@ -221,7 +221,7 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
                 {copy.info.coworkingSpaces.value.map((space, i) => (
                   <div className="flex flex-col gap-0.5 lg:gap-2" key={i}>
                     <Link
-                      className="text-lg lg:text-2xl !font-extralight font-poppins uppercase"
+                      className="text-lg lg:text-2xl font-extralight! font-poppins uppercase"
                       href={space.website || ""}
                       target="_blank"
                       rel="noopener noreferrer"

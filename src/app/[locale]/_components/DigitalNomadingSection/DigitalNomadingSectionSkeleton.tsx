@@ -2,7 +2,7 @@ export const DigitalNomadingSectionSkeleton = () => {
   return (
     <section className="py-16 lg:py-20 px-6 lg:px-16 xl:px-48 w-full bg-primary">
       <div className="flex flex-col lg:flex-row gap-8">
-        <div className="flex items-end w-full aspect-square lg:aspect-[4/3] relative bg-gray-200 rounded-2xl drop-shadow-lg bg-gray-400 border-2 border-black">
+        <div className="flex items-end w-full aspect-square lg:aspect-4/3 relative bg-gray-200 rounded-2xl drop-shadow-lg bg-gray-400 border-2 border-black">
           <div className="h-full w-full  loading-background-animation rounded-xl" />
         </div>
 

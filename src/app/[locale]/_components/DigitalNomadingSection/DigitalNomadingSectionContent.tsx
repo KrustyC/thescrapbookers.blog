@@ -41,7 +41,7 @@ export const DigitalNomadingSectionContent: React.FC<
     >
       <div className="mb-16">
         <motion.h2
-          className="text-3xl lg:text-[35px] !font-semibold w-fit text-black mb-3"
+          className="text-3xl lg:text-[35px] font-semibold! w-fit text-black mb-3"
           variants={titleVariants}
         >
           {title}

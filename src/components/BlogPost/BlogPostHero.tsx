@@ -16,7 +16,7 @@ export const BlogPostHeroLoading = () => (
 export const BlogPostHero: React.FC<BlogPostHeroProps> = ({ post }) => {
   return (
     <div className="relative h-[650px] lg:h-[750px]">
-      <div className="z-10 flex flex-col items-center justify-between pt-24 gap-4 lg:gap-6 absolute top-0 bottom-0 right-0 left-0 bg-gradient-to-b from-black/0 to-black/50 pb-8">
+      <div className="z-10 flex flex-col items-center justify-between pt-24 gap-4 lg:gap-6 absolute top-0 bottom-0 right-0 left-0 bg-linear-to-b from-black/0 to-black/50 pb-8">
         <div className="flex flex-col justify-center items-center gap-y-4 flex-1">
           {post.country ? (
             <div className="mt-8">

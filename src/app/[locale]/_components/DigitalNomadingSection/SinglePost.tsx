@@ -45,7 +45,7 @@ export const SinglePost: React.FC<PostProps> = ({
           style={{ objectFit: "cover" }}
         />
 
-        <div className="absolute bottom-0 right-0 left-0 flex flex-col w-full p-5 bg-gradient-to-r from-black to-white/5">
+        <div className="absolute bottom-0 right-0 left-0 flex flex-col w-full p-5 bg-linear-to-r from-black to-white/5">
           <div className="flex items-center uppercase tracking-widest text-sm lg:text-base text-white">
             <span>{category}</span>
             <div className="border-r-2 border-white h-3 mx-2" />

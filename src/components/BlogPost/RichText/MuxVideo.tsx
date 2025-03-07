@@ -25,7 +25,7 @@ const MuxVideo: React.FC<MuxVideoProps> = ({ video }) => {
       <div
         className={classNames("bg-gray-200 relative", {
           "w-screen lg:w-[760px] xl:w-[800px] aspect-video": isLandscape,
-          "w-screen md:w-[320px] xl:w-[450px] aspect-[9/16]": isPortrait,
+          "w-screen md:w-[320px] xl:w-[450px] aspect-9/16": isPortrait,
         })}
       >
         <MuxVideoReact

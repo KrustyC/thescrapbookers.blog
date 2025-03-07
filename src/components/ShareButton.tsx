@@ -64,7 +64,7 @@ export const ShareButton: React.FC<ShareButtonProps> = ({ text, title }) => {
         >
           <PopoverPanel
             static
-            className="bg-white p-4 rounded-lg drop-shadow absolute flex flex-col gap-3"
+            className="bg-white p-4 rounded-lg drop-shadow-sm absolute flex flex-col gap-3"
           >
             <WhatsappShareButton blankTarget url={url} title={text}>
               <div className="flex items-center gap-2">
