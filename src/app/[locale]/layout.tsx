@@ -1,11 +1,11 @@
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import Script from "next/script";
-import { NextIntlClientProvider } from "next-intl";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import { Organization, WithContext } from "schema-dts";
@@ -77,7 +77,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale)) {
+  if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
@@ -99,6 +99,8 @@ export default async function LocaleLayout({ children, params }: Props) {
       className={`${poppins.variable} ${leagueGothic.variable} ${ooohBaby.variable} ${merriweather.variable}`}
     >
       <head>
+        <GoogleTagManager gtmId="GTM-TDQDTN97" />
+
         <Script
           id="website-json-ld"
           type="application/ld+json"

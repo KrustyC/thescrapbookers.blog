@@ -42,7 +42,6 @@ export function parseCheatsheet(
     currencies,
     languages,
     dishes,
-    preposition,
     commonPhrases,
     coworkingSpaces,
   } = cheatsheet;
@@ -60,6 +59,7 @@ export function parseCheatsheet(
     capital,
     population,
     visaWebsite,
+
     lifeExpectancy,
     currencies: Array.isArray(currencies) ? currencies : [],
     languages: Array.isArray(languages) ? languages : [],

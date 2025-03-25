@@ -143,7 +143,7 @@ export async function getCountryWithPosts({
         slug: country.slug,
         preposition: country.preposition
           ? (country.preposition as CountryPreposition)
-          : undefined,
+          : 'simple',
         cheatsheet: country.cheatsheet
           ? parseCheatsheet(country.cheatsheet)
           : undefined,
