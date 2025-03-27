@@ -50,11 +50,6 @@
       "textFirstPar": "We began our travels in Southeast Asia at the beginning of 2023. We decided to experiment with our professional skills and shared passion for travel by designing and building a blog that could reflect our experiences, highlight overlooked historical events, and explore general subjects we found interesting along the way.",
       "textSecondPar": "Our slow travel pace has also rubbed off on our speed at producing content, but please be patient—we believe you will find our discoveries worth the wait. Join us here, in our newsletter, or on social media, and we'll help you feel like you're travelling to these places, from wherever you are.",
       "cta": "Scopri di più"
-    },
-    "NavbarLinks": {
-      "asia": "Asia",
-      "cheatsheets": "Info in pillole",
-      "aboutUs": "Chi SIamo"
     }
   },
   "AboutUs": {
@@ -75,6 +70,13 @@
       "fifthParagraph": "We are trying to go on fewer flights as possible and travel mainly by train, bus and boat. We think that if we are able to stay in places for longer we can also spend more time getting there. You get a good view of the scenery around you too!",
       "sixthParagraph": "Stiamo inoltre cercando di limitare il più possibile i viaggi aerei, preferendo treni, autobus e navi. Crediamo fermamente che, avendo la possibilità di restare in un luogo per periodi più lunghi, possiamo anche permetterci di impiegare più tempo per raggiungerli. Oltre ad avere un impatto ambientale minore, ci consente di immergerci ed ammirare il paesaggio che ci circonda durante il tragitto, di certo non qualcosa da sottovalutare!"
     }
+  },
+  "AllArticles": {
+    "Metadata": {
+      "title": "Travel Articles and Digital Nomading | Complete Archive",
+      "description": "Explore our complete collection of articles on travel, cultures and digital nomading. Stories, tips and reflections from our adventures around the world."
+    },
+    "title": "All Articles"
   },
   "BlogPost": {
     "shareText": "Check out this post by The Scrapbookers",
@@ -127,7 +129,7 @@
   "Global": {
     "NavbarLinks": {
       "asia": "Asia",
-      "cheatsheets": "Info in pillole",
+      "allArticles": "All Articles",
       "aboutUs": "Chi Siamo"
     },
     "LocaleSelector": {
