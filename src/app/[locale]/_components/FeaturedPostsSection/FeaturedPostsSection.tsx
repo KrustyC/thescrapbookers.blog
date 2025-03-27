@@ -1,11 +1,11 @@
 import { draftMode } from "next/headers";
 import { getTranslations } from "next-intl/server";
 
+import { getLatestPosts } from "@/graphql/queries/get-latest-posts.query copy";
 import { type AppLocale, Tag } from "@/types/global";
 
 import { AnimatedPostsSection } from "./AnimatedPostsSection";
 import { FeaturedPostsSectionSkeleton } from "./FeaturedPostsSectionSkeleton";
-import { getLatestPosts } from "@/graphql/queries/get-latest-posts.query copy";
 
 export default async function FeaturedPostsSection({
   locale,
@@ -17,7 +17,7 @@ export default async function FeaturedPostsSection({
 
   try {
     const { posts } = await getLatestPosts({
-      limit: 3,
+      limit: 6,
       locale,
       isPreview: isEnabled,
     });

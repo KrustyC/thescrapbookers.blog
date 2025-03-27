@@ -52,7 +52,7 @@ export default async function Home({
           <FeaturedPostsSection locale={locale} />
         </Suspense>
 
-        <DynamicVideo text={t("text")} />
+        <HighlightSection />
 
         <Suspense fallback={<DigitalNomadingSectionSkeleton />}>
           <DigitalNomadingSection locale={locale} />
@@ -64,7 +64,7 @@ export default async function Home({
 
         <AboutUsSection />
 
-        <HighlightSection />
+        <DynamicVideo text={t("text")} />
 
         <div className="-mt-[160px] 2xl:-mt-[200px] z-50 block">
           <Footer locale={locale} />

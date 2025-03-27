@@ -1,19 +1,19 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-import highlightPic from "../../../../public/images/vang_vieng.webp";
+import highlightPic from "../../../../public/images/hummingbird_belize.webp";
 
 export const HighlightSection = () => {
   const t = useTranslations("Home.HighlightSection");
 
   return (
     <div className="flex py-16 px-2 lg:px-24 lg:mt-16 relative w-full h-[880px] 2xl:h-[780px]">
-      <div className="w-full md:w-[72vw] lg:w-[60vw] xl:w-[800px] flex flex-col justify-start md:justify-center z-10 text-white relative p-8 bg-black/50 h-fit rounded-xl">
+      <div className="w-full md:w-[72vw] lg:w-[60vw] xl:w-[600px] flex flex-col justify-start md:justify-center z-10 text-white/80 relative p-8 bg-black/50 h-fit rounded-xl">
         <h2 className="text-6xl md:text-8xl xl:text-9xl font-regular uppercase font-league-gothic">
           {t("title")}
         </h2>
 
-        <p className="py-4 lg:py-6 text-lg font-light w-full md:w-[70%] lg:w-[460px]">
+        <p className="py-4 lg:py-6 font-light w-full md:w-[70%] lg:w-[460px]">
           {t("text")}
         </p>
 
