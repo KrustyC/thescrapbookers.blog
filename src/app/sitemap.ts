@@ -1,4 +1,4 @@
-const BASE_PATHS = ["", "/about-us"];
+const BASE_PATHS = ["", "/about-us", "/all-articles"];
 
 async function fetchPostRoutes() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/post`, {
