@@ -31,7 +31,7 @@ interface LatestPostsgQueryResposne {
   };
 }
 
-interface GetLatestPostsResposne {
+interface GetLatestPostsResponse {
   posts: ShortPost[];
 }
 
@@ -72,7 +72,7 @@ export async function getLatestPosts({
   limit,
   locale,
   isPreview = false,
-}: GetLatestPostsParams): Promise<GetLatestPostsResposne> {
+}: GetLatestPostsParams): Promise<GetLatestPostsResponse> {
   try {
     const data = await getApolloServerClient({
       isPreview,

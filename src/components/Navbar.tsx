@@ -6,17 +6,20 @@ import { Link } from "@/i18n/navigation";
 import { AppLocale } from "@/types/global";
 import { URLS } from "@/utils/urls";
 
-import logoPic from "../../public/images/logo_white.png";
+import logoBlackPic from "../../public/images/logo_black.png";
+import logoWhitePic from "../../public/images/logo_white.png";
 
 import { LocaleSelector } from "./LocaleSelector/LocaleSelector";
 
 interface NavbarProps {
   blackText?: boolean;
+  blackLogo?: boolean;
   locale: AppLocale;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   blackText = false,
+  blackLogo = false,
   locale,
 }) => {
   const localeDropdown = useTranslations("Global.LocaleSelector");
@@ -26,7 +29,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     <nav className="flex justify-between w-full h-24 bg-transparent absolute top-0 left-0 right-0 z-50 px-6 lg:px-24">
       <Link className="relative h-full w-44 md:w-56" href="/">
         <Image
-          src={logoPic}
+          src={blackLogo ? logoBlackPic : logoWhitePic}
           alt="the scrapbooker logo"
           title="logo"
           sizes="100%"
@@ -43,6 +46,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       >
         <div className="hidden md:flex items-center gap-5 uppercase">
           <Link href={URLS.asiaArticles()}>{navbar("asia")}</Link>
+          <Link href={URLS.allArticles()}>{navbar("allArticles")}</Link>
           <Link href={URLS.aboutUs()}>{navbar("aboutUs")}</Link>
         </div>
 

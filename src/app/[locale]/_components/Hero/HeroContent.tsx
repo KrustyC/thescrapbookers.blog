@@ -14,7 +14,7 @@ import { HeroNavbar } from "./HeroNavbar";
 interface HeroProps {
   heroCopy: { title: string; heroImgAlt: string };
   localeDropdownCopy: { optionEnglish: string; optionItalian: string };
-  navbarCopy: { asia: string; aboutUs: string };
+  navbarCopy: { asia: string; aboutUs: string; allArticles: string };
   locale: AppLocale;
 }
 

@@ -19,6 +19,7 @@ interface HeroNavbarProps {
   navbarCopy: {
     asia: string;
     aboutUs: string;
+    allArticles: string;
   };
   locale: AppLocale;
 }
@@ -75,6 +76,10 @@ export const HeroNavbar: React.FC<HeroNavbarProps> = ({
         <div className="hidden md:flex gap-5 items-center uppercase">
           <motion.div variants={linkVariants}>
             <Link href={URLS.asiaArticles()}>{navbarCopy.asia}</Link>
+          </motion.div>
+
+          <motion.div variants={linkVariants}>
+            <Link href={URLS.allArticles()}>{navbarCopy.allArticles}</Link>
           </motion.div>
 
           <motion.div variants={linkVariants}>

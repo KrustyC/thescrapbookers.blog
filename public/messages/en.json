@@ -50,11 +50,6 @@
       "textFirstPar": "We began our travels in Southeast Asia at the beginning of 2023. We decided to experiment with our professional skills and shared passion for travel by designing and building a blog that could reflect our experiences, highlight overlooked historical events, and explore general subjects we found interesting along the way.",
       "textSecondPar": "Our slow travel pace has also rubbed off on our speed at producing content, but please be patient—we believe you will find our discoveries worth the wait. Join us here, in our newsletter, or on social media, and we'll help you feel like you're travelling to these places, from wherever you are.",
       "cta": "Find out more"
-    },
-    "NavbarLinks": {
-      "asia": "Asia",
-      "cheatsheets": "Cheatsheets",
-      "aboutUs": "About Us"
     }
   },
   "AboutUs": {
@@ -75,6 +70,13 @@
       "fifthParagraph": "We are trying to go on fewer flights as possible and travel mainly by train, bus and boat. We think that if we are able to stay in places for longer we can also spend more time getting there. You get a good view of the scenery around you too!",
       "sixthParagraph": "Thank you for visiting our blog, where we share our stories, with a particular focus on the places we visit. We want to give you an authentic glimpse of what these places are really like and to bring you along on our journey. Through our writing, we aim to provide you with informative and engaging content that will give you insights into the different cultures, histories, and landscapes we encounter."
     }
+  },
+  "AllArticles": {
+    "Metadata": {
+      "title": "Travel Articles and Digital Nomading | Complete Archive",
+      "description": "Explore our complete collection of articles on travel, cultures and digital nomading. Stories, tips and reflections from our adventures around the world."
+    },
+    "title": "All Articles"
   },
   "BlogPost": {
     "shareText": "Check out this post by The Scrapbookers",
@@ -127,7 +129,7 @@
   "Global": {
     "NavbarLinks": {
       "asia": "Asia",
-      "cheatsheets": "Cheatsheets",
+      "allArticles": "All Articles",
       "aboutUs": "About Us"
     },
     "LocaleSelector": {

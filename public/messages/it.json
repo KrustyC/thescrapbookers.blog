@@ -50,11 +50,6 @@
       "textFirstPar": "Abbiamo iniziato i nostri viaggi nel sud-est asiatico all'inizio del 2023, sperimentando con le nostre competenze professionali e la nostra passione per i viaggi, progettando e costruendo un blog che riflettesse le nostre esperienze, mettesse in evidenza eventi storici trascurati ed esplorasse argomenti interessanti. ",
       "textSecondPar": "Il nostro ritmo di viaggio lento ha influenzato anche la produzione dei contenuti, ma abbiate pazienza: crediamo che l'’'attesa valga la pena. Unitevi a noi, tramite la nostra newsletter o sui social media, e cercheremo di farvi sentire come se steste viaggiando anche voi, ovunque vi troviate.",
       "cta": "Scopri di più"
-    },
-    "NavbarLinks": {
-      "asia": "Asia",
-      "cheatsheets": "Info in pillole",
-      "aboutUs": "Chi SIamo"
     }
   },
   "AboutUs": {
@@ -75,6 +70,13 @@
       "fifthParagraph": "Cerchiamo di prendere meno voli possibile e di viaggiare principalmente via treno, autobus e nave. Pensiamo che avendo l'’'opportunità di fermarci più a lungo nei luoghi, possiamo anche permetterci di prenderci più tempo per arrivarci. Inoltre, viaggiando via terra si gode anche della vista del paesaggio circostante.",
       "sixthParagraph": "Grazie per aver visitato il nostro blog. Speriamo che vi possa offrire una prospettiva nuova e che possa essere una risorsa utile per coloro che hanno intenzione di intraprendere questo stile di vita."
     }
+  },
+  "AllArticles": {
+    "Metadata": {
+      "title": "Articoli di Viaggio e Nomadismo Digitale | Archivio Completo",
+      "description": "Esplora la nostra collezione completa di articoli su viaggi, culture e nomadismo digitale. Storie, consigli e riflessioni dalle nostre avventure in giro per il mondo."
+    },
+    "title": "I nostri articoli"
   },
   "BlogPost": {
     "shareText": "Leggi questo articolo dei The Scrapbookers",
@@ -127,7 +129,7 @@
   "Global": {
     "NavbarLinks": {
       "asia": "Asia",
-      "cheatsheets": "Info in pillole",
+      "allArticles": "Articoli",
       "aboutUs": "Chi Siamo"
     },
     "LocaleSelector": {

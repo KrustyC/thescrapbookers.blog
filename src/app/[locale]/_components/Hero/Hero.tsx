@@ -11,7 +11,7 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ locale }) => {
   const heroCopy = useTranslations("Home.Hero");
   const localeDropdownCopy = useTranslations("Global.LocaleSelector");
-  const navbarCopy = useTranslations("Home.NavbarLinks");
+  const navbarCopy = useTranslations("Global.NavbarLinks");
 
   return (
     <div className="md:p-8">
@@ -28,6 +28,7 @@ export const Hero: React.FC<HeroProps> = ({ locale }) => {
         navbarCopy={{
           asia: navbarCopy("asia"),
           aboutUs: navbarCopy("aboutUs"),
+          allArticles: navbarCopy("allArticles"),
         }}
       />
     </div>

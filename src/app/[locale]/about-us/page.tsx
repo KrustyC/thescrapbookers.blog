@@ -1,4 +1,3 @@
-import { Metadata } from "next";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
@@ -6,53 +5,6 @@ import { routing } from "@/i18n/routing";
 
 import aboutUsPic from "../../../../public/images/about_us.webp";
 import cameronHighlands from "../../../../public/images/cameron_highlands.webp";
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "AboutUs.Metadata" });
-
-  return {
-    description: t("description"),
-    keywords: ["About Us", "South East Asia", "Blog", "Digital Nomads"],
-    authors: [
-      { name: "Davide Crestini", url: "https://dcrestini.me" },
-      { name: "Beatrice Cox", url: "https://beatricecox.com" },
-    ],
-    openGraph: {
-      title: t("title"),
-      description: t("description"),
-      siteName: "The Scrapbookers",
-      locale,
-      url: new URL(
-        `${locale === "it" ? `/${locale}` : ""}/about-us`,
-        process.env.NEXT_PUBLIC_BASE_URL
-      ),
-      images: [
-        {
-          url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/about_us.webp`,
-          height: 900,
-          width: 1024,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t("title"),
-      description: t("description"),
-      images: [
-        {
-          url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/about_us.webp`,
-          height: 900,
-          width: 1024,
-        },
-      ],
-    },
-  };
-}
 
 interface SidebarProps {
   title: string;

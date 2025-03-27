@@ -4,6 +4,7 @@ export const URLS = {
   asiaArticles: () => "/asia",
   remoteRoaming: () => "/remote-roaming",
   aboutUs: () => "/about-us",
+  allArticles: () => "/all-articles",
   instagramURL: () =>
     "https://www.instagram.com/the_scrapbookers?igshid=OTjhZDVkZWE=",
   twitterURL: () =>
