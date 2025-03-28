@@ -74,12 +74,10 @@ export async function generateStaticParams() {
   });
 }
 
-export default async function CountryPage({
-  params,
-}: CountryPageProps) {
+export default async function CountryPage({ params }: CountryPageProps) {
   const { country: countrySlug, locale } = await params;
 
-   setRequestLocale(locale);
+  setRequestLocale(locale);
 
   const { isEnabled } = await draftMode();
 
@@ -127,8 +125,8 @@ export default async function CountryPage({
           <div className="w-full 2xl:w-max 2xl:mx-auto flex flex-col">
             <h2 className="text-3xl lg:text-5xl font-semibold mb-8 lg:mb-12">
               {tArticles("heading", {
-                preposition: country.preposition || 'in',
-                country: country.name || '',
+                preposition: country.preposition || "in",
+                country: country.name || "",
               })}
             </h2>
 

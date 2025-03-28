@@ -109,14 +109,16 @@ export default async function LocaleLayout({ children, params }: Props) {
       </head>
       <body className="font-poppins">
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <>
+            {children}
+
+            {isPreviewEnabled && <PreviewBadge />}
+          </>
         </NextIntlClientProvider>
       </body>
 
       <Analytics />
       <SpeedInsights />
-
-      {isPreviewEnabled && <PreviewBadge />}
 
       {process.env.NEXT_PUBLIC_ENVIRONMENT === "production" && (
         <>
