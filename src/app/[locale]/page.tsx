@@ -22,7 +22,8 @@ import { Hero } from "./_components/Hero/Hero";
 import { HighlightSection } from "./_components/HighlightSection";
 
 // const DynamicVideo = dynamic(() => import("../../components/home/VideoPlayer"));
-const DynamicVideo = dynamic(() => import("./_components/Video"));
+const DynamicVideo = dynamic(() => import("./_components/VideoPlayer"));
+// const DynamicVideo = dynamic(() => import("./_components/Video"));
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
