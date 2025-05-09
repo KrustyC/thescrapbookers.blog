@@ -74,7 +74,6 @@ function parseLinkToEntry(graphQLLink: Entry | undefined): Video | undefined {
 }
 
 export function parseGraphQLPost(graphQLPost: PostGraphQL): Post {
-  console.log("graphQLPost", graphQLPost);
   const mainImage = graphQLPost.mainImage
     ? extractImageDataFromContentfulAsset(graphQLPost.mainImage as any) // Contentful new types are fucking awful, so I had to hack around a bit
     : undefined;

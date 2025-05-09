@@ -135,9 +135,6 @@ export async function getPost({
 
     const post = data.data.postCollection.items[0];
 
-    console.log("slug", slug);
-    console.log("post", post);
-
     return {
       post: parseGraphQLPost(post),
       nextPost: post.nextPost ? parseGraphQLNextPost(post.nextPost) : undefined,
