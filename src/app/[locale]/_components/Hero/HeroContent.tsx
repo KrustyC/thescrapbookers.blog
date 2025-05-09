@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { motion, Variants } from "motion/react";
 import Image from "next/image";
 
 import { AppLocale } from "@/types/global";
@@ -62,10 +62,9 @@ export const HeroContent: React.FC<HeroProps> = ({
           src={homeHeroPic}
           alt={heroCopy.heroImgAlt}
           title="Langtang Valley"
-          sizes="100vw"
+          fill
           priority
           className="md:rounded-2xl"
-          fill
           style={{ objectFit: "cover" }}
         />
 

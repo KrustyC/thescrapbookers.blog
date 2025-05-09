@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { motion, Variants } from "motion/react";
 
 import { type AppLocale, ShortPost } from "@/types/global";
 import { smoothSpring } from "@/utils/transitions";
