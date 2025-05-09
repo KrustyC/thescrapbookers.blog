@@ -20,30 +20,37 @@
   --text-lg--line-height: 1.6rem;
   --text-lg--letter-spacing: 0.025rem;
   --text-lg--font-weight: 400;
+
   --text-xl: 1.3rem;
   --text-xl--line-height: 1.8rem;
   --text-xl--letter-spacing: 0.025rem;
   --text-xl--font-weight: 400;
+
   --text-2xl: 1.6rem;
   --text-2xl--line-height: 1.9rem;
   --text-2xl--letter-spacing: 0.025rem;
   --text-2xl--font-weight: 400;
+
   --text-3xl: 1.8rem;
   --text-3xl--line-height: 2rem;
   --text-3xl--letter-spacing: 0.025rem;
   --text-3xl--font-weight: 600;
+
   --text-4xl: 2rem;
   --text-4xl--line-height: 2.5rem;
   --text-4xl--letter-spacing: 0.025rem;
   --text-4xl--font-weight: 600;
+
   --text-5xl: 2.8rem;
   --text-5xl--line-height: 3rem;
   --text-5xl--letter-spacing: 0.025rem;
   --text-5xl--font-weight: 600;
+
   --text-9xl: 6rem;
   --text-9xl--line-height: 6rem;
   --text-9xl--letter-spacing: 0.025rem;
   --text-9xl--font-weight: 500;
+
   --text-10xl: 10rem;
   --text-10xl--line-height: 9rem;
   --text-10xl--letter-spacing: 0.025rem;

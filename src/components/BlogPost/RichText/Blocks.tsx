@@ -119,11 +119,11 @@ export const Heading: React.FC<PropsWithChildren<HeadingProps>> = ({
         </h2>
       );
     case 3:
-      return <h3 className="rich-text-heading text-3xl">{children}</h3>;
+      return <h3 className="rich-text-heading text-xl">{children}</h3>;
     case 4:
-      return <h4 className="rich-text-heading text-2xl">{children}</h4>;
+      return <h4 className="rich-text-heading text-lg">{children}</h4>;
     case 5:
-      return <h5 className="rich-text-heading text-xl">{children}</h5>;
+      return <h5 className="rich-text-heading text-lg">{children}</h5>;
     case 6:
     default:
       return <h6 className="rich-text-heading text-lg">{children}</h6>;
