@@ -58,13 +58,12 @@ export const PostCard: React.FC<PostProps> = ({
       >
         <Image
           className="rounded-2xl"
-          sizes="100%"
           fill
           src={thumbnailImage?.url || ""}
           alt={thumbnailImage?.description || "missing image"}
           title={thumbnailImage?.title || "missing image"}
           loading="lazy"
-          style={{ objectFit: "cover" }}
+          objectFit="cover"
         />
       </Link>
 
