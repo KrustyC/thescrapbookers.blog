@@ -26,10 +26,9 @@ export const ContinentHero: React.FC<ContinentHeroProps> = ({
           src={image.url || ""}
           alt={image.description || "missing image"}
           title={image.title || "missing image"}
-          sizes="100vw"
           priority
           fill
-          style={{ objectFit: "cover" }}
+          objectFit="cover"
         />
       )}
     </div>

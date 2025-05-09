@@ -33,8 +33,7 @@ export const AboutUsSection: React.FC = () => {
           title="us taking a selfie in the jungle"
           placeholder="blur"
           fill
-          sizes="100%"
-          style={{ objectFit: "cover" }}
+          objectFit="cover"
         />
       </div>
     </div>

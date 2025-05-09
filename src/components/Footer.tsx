@@ -129,7 +129,7 @@ export const Footer: React.FC<FooterProps> = () => {
               src={logoPic}
               alt="the scrapbooker logo"
               title="logo"
-              sizes="100%"
+              objectFit="contain"
               fill
               style={{ objectFit: "contain" }}
             />

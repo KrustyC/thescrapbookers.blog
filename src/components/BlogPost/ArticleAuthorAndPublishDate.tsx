@@ -36,8 +36,7 @@ export const ArticleAuthorAndPublishDate: React.FC<
                 alt={authorImage.alt}
                 title={authorImage.title}
                 fill
-                sizes="100%"
-                style={{ objectFit: "cover" }}
+                objectFit="cover"
               />
             </div>
           ) : null}

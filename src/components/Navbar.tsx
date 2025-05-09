@@ -32,9 +32,8 @@ export const Navbar: React.FC<NavbarProps> = ({
           src={blackLogo ? logoBlackPic : logoWhitePic}
           alt="the scrapbooker logo"
           title="logo"
-          sizes="100%"
           fill
-          style={{ objectFit: "contain" }}
+          objectFit="contain"
         />
       </Link>
 

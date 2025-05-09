@@ -22,12 +22,11 @@ export const NextPost: React.FC<NextPostHeroProps> = ({ post, locale }) => {
         className="w-full h-[380px] relative loading-background"
       >
         <Image
-          sizes="100%"
           fill
           src={post.mainImage?.url || ""}
           alt={post.mainImage?.description || "missing image"}
           title={post.mainImage?.title || "missing image"}
-          style={{ objectFit: "cover" }}
+          objectFit="cover"
         />
       </Link>
 

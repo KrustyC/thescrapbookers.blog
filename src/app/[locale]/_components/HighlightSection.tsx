@@ -27,11 +27,10 @@ export const HighlightSection = () => {
         alt="In the forefornt there are many cows, of brown colour, grazing. In the background there is a mountain with a small house in front of it."
         title="Picture of Vang Vieng"
         placeholder="blur"
-        sizes="100vw"
+        objectFit="cover"
         priority={false}
         loading="lazy"
         fill
-        style={{ objectFit: "cover" }}
       />
     </div>
   );

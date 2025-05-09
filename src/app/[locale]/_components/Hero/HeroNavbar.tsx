@@ -64,10 +64,9 @@ export const HeroNavbar: React.FC<HeroNavbarProps> = ({
             src={logoPic}
             alt="the scrapbooker logo"
             title="logo"
-            sizes="100%"
             fill
             priority
-            style={{ objectFit: "contain" }}
+            objectFit="contain"
           />
         </Link>
       </motion.div>

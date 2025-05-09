@@ -23,10 +23,9 @@ export const CountryHero: React.FC<CountryHeroProps> = ({ name, image }) => {
           src={image.url || ""}
           alt={image.description || ""}
           title={image.title || ""}
-          sizes="100vw"
           priority
           fill
-          style={{ objectFit: "cover" }}
+          objectFit="cover"
         />
       )}
     </div>

@@ -38,13 +38,12 @@ export const BlogPostHero: React.FC<BlogPostHeroProps> = ({ post }) => {
 
       <Image
         className="loading-background"
-        sizes="100%"
         fill
         priority
         src={post.mainImage?.url || ""}
         alt={post.mainImage?.description || "missing image"}
         title={post.mainImage?.title || "missing image"}
-        style={{ objectFit: "cover" }}
+        objectFit="cover"
       />
     </div>
   );

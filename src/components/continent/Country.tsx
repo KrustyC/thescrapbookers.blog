@@ -36,10 +36,9 @@ export const Country: React.FC<CountryProps> = ({ country, continentSlug }) => {
           src={country.thumbnailImage?.url || ""}
           alt={country.thumbnailImage?.description || "missing image"}
           title={country.thumbnailImage?.title || "missing image"}
-          sizes="100vw"
           priority
           fill
-          style={{ objectFit: "cover" }}
+          objectFit="cover"
         />
       </div>
 

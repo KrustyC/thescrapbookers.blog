@@ -23,8 +23,7 @@ const Sidebar: React.FC<SidebarProps> = ({ title, description }) => {
             title="us taking a selfie in the jungle"
             placeholder="blur"
             fill
-            sizes="100%"
-            style={{ objectFit: "cover" }}
+            objectFit="cover"
           />
         </div>
 
@@ -83,8 +82,7 @@ export default async function AboutUsPage({
           title="Tea plantation in Cameron Highlands, Tanha Rata, Malaysia"
           placeholder="blur"
           fill
-          sizes="100%"
-          style={{ objectFit: "cover" }}
+          objectFit="cover"
         />
       </div>
     </div>

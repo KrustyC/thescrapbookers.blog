@@ -31,8 +31,7 @@ export const NativeCarousel: React.FC<CaoruselProps> = ({ slides }) => (
           alt={slide.image.alt}
           title={slide.image.title}
           className="rounded-2xl group-hover:scale-125 transition duration-500"
-          style={{ objectFit: "cover" }}
-          sizes="100%"
+          objectFit="cover"
           loading="lazy"
         />
         <div className="absolute z-10 top-0 left-0 bottom-0 right-0 h-full w-full flex items-center justify-center">
