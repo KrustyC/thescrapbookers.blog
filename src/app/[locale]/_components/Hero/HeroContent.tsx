@@ -65,7 +65,7 @@ export const HeroContent: React.FC<HeroProps> = ({
           fill
           priority
           className="md:rounded-2xl"
-          style={{ objectFit: "cover" }}
+          objectFit="cover"
         />
 
         <Arrow />
