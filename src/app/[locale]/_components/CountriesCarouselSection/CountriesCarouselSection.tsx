@@ -10,6 +10,7 @@ import cambodiaPic from "../../../../../public/images/monk_walking_in_a_temple_n
 import nepalPic from "../../../../../public/images/nepalese_guy_on_swing.webp";
 import laosPic from "../../../../../public/images/vientiane_man_working_with_cables.webp";
 import vietnamPic from "../../../../../public/images/woman_pushing_a_bike_with_flowers_in_hanoi.webp";
+import japanPic from "../../../../../public/images/japan_temple.webp";
 
 import { CountriesCarouselSectionSkeleton } from "./CountriesCarouselSectionSkeleton";
 import { NativeCarousel } from "./NativeCarousel";
@@ -21,6 +22,7 @@ interface Copy {
   cambodia: string;
   malaysia: string;
   nepal: string;
+  japan: string;
 }
 
 function getImage(slug: string | undefined, copy: Copy) {
@@ -61,12 +63,20 @@ function getImage(slug: string | undefined, copy: Copy) {
         alt: copy.nepal,
         title: "Nepal",
       };
+    case "japan":
+      return {
+        src: japanPic,
+        alt: copy.japan,
+        title: "Japan",
+      };
     default:
       return {
         src: cambodiaPic,
         alt: "",
         title: "",
       };
+
+
   }
 }
 
@@ -98,6 +108,7 @@ export default async function CountriesCarouselSection({
     cambodia: t("cambodia"),
     malaysia: t("malaysia"),
     nepal: t("nepal"),
+    japan: t("japan"),
   };
 
   const slides = countries.map((country) => ({

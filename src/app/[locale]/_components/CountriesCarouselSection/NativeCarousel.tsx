@@ -35,7 +35,7 @@ export const NativeCarousel: React.FC<CaoruselProps> = ({ slides }) => (
           loading="lazy"
         />
         <div className="absolute z-10 top-0 left-0 bottom-0 right-0 h-full w-full flex items-center justify-center">
-          <span className="text-7xl text-white uppercase font-league-gothic">
+          <span className="text-7xl text-white uppercase font-league-gothic [text-shadow:_0_2px_8px_rgba(0,0,0,0.4)]">
             {slide.name}
           </span>
         </div>

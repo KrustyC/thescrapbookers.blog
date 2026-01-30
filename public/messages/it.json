@@ -5,7 +5,8 @@
       "description": "Pensieri e consigli di viaggio per nomadi digitali e amanti degli usi e costumi di culture straniere. Un blog per leggere storie su posti nuovi e a te sconosciuti."
     },
     "Hero": {
-      "title": "Alla ricerca della sostenibilità nel nomadismo digitale",
+      "title": "Viaggiare senza una bucket list",
+      "subtitle": "Qui puoi trovare i nostri ultimi articoli. Siamo piuttosto lenti a scrivere, ma se non puoi aspettare di leggere il prossimo, puoi sempre iscriverti alla nostra newsletter e ti faremo sapere quando avremo pubblicato qualcosa di nuovo!",
       "heroImgAlt": "Vista della Valle di Langtang (Nepal) circondata da montagne. In primo piano c'è una piccola casa tradizionale"
     },
     "ExhibitionBanner": {
@@ -17,12 +18,14 @@
     },
     "Featured": {
       "title": "Articoli Recenti",
-      "subtitle": "Qui puoi trovare i nostri ultimi articoli. Siamo piuttosto lenti a scrivere, ma se non puoi aspettare di leggere il prossimo, puoi sempre iscriverti alla nostra newsletter e ti faremo sapere quando avremo pubblicato qualcosa di nuovo! 😉",
       "error1": "Errore durante il caricamento dei post recenti...",
       "error2": "Ci scusiamo per il disagio, siamo già al lavoro per risolvere il problema, ti preghiamo di riprovare tra qualche minuto."
     },
     "Video": {
-      "text": "storie di viaggio, cibo, cultura e nomadismo digitale"
+      "text": "le parti panoramiche",
+      "followText": "Stesso contenuto lento, consegna più veloce. A volte.",
+      "pinterest": "Pinterest",
+      "instagram": "Instagram"
     },
     "DigitalNomading": {
       "title": "Nomadismo Digitale",
@@ -38,7 +41,8 @@
         "vietnam": "una donna ad Hanoi (Vietnam) che spinge una bicicletta, con molti fiori. Non si può vedere il volto della donna, poiché è coperto da alcune piante verdi. È però possibile notare che indossa un cappello tradizionale a cono",
         "cambodia": "un giovane monaco che cammina in un tempio vicino ad Angkor Wat (Cambogia). Il monaco indossa una veste arancione tradizionale",
         "malaysia": "Immagine in prospettiva del minareto della Moschea Nazionale della Malesia a Kuala Lumpur. Lungo la via per il minareto, c'è una piscina colma di acqua di un azzurro brillante. Ai lati della piscina, due corridoi con numerose colonne nere e un tetto bianco",
-        "nepal": "un ragazzo nepalese dondola in un'altalena di legno costruita a mano"
+        "nepal": "un ragazzo nepalese dondola in un'altalena di legno costruita a mano",
+        "japan": "un tempio tradizionale giapponese circondato da alberi"
       }
     },
     "HighlightSection": {

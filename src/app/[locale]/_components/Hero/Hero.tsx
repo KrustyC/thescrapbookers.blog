@@ -19,6 +19,7 @@ export const Hero: React.FC<HeroProps> = ({ locale }) => {
         locale={locale}
         heroCopy={{
           title: heroCopy("title"),
+          subtitle: heroCopy("subtitle"),
           heroImgAlt: heroCopy("heroImgAlt"),
         }}
         localeDropdownCopy={{
