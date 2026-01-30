@@ -6,13 +6,12 @@ import Image from "next/image";
 
 import { InstagramIcon } from "@/icons/Instagram";
 import { PinterestIcon } from "@/icons/Pinterest";
+import { URLS } from "@/utils/urls";
+import Link from "next/link";
 
 const PLAYBACK_ID = "4nu02x0002c01H7btpNSvahcMcgj9XxZycSH2D01awYWUuMY";
 const PLACEHOLDER_HASH =
   "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAASACADASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAwL/xAAdEAACAgIDAQAAAAAAAAAAAAAAAQIDBBEFISIx/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDAP/EABcRAQEBAQAAAAAAAAAAAAAAAAABEQL/2gAMAwEAAhEDEQA/AJ+NyMLX5KNd20SKceup+VooVTikHaXG9l+kJW5mn8G2oyRjOmtg0CBpW+wAVSGovo4mwA0T6f/Z";
-
-const INSTAGRAM_URL = "https://www.instagram.com/the_scrapbookers_blog/";
-const PINTEREST_URL = "https://www.pinterest.com/thescrapbookersblog/";
 
 interface VideoProps {
   text: string;
@@ -103,30 +102,38 @@ const Video: React.FC<VideoProps> = ({
                 {followText}
               </p>
               <div className="flex gap-4">
-                <a
-                  href={PINTEREST_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-5 py-2.5 rounded-full transition-colors"
-                >
+                <ExternalLink href={URLS.pinterestURL()}>
                   <PinterestIcon className="w-5 h-5 fill-current" />
                   {pinterest}
-                </a>
-                <a
-                  href={INSTAGRAM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-5 py-2.5 rounded-full transition-colors"
-                >
+                </ExternalLink>
+                <ExternalLink href={URLS.instagramURL()}>
                   <InstagramIcon className="w-5 h-5 fill-current" />
                   {instagram}
-                </a>
+                </ExternalLink>
               </div>
             </div>
           </div>
         )}
       </div>
     </div>
+  );
+};
+
+interface ExternalLinkProps {
+  href: string;
+  children: React.ReactNode;
+}
+
+const ExternalLink: React.FC<ExternalLinkProps> = ({ href, children }) => {
+  return (
+    <Link
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-5 py-2.5 rounded-full transition-colors"
+    >
+      {children}
+    </Link>
   );
 };
 
