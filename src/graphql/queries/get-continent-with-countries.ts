@@ -112,6 +112,10 @@ export async function getContinentWithCountries({
       },
     });
 
+    if (!data.data) {
+      throw new Error(`Continent with slug: ${slug} not found`);
+    }
+
     const continent = data.data.continentCollection.items[0];
 
     const countries = continent.linkedFrom.countryCollection.items.map(

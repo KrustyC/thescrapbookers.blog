@@ -133,6 +133,10 @@ export async function getPost({
       },
     });
 
+    if (!data.data) {
+      throw new Error(`Post with slug: ${slug} not found`);
+    }
+
     const post = data.data.postCollection.items[0];
 
     return {

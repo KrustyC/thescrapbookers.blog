@@ -70,8 +70,6 @@ export async function generateMetadata({
 export default async function PostPage({ params }: PostPageProps) {
   const { slug, locale } = await params;
 
-   
-
   const { isEnabled } = await draftMode();
   const { post, nextPost } = await getPost({
     slug,

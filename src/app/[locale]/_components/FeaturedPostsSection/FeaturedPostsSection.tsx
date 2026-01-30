@@ -23,11 +23,7 @@ export default async function FeaturedPostsSection({
     });
 
     return (
-      <AnimatedPostsSection
-        title={t("title")}
-        posts={posts}
-        locale={locale}
-      />
+      <AnimatedPostsSection title={t("title")} posts={posts} locale={locale} />
     );
   } catch (error) {
     return (

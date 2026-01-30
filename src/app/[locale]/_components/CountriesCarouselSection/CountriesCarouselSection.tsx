@@ -5,12 +5,12 @@ import { getCountriesForContinent } from "@/graphql/queries/get-countries-for-co
 import { AppLocale } from "@/types/global";
 
 import thailandPic from "../../../../../public/images/chiang_mai_tower.webp";
+import japanPic from "../../../../../public/images/japan_temple.webp";
 import malaysiaPic from "../../../../../public/images/kuala_lumpur_mosque.webp";
 import cambodiaPic from "../../../../../public/images/monk_walking_in_a_temple_near_angkor_wat.webp";
 import nepalPic from "../../../../../public/images/nepalese_guy_on_swing.webp";
 import laosPic from "../../../../../public/images/vientiane_man_working_with_cables.webp";
 import vietnamPic from "../../../../../public/images/woman_pushing_a_bike_with_flowers_in_hanoi.webp";
-import japanPic from "../../../../../public/images/japan_temple.webp";
 
 import { CountriesCarouselSectionSkeleton } from "./CountriesCarouselSectionSkeleton";
 import { NativeCarousel } from "./NativeCarousel";
@@ -75,8 +75,6 @@ function getImage(slug: string | undefined, copy: Copy) {
         alt: "",
         title: "",
       };
-
-
   }
 }
 

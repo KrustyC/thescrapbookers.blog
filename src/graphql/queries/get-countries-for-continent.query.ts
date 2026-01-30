@@ -58,7 +58,14 @@ export async function getCountriesForContinent({
       },
     });
 
+    if (!data.data) {
+      throw new Error(
+        `Countries for continent with slug: ${continentSlug} not found`
+      );
+    }
+
     const countries = data.data.countryCollection.items;
+
     return {
       countries: sortItemsWithSlug(countries, COUNTRY_ORDERED_SLUGS),
     };

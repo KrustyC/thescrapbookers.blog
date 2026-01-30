@@ -23,8 +23,6 @@ type ShortPostGraphQL = Pick<
   | "country"
 >;
 
-
-
 interface LatestPostsgQueryResposne {
   postCollection: {
     items: ShortPostGraphQL[];
@@ -38,7 +36,7 @@ interface GetLatestPostsResponse {
 const GET_LATEST_POSTS_QUERY = gql`
   query ($locale: String!, $preview: Boolean!, $limit: Int!) {
     postCollection(
-      order: sys_firstPublishedAt_DESC,
+      order: sys_firstPublishedAt_DESC
       preview: $preview
       limit: $limit
       locale: $locale
@@ -88,6 +86,10 @@ export async function getLatestPosts({
         },
       },
     });
+
+    if (!data.data) {
+      throw new Error(`Latest posts not found`);
+    }
 
     return {
       posts: data.data.postCollection.items.map((post) => ({

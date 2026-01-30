@@ -15,7 +15,10 @@ export async function generateMetadata({
 }: IntroductionPageProps): Promise<Metadata> {
   const { locale } = await params;
 
-  const t = await getTranslations({ locale, namespace: "AllArticles.Metadata" });
+  const t = await getTranslations({
+    locale,
+    namespace: "AllArticles.Metadata",
+  });
 
   const baseUrl =
     process.env.NEXT_PUBLIC_BASE_URL || "https://thescrapbookers.blog";

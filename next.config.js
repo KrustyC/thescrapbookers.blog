@@ -31,8 +31,12 @@ module.exports = withSentryConfig(nextConfig, {
   widenClientFileUpload: true,
 
   // Transpiles SDK to be compatible with IE11 (increases bundle size)
+  webpack: {
+    automaticVercelMonitors: true,
+    treeshake: {
+      removeDebugLogging: true,
+    },
+  },
   transpileClientSDK: true,
   hideSourceMaps: true,
-  disableLogger: true,
-  automaticVercelMonitors: true,
 });

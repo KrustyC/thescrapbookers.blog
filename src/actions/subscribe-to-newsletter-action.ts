@@ -14,8 +14,8 @@ function isVariableDefined(variable: unknown): variable is string {
   return !!variable && typeof variable === "string";
 }
 
-function isMemberErrorResponse(error: any): error is ErrorResponse {
-  return !!(error as any).status;
+function isMemberErrorResponse(error: unknown): error is ErrorResponse {
+  return !!(error as ErrorResponse).status;
 }
 
 interface SubscribeToNewsletterActionData {

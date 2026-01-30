@@ -106,11 +106,10 @@ export function parseGraphQLPost(graphQLPost: PostGraphQL): Post {
   };
 }
 
-interface NextPost
-  extends Pick<
-    Post,
-    "title" | "slug" | "mainImage" | "date" | "smallIntro" | "href"
-  > {}
+interface NextPost extends Pick<
+  Post,
+  "title" | "slug" | "mainImage" | "date" | "smallIntro" | "href"
+> {}
 
 export function parseGraphQLNextPost(nextPost: PostGraphQL): NextPost {
   const mainImage = nextPost.mainImage

@@ -66,11 +66,11 @@ export interface Country {
   continent?: Pick<Continent, "name" | "slug">;
 }
 
-export interface ShortCountry
-  extends Pick<
-    Country,
-    "name" | "slug" | "description" | "thumbnailImage" | "continent"
-  > {}
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+export interface ShortCountry extends Pick<
+  Country,
+  "name" | "slug" | "description" | "thumbnailImage" | "continent"
+> {}
 
 export interface Author {
   name?: string;

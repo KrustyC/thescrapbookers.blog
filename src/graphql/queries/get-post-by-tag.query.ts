@@ -89,6 +89,10 @@ export async function getPostsByTag({
       },
     });
 
+    if (!data.data) {
+      throw new Error(`Posts by tag: ${tag} not found`);
+    }
+
     return {
       posts: data.data.postCollection.items.map((post) => ({
         ...post,

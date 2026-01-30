@@ -135,6 +135,10 @@ export async function getCountryWithPosts({
       },
     });
 
+    if (!data.data) {
+      throw new Error(`Country with slug: ${slug} not found`);
+    }
+
     const country = data.data.countryCollection.items[0];
 
     return {
@@ -143,7 +147,7 @@ export async function getCountryWithPosts({
         slug: country.slug,
         preposition: country.preposition
           ? (country.preposition as CountryPreposition)
-          : 'simple',
+          : "simple",
         cheatsheet: country.cheatsheet
           ? parseCheatsheet(country.cheatsheet)
           : undefined,

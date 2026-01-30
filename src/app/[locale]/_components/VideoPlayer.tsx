@@ -21,7 +21,12 @@ interface VideoProps {
   instagram: string;
 }
 
-const Video: React.FC<VideoProps> = ({ text, followText, pinterest, instagram }) => {
+const Video: React.FC<VideoProps> = ({
+  text,
+  followText,
+  pinterest,
+  instagram,
+}) => {
   const [showText, setShowText] = useState(false);
 
   const ref = useRef(null);
@@ -58,7 +63,12 @@ const Video: React.FC<VideoProps> = ({ text, followText, pinterest, instagram })
       />
 
       <MuxVideo
-        style={{ height: "100%", maxWidth: "100%", position: "relative", zIndex: 0 }}
+        style={{
+          height: "100%",
+          maxWidth: "100%",
+          position: "relative",
+          zIndex: 0,
+        }}
         playbackId={PLAYBACK_ID}
         metadata={{
           video_title: "Some videos with the drone",
@@ -88,7 +98,10 @@ const Video: React.FC<VideoProps> = ({ text, followText, pinterest, instagram })
               ))}
             </h2>
 
-            <div className="mt-8 opacity-0 animate-text-appear" style={{ animationDelay: "0.8s" }}>
+            <div
+              className="mt-8 opacity-0 animate-text-appear"
+              style={{ animationDelay: "0.8s" }}
+            >
               <p className="text-white text-lg mb-8 [text-shadow:_0_1px_4px_rgba(0,0,0,0.5)]">
                 {followText}
               </p>
