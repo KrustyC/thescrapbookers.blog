@@ -5,7 +5,8 @@
       "description": "Pensieri e consigli di viaggio per nomadi digitali e amanti degli usi e costumi di culture straniere. Un blog per leggere storie su posti nuovi e a te sconosciuti."
     },
     "Hero": {
-      "title": "On the lookout for the sustainable side of digital nomading",
+      "title": "No bucketlist. Just an ongoing adventure.",
+      "subtitle": "This blog is a coollection of our stories and adventures We never know where we will end up, but we're always sure that we will have a lot of fun along the way.",
       "heroImgAlt": "View of the Langtang Valley (Nepal) surrounded by mountains. In the front there is a small traditional house"
     },
     "ExhibitionBanner": {
@@ -17,12 +18,14 @@
     },
     "Featured": {
       "title": "Articoli Recenti",
-      "subtitle": "Here you can you find our latest articles. We are quite slow writers, but if you can't wait to read our next one, you can always subscribe to our newletter and we'll let you know when we have published something new! 😉",
       "error1": "Errore durante il caricamento dei post recenti...",
       "error2": "Ci scusiamo per il disagio, siamo già al lavoro per risolvere il problema, ti preghiamo di riprovare tra qualche minuto."
     },
     "Video": {
-      "text": "stories of travel, food, culture and digital nomading"
+      "text": "Same slow content, faster delivery. Sometimes.",
+      "followText": "We're not big fans of social media, but if you would like to keep up to date with our journey, you can follow us on Pinterest and Instagram. You might be lucky and see some newer content. ",
+      "pinterest": "Pinterest",
+      "instagram": "Instagram"
     },
     "DigitalNomading": {
       "title": "Digital Nomading",
@@ -38,7 +41,8 @@
         "vietnam": "a woman in Hanoi (Vietnam) pushing a bike, with a lot of flowers. You can not see the face of the woman, as it's covered by some green plants. It is possible though to notice that she is wearing a traditional hat",
         "cambodia": "a young monk walking in a temple near Angkor Wat (Cambodia). The monk is wearing a traditional orange robe",
         "malaysia": "picture in perspective of the minaret of the National Mosque of Malaysia in Kuala Lumpur. On thw way to the minaret there is pool full of bright blue water. On the side of the pool, two corridors with a lot of black columns and a white roof",
-        "nepal": "a Nepalese guy is having fun on a handmade wooden swing"
+        "nepal": "a Nepalese guy is having fun on a handmade wooden swing",
+        "japan": "a traditional Japanese temple surrounded by trees"
       }
     },
     "HighlightSection": {
@@ -46,7 +50,7 @@
       "text": "We are exploring the lush jungles, pristine beaches, and vibrant wildlife of Belize. From ancient Mayan ruins to the stunning Great Blue Hole, this country has captivated us with its natural beauty. Stay tuned for an upcoming article where we share our adventures and insights from this incredible destination!"
     },
     "AboutUs": {
-      "title": "Filosofia del blog",
+      "title": "A bit about us",
       "textFirstPar": "We began our travels in Southeast Asia at the beginning of 2023. We decided to experiment with our professional skills and shared passion for travel by designing and building a blog that could reflect our experiences, highlight overlooked historical events, and explore general subjects we found interesting along the way.",
       "textSecondPar": "Our slow travel pace has also rubbed off on our speed at producing content, but please be patient—we believe you will find our discoveries worth the wait. Join us here, in our newsletter, or on social media, and we'll help you feel like you're travelling to these places, from wherever you are.",
       "cta": "Scopri di più"
