@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 import { ButtonLink } from "@/components/uikit/ButtonLink";
@@ -38,10 +38,11 @@ export const Country: React.FC<CountryProps> = ({ country, continentSlug }) => {
           title={country.thumbnailImage?.title || "missing image"}
           priority
           fill
-          objectFit="cover"
+          style={{
+            objectFit: "cover",
+          }}
         />
       </div>
-
       <div className="w-full md:w-1/4 flex flex-col gap-3 md:gap-4">
         <h2 className="text-2xl font-bold">{country.name}</h2>
         <p className="mb-0.5 line-clamp-6"> {country.description}</p>

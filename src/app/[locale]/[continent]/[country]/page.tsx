@@ -13,17 +13,18 @@ import { AppLocale } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
 
 interface CountryPageProps {
-  params: Promise<{ country: string; locale: AppLocale }>;
+  params: Promise<{ country: string; locale: string }>;
 }
 
 export async function generateMetadata({
   params,
 }: CountryPageProps): Promise<Metadata> {
   const { country: countrySlug, locale } = await params;
+  const appLocale = locale as AppLocale;
   const { isEnabled } = await draftMode();
   const { country } = await getCountryWithPosts({
     slug: countrySlug,
-    locale,
+    locale: appLocale,
     isPreview: isEnabled,
   });
 
@@ -76,19 +77,20 @@ export async function generateStaticParams() {
 
 export default async function CountryPage({ params }: CountryPageProps) {
   const { country: countrySlug, locale } = await params;
+  const appLocale = locale as AppLocale;
 
-  setRequestLocale(locale);
+  setRequestLocale(appLocale);
 
   const { isEnabled } = await draftMode();
 
   const tArticles = await getTranslations({
-    locale,
+    locale: appLocale,
     namespace: "Country.Articles",
   });
 
   const { country } = await getCountryWithPosts({
     slug: countrySlug,
-    locale,
+    locale: appLocale,
     isPreview: isEnabled,
   });
 
@@ -132,7 +134,7 @@ export default async function CountryPage({ params }: CountryPageProps) {
 
             <div className="grid gap-x-12 gap-y-16 grid-cols-1 lg:grid-cols-3">
               {country.posts.map((post) => (
-                <PostCard key={post.slug} post={post} locale={locale} />
+                <PostCard key={post.slug} post={post} locale={appLocale} />
               ))}
             </div>
           </div>

@@ -10,18 +10,19 @@ import { AppLocale, Continent } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
 
 interface ContinentPageProps {
-  params: Promise<{ continent: string; locale: AppLocale }>;
+  params: Promise<{ continent: string; locale: string }>;
 }
 
 export async function generateMetadata({
   params,
 }: ContinentPageProps): Promise<Metadata> {
   const { continent: continentSlug, locale } = await params;
+  const appLocale = locale as AppLocale;
 
   const { isEnabled } = await draftMode();
   const { continent } = await getContinentWithCountries({
     slug: continentSlug,
-    locale,
+    locale: appLocale,
     isPreview: isEnabled,
   });
 
@@ -77,13 +78,14 @@ export async function generateStaticParams() {
 
 export default async function ContinentPage({ params }: ContinentPageProps) {
   const { continent: continentSlug, locale } = await params;
+  const appLocale = locale as AppLocale;
 
-  setRequestLocale(locale);
+  setRequestLocale(appLocale);
 
   const { isEnabled } = await draftMode();
   const { continent } = await getContinentWithCountries({
     slug: continentSlug,
-    locale,
+    locale: appLocale,
     isPreview: isEnabled,
   });
 

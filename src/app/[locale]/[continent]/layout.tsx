@@ -7,17 +7,17 @@ export default async function ContinentLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: AppLocale }>;
+  params: Promise<{ locale: string; continent: string }>;
 }) {
-  const locale = (await params).locale;
+  const { locale } = await params;
 
   return (
     <div>
-      <Navbar locale={locale} />
+      <Navbar locale={locale as AppLocale} />
 
       <div>{children}</div>
 
-      <Footer locale={locale} />
+      <Footer locale={locale as AppLocale} />
     </div>
   );
 }

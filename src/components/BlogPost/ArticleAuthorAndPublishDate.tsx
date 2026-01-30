@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import { ShareButton } from "@/components/ShareButton";
 import { AppLocale, Author } from "@/types/global";
@@ -36,7 +36,9 @@ export const ArticleAuthorAndPublishDate: React.FC<
                 alt={authorImage.alt}
                 title={authorImage.title}
                 fill
-                objectFit="cover"
+                style={{
+                  objectFit: "cover",
+                }}
               />
             </div>
           ) : null}
@@ -57,7 +59,6 @@ export const ArticleAuthorAndPublishDate: React.FC<
           </p>
         </div>
       </div>
-
       <ShareButton title="The Scrapbookers" text={copy.shareText} />
     </div>
   );

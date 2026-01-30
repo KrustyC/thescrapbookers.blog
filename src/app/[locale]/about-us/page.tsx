@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { routing } from "@/i18n/routing";
@@ -23,7 +23,9 @@ const Sidebar: React.FC<SidebarProps> = ({ title, description }) => {
             title="us taking a selfie in the jungle"
             placeholder="blur"
             fill
-            objectFit="cover"
+            style={{
+              objectFit: "cover",
+            }}
           />
         </div>
 
@@ -82,7 +84,9 @@ export default async function AboutUsPage({
           title="Tea plantation in Cameron Highlands, Tanha Rata, Malaysia"
           placeholder="blur"
           fill
-          objectFit="cover"
+          style={{
+            objectFit: "cover",
+          }}
         />
       </div>
     </div>

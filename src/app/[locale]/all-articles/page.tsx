@@ -13,22 +13,26 @@ export function generateStaticParams() {
 export default async function AboutUsPage({
   params,
 }: {
-  params: Promise<{ locale: AppLocale }>;
+  params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  const appLocale = locale as AppLocale;
 
-  setRequestLocale(locale);
+  setRequestLocale(appLocale);
 
-  const t = await getTranslations({ locale, namespace: "AllArticles" });
+  const t = await getTranslations({
+    locale: appLocale,
+    namespace: "AllArticles",
+  });
 
   const { posts } = await getLatestPosts({
     limit: 40,
-    locale,
+    locale: appLocale,
   });
 
   return (
     <div className="flex flex-col gap-8 py-16 w-full md:w-4/5 lg:w-4/5 max-w-[1280px] mx-auto">
-      <AnimatedPosts title={t("title")} posts={posts} locale={locale} />
+      <AnimatedPosts title={t("title")} posts={posts} locale={appLocale} />
     </div>
   );
 }

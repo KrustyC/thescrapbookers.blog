@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, Variants } from "motion/react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import { LocaleSelector } from "@/components/LocaleSelector/LocaleSelector";
 import { Link } from "@/i18n/navigation";
@@ -66,11 +66,12 @@ export const HeroNavbar: React.FC<HeroNavbarProps> = ({
             title="logo"
             fill
             priority
-            objectFit="contain"
+            style={{
+              objectFit: "contain",
+            }}
           />
         </Link>
       </motion.div>
-
       <div className="flex items-center gap-5 text-white font-semibold pr-4 md:pr-0">
         <div className="hidden md:flex gap-5 items-center uppercase">
           <motion.div variants={linkVariants}>

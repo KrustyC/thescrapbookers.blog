@@ -33,9 +33,9 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Home({
   params,
 }: {
-  params: Promise<{ locale: AppLocale }>;
+  params: Promise<{ locale: string }>;
 }) {
-  const locale = (await params).locale;
+  const locale = (await params).locale as AppLocale;
 
   setRequestLocale(locale);
 

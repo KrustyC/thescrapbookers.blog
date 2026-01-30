@@ -7,17 +7,17 @@ export default async function GenericLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: AppLocale }>;
+  params: Promise<{ locale: string; slug: string }>;
 }) {
   const { locale } = await params;
 
   return (
     <div>
-      <Navbar locale={locale} />
+      <Navbar locale={locale as AppLocale} />
 
       <div>{children}</div>
 
-      <Footer locale={locale} />
+      <Footer locale={locale as AppLocale} />
     </div>
   );
 }

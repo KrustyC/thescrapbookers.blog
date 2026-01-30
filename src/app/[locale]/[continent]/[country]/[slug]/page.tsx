@@ -13,16 +13,26 @@ import { AppLocale } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
 
 interface PostPageProps {
-  params: Promise<{ slug: string; locale: AppLocale }>;
+  params: Promise<{
+    slug: string;
+    locale: string;
+    continent: string;
+    country: string;
+  }>;
 }
 
 export async function generateMetadata({
   params,
 }: PostPageProps): Promise<Metadata> {
   const { slug, locale } = await params;
+  const appLocale = locale as AppLocale;
   try {
     const { isEnabled } = await draftMode();
-    const { post } = await getPost({ slug, locale, isPreview: isEnabled });
+    const { post } = await getPost({
+      slug,
+      locale: appLocale,
+      isPreview: isEnabled,
+    });
 
     if (!post) {
       return {};
@@ -50,9 +60,9 @@ export async function generateMetadata({
         description,
         siteName: "The Scrapbookers",
         images,
-        locale,
+        locale: appLocale,
         url: new URL(
-          `${locale === "it" ? `/${locale}` : ""}${post.href || ""}`,
+          `${appLocale === "it" ? `/${appLocale}` : ""}${post.href || ""}`,
           process.env.NEXT_PUBLIC_BASE_URL
         ),
       },
@@ -69,15 +79,16 @@ export async function generateMetadata({
 
 export default async function PostPage({ params }: PostPageProps) {
   const { slug, locale } = await params;
+  const appLocale = locale as AppLocale;
 
   const { isEnabled } = await draftMode();
   const { post, nextPost } = await getPost({
     slug,
-    locale,
+    locale: appLocale,
     isPreview: isEnabled,
   });
 
-  const t = await getTranslations({ locale, namespace: "BlogPost" });
+  const t = await getTranslations({ locale: appLocale, namespace: "BlogPost" });
 
   if (!post) {
     return (
@@ -96,7 +107,7 @@ export default async function PostPage({ params }: PostPageProps) {
     );
   }
 
-  const url = `${process.env.NEXT_PUBLIC_BASE_URL}/${locale}${post.href || ""}`;
+  const url = `${process.env.NEXT_PUBLIC_BASE_URL}/${appLocale}${post.href || ""}`;
 
   const jsonLd: WithContext<BlogPosting> = {
     "@context": "https://schema.org",
@@ -127,7 +138,7 @@ export default async function PostPage({ params }: PostPageProps) {
       <BlogPost
         post={post}
         nextPost={nextPost}
-        locale={locale}
+        locale={appLocale}
         copy={{
           shareText: t("shareText"),
           timeToRead: t("timeToRead"),

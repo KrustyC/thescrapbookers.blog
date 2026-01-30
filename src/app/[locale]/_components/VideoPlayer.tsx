@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import MuxVideo from "@mux/mux-video-react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import { InstagramIcon } from "@/icons/Instagram";
 import { PinterestIcon } from "@/icons/Pinterest";
@@ -61,7 +61,6 @@ const Video: React.FC<VideoProps> = ({
         title="placeholder for ban sen video"
         fill
       />
-
       <MuxVideo
         style={{
           height: "100%",
@@ -77,10 +76,8 @@ const Video: React.FC<VideoProps> = ({
         loop
         muted
       />
-
       {/* Overlay for better text contrast */}
       <div className="absolute inset-0 bg-black/15 z-[1]" />
-
       <div className="absolute h-full w-full top-0 bottom-0 left-0 right-0 z-10 px-6 lg:px-16 xl:px-48 flex flex-col justify-center">
         {showText && (
           <div className="md:w-4/5 2xl:w-3/5 4xl:w-1/2">

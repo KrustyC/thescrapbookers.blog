@@ -1,7 +1,7 @@
 import { Children, PropsWithChildren } from "react";
 import parse from "html-react-parser";
 import dynamic from "next/dynamic";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import { RichTextAsset, Video } from "@/types/global";
 
@@ -162,6 +162,10 @@ export const Asset: React.FC<{ asset: RichTextAsset }> = ({ asset }) => {
         title={title}
         height={asset.height}
         width={asset.width}
+        style={{
+          maxWidth: "100%",
+          height: "auto",
+        }}
       />
       {title ? (
         <p className="mt-2 px-4 text-gray-600 text-xs italic">{parse(title)}</p>

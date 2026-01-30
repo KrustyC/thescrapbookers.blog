@@ -7,7 +7,7 @@ import { AppLocale } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
 
 interface IntroductionPageProps {
-  params: Promise<{ locale: AppLocale }>;
+  params: Promise<{ locale: string }>;
 }
 
 export async function generateMetadata({
@@ -71,18 +71,18 @@ export default async function AllArticlesLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: AppLocale }>;
+  params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
 
   return (
     <div>
-      <Navbar blackLogo blackText locale={locale} />
+      <Navbar blackLogo blackText locale={locale as AppLocale} />
 
       <div className="w-full flex justify-center my-24">{children}</div>
 
       <div className="-mt-12 sm:-mt-24 md:-mt-28 lg:-mt-40 2xl:-mt-48">
-        <Footer locale={locale} />
+        <Footer locale={locale as AppLocale} />
       </div>
     </div>
   );

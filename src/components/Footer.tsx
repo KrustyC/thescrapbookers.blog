@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/navigation";
@@ -61,7 +61,6 @@ export const Footer: React.FC<FooterProps> = () => {
   return (
     <footer className="bg-transparent">
       <WaveSvg />
-
       <div className="flex flex-col px-16 md:px-16 pb-10 pt-6 md:pt-3 -mt-2 bg-primary">
         <div className="flex flex-col md:flex-row md:justify-between md:items-end md:mb-24">
           <div className="flex flex-col md:w-[280px] lg:w-[580px]">
@@ -125,14 +124,7 @@ export const Footer: React.FC<FooterProps> = () => {
             href="/"
             target="_blank"
           >
-            <Image
-              src={logoPic}
-              alt="the scrapbooker logo"
-              title="logo"
-              objectFit="contain"
-              fill
-              style={{ objectFit: "contain" }}
-            />
+            <Image src={logoPic} alt="the scrapbooker logo" title="logo" fill />
           </Link>
         </div>
       </div>

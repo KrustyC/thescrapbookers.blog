@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import { ChevronDown } from "@/icons/ChevronDown";
 import { Post } from "@/types/global";
@@ -35,7 +35,6 @@ export const BlogPostHero: React.FC<BlogPostHeroProps> = ({ post }) => {
           <ChevronDown className="w-4 h-4 text-black" />
         </a>
       </div>
-
       <Image
         className="loading-background"
         fill
@@ -43,7 +42,9 @@ export const BlogPostHero: React.FC<BlogPostHeroProps> = ({ post }) => {
         src={post.mainImage?.url || ""}
         alt={post.mainImage?.description || "missing image"}
         title={post.mainImage?.title || "missing image"}
-        objectFit="cover"
+        style={{
+          objectFit: "cover",
+        }}
       />
     </div>
   );

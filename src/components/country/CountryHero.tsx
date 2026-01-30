@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import { Image as IImage } from "@/types/global";
 
@@ -17,7 +17,6 @@ export const CountryHero: React.FC<CountryHeroProps> = ({ name, image }) => {
       <h1 className="text-8xl lg:text-10xl uppercase font-league-gothic z-10 text-white -mb-[13px]">
         {name}
       </h1>
-
       {image && (
         <Image
           src={image.url || ""}
@@ -25,7 +24,9 @@ export const CountryHero: React.FC<CountryHeroProps> = ({ name, image }) => {
           title={image.title || ""}
           priority
           fill
-          objectFit="cover"
+          style={{
+            objectFit: "cover",
+          }}
         />
       )}
     </div>

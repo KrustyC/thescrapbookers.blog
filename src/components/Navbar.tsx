@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/navigation";
@@ -33,10 +33,11 @@ export const Navbar: React.FC<NavbarProps> = ({
           alt="the scrapbooker logo"
           title="logo"
           fill
-          objectFit="contain"
+          style={{
+            objectFit: "contain",
+          }}
         />
       </Link>
-
       <div
         className={classNames("h-full flex items-center gap-5 font-semibold", {
           "text-white": !blackText,

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, Variants } from "motion/react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import { Link } from "@/i18n/navigation";
 import type { AppLocale, Post as IPost } from "@/types/global";
@@ -63,10 +63,11 @@ export const PostCard: React.FC<PostProps> = ({
           alt={thumbnailImage?.description || "missing image"}
           title={thumbnailImage?.title || "missing image"}
           loading="lazy"
-          objectFit="cover"
+          style={{
+            objectFit: "cover",
+          }}
         />
       </Link>
-
       <motion.div
         variants={variants}
         className="px-4 mt-2 flex items-center uppercase tracking-widest text-gray-400 text-sm font-poppins"
@@ -83,7 +84,6 @@ export const PostCard: React.FC<PostProps> = ({
             : "Missing Date"}
         </span>
       </motion.div>
-
       <motion.div className="px-4" variants={variants}>
         <Link href={href || "/"}>
           <h3 className="text-lg 2xl:text-xl text-black font-medium">

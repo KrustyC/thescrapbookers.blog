@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/legacy/image";
+import Image, { StaticImageData } from "next/image";
 
 import { Link } from "@/i18n/navigation";
 
@@ -31,8 +31,10 @@ export const NativeCarousel: React.FC<CaoruselProps> = ({ slides }) => (
           alt={slide.image.alt}
           title={slide.image.title}
           className="rounded-2xl group-hover:scale-125 transition duration-500"
-          objectFit="cover"
           loading="lazy"
+          style={{
+            objectFit: "cover",
+          }}
         />
         <div className="absolute z-10 top-0 left-0 bottom-0 right-0 h-full w-full flex items-center justify-center">
           <span className="text-7xl text-white uppercase font-league-gothic [text-shadow:_0_2px_8px_rgba(0,0,0,0.4)]">

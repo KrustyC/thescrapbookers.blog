@@ -17,7 +17,7 @@ import { leagueGothic, merriweather, ooohBaby, poppins } from "@/utils/fonts";
 
 interface Props {
   children: React.ReactNode;
-  params: Promise<{ locale: AppLocale }>;
+  params: Promise<{ locale: string }>;
 }
 
 export async function generateMetadata({

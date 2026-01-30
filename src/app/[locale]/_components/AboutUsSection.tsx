@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 import { ButtonLink } from "@/components/uikit/ButtonLink";
@@ -24,7 +24,6 @@ export const AboutUsSection: React.FC = () => {
           </ButtonLink>
         </div>
       </div>
-
       <div className="mx-6 lg:mx-0 lg:w-5/12 xl:w-1/3 h-[500px] lg:h-full relative rounded-2xl lg:rounded-r-none">
         <Image
           className="rounded-2xl lg:rounded-r-none"
@@ -33,7 +32,9 @@ export const AboutUsSection: React.FC = () => {
           title="us taking a selfie in the jungle"
           placeholder="blur"
           fill
-          objectFit="cover"
+          style={{
+            objectFit: "cover",
+          }}
         />
       </div>
     </div>

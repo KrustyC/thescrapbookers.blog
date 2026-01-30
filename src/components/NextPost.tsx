@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import { Link } from "@/i18n/navigation";
 import { AppLocale, Post } from "@/types/global";
@@ -26,10 +26,11 @@ export const NextPost: React.FC<NextPostHeroProps> = ({ post, locale }) => {
           src={post.mainImage?.url || ""}
           alt={post.mainImage?.description || "missing image"}
           title={post.mainImage?.title || "missing image"}
-          objectFit="cover"
+          style={{
+            objectFit: "cover",
+          }}
         />
       </Link>
-
       <div className="flex flex-col px-6 lg:px-0">
         <div className="mt-8 mb-6 text-gray-400 uppercase tracking-wider font-600 rounded-full font-poppins">
           <span>

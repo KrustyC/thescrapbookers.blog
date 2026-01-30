@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, Variants } from "motion/react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import { AppLocale } from "@/types/global";
 import { smoothSpring } from "@/utils/transitions";
@@ -71,7 +71,9 @@ export const HeroContent: React.FC<HeroProps> = ({
           fill
           priority
           className="md:rounded-2xl z-0"
-          objectFit="cover"
+          style={{
+            objectFit: "cover",
+          }}
         />
 
         {/* Overlay for better text contrast */}

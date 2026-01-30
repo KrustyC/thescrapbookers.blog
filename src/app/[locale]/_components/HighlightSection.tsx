@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 import highlightPic from "../../../../public/images/hummingbird_belize.webp";
@@ -21,16 +21,17 @@ export const HighlightSection = () => {
           Coming soon!
         </div>
       </div>
-
       <Image
         src={highlightPic}
         alt="In the forefornt there are many cows, of brown colour, grazing. In the background there is a mountain with a small house in front of it."
         title="Picture of Vang Vieng"
         placeholder="blur"
-        objectFit="cover"
         priority={false}
         loading="lazy"
         fill
+        style={{
+          objectFit: "cover",
+        }}
       />
     </div>
   );
