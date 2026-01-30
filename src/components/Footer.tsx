@@ -118,7 +118,7 @@ export const Footer: React.FC<FooterProps> = () => {
 
         <div className="flex flex-col-reverse md:flex-row items-center md:justify-between">
           <span className="text-sm md:text-lg font-light md:mt-2">
-            ©2025 | The Scrapbookers
+            ©2026 | The Scrapbookers
           </span>
           <Link
             className="hidden md:block relative h-20 w-56"

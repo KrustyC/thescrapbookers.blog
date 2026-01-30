@@ -25,7 +25,6 @@ export default async function FeaturedPostsSection({
     return (
       <AnimatedPostsSection
         title={t("title")}
-        subtitle={t("subtitle")}
         posts={posts}
         locale={locale}
       />

@@ -59,7 +59,7 @@ export const MalaysiaFlag = () => {
           fill="none"
           stroke="#CCCCCC"
           strokeWidth={0.1199}
-          stroke-miterlimit={2.6131}
+          strokeMiterlimit={2.6131}
           d="M3.09,0.06h49.13c1.67,0,3.03,1.36,3.03,3.03v32.33c0,1.67-1.36,3.03-3.03,3.03H3.09 c-1.67,0-3.03-1.37-3.03-3.03V3.09C0.06,1.42,1.42,0.06,3.09,0.06L3.09,0.06z"
         />
       </g>

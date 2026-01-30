@@ -12,9 +12,6 @@ import { AboutUsSection } from "./_components/AboutUsSection";
 import CountriesCarouselSection, {
   CountriesCarouselSectionSkeleton,
 } from "./_components/CountriesCarouselSection/CountriesCarouselSection";
-import DigitalNomadingSection, {
-  DigitalNomadingSectionSkeleton,
-} from "./_components/DigitalNomadingSection/DigitalNomadingSection";
 import FeaturedPostsSection, {
   FeaturedPostsSectionSkeleton,
 } from "./_components/FeaturedPostsSection/FeaturedPostsSection";
@@ -55,17 +52,18 @@ export default async function Home({
 
         <HighlightSection />
 
-        <Suspense fallback={<DigitalNomadingSectionSkeleton />}>
-          <DigitalNomadingSection locale={locale} />
-        </Suspense>
-
         <Suspense fallback={<CountriesCarouselSectionSkeleton />}>
           <CountriesCarouselSection locale={locale} />
         </Suspense>
 
         <AboutUsSection />
 
-        <DynamicVideo text={t("text")} />
+        <DynamicVideo
+          text={t("text")}
+          followText={t("followText")}
+          pinterest={t("pinterest")}
+          instagram={t("instagram")}
+        />
 
         <div className="-mt-[160px] 2xl:-mt-[200px] z-50 block">
           <Footer locale={locale} />

@@ -9,7 +9,6 @@ import { smoothSpring } from "@/utils/transitions";
 
 interface AnimatedPostsSectionProps {
   title: string;
-  subtitle: string;
   posts: ShortPost[];
   locale: AppLocale;
 }
@@ -28,7 +27,6 @@ const titleVariants: Variants = {
 
 export const AnimatedPostsSection: React.FC<AnimatedPostsSectionProps> = ({
   title,
-  subtitle,
   posts,
   locale,
 }) => {
@@ -43,14 +41,11 @@ export const AnimatedPostsSection: React.FC<AnimatedPostsSectionProps> = ({
     >
       <div className="mb-16">
         <motion.h2
-          className="text-3xl lg:text-[35px] font-semibold! w-fit text-black mb-3"
+          className="text-3xl lg:text-[35px] font-semibold! w-fit text-black"
           variants={titleVariants}
         >
           {title}
         </motion.h2>
-        <motion.p className="md:w-1/2 text-slate-600" variants={titleVariants}>
-          {subtitle}
-        </motion.p>
       </div>
 
       <PostcardRail>
