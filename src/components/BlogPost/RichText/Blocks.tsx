@@ -1,7 +1,7 @@
 import { Children, PropsWithChildren } from "react";
 import parse from "html-react-parser";
 import dynamic from "next/dynamic";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 import { RichTextAsset, Video } from "@/types/global";
 

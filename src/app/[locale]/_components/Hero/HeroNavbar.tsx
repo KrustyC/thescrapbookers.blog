@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, Variants } from "motion/react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 import { LocaleSelector } from "@/components/LocaleSelector/LocaleSelector";
 import { Link } from "@/i18n/navigation";

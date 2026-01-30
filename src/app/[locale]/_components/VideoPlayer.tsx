@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import MuxVideo from "@mux/mux-video-react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 import { InstagramIcon } from "@/icons/Instagram";
 import { PinterestIcon } from "@/icons/Pinterest";

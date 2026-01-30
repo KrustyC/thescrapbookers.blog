@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 import { Link } from "@/i18n/navigation";
 import { AppLocale, Post } from "@/types/global";

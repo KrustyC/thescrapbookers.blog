@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, Variants } from "motion/react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 import { Link } from "@/i18n/navigation";
 import type { AppLocale, Post as IPost } from "@/types/global";
