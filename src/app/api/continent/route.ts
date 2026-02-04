@@ -15,6 +15,7 @@ export async function GET() {
     const continents = result?.items.map((continent) => ({
       lastModified: continent.sys.updatedAt,
       href: `/${continent.fields.slug}`,
+      slug: continent.fields.slug,
     }));
 
     return NextResponse.json({

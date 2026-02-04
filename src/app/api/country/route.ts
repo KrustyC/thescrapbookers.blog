@@ -29,6 +29,9 @@ export async function GET() {
         country.fields.slug as unknown as string,
         country.fields.continent
       ),
+      slug: country.fields.slug,
+      continent: (country.fields.continent as { fields: { slug: string } })
+        ?.fields?.slug as unknown as string,
     }));
 
     return NextResponse.json({

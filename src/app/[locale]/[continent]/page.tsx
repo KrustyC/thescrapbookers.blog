@@ -8,6 +8,7 @@ import { getContinentWithCountries } from "@/graphql/queries/get-continent-with-
 import { routing } from "@/i18n/routing";
 import { AppLocale, Continent } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
+import { getContentfulClient } from "@/utils/contentful-client";
 
 interface ContinentPageProps {
   params: Promise<{ continent: string; locale: string }>;
@@ -63,17 +64,27 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/continent`, {
-    next: { revalidate: 3600 },
+  const client = getContentfulClient();
+
+  const result = await client.getEntries({
+    content_type: "continent",
+    locale: "en",
+    include: 2,
+    select: ["fields.slug", "sys.updatedAt"],
   });
 
-  const { continents } = await res.json();
+  const continents = result.items.map((continent) => ({
+    slug: continent.fields.slug as string,
+  }));
 
-  return routing.locales.map((locale) => {
+  const params = routing.locales.flatMap((locale) => {
     return continents.map((continent: Continent) => ({
-      params: { continent: continent.slug, locale },
+      locale,
+      continent: continent.slug,
     }));
   });
+
+  return params;
 }
 
 export default async function ContinentPage({ params }: ContinentPageProps) {

@@ -8,9 +8,40 @@ import { Link } from "@/i18n/navigation";
 import { ArticleNotFoundIcon } from "@/icons/ArticleNotFound";
 import { AppLocale } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
+import { getContentfulClient } from "@/utils/contentful-client";
+import { routing } from "@/i18n/routing";
 
 interface PostPageProps {
   params: Promise<{ slug: string; locale: string }>;
+}
+
+export const dynamic = "force-static";
+
+export async function generateStaticParams() {
+  const client = getContentfulClient();
+
+  const result = await client.getEntries({
+    content_type: "post",
+    locale: "en",
+    include: 3,
+    select: ["fields.slug", "fields.country"],
+  });
+
+  const params = routing.locales.flatMap((locale) =>
+    result.items
+      .filter((post) => {
+        const country = post.fields.country as any;
+        return !country;
+      })
+      .map((post) => {
+        return {
+          locale,
+          slug: post.fields.slug as string,
+        };
+      })
+  );
+
+  return params;
 }
 
 export async function generateMetadata({

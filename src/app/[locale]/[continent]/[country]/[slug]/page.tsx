@@ -12,6 +12,7 @@ import { AppLocale } from "@/types/global";
 
 import { createAlternates } from "@/utils/urls";
 import { routing } from "@/i18n/routing";
+import { getContentfulClient } from "@/utils/contentful-client";
 
 interface PostPageProps {
   params: Promise<{
@@ -20,6 +21,38 @@ interface PostPageProps {
     continent: string;
     country: string;
   }>;
+}
+
+export async function generateStaticParams() {
+  const client = getContentfulClient();
+
+  const result = await client.getEntries({
+    content_type: "post",
+    locale: "en",
+    include: 3,
+    select: ["fields.slug", "fields.country"],
+  });
+
+  const params = routing.locales.flatMap((locale) =>
+    result.items
+      .filter((post) => {
+        const country = post.fields.country as any;
+        return (
+          !!country?.fields?.slug && !!country?.fields?.continent?.fields?.slug
+        );
+      })
+      .map((post) => {
+        const country = post.fields.country as any;
+        return {
+          locale,
+          continent: country.fields.continent.fields.slug,
+          country: country.fields.slug,
+          slug: post.fields.slug as string,
+        };
+      })
+  );
+
+  return params;
 }
 
 export async function generateMetadata({
@@ -72,24 +105,6 @@ export async function generateMetadata({
   } catch (error) {
     return {};
   }
-}
-
-export async function generateStaticParams() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/post`, {
-    next: { revalidate: 30 },
-  });
-  const { posts } = await res.json();
-
-  console.log("DIO CANE");
-  console.log(posts);
-
-  return routing.locales.map((locale) => {
-    return posts
-      .filter((post: { country: string; slug: string }) => !!post.country)
-      .map((post: { country: string; slug: string }) => ({
-        params: { slug: post.slug, locale },
-      }));
-  });
 }
 
 export default async function PostPage({ params }: PostPageProps) {

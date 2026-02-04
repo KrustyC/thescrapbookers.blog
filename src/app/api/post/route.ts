@@ -26,12 +26,17 @@ export async function GET() {
       select: ["fields.slug", "fields.country", "sys.updatedAt"],
     });
 
-    const posts = result?.items.map((post) => ({
-      lastModified: post.sys.updatedAt,
-      href: getHref(post.fields.slug as unknown as string, post.fields.country),
-      slug: post.fields.slug as unknown as string,
-      country: post.fields.country as unknown as string,
-    }));
+    const posts = result?.items.map((post) => {
+      const country = post.fields.country as any;
+      const slug = post.fields.slug as string;
+      return {
+        lastModified: post.sys.updatedAt,
+        href: getHref(slug, country),
+        slug,
+        country: country?.fields?.slug || null,
+        continent: country?.fields?.continent?.fields?.slug || null,
+      };
+    });
 
     return NextResponse.json({
       success: true,

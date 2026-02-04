@@ -11,6 +11,9 @@ import { ExamsIcon } from "@/icons/Exams";
 import { Country } from "@/types/generated/graphql";
 import { AppLocale } from "@/types/global";
 import { createAlternates } from "@/utils/urls";
+import { getContentfulClient } from "@/utils/contentful-client";
+
+export const dynamic = "force-static";
 
 interface CountryPageProps {
   params: Promise<{ country: string; locale: string }>;
@@ -62,17 +65,27 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/country`, {
-    next: { revalidate: 3600 },
+  const client = getContentfulClient();
+
+  const result = await client.getEntries({
+    content_type: "country",
+    locale: "en",
+    include: 2,
+    select: ["fields.slug", "fields.continent", "sys.updatedAt"],
   });
 
-  const { countries } = await res.json();
+  const params = routing.locales.flatMap((locale) =>
+    result.items
+      .filter((country) => !!country.fields.continent)
+      .map((country) => ({
+        locale,
+        continent: (country.fields.continent as { fields: { slug: string } })
+          ?.fields?.slug as unknown as string,
+        country: country.fields.slug,
+      }))
+  );
 
-  return routing.locales.map((locale) => {
-    return countries.map((country: Country) => ({
-      params: { country: country.slug, locale },
-    }));
-  });
+  return params;
 }
 
 export default async function CountryPage({ params }: CountryPageProps) {
