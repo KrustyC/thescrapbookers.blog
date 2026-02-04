@@ -31,6 +31,7 @@ export const ArticleAuthorAndPublishDate: React.FC<
           {authorImage ? (
             <div className="h-14 w-14 lg:h-16 lg:w-16 rounded-full relative">
               <Image
+                unoptimized
                 className="rounded-full"
                 src={authorImage.img}
                 alt={authorImage.alt}

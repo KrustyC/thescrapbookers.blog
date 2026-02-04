@@ -33,6 +33,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           alt="the scrapbooker logo"
           title="logo"
           fill
+          unoptimized
           style={{
             objectFit: "contain",
           }}

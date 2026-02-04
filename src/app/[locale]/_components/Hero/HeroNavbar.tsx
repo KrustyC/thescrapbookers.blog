@@ -64,6 +64,7 @@ export const HeroNavbar: React.FC<HeroNavbarProps> = ({
             src={logoPic}
             alt="the scrapbooker logo"
             title="logo"
+            unoptimized
             fill
             priority
             style={{

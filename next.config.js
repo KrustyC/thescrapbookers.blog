@@ -6,11 +6,11 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = withNextIntl({
-  experimental: {
-    // nextScriptWorkers: true, @TODO Enable once Partytown and worker are supported in the app folder
-  },
+  reactCompiler: true,
   images: {
     remotePatterns: [{ protocol: "https", hostname: "images.ctfassets.net" }],
+    loader: "custom",
+    loaderFile: "./src/utils/contentfulImageLoader.ts",
   },
 });
 

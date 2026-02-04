@@ -133,11 +133,11 @@ export async function getPost({
       },
     });
 
-    if (!data.data) {
+    const post = data.data?.postCollection?.items?.[0];
+
+    if (!post) {
       throw new Error(`Post with slug: ${slug} not found`);
     }
-
-    const post = data.data.postCollection.items[0];
 
     return {
       post: parseGraphQLPost(post),
