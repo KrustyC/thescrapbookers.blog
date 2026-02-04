@@ -225,6 +225,7 @@ export const CheatsheetBanner: React.FC<CheatsheetBannerProps> = ({
                       href={space.website || ""}
                       target="_blank"
                       rel="noopener noreferrer"
+                      prefetch={false}
                     >
                       {space.name}
                     </Link>

@@ -59,7 +59,7 @@ export const HeroNavbar: React.FC<HeroNavbarProps> = ({
         className="relative w-44 lg:w-72 xl:w-56 h-8 xl:h-20"
         variants={logoVariants}
       >
-        <Link href="/" target="_blank">
+        <Link href="/" target="_blank" prefetch={false}>
           <Image
             src={logoPic}
             alt="the scrapbooker logo"
@@ -75,15 +75,21 @@ export const HeroNavbar: React.FC<HeroNavbarProps> = ({
       <div className="flex items-center gap-5 text-white font-semibold pr-4 md:pr-0">
         <div className="hidden md:flex gap-5 items-center uppercase">
           <motion.div variants={linkVariants}>
-            <Link href={URLS.asiaArticles()}>{navbarCopy.asia}</Link>
+            <Link href={URLS.asiaArticles()} prefetch={false}>
+              {navbarCopy.asia}
+            </Link>
           </motion.div>
 
           <motion.div variants={linkVariants}>
-            <Link href={URLS.allArticles()}>{navbarCopy.allArticles}</Link>
+            <Link href={URLS.allArticles()} prefetch={false}>
+              {navbarCopy.allArticles}
+            </Link>
           </motion.div>
 
           <motion.div variants={linkVariants}>
-            <Link href={URLS.aboutUs()}>{navbarCopy.aboutUs}</Link>
+            <Link href={URLS.aboutUs()} prefetch={false}>
+              {navbarCopy.aboutUs}
+            </Link>
           </motion.div>
         </div>
 

@@ -27,7 +27,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <nav className="flex justify-between w-full h-24 bg-transparent absolute top-0 left-0 right-0 z-50 px-6 lg:px-24">
-      <Link className="relative h-full w-44 md:w-56" href="/">
+      <Link className="relative h-full w-44 md:w-56" href="/" prefetch={false}>
         <Image
           src={blackLogo ? logoBlackPic : logoWhitePic}
           alt="the scrapbooker logo"
@@ -45,9 +45,15 @@ export const Navbar: React.FC<NavbarProps> = ({
         })}
       >
         <div className="hidden md:flex items-center gap-5 uppercase">
-          <Link href={URLS.asiaArticles()}>{navbar("asia")}</Link>
-          <Link href={URLS.allArticles()}>{navbar("allArticles")}</Link>
-          <Link href={URLS.aboutUs()}>{navbar("aboutUs")}</Link>
+          <Link href={URLS.asiaArticles()} prefetch={false}>
+            {navbar("asia")}
+          </Link>
+          <Link href={URLS.allArticles()} prefetch={false}>
+            {navbar("allArticles")}
+          </Link>
+          <Link href={URLS.aboutUs()} prefetch={false}>
+            {navbar("aboutUs")}
+          </Link>
         </div>
 
         <LocaleSelector

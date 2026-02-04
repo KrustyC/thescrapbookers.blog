@@ -9,8 +9,9 @@ import { getPost } from "@/graphql/queries/get-post.query";
 import { Link } from "@/i18n/navigation";
 import { ArticleNotFoundIcon } from "@/icons/ArticleNotFound";
 import { AppLocale } from "@/types/global";
-// import { LOCALES } from "@/utils/constants";
+
 import { createAlternates } from "@/utils/urls";
+import { routing } from "@/i18n/routing";
 
 interface PostPageProps {
   params: Promise<{
@@ -73,9 +74,23 @@ export async function generateMetadata({
   }
 }
 
-// export function generateStaticParams() {
-//   return LOCALES.map((locale) => ({ locale }));
-// }
+export async function generateStaticParams() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/post`, {
+    next: { revalidate: 30 },
+  });
+  const { posts } = await res.json();
+
+  console.log("DIO CANE");
+  console.log(posts);
+
+  return routing.locales.map((locale) => {
+    return posts
+      .filter((post: { country: string; slug: string }) => !!post.country)
+      .map((post: { country: string; slug: string }) => ({
+        params: { slug: post.slug, locale },
+      }));
+  });
+}
 
 export default async function PostPage({ params }: PostPageProps) {
   const { slug, locale } = await params;
@@ -100,6 +115,7 @@ export default async function PostPage({ params }: PostPageProps) {
         <Link
           href="/"
           className="bg-black px-6 pt-2 pb-4 w-fit font-bold inline-block mt-8"
+          prefetch={false}
         >
           <span className="text-xl text-white">{t("notFound.cta")}</span>
         </Link>

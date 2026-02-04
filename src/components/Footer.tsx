@@ -47,6 +47,7 @@ const CircularLink: React.FC<PropsWithChildren<CircularButtonLinkProps>> = ({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
+      prefetch={false}
       className={`flex items-center justify-center rounded-full bg-black h-8 w-8 ${className}`}
     >
       {children}
@@ -95,8 +96,12 @@ export const Footer: React.FC<FooterProps> = () => {
           </div>
 
           <div className="flex flex-col gap-4 uppercase font-semibold justify-center md:justify-end text-center md:text-right my-16 md:my-0">
-            <Link href={URLS.asiaArticles()}>{footer("Links.asia")}</Link>
-            <Link href={URLS.aboutUs()}>{footer("Links.aboutUs")}</Link>
+            <Link href={URLS.asiaArticles()} prefetch={false}>
+              {footer("Links.asia")}
+            </Link>
+            <Link href={URLS.aboutUs()} prefetch={false}>
+              {footer("Links.aboutUs")}
+            </Link>
 
             <div className="flex gap-4 justify-center md:justify-end">
               <CircularLink href={URLS.instagramURL()}>
@@ -123,6 +128,7 @@ export const Footer: React.FC<FooterProps> = () => {
             className="hidden md:block relative h-20 w-56"
             href="/"
             target="_blank"
+            prefetch={false}
           >
             <Image src={logoPic} alt="the scrapbooker logo" title="logo" fill />
           </Link>

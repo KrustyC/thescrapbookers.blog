@@ -29,6 +29,8 @@ export async function GET() {
     const posts = result?.items.map((post) => ({
       lastModified: post.sys.updatedAt,
       href: getHref(post.fields.slug as unknown as string, post.fields.country),
+      slug: post.fields.slug as unknown as string,
+      country: post.fields.country as unknown as string,
     }));
 
     return NextResponse.json({

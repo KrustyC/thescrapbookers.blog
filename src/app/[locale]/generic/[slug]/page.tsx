@@ -89,6 +89,7 @@ export default async function PostPage({ params }: PostPageProps) {
         <Link
           href="/"
           className="bg-black px-6 pt-2 pb-4 w-fit font-bold inline-block mt-8"
+          prefetch={false}
         >
           <span className="text-xl text-white">{t("notFound.cta")}</span>
         </Link>

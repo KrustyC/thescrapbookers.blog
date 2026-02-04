@@ -20,6 +20,7 @@ export const NextPost: React.FC<NextPostHeroProps> = ({ post, locale }) => {
       <Link
         href={post.href || ""}
         className="w-full h-[380px] relative loading-background"
+        prefetch={false}
       >
         <Image
           fill
@@ -44,7 +45,7 @@ export const NextPost: React.FC<NextPostHeroProps> = ({ post, locale }) => {
           </span>
         </div>
 
-        <Link href={post.href || ""}>
+        <Link href={post.href || ""} prefetch={false}>
           <h2 className="text-5xl font-semibold text-black">{post.title}</h2>
         </Link>
 

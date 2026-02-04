@@ -130,6 +130,7 @@ const ExternalLink: React.FC<ExternalLinkProps> = ({ href, children }) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
+      prefetch={false}
       className="flex items-center gap-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-5 py-2.5 rounded-full transition-colors"
     >
       {children}

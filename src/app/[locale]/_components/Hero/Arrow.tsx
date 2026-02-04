@@ -8,6 +8,7 @@ export const Arrow = () => {
   return (
     <Link
       href="#featured-articles"
+      prefetch={false}
       className="absolute bottom-5 left-0 w-full flex justify-center items-center cursor-pointer z-50"
     >
       <div className="bg-black bg-opacity-80 text-white text-center p-2 rounded-full">

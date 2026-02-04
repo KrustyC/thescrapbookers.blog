@@ -85,7 +85,7 @@ export const PostCard: React.FC<PostProps> = ({
         </span>
       </motion.div>
       <motion.div className="px-4" variants={variants}>
-        <Link href={href || "/"}>
+        <Link href={href || "/"} prefetch={false}>
           <h3 className="text-lg 2xl:text-xl text-black font-medium">
             {title}
           </h3>

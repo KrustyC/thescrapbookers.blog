@@ -34,6 +34,7 @@ export const ExhibitionBanner = () => {
             <Link
               href={PALAZZO_PRETORIO_LINK}
               target="_blank"
+              prefetch={false}
               className="flex items-center mt-0.5 lg:mt-2 mb-0.5 underline hover:text-primary transition-all"
             >
               <LocationPinIcon className="w-4 h-4 mr-0.5" />
@@ -47,6 +48,7 @@ export const ExhibitionBanner = () => {
 
           <Link
             href="mailto:hello@thescrapbookers.blog?subject=Info Mostra Palazzo Pretorio"
+            prefetch={false}
             className="mt-6 lg:mt-8 flex justify-center items-center rounded-2xl h-16 text-xl w-full lg:w-fit bg-black text-white hover:bg-white hover:text-black transition-all border-2 border-white px-12"
           >
             {t("cta")}
